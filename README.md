@@ -14,8 +14,8 @@ This is a new version of web reporting system. Maybe will change it's name to BI
 1. develop a inform component that could convey event result (success, failed, error, warning, etc.)
 
 ## some helpful links
-* CodeIgniter homepage[4]
-* Bootstrap homepage[5]
+* [CodeIgniter homepage][4]
+* [Bootstrap homepage][5]
 
 ## developers
 * Bo Zhang (zhangbobell [homepage][1])
