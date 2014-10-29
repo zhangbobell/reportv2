@@ -8,7 +8,7 @@ This is a new version of web reporting system. Maybe will change it's name to BI
 3. display the final interface.
 
 ## developers
-Bo Zhang (zhangbobell[个人主页][1])
+Bo Zhang (zhangbobell[homepage][1])
 
 
   [1]: http://zhangbobell.cn

@@ -1,0 +1,147 @@
+body {
+	font-family: arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+html, body, h1, h2, h3, h4, h5, h6, div, span, input, ul, ol, li, table, tr, th, td{
+    margin: 0;
+    padding: 0;
+}
+.content
+{
+	width: 100%;
+	min-width:980px;
+}
+.banner
+{
+	width: 100%;
+	height: 150px;
+	background-color: #32c6f0;
+	color: #fff;
+}
+.sidebar
+{
+	width: 20%;
+	float: left;
+    color: #fff;
+	background-color: #393939;
+	min-height: 800px;
+}
+.main
+{
+	width: 80%;
+	float: left;
+    padding: 5px;
+    /*background-color: #e1e1e1;*/
+}
+
+/*-------------------------------------------- banner元素样式 --------------------------------------------*/
+.sys-title {
+    font-weight: normal;
+    font-size: 34px;
+    text-align: center;
+    height: 120px;
+    line-height: 120px;
+    margin: 0;
+    padding: 0;
+}
+.login-info
+{
+	position: absolute;
+	top: 10px;
+	right: 20px;
+}
+
+.login-info a:link
+{
+	color: #fff;
+	text-decoration: none;
+}
+
+.login-info a:visited
+{
+	color: #fff;
+	text-decoration: none;
+}
+.login-info a:hover
+{
+	color: #fff;
+	text-decoration: underline;
+}
+
+.login-info a:active
+{
+	color: #fff;
+	text-decoration: underline;
+}
+.pannel
+{
+	float: right;
+}
+.pannel li
+{
+	width: 64px;
+	height: 64px;
+	float: left;
+	list-style-type: none;
+	margin-right: 5px;
+	text-align: center;
+}
+.pannel li div
+{
+	width: 64px;
+	height: 40px;
+}
+.pannel li div img
+{
+	margin-bottom: -24px;
+}
+.pannel li span
+{
+	line-height: 28px;
+}
+.pannel li a:link
+{
+	display: block;
+	border-radius: 5px;
+	color: #fff;
+	text-decoration: none;
+}
+.pannel li a:hover
+{
+	background-color: #2980b9;
+}
+
+/*-------------------------------------------- sidebar元素样式 --------------------------------------------*/
+.sidebar li
+{
+	margin-left: 20px;
+	list-style-type: none;
+	border-bottom: 1px solid #3f3f3f;
+}
+.sidebar li a
+{
+	height: 36px;
+	line-height: 36px;
+	display: block;
+	text-decoration: none;
+	padding-left: 10px;
+}
+.sidebar li a:link
+{
+	color: #fff;
+}
+.sidebar li a:visited
+{
+    color: #fff;
+}
+.sidebar li a:hover
+{
+	background-color: #3f3f3f;
+	border-left: 3px solid #ff9667;
+	color: #32c6f0;
+}
+li.sidebar-title {
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+    margin-left: 0;
+}
