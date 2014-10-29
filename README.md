@@ -13,12 +13,18 @@ This is a new version of web reporting system. Maybe will change it's name to BI
 ### Dengyang Zhao -- develop a inform component
 1. develop a inform component that could convey event result (success, failed, error, warning, etc.)
 
+## some helpful links
+* CodeIgniter homepage[4]
+* Bootstrap homepage[5]
+
 ## developers
-Bo Zhang (zhangbobell[homepage][1])
-Hui Zhang (bigMan[github][2])
-Dengyang Zhao(winzhaody[github][3])
+* Bo Zhang (zhangbobell [homepage][1])
+* Hui Zhang (bigMan [github][2])
+* Dengyang Zhao(winzhaody [github][3])
 
 
   [1]: http://zhangbobell.cn
   [2]: https://github.com/zh9927
   [3]: https://github.com/winzhaody
+  [4]: http://codeigniter.org.cn/
+  [5]: http://v3.bootcss.com/
