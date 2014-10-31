@@ -1,9 +1,7 @@
-body {
-	font-family: arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-}
 html, body, h1, h2, h3, h4, h5, h6, div, span, input, ul, ol, li, table, tr, th, td{
     margin: 0;
     padding: 0;
+    font-family: arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 .content
 {
@@ -29,7 +27,7 @@ html, body, h1, h2, h3, h4, h5, h6, div, span, input, ul, ol, li, table, tr, th,
 {
 	width: 80%;
 	float: left;
-    padding: 5px;
+    padding: 15px;
     /*background-color: #e1e1e1;*/
 }
 
@@ -144,4 +142,8 @@ li.sidebar-title {
     text-align: center;
     line-height: 40px;
     margin-left: 0;
+}
+/*-------------------------------------------- price-control 模块 CSS --------------------------------------------*/
+.tr-selected {
+    background-color: #f5f5f5;
 }

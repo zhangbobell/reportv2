@@ -6,3 +6,5 @@
 <!--        <li><a href="price/inputComplete">录入今日完成</a></li>-->
 </ul>
 <!-- sidebar 部分结束 -->
+<!-- main 部分开始 -->
+<div class="main container-fluid">

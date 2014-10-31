@@ -37,4 +37,44 @@ class MY_model extends CI_Model
 
         return $db_config;
     }
+
+    /* get_result_array: 根据数据库和 SQL 语句获取到结果数组
+     * @param : $db -- 选择的数据库
+     *          $sql -- 要查询的语句
+     *          $valArr[可选] -- 可以带入的参数
+     *          $retArr[可选] -- 返回的数组中的字段
+     * @return : SQL 查询结果数组
+     * */
+    public function get_result_array($db, $sql, $valArr = null, $retArr = null) {
+        $config= $this->select_DB($db);
+        $this->load->database($config);
+
+        $query = $this->db->query($sql, $valArr);
+
+        $ret = array();
+        if ($retArr) {
+            foreach ($query->result_array() as $row) {
+                foreach ($retArr as $key) {
+                    $ret[$row[$key]] = $row[$key];
+                }
+            }
+
+            return $ret;
+        } else {
+            return $query->result_array();
+        }
+    }
+
+    public function set_record($db, $sql, $valArr) {
+        $config= $this->select_DB($db);
+        $this->load->database($config);
+
+        $this->db->query($sql, $valArr);
+
+        if (mysql_errno() == 1062) {
+            return -1;
+        }
+
+        return 0;
+    }
 }

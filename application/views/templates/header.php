@@ -19,6 +19,6 @@ if(!array_key_exists('logged_in', $this->session->all_userdata()))
     <base href="<?php echo base_url(); ?>" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><?php echo $title ?> -- 追灿数据决策系统</title>
-    <link href="<?php echo base_url().TP_DIR; ?>/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url().TP_DIR; ?>/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url().CSS_DIR; ?>/zxx.lib.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url().CSS_DIR; ?>/base.css" rel="stylesheet" type="text/css" />
