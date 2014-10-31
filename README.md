@@ -2,20 +2,22 @@
 This is a new version of web reporting system. Maybe will change it's name to BI system.
 
 ## develop plan
-### Bo Zhang -- doing a tagging module to control the price of the sellers.
-1. complete the UI and support uploading .xls and .xlsx format file.
-2. support manually adjust the mismatch.
-3. display the final interface.
+#### Bo Zhang
+1. Complete upset price control(UPC) module, it could show the list of sellers or products that upset the price.
 
-### Hui Zhang -- develop a database mutual component
-1. develop a database mutual component, we can use this to select any field in any table in any database, and can get the selected result.
+#### Hui Zhang
+1. Integrate MDX query with CodeIgniter, do a survey about xmla protocol and try it in CI.
 
-### Dengyang Zhao -- develop a inform component
-1. develop a inform component that could convey event result (success, failed, error, warning, etc.)
+#### Dengyang Zhao
+1. Integrate webUploader and PHPExcel into CodeIgniter that could support upload a .xls or .xlsx file, and parse into a PHP array, then insert to the database.
 
 ## some helpful links
 * [CodeIgniter homepage][4]
 * [Bootstrap homepage][5]
+* [PHPExcel homepage][6]
+* [PHPExcel github][7]
+* [WebUploader hompage][8]
+* [XMLA protocol][9] in microsoft
 
 ## developers
 * Bo Zhang (zhangbobell [homepage][1])
@@ -28,3 +30,7 @@ This is a new version of web reporting system. Maybe will change it's name to BI
   [3]: https://github.com/winzhaody
   [4]: http://codeigniter.org.cn/
   [5]: http://v3.bootcss.com/
+  [6]: https://phpexcel.codeplex.com/
+  [7]: https://github.com/PHPOffice/PHPExcel
+  [8]: http://fex.baidu.com/webuploader/
+  [9]: http://msdn.microsoft.com/zh-cn/library/bb522619.aspx
