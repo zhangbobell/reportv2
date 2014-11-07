@@ -111,33 +111,32 @@ class Price extends CI_Controller {
         echo json_encode($this->mprice->get_initial_screen_product_array($db, $updatetime));
     }
 
-    public function read_excel() {
-
-        // 加载 excel 类
-        $this->load->library('excel');
-        $filePath = 'http://localhost/abc.xlsx';
-
-        $objPHPExcel = PHPExcel_IOFactory::load($filePath);
-
-        $cell_collection = $objPHPExcel->getActiveSheet()->getCellCollection();
-
-
-        foreach ($cell_collection as $cell) {
-            $column = $objPHPExcel->getActiveSheet()->getCell($cell)->getColumn();
-            $row = $objPHPExcel->getActiveSheet()->getCell($cell)->getRow();
-            $data_value = $objPHPExcel->getActiveSheet()->getCell($cell)->getValue();
-
-            // 表头包含第一行的数据
-            if ($row == 1) {
-                $header[$row][$column] = $data_value;
-            } else {
-                $arr_data[$row][$column] = $data_value;
-            }
+    public function upload($page = "upload")
+    {
+        /*
+                $config['upload_path'] = './public/upload/';
+                $config['allowed_types'] = 'jpg';
+                $config['max_size'] = '10000';
+                $config['file_name'] = uniqid();
+                $this->load->library('upload', $config);
+                $this->upload->do_upload("pic");
+                $this->upload->display_errors('<p>', '</p>');
+        */
+        if ( ! file_exists('application/views/price/'.$page.'.php'))
+        {
+            show_404();
         }
 
-        $data['header'] = $header;
-        $data['values'] = $arr_data;
+        $data['title'] = "上传价格表";
+        $data['username'] = $this->session->userdata('username');
 
-        var_dump($data);
+        $this->load->view('templates/header', $data);
+        $this->load->view('price/header_add_' . $page);
+        $this->load->view('templates/banner');
+        $this->load->view('templates/sidebar');
+        $this->load->view('price/' . $page,$data);
+        $this->load->view('templates/footer_script');
+        $this->load->view('price/footer_add_' . $page);
+        $this->load->view('templates/footer');
     }
 }

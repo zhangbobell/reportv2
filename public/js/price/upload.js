@@ -151,7 +151,7 @@
             swf: '../../dist/Uploader.swf',
             chunked: false,
             chunkSize: 512 * 1024,
-            server: '../../public/fileupload.php',
+            server: './public/third-party/webuploader/fileupload.php',
             // runtimeOrder: 'flash',
 
             // accept: {

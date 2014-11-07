@@ -1,0 +1,3 @@
+<script type="text/javascript" src="<?php echo base_url().TP_DIR; ?>/jquery/jquery.js"></script>
+<script type="text/javascript" src="<?php echo base_url().TP_DIR; ?>/webuploader/webuploader.js"></script>
+<script type="text/javascript" src="<?php echo base_url().JS_DIR; ?>/price/upload.js"></script>
