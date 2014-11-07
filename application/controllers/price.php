@@ -36,6 +36,29 @@ class Price extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
+    /* control : 初次筛选商品主界面
+     * @param : page=['control']
+     * return : null
+     * */
+    public function init_screen($page = 'init_screen') {
+        if ( ! file_exists('application/views/price/'.$page.'.php'))
+        {
+            show_404();
+        }
+
+        $data['title'] = "初次筛选";
+        $data['username'] = $this->session->userdata('username');
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('price/header_add_' . $page);
+        $this->load->view('templates/banner');
+        $this->load->view('templates/sidebar');
+        $this->load->view('price/' . $page,$data);
+        $this->load->view('templates/footer_script');
+        $this->load->view('price/footer_add_' . $page);
+        $this->load->view('templates/footer');
+    }
+
     /*
      * get_upset_price_seller : 获取乱价商家名单，以 json 格式返回
      * @param : null
@@ -74,6 +97,18 @@ class Price extends CI_Controller {
         $msg = $this->input->post('msg');
 
         echo $this->mprice->set_upset_price_record($db, $sellernick, $username, $status, $msg);
+    }
+
+    /*
+     * get_init_screen_product : 获取初次筛选的产品名单
+     * @param : null
+     * return : null
+     **/
+    public function get_init_screen_product() {
+        $db = $this->input->post('db');
+        $updatetime = $this->input->post('updatetime');
+
+        echo json_encode($this->mprice->get_initial_screen_product_array($db, $updatetime));
     }
 
     public function read_excel() {

@@ -62,4 +62,23 @@ class MPrice extends MY_model {
         return $this->set_record($db, $sql, array($datetime, $sellernick, $username, $status, $msg));
     }
 
+    public function get_initial_screen_product_array($db, $updatetime) {
+        $sql = "SELECT `a`.`updatetime`, `a`.`sellernick`, `a`.`itemid`, `itemnum`, `zk_final_price`, `zk_final_price_wap`
+                FROM `crawl_shop_item` as `a`
+                LEFT JOIN `crawl_item_sku` AS `b`
+                ON `a`.`itemid` = `b`.`itemid`
+                WHERE `a`.`updatetime` = ?";
+
+        $arr = $this->get_result_array($db, $sql, array($updatetime));
+        foreach ($arr as $key => $row) {
+            foreach($row as $k => $v) {
+                if ($k == 'itemid') {
+                    $arr[$key]['url'] = "<a href=\"http://item.taobao.com/item.html?id=$v\" target=\"_blank\">$v</a>";
+                }
+            }
+        }
+
+        return $arr;
+    }
+
 }
