@@ -49,3 +49,11 @@
 </div>
 
 
+<div>
+    <form action="<?php echo site_url('price/upload')?>" method="post" >
+
+        <input type="submit" value="上传" />
+    </form>
+</div>
+
+

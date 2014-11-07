@@ -76,33 +76,20 @@ class Price extends CI_Controller {
         echo $this->mprice->set_upset_price_record($db, $sellernick, $username, $status, $msg);
     }
 
-    public function read_excel() {
 
-        // 加载 excel 类
-        $this->load->library('excel');
-        $filePath = 'http://localhost/abc.xlsx';
+    public function upload()
+    {
 
-        $objPHPExcel = PHPExcel_IOFactory::load($filePath);
+        /*
+                $config['upload_path'] = './public/upload/';
+                $config['allowed_types'] = 'jpg';
+                $config['max_size'] = '10000';
+                $config['file_name'] = uniqid();
+                $this->load->library('upload', $config);
+                $this->upload->do_upload("pic");
+                $this->upload->display_errors('<p>', '</p>');
+        */
 
-        $cell_collection = $objPHPExcel->getActiveSheet()->getCellCollection();
-
-
-        foreach ($cell_collection as $cell) {
-            $column = $objPHPExcel->getActiveSheet()->getCell($cell)->getColumn();
-            $row = $objPHPExcel->getActiveSheet()->getCell($cell)->getRow();
-            $data_value = $objPHPExcel->getActiveSheet()->getCell($cell)->getValue();
-
-            // 表头包含第一行的数据
-            if ($row == 1) {
-                $header[$row][$column] = $data_value;
-            } else {
-                $arr_data[$row][$column] = $data_value;
-            }
-        }
-
-        $data['header'] = $header;
-        $data['values'] = $arr_data;
-
-        var_dump($data);
+        $this->load->view('price/upload.html');
     }
 }
