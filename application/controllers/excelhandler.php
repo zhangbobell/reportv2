@@ -20,7 +20,8 @@ class excelHandler extends CI_Controller {
      */
     public function insert_excel($excelName, $tableName)
     {
-
+        $excelName = $this->input->post('excelName');
+        $tableName = 'blog_user';
         // 加载 excel 类
         $this->load->library('excel');
         $filePath = './public/upload/'.$excelName;
@@ -68,8 +69,6 @@ class excelHandler extends CI_Controller {
 
 
        $this->mexcel->insert_excel($data, $tableName);
-
-
     }
 
 

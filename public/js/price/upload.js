@@ -21,6 +21,8 @@
 
             $progress = $statusBar.find( '.progress' ).hide(),
 
+            fileName = new Array(),
+
             // 添加的文件数量
             fileCount = 0,
 
@@ -470,7 +472,23 @@
                 case 'finish':
                     stats = uploader.getStats();
                     if ( stats.successNum ) {
+
+
+                        for (var i=0; i<fileName.length; i++)
+                        {
+                            $.ajax({
+                                url:"excelhandler/insert_excel",
+                                type:"post",
+                                async:false,
+                                dateType:"json",
+                                data:{"excelName": fileName[i]}
+                            }).done(function(){
+
+                            });
+                        }
+
                         alert( '上传成功' );
+
                     } else {
                         // 没有成功的文件，重设
                         state = 'done';
@@ -494,6 +512,7 @@
         uploader.onFileQueued = function( file ) {
             fileCount++;
             fileSize += file.size;
+            fileName.push(file.name);
 
             if ( fileCount === 1 ) {
                 $placeHolder.addClass( 'element-invisible' );
