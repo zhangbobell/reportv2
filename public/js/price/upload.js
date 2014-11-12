@@ -21,7 +21,7 @@
 
             $progress = $statusBar.find( '.progress' ).hide(),
 
-            fileName = new Array(),
+            fileName = '',
 
             // 添加的文件数量
             fileCount = 0,
@@ -474,18 +474,56 @@
                     if ( stats.successNum ) {
 
 
-                        for (var i=0; i<fileName.length; i++)
-                        {
+
                             $.ajax({
                                 url:"excelhandler/insert_excel",
                                 type:"post",
                                 async:false,
                                 dateType:"json",
-                                data:{"excelName": fileName[i]}
-                            }).done(function(){
+                                data:{"excelName": fileName}
+                            }).done(function(d){
+
+                                console.log(d);
+                                var dd = JSON.parse(d);
+                                //alert(d);
+                                $("#preview-excel").mrjsontable({
+                                    tableClass: "table table-bordered table-hover",
+                                    pageSize: 10,
+                                    columns: [
+                                        {
+                                            heading: "更新时间",
+                                            data: "updatetime",
+                                            type: "datetime",
+                                            sortable: true
+                                        },
+                                        {
+                                            heading: "产品编号",
+                                            data: "itemnum",
+                                            type: "string"
+                                        },
+                                        {
+                                            heading: "最低价格",
+                                            data: "min_price",
+                                            type: "float"
+                                        },
+                                        {
+                                            heading: "是否打标",
+                                            data: "is_wap",
+                                            type: "string"
+                                        },
+                                        {
+                                            heading: "相关信息",
+                                            data: "msg",
+                                            type: "string"
+                                        }
+
+                                    ],
+                                    data: dd
+                                });
+
 
                             });
-                        }
+
 
                         alert( '上传成功' );
 
@@ -512,7 +550,7 @@
         uploader.onFileQueued = function( file ) {
             fileCount++;
             fileSize += file.size;
-            fileName.push(file.name);
+            fileName = file.name;
 
             if ( fileCount === 1 ) {
                 $placeHolder.addClass( 'element-invisible' );
