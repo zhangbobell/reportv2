@@ -57,17 +57,21 @@ class MPrice extends MY_model {
     public function set_upset_price_record($db, $sellernick, $username, $status, $msg) {
         $datetime = date("Y-m-d");
         $sql = "INSERT INTO `status_price_log` (`updatetime`, `sellernick`, `account`, `status`, `msg`)
-                VALUES (?, ?, ?, ?, ?)";
+                VALUES (?, ?, ?, ?, ?)
+                ON DUPLICATE KEY UPDATE
+                `updatetime` = VALUES(`updatetime`),
+                `sellernick` = VALUES(`sellernick`),
+                `account` = VALUES(`account`),
+                `status` = VALUES(`status`),
+                `msg` = VALUES(msg)";
 
         return $this->set_record($db, $sql, array($datetime, $sellernick, $username, $status, $msg));
     }
 
     public function get_initial_screen_product_array($db, $updatetime) {
-        $sql = "SELECT `a`.`updatetime`, `a`.`sellernick`, `a`.`itemid`, `itemnum`, `zk_final_price`, `zk_final_price_wap`
-                FROM `crawl_shop_item` as `a`
-                LEFT JOIN `crawl_item_sku` AS `b`
-                ON `a`.`itemid` = `b`.`itemid`
-                WHERE `a`.`updatetime` = ?";
+        $sql = "SELECT `updatetime`, `sellernick`, `itemid`, `itemnum`, `zk_final_price`, `zk_final_price_wap`, `is_reviewed_item`
+                FROM `crawl_item_sku`
+                WHERE `updatetime` = '?' AND (`is_reviewed_item` = '0' OR `is_reviewed_item` is null)";
 
         $arr = $this->get_result_array($db, $sql, array($updatetime));
         foreach ($arr as $key => $row) {
@@ -75,10 +79,86 @@ class MPrice extends MY_model {
                 if ($k == 'itemid') {
                     $arr[$key]['url'] = "<a href=\"http://item.taobao.com/item.html?id=$v\" target=\"_blank\">$v</a>";
                 }
+                if ($k == 'is_reviewed_item' && ($v = '0' || $v = 'null')) {
+                    $arr[$key]['is_reviewed_item'] = "<button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\"><span class=\"glyphicon glyphicon-edit\"></span> 编辑</button>";
+                }
             }
         }
 
         return $arr;
     }
 
+    public function set_checked_record($db, $record) {
+        $sql = "INSERT INTO `crawl_item_sku` (`updatetime`, `sellernick`, `itemnum`, `itemid`, `is_reviewed_item`)
+                VALUES(?, ?, ?, ?, ?)
+                ON DUPLICATE KEY UPDATE
+                `sellernick` = VALUES(`sellernick`),
+                `itemnum` = VALUES(`itemnum`),
+                `is_reviewed_item` = VALUES(`is_reviewed_item`)";
+
+        return $this->set_record($db, $sql, $record);
+    }
+
+    /*
+     * refresh_meta_item: 将爬取的商品信息更新到最新的 meta_item 表中
+     * @param : $db -- 数据库名
+     * @return : null
+     * */
+    public function refresh_meta_item($db) {
+        $sql = "SELECT `updatetime`, `uid`, `sellernick`, `itemid`, `title`, `zk_final_price`, `zk_final_price_wap`, `total_sold_quantity`
+                FROM `crawl_shop_item`
+                WHERE `updatetime` = ?";
+
+        // 获取到最新的爬取时间
+        $latest_time = $this->_latest_crawl_item_time($db);
+
+        $lasted_crawl = $this->my_query($db, $sql, array($latest_time));
+        foreach ($lasted_crawl->result_array() as $row) {
+            $res = $this->_insert_to_meta_item($db, $row);
+            if ($res === false)
+                return false;
+        }
+        return true;
+    }
+
+    /*
+     * _lasted_crawl_item_time: 获取爬取商品的最新的日期
+     * @param : $db -- 数据库名
+     * @return : string -- 最新的日期
+     * */
+    private function _latest_crawl_item_time($db) {
+        $sql = "SELECT max(`updatetime`) as `latest` FROM `crawl_shop_item`";
+        $query_arr = $this->my_query($db, $sql)->result_array();
+
+        return $query_arr[0]['latest'];
+    }
+
+    /*
+     * _insert_to_meta_item: 将记录插入到 meta_item 表中
+     * @param : $db -- 数据库名 $valArr -- 需要填充的数组
+     * return : boolean -- 执行的结果
+     * */
+    private function _insert_to_meta_item($db, $valArr) {
+        // 得到创建记录的时间
+        $createtime = date("Y-m-d");
+
+        $sql = "INSERT INTO `crawl_item_sku` (`createtime`, `updatetime`, `uid`, `sellernick`, `itemid`, `title`, `zk_final_price`, `zk_final_price_wap`, `total_sold_quantity`)
+                VALUES ('$createtime', ?, ?, ?, ?, ?, ?, ?, ?)
+                ON DUPLICATE KEY UPDATE
+                `updatetime` = VALUES(`updatetime`),
+                `uid` = VALUES(`uid`),
+                `sellernick` = VALUES(`sellernick`),
+                `title` = VALUES(`title`),
+                `zk_final_price` = VALUES(`zk_final_price`),
+                `zk_final_price_wap` = VALUES(`zk_final_price_wap`),
+                `total_sold_quantity` = VALUES(`total_sold_quantity`)";
+
+        return $this->my_query($db, $sql, $valArr);
+    }
+
+    public function test_insert($db) {
+        $sql = "INSERT INTO `crawl_item_sku` (`updatetime`, `itemid`) VALUES('2014-11-11', '". rand() ."')";
+
+        return $this->my_query($db, $sql);
+    }
 }

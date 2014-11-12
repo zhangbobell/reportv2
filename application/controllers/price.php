@@ -37,7 +37,7 @@ class Price extends CI_Controller {
     }
 
     /* control : 初次筛选商品主界面
-     * @param : page=['control']
+     * @param : page=['init_screen']
      * return : null
      * */
     public function init_screen($page = 'init_screen') {
@@ -53,7 +53,7 @@ class Price extends CI_Controller {
         $this->load->view('price/header_add_' . $page);
         $this->load->view('templates/banner');
         $this->load->view('templates/sidebar');
-        $this->load->view('price/' . $page,$data);
+        $this->load->view('price/' . $page, $data);
         $this->load->view('templates/footer_script');
         $this->load->view('price/footer_add_' . $page);
         $this->load->view('templates/footer');
@@ -111,6 +111,19 @@ class Price extends CI_Controller {
         echo json_encode($this->mprice->get_initial_screen_product_array($db, $updatetime));
     }
 
+    public function set_checked_record() {
+        $db = $this->input->post('db');
+        $record = array(
+            'updatetime' => date("Y-m-d"),
+            'sellernick' => $this->input->post('sellernick'),
+            'itemnum' => $this->input->post('itemnum'),
+            'itemid' => $this->input->post('itemid'),
+            'is_reviewed_item' => $this->input->post('is_reviewed_item')
+        );
+
+        echo $this->mprice->set_checked_record($db, $record);
+    }
+
     public function upload($page = "upload")
     {
         /*
@@ -138,5 +151,15 @@ class Price extends CI_Controller {
         $this->load->view('templates/footer_script');
         $this->load->view('price/footer_add_' . $page);
         $this->load->view('templates/footer');
+    }
+
+    public function refresh_meta_item() {
+        $db = $this->input->post('db');
+
+        echo $this->mprice->refresh_meta_item($db);
+    }
+
+    public function  test_latest($db) {
+        echo ($this->mprice->refresh_meta_item($db));
     }
 }
