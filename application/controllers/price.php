@@ -126,15 +126,6 @@ class Price extends CI_Controller {
 
     public function upload($page = "upload")
     {
-        /*
-                $config['upload_path'] = './public/upload/';
-                $config['allowed_types'] = 'jpg';
-                $config['max_size'] = '10000';
-                $config['file_name'] = uniqid();
-                $this->load->library('upload', $config);
-                $this->upload->do_upload("pic");
-                $this->upload->display_errors('<p>', '</p>');
-        */
         if ( ! file_exists('application/views/price/'.$page.'.php'))
         {
             show_404();

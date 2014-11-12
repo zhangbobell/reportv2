@@ -11,15 +11,20 @@ class MExcel extends MY_model {
         parent::__construct();
     }
 
-    public function insert_excel($data, $tableName)
+    public function insert_excel($data)
     {
-        $config = $this->select_DB("test");
-        $this->load->database($config);
+
+        $sql = "INSERT INTO `meta_sku` (`updatetime`, `itemnum`, `min_price`, `is_wap`, `msg`)
+                VALUES (?, ?, ?, ?, ?)";
 
         foreach($data as $cell)
         {
-            $bool=$this->db->insert($tableName, $cell);
-         //   var_dump($bool);
+            // $bool=$this->db->insert($tableName, $cell);
+            //   var_dump($bool);
+            $this->set_record("db_madebaokang", $sql, $cell);
         }
+
+       //
+
     }
 }
