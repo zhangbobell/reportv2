@@ -25,6 +25,7 @@ class excelHandler extends CI_Controller {
         // 加载 excel 类
         $this->load->library('excel');
         $filePath = './public/upload/'.$excelName;
+       // $filePath = './public/upload/upload.xlsx';
 
         $objPHPExcel = PHPExcel_IOFactory::load($filePath);
 
@@ -69,8 +70,11 @@ class excelHandler extends CI_Controller {
 
 
         $this->mexcel->insert_excel($data);
-       // echo print_r($data);
+
         echo json_encode($data);
+
+
+
     }
 
 

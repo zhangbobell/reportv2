@@ -485,7 +485,7 @@
 
                                 console.log(d);
                                 var dd = JSON.parse(d);
-                                //alert(d);
+
                                 $("#preview-excel").mrjsontable({
                                     tableClass: "table table-bordered table-hover",
                                     pageSize: 10,
@@ -524,8 +524,8 @@
 
                             });
 
-
-                        alert( '上传成功' );
+                         $.bootstrapGrowl('上传成功。', {type: 'success'});
+                        //alert( '上传成功' );
 
                     } else {
                         // 没有成功的文件，重设

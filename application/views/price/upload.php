@@ -24,4 +24,4 @@
         </div>
     </div>
 </div>
-<div id="preview-excel"></div>
+<div id="preview-excel" class="col-md-12 mt20 fix"></div>
