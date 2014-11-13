@@ -71,7 +71,7 @@ class MPrice extends MY_model {
     public function get_initial_screen_product_array($db, $updatetime) {
         $sql = "SELECT `updatetime`, `sellernick`, `itemid`, `itemnum`, `zk_final_price`, `zk_final_price_wap`, `is_reviewed_item`
                 FROM `crawl_item_sku`
-                WHERE `updatetime` = '?' AND (`is_reviewed_item` = '0' OR `is_reviewed_item` is null)";
+                WHERE `updatetime` = ?";
 
         $arr = $this->get_result_array($db, $sql, array($updatetime));
         foreach ($arr as $key => $row) {
@@ -79,8 +79,10 @@ class MPrice extends MY_model {
                 if ($k == 'itemid') {
                     $arr[$key]['url'] = "<a href=\"http://item.taobao.com/item.html?id=$v\" target=\"_blank\">$v</a>";
                 }
-                if ($k == 'is_reviewed_item' && ($v = '0' || $v = 'null')) {
-                    $arr[$key]['is_reviewed_item'] = "<button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\"><span class=\"glyphicon glyphicon-edit\"></span> 编辑</button>";
+                if ($k == 'is_reviewed_item' && ($v == '1')) {
+                    $arr[$key]['is_reviewed_item'] = "<span class=\"glyphicon glyphicon-check\"></span> ";
+                } else {
+                    $arr[$key]['is_reviewed_item'] = "";
                 }
             }
         }
