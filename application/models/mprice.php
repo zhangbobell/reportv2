@@ -81,4 +81,31 @@ class MPrice extends MY_model {
         return $arr;
     }
 
+    public function get_management_user_array($db) {
+
+        $sql = "SELECT
+                `etc_user`.`userid`,
+                `etc_user`.`username`,
+                `etc_user`.`group`,
+                `etc_project`.`projectname`,
+                `etc_user`.`is_valid`
+                FROM
+                `etc_user`
+                LEFT JOIN
+                `rep_competence`
+                ON `rep_competence`.`uid` = `etc_user`.`userid`
+                LEFT JOIN
+                `etc_project`
+                ON `etc_project`.`pid` = `rep_competence`.`pid`";
+
+        return $this->get_result_array($db, $sql);
+    }
+
+    public function get_management_project_array($db) {
+
+        $sql = "";
+
+        return $this->get_result_array($db, $sql);
+    }
+
 }

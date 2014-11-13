@@ -4,6 +4,8 @@
         <li><a href="price/upload/">上传表格</a></li>
         <li><a href="price/init_screen/">初次筛选</a></li>
         <li><a href="price/control/">价格管控</a></li>
+        <li><a href="price/management_project/">项目管理</a></li>
+        <li><a href="price/management_user/">用户管理</a></li>
 <!--        <li><a href="price/inputTarget/">录入下周目标</a></li>-->
 <!--        <li><a href="price/inputComplete">录入今日完成</a></li>-->
 </ul>
