@@ -55,9 +55,9 @@ $(function() {
     function updateCallback(){
         var record = {
             db: 'db_madebaokang',
-            sellernick: $('#sellernick').val(),
-            itemid: $($('#url').val()).text(),
-            itemnum: $('#itemnum').val(),
+            sellernick: $('#dg-sellernick').val(),
+            itemid: $($('#dg-url').val()).text(),
+            itemnum: $('#dg-itemnum').val(),
             is_reviewed_item: 1
         };
         set_checked_record(record);

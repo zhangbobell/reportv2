@@ -134,9 +134,9 @@
                 var $input;
 
                 if (item.dg_editable == false) {
-                    $input = $('<input type="text" class="form-control" id="'+ item.data +'" disabled>').val(value);
+                    $input = $('<input type="text" class="form-control" id="dg-'+ item.data +'" disabled>').val(value);
                 } else {
-                    $input = $('<input type="text" class="form-control" id="'+ item.data +'" >').val(value);
+                    $input = $('<input type="text" class="form-control" id="dg-'+ item.data +'" >').val(value);
                 }
 
                 $input.appendTo($td);
@@ -190,6 +190,7 @@
         data: [],
         pageSize: 10,
         editable: false,
+        dg_id: "dg-edit-record",
 
         onHiddenCBChange: function () {
             var $thisGrid = $(this).parents(".mrjt");
