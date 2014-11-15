@@ -3,13 +3,14 @@ This is a new version of web reporting system. Maybe will change it's name to BI
 
 ## develop plan
 #### Bo Zhang
-1. Complete upset price control(UPC) module, it could show the list of sellers or products that upset the price.
+1. Complete upset price control(UPC) module, divides into three submodule: upload, initial screen, price control.
 
 #### Hui Zhang
-1. Integrate MDX query with CodeIgniter, do a survey about xmla protocol and try it in CI.
+1. Complete the privilege management module.
 
 #### Dengyang Zhao
-1. Integrate webUploader and PHPExcel into CodeIgniter that could support upload a .xls or .xlsx file, and parse into a PHP array, then insert to the database.
+1. Modified the upload submodule, display the PHP array.
+2. Read REST protocol, and try to combine the protocol with Saiku.
 
 ## some helpful links
 * [CodeIgniter homepage][4]
@@ -17,7 +18,7 @@ This is a new version of web reporting system. Maybe will change it's name to BI
 * [PHPExcel homepage][6]
 * [PHPExcel github][7]
 * [WebUploader hompage][8]
-* [XMLA protocol][9] in microsoft
+* [REST protocol][9]
 
 ## developers
 * Bo Zhang (zhangbobell [homepage][1])
@@ -33,4 +34,4 @@ This is a new version of web reporting system. Maybe will change it's name to BI
   [6]: https://phpexcel.codeplex.com/
   [7]: https://github.com/PHPOffice/PHPExcel
   [8]: http://fex.baidu.com/webuploader/
-  [9]: http://msdn.microsoft.com/zh-cn/library/bb522619.aspx
+  [9]: http://office.e-corp.cn:888/saiku/serverdocs/index.html

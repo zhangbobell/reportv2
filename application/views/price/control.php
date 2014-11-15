@@ -1,5 +1,5 @@
 <div class="row">
-        <label for="db-input" class="col-xs-2 col-md-1 control-label lh32">数据库：</label>
+        <label for="db-input" class="col-xs-3 col-md-1 control-label lh32">数据库：</label>
         <div class="col-xs-2 col-md-1" data-link-field="db-input">
             <select class="form-control" id="slected-db">
                 <option>1</option>
@@ -24,7 +24,7 @@
                 <label for="upset-result" class="col-md-3 control-label">选择结果：</label>
                 <div class="radio-inline" data-link-field="upset-handle">
                     <label>
-                        <input type="radio" name="upset-result" id="optionsRadios1" value="1" checked>乱价
+                        <input type="radio" name="upset-result" id="optionsRadios1" value="1" checked>已沟通
                     </label>
                 </div>
                 <div class="radio-inline"  data-link-field="upset-handle">
@@ -47,13 +47,4 @@
         </div>
         <div class="col-md-8 fix" id="upset-price-history"></div>
 </div>
-
-
-<div>
-    <form action="<?php echo site_url('price/upload')?>" method="post" >
-
-        <input type="submit" value="上传" />
-    </form>
-</div>
-
 

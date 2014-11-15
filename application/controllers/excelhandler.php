@@ -18,13 +18,14 @@ class excelHandler extends CI_Controller {
      * 如果Excel文件过大导致$data内存溢出，可以讲数据库插入语句改到迭代读取Excel中
      * 即可以不用$data来保存整个Excel文件内容
      */
-    public function insert_excel($excelName, $tableName)
+    public function analyze_excel($is_insert = 0)
     {
         $excelName = $this->input->post('excelName');
-        $tableName = 'blog_user';
+
         // 加载 excel 类
         $this->load->library('excel');
         $filePath = './public/upload/'.$excelName;
+        //$filePath = './public/upload/upload.xlsx';
 
         $objPHPExcel = PHPExcel_IOFactory::load($filePath);
 
@@ -67,10 +68,10 @@ class excelHandler extends CI_Controller {
             }
         }
 
-
-       $this->mexcel->insert_excel($data, $tableName);
+        if($is_insert != 0)
+            $this->mexcel->insert_excel($data);
+        else
+            echo json_encode($data);
     }
-
-
 }
 

@@ -65,9 +65,9 @@ $(function() {
     };
 
     /*
-     * fillInitScreen : 填充初次筛选名单
-     * param : d -- json 数据
-     */
+    * fillInitScreen : 填充初次筛选名单
+    * param : d -- json 数据
+    */
     function fillInitScreen(d) {
         $("#init-sreen-product").mrjsontable({
             tableClass: "table table-bordered table-hover",

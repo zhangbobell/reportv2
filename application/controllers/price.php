@@ -37,7 +37,7 @@ class Price extends CI_Controller {
     }
 
     /* control : 初次筛选商品主界面
-     * @param : page=['control']
+     * @param : page=['init_screen']
      * return : null
      * */
     public function init_screen($page = 'init_screen') {
@@ -53,7 +53,7 @@ class Price extends CI_Controller {
         $this->load->view('price/header_add_' . $page);
         $this->load->view('templates/banner');
         $this->load->view('templates/sidebar');
-        $this->load->view('price/' . $page,$data);
+        $this->load->view('price/' . $page, $data);
         $this->load->view('templates/footer_script');
         $this->load->view('price/footer_add_' . $page);
         $this->load->view('templates/footer');
@@ -111,17 +111,21 @@ class Price extends CI_Controller {
         echo json_encode($this->mprice->get_initial_screen_product_array($db, $updatetime));
     }
 
+    public function set_checked_record() {
+        $db = $this->input->post('db');
+        $record = array(
+            'updatetime' => date("Y-m-d"),
+            'sellernick' => $this->input->post('sellernick'),
+            'itemnum' => $this->input->post('itemnum'),
+            'itemid' => $this->input->post('itemid'),
+            'is_reviewed_item' => $this->input->post('is_reviewed_item')
+        );
+
+        echo $this->mprice->set_checked_record($db, $record);
+    }
+
     public function upload($page = "upload")
     {
-        /*
-                $config['upload_path'] = './public/upload/';
-                $config['allowed_types'] = 'jpg';
-                $config['max_size'] = '10000';
-                $config['file_name'] = uniqid();
-                $this->load->library('upload', $config);
-                $this->upload->do_upload("pic");
-                $this->upload->display_errors('<p>', '</p>');
-        */
         if ( ! file_exists('application/views/price/'.$page.'.php'))
         {
             show_404();
@@ -140,88 +144,13 @@ class Price extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
-    /*
-     * management_project() ： 项目管理
-     * @param : null
-     * return : null
-     */
-    public function management_project($page = "management_project"){
-        if ( ! file_exists('application/views/price/'.$page.'.php'))
-        {
-            show_404();
-        }
-
-        $data['title'] = "项目管理";
-        $data['username'] = $this->session->userdata('username');
-
-        $this->load->view('templates/header', $data);
-        $this->load->view('price/header_add_' . $page);
-        $this->load->view('templates/banner');
-        $this->load->view('templates/sidebar');
-        $this->load->view('price/' . $page,$data);
-        $this->load->view('templates/footer_script');
-        $this->load->view('price/footer_add_' . $page);
-        $this->load->view('templates/footer');
-    }
-
-    /*
-     * management_user() ： 项目管理
-     * @param : null
-     * return : null
-     */
-    public function management_user($page = "management_user"){
-        if ( ! file_exists('application/views/price/'.$page.'.php'))
-        {
-            show_404();
-        }
-
-        $data['title'] = "用户管理";
-        $data['username'] = $this->session->userdata('username');
-
-        $this->load->view('templates/header', $data);
-        $this->load->view('price/header_add_' . $page);
-        $this->load->view('templates/banner');
-        $this->load->view('templates/sidebar');
-        $this->load->view('price/' . $page,$data);
-        $this->load->view('templates/footer_script');
-        $this->load->view('price/footer_add_' . $page);
-        $this->load->view('templates/footer');
-    }
-
-    /*
-     * get_management_user : 获取用户的信息，以 json 格式返回
-     * @param : null
-     * return : null
-     * */
-    public function get_management_user() {
+    public function refresh_meta_item() {
         $db = $this->input->post('db');
-        //$updatetime = $this->input->post('updatetime');
-        //$sellernick = $this->input->post('sellernick');
 
-        echo json_encode($this->mprice->get_management_user_array($db));
+        echo $this->mprice->refresh_meta_item($db);
     }
 
-    /*
-     * get_management_user : 获取用户的信息，以 json 格式返回
-     * @param : null
-     * return : null
-     * */
-    public function management_user_add($page = "management_user_add") {
-        if ( ! file_exists('application/views/price/'.$page.'.php'))
-        {
-            show_404();
-        }
-
-        $data['title'] = "用户管理";
-        $data['username'] = $this->session->userdata('username');
-
-        $this->load->view('templates/header', $data);
-        $this->load->view('price/header_add_' . $page);
-        $this->load->view('templates/banner');
-        $this->load->view('templates/sidebar');
-        $this->load->view('price/' . $page,$data);
-        $this->load->view('templates/footer_script');
-        $this->load->view('price/footer_add_' . $page);
-        $this->load->view('templates/footer');
+    public function  test_latest($db) {
+        echo ($this->mprice->refresh_meta_item($db));
     }
 }
