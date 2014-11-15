@@ -14,6 +14,7 @@ class MExcel extends MY_model {
     public function insert_excel($data)
     {
 
+
         $sql = "INSERT INTO `meta_sku` (`updatetime`, `itemnum`, `min_price`, `is_wap`, `msg`)
                 VALUES (?, ?, ?, ?, ?)
                 ON DUPLICATE KEY
@@ -34,6 +35,8 @@ class MExcel extends MY_model {
 
     public function update_crawl_item_sku($d)
     {
+        $datetime = date("Y-m-d");
+
         $sql0 = "SELECT * FROM `crawl_item_sku` WHERE `itemnum` = ?";
 
         $sql1 = "INSERT INTO `crawl_item_sku` (`tag_refresh_updatetime_price`, `itemnum`, `min_price`)
@@ -68,12 +71,12 @@ class MExcel extends MY_model {
         {
             if($d['is_wap'] == 0)
             {
-                $this->set_record("db_madebaokang", $sql3, Array('tag_refresh_updatetime_price'=>$d['updatetime'],
+                $this->set_record("db_madebaokang", $sql3, Array('tag_refresh_updatetime_price'=>$datetime,
                  'min_price'=>$d['min_price'], 'itemnum'=>(string)$d['itemnum']));
             }
             else
             {
-                $this->set_record("db_madebaokang", $sql4, Array('tag_refresh_updatetime_price'=>$d['updatetime'],
+                $this->set_record("db_madebaokang", $sql4, Array('tag_refresh_updatetime_price'=>$datetime,
                  'min_price_wap'=>$d['min_price'], 'itemnum'=>(string)$d['itemnum']));
             }
         }
@@ -81,12 +84,12 @@ class MExcel extends MY_model {
         {
             if($d['is_wap'] == 0)
             {
-                $this->set_record("db_madebaokang", $sql1, Array('tag_refresh_updatetime_price'=>$d['updatetime'],
+                $this->set_record("db_madebaokang", $sql1, Array('tag_refresh_updatetime_price'=>$datetime,
                     'itemnum'=>$d['itemnum'], 'min_price'=>$d['min_price']));
             }
             else
             {
-                $this->set_record("db_madebaokang", $sql2, Array('tag_refresh_updatetime_price'=>$d['updatetime'],
+                $this->set_record("db_madebaokang", $sql2, Array('tag_refresh_updatetime_price'=>$datetime,
                     'itemnum'=>$d['itemnum'], 'min_price_wap'=>$d['min_price']));
             }
         }
