@@ -19,6 +19,7 @@ $(function() {
             data:condition
         }).done(function(d){
             data = JSON.parse(d);
+
             $("#init-sreen-product").html("");
             fillInitScreen(data);
         });

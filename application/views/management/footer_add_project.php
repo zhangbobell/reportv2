@@ -1,0 +1,2 @@
+<script src="<?php echo base_url().TP_DIR; ?>/mrjsontable/js/mrjsontable.js"  type="text/javascript" ></script>
+<script src="<?php echo base_url().JS_DIR; ?>/management/project.js"  type="text/javascript" ></script>

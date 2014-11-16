@@ -181,4 +181,5 @@ class Price extends CI_Controller {
 
         echo $this->mprice->latest_crawl_item_time($db);
     }
+
 }

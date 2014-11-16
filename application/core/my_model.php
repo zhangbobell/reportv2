@@ -42,6 +42,7 @@ class MY_model extends CI_Model
      * @param : $db -- 选择的数据库
      *          $sql -- 要查询的语句
      *          $valArr[可选] -- 可以带入的参数
+     *          $retArr[可选] -- 返回的数组中的字段
      * @return : SQL 查询结果数组
      * */
     public function get_result_array($db, $sql, $valArr = null) {

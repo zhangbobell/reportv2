@@ -60,7 +60,7 @@
 
         $theadRow.appendTo($thead);
         $thead.appendTo($table);
-        
+
         var pagingNeeded = false;
         $.each(opts.data, function (index, item) {
             var $tr = $("<tr>").attr("data-i", index);
@@ -90,7 +90,7 @@
 
             $tr.appendTo($table);
         });
-                
+
         $mrjsontableContainer.append($visibleColumnsCBList);
         $mrjsontableContainer.append($table);
 
@@ -183,7 +183,7 @@
 
         return this.append($mrjsontableContainer);
     };
-    
+
     $.fn.mrjsontable.defaults = {
         cssClass: "table",
         columns: [],
@@ -195,7 +195,7 @@
         onHiddenCBChange: function () {
             var $thisGrid = $(this).parents(".mrjt");
             var columIndex = $(this).attr("data-i");
-            
+
             if ($(this).is(":checked")) {
                 $("td[data-i='" + columIndex + "']", $thisGrid).show();
                 $("th[data-i='" + columIndex + "']", $thisGrid).show();
@@ -287,7 +287,7 @@
                 var td = $("tr[data-i='" + array[i].tr_id + "']", $thisGrid)
 
                 td.detach();
-                
+
                 $("tbody", $thisGrid).append(td);
             }
 
@@ -298,5 +298,5 @@
             return false;
         }
     };
-    
+
 }(jQuery));
