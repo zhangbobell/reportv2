@@ -11,35 +11,81 @@ class MPrice extends MY_model {
         parent::__construct();
     }
 
-    public function get_upset_price_seller_array($db, $updatetime) {
+    /*
+     * get_upset_price_seller_array : 获取乱价商家名单
+     * @param : $db -- 数据库  $updatetime -- 更新时间 $is_history -- 是否是查询历史记录
+     * */
+    public function get_upset_price_seller_array($db, $updatetime, $is_history) {
 
-        $sql = "SELECT `updatetime`, `sellernick`, `ratesum`,
-                COUNT(IF(`zk_final_price_wap` < `price_min` OR `zk_final_price` < `price_min`, 1, 0)) as `ljnum`,
-                SUM(IF(`zk_final_price_wap` < `price_min` OR `zk_final_price` < `price_min`, `zk_final_price`, 0) * `total_sold_quantity`) as `ljTotalSoldPrice`,
-                SUM(IF(`zk_final_price_wap` < `price_min` OR `zk_final_price` < `price_min`, `zk_final_price`, 0) * `total_sold_quantity`) / SUM(`zk_final_price` * `total_sold_quantity`) as `ljRate`
+        $sql = "SELECT `a`.`updatetime`, `a`.`sellernick`, `ljNum`, `totalNum`, (`ljnum`/`totalnum`) as `ljRate`, `logTime`, `status`
                 FROM (
-                SELECT `a`.`updatetime`, `a`.`sellernick`, `a`.`ratesum`, `a`.`total_sold_quantity`, `a`.`itemid`, `b`.`itemnum`, `zk_final_price_wap`, `zk_final_price`, `price_min`
-                FROM `crawl_shop_item` as `a`
-                LEFT JOIN `crawl_item_sku` as `b`
-                ON `b`.`itemid` = `a`.`itemid`
-                LEFT JOIN `meta_sku` as `c`
-                ON  `b`.`itemnum` = `c`.`itemnum`
-                WHERE `a`.`updatetime` = ?) as `abc`
-                GROUP BY `sellernick`";
+                    SELECT `updatetime`, `sellernick`, `itemid`,
+                    COUNT(IF((`zk_final_price_wap` < `min_price_wap` OR `zk_final_price` < `min_price`), `itemid`, null )) AS `ljnum`,
+                    COUNT(`itemid`) AS `totalnum`
+                    FROM `crawl_item_sku`
+                    WHERE `updatetime` = ?
+                    GROUP BY `sellernick`
+                ) AS `a`
+                LEFT JOIN (
+                    SELECT MAX(`updatetime`) as `logTime`, `sellernick`, `status`
+                    FROM `status_price_log`
+                    WHERE `status` = '1'
+                    GROUP BY `sellernick`
+                ) AS `b`
+                ON `a`.`sellernick` = `b`.`sellernick`
+                WHERE `itemid` != '-1'
+                AND `ljnum` > 0";
 
-        return $this->get_result_array($db, $sql, array($updatetime));
+        $sql_old = "SELECT `a`.`updatetime`, `a`.`sellernick`, `ljNum`, `totalNum`, (`ljnum`/`totalnum`) as `ljRate`, `logTime`, `status`
+                     FROM (
+                         SELECT `updatetime`, `sellernick`, `itemid`,
+                         COUNT(IF((`zk_final_price_wap` < `min_price_wap` OR `zk_final_price` < `min_price`), `itemid`, null )) AS `ljnum`,
+                         COUNT(`itemid`) AS `totalnum`
+                         FROM (
+                                SELECT `crawl_shop_item`.`updatetime`, `crawl_shop_item`.`sellernick`, `crawl_item_sku`.`itemid`,`crawl_item_sku`.`itemnum`, `crawl_shop_item`.`zk_final_price`, `crawl_shop_item`.`zk_final_price_wap`, `min_price`, `min_price_wap`
+                                FROM `crawl_shop_item`
+                                LEFT JOIN `crawl_item_sku`
+                                ON `crawl_shop_item`.`itemid` = `crawl_item_sku`.`itemid`
+                                WHERE `crawl_shop_item`.`updatetime`= ?
+                          ) as c
+                         GROUP BY `sellernick`
+                     ) AS `a`
+                     LEFT JOIN (
+                         SELECT MAX(`updatetime`) as `logTime`, `sellernick`, `status`
+                         FROM `status_price_log`
+                         WHERE `status` = '1'
+                         GROUP BY `sellernick`
+                     ) AS `b`
+                     ON `a`.`sellernick` = `b`.`sellernick`
+                     WHERE `itemid` != '-1'
+                     AND `ljnum` > 0";
+
+        if ($is_history) {
+            $arr = $this->get_result_array($db, $sql_old, array($updatetime));
+        } else {
+            $arr = $this->get_result_array($db, $sql, array($updatetime));
+        }
+
+
+        foreach ($arr as $key => $row) {
+            foreach($row as $k => $v) {
+                if ($k == 'status' && ($v == '1')) {
+                    $arr[$key]['status'] = "<span class=\"glyphicon glyphicon-ok\"></span> ";
+                } else {
+                    $arr[$key]['status'] = "";
+                }
+            }
+        }
+
+        return $arr;
     }
 
     public function get_upset_price_product_array($db, $updatetime, $sellernick) {
-        $sql = "SELECT `a`.`updatetime`, `a`.`total_sold_quantity`, `a`.`itemid`, `b`.`itemnum`, `zk_final_price_wap`, `zk_final_price`, `price_min`
-                FROM `crawl_shop_item` as `a`
-                LEFT JOIN `crawl_item_sku` as `b`
-                ON `b`.`itemid` = `a`.`itemid`
-                LEFT JOIN `meta_sku` as `c`
-                ON  `b`.`itemnum` = `c`.`itemnum`
-                WHERE `a`.`updatetime` = ?
-                AND `a`.`sellernick` = ?
-                AND (`zk_final_price_wap` < `price_min` OR `zk_final_price` < `price_min`)";
+        $sql = "SELECT `sellernick`, `itemid`, `itemnum`, `zk_final_price`,`min_price`, `zk_final_price_wap`, `min_price_wap`, `is_reviewed_item`
+                FROM `crawl_item_sku`
+                WHERE `updatetime` = ?
+                AND `sellernick` = ?
+                AND (`zk_final_price_wap` < `min_price_wap` OR `zk_final_price` < `min_price`)";
 
         $arr = $this->get_result_array($db, $sql, array($updatetime, $sellernick));
 
@@ -48,6 +94,11 @@ class MPrice extends MY_model {
                 if ($k == 'itemid') {
                     $arr[$key]['url'] = "<a href=\"http://item.taobao.com/item.html?id=$v\" target=\"_blank\">$v</a>";
                 }
+                if ($k == 'is_reviewed_item' && ($v == '1')) {
+                    $arr[$key]['is_reviewed_item'] = "<span class=\"glyphicon glyphicon-check\"></span> ";
+                } else {
+                    $arr[$key]['is_reviewed_item'] = "";
+                }
             }
         }
 
@@ -55,17 +106,18 @@ class MPrice extends MY_model {
     }
 
     public function set_upset_price_record($db, $sellernick, $username, $status, $msg) {
+
+        // 时间问题待定，目前不修改原有的时间
         $datetime = date("Y-m-d");
         $sql = "INSERT INTO `status_price_log` (`updatetime`, `sellernick`, `account`, `status`, `msg`)
                 VALUES (?, ?, ?, ?, ?)
                 ON DUPLICATE KEY UPDATE
-                `updatetime` = VALUES(`updatetime`),
                 `sellernick` = VALUES(`sellernick`),
                 `account` = VALUES(`account`),
                 `status` = VALUES(`status`),
                 `msg` = VALUES(msg)";
 
-        return $this->set_record($db, $sql, array($datetime, $sellernick, $username, $status, $msg));
+        return $this->my_query($db, $sql, array($datetime, $sellernick, $username, $status, $msg));
     }
 
     public function get_initial_screen_product_array($db, $updatetime) {
@@ -91,12 +143,14 @@ class MPrice extends MY_model {
     }
 
     public function set_checked_record($db, $record) {
-        $sql = "INSERT INTO `crawl_item_sku` (`updatetime`, `sellernick`, `itemnum`, `itemid`, `is_reviewed_item`)
-                VALUES(?, ?, ?, ?, ?)
+        $sql = "INSERT INTO `crawl_item_sku` (`updatetime`, `sellernick`, `itemnum`, `itemid`, `is_reviewed_item`, `min_price`, `min_price_wap`)
+                VALUES(?, ?, ?, ?, ?, ?, ?)
                 ON DUPLICATE KEY UPDATE
                 `sellernick` = VALUES(`sellernick`),
                 `itemnum` = VALUES(`itemnum`),
-                `is_reviewed_item` = VALUES(`is_reviewed_item`)";
+                `is_reviewed_item` = VALUES(`is_reviewed_item`),
+                `min_price` = VALUES(`min_price`),
+                `min_price_wap` = VALUES(`min_price_wap`)";
 
         return $this->set_record($db, $sql, $record);
     }
@@ -112,7 +166,7 @@ class MPrice extends MY_model {
                 WHERE `updatetime` = ?";
 
         // 获取到最新的爬取时间
-        $latest_time = $this->_latest_crawl_item_time($db);
+        $latest_time = $this->latest_crawl_item_time($db);
 
         $lasted_crawl = $this->my_query($db, $sql, array($latest_time));
         foreach ($lasted_crawl->result_array() as $row) {
@@ -128,7 +182,7 @@ class MPrice extends MY_model {
      * @param : $db -- 数据库名
      * @return : string -- 最新的日期
      * */
-    private function _latest_crawl_item_time($db) {
+    public function latest_crawl_item_time($db) {
         $sql = "SELECT max(`updatetime`) as `latest` FROM `crawl_shop_item`";
         $query_arr = $this->my_query($db, $sql)->result_array();
 
@@ -162,5 +216,45 @@ class MPrice extends MY_model {
         $sql = "INSERT INTO `crawl_item_sku` (`updatetime`, `itemid`) VALUES('2014-11-11', '". rand() ."')";
 
         return $this->my_query($db, $sql);
+    }
+
+    public function get_upset_history($db, $sellernick) {
+        $sql = "SELECT `updatetime`, `account`, `status`, `msg`
+                FROM `status_price_log`
+                WHERE `sellernick` = ?";
+
+        $arr = $this->my_query($db, $sql, array($sellernick))->result_array();
+        foreach ($arr as $key => $row) {
+            foreach($row as $k => $v) {
+                if ($k == 'status' && ($v == '1')) {
+                    $arr[$key]['status'] = "乱价已沟通";
+                } else if ($k == 'status' && ($v == '2')) {
+                    $arr[$key]['status'] = "未授权";
+                } else if ($k == 'status' && ($v == '0')) {
+                    $arr[$key]['status'] = "误判";
+                }
+            }
+        }
+
+        return $arr;
+    }
+
+    public function get_unreviewed_count($db, $updatetime) {
+        $sql = "SELECT COUNT(`is_reviewed_item`) AS `count_item`
+                FROM `crawl_item_sku`
+                WHERE `is_reviewed_item` = '0'
+                AND `updatetime` = ?";
+
+        return $this->my_query($db, $sql, $updatetime)->result_array();
+    }
+
+    public function get_min_price($db, $itemnum) {
+        $sql = "SELECT sum(if(`is_wap` = '0', `price_min`, 0)) as `price_min`,
+                sum(if(`is_wap` = '1', `price_min`, 0)) as `price_min_wap`
+                FROM `meta_sku`
+                WHERE `itemnum` = ?
+                GROUP BY `itemnum`";
+
+        return $this->my_query($db, $sql, array($itemnum))->result_array();
     }
 }

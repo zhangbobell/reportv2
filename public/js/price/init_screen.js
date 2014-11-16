@@ -8,9 +8,9 @@ $(function() {
         db: 'db_madebaokang',
         updatetime:'2014-10-27'
     };
-    fetch_init_screen_list(condition);
+    fetchInitScreenList(condition);
 
-    function fetch_init_screen_list(condition) {
+    function fetchInitScreenList(condition) {
         $.ajax({
             url:"price/get_init_screen_product",
             type:"post",
@@ -24,7 +24,7 @@ $(function() {
         });
     }
 
-    function set_checked_record(record) {
+    function setCheckedRecord(record) {
         $.ajax({
             url:"price/set_checked_record",
             type:"post",
@@ -32,7 +32,9 @@ $(function() {
             dateType:"json",
             data:record
         }).done(function(d){
-            fetch_init_screen_list(condition);
+            fetchInitScreenList(condition);
+
+            d ? $.bootstrapGrowl('修改成功！', {type: 'success'}) : $.bootstrapGrowl('修改出错！', {type: 'danger'});
         });
     }
 
@@ -60,7 +62,7 @@ $(function() {
             itemnum: $('#dg-itemnum').val(),
             is_reviewed_item: 1
         };
-        set_checked_record(record);
+        setCheckedRecord(record);
         $('#DG-show-record').modal('hide');
     };
 

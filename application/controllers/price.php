@@ -67,8 +67,11 @@ class Price extends CI_Controller {
     public function get_upset_price_seller() {
         $db = $this->input->post('db');
         $updatetime = $this->input->post('updatetime');
+        $latestTime = $this->input->post('latestTime');
 
-        echo json_encode($this->mprice->get_upset_price_seller_array($db, $updatetime));
+        $is_history = ($updatetime === $latestTime);
+
+        echo json_encode($this->mprice->get_upset_price_seller_array($db, $updatetime, $is_history));
     }
 
     /*
@@ -118,8 +121,16 @@ class Price extends CI_Controller {
             'sellernick' => $this->input->post('sellernick'),
             'itemnum' => $this->input->post('itemnum'),
             'itemid' => $this->input->post('itemid'),
-            'is_reviewed_item' => $this->input->post('is_reviewed_item')
+            'is_reviewed_item' => $this->input->post('is_reviewed_item'),
+            'min_price' => null,
+            'min_price_wap' => null
         );
+
+        $arr = $this->mprice->get_min_price($db, $record['itemnum']);
+        if (count($arr) != 0) {
+            $record['min_price'] = $arr[0]['price_min'];
+            $record['min_price_wap'] = $arr[0]['price_min_wap'];
+        }
 
         echo $this->mprice->set_checked_record($db, $record);
     }
@@ -150,7 +161,24 @@ class Price extends CI_Controller {
         echo $this->mprice->refresh_meta_item($db);
     }
 
-    public function  test_latest($db) {
-        echo ($this->mprice->refresh_meta_item($db));
+    public function  get_upset_history() {
+        $db = $this->input->post('db');
+        $sellernick = $this->input->post('sellernick');
+
+        echo json_encode($this->mprice->get_upset_history($db, $sellernick));
+    }
+
+    public function get_unreviewed_count() {
+        $db = $this->input->post('db');
+        $updatetime = $this->input->post('updatetime');
+
+        $res = $this->mprice->get_unreviewed_count($db, $updatetime);
+        echo $res[0]['count_item'];
+    }
+
+    public function get_latest_crawl_time() {
+        $db = $this->input->post('db');
+
+        echo $this->mprice->latest_crawl_item_time($db);
     }
 }
