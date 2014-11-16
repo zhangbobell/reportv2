@@ -153,4 +153,5 @@ class Price extends CI_Controller {
     public function  test_latest($db) {
         echo ($this->mprice->refresh_meta_item($db));
     }
+
 }
