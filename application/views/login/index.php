@@ -11,12 +11,23 @@
         <div class="content">
             <form class="login-form" method="post" action="">
                 <label class="form-title">用户登录</label>
-                <p><input type="text" name="username" id="username" class="form-control" placeholder="用户名" autofocus="autofocus"/></p>
-		<p><input type="password" name="password" id="password" class="form-control" placeholder="密码"/></p>
-                <p><input type="text" name="captcha" id="captcha-input" class="form-control" placeholder="验证码" autocomplete="off" /></p>
-                <div class="captcha"><div id="captcha-image"></div> 看不清？<a id="reload-captcha" href="javascript:void(0);">换一张</a></div>
-		<p><div id="login_info"></div>
-		<input id="submit" type="submit" value="登  录" class="login-btn"/></p>
+                <p>
+                    <input type="text" name="username" id="username" class="form-control" placeholder="用户名" autofocus="autofocus"/>
+                </p>
+		        <p>
+                    <input type="password" name="password" id="password" class="form-control" placeholder="密码"/>
+                </p>
+                <p>
+                    <input type="text" name="captcha" id="captcha-input" class="form-control" placeholder="验证码" autocomplete="off" />
+                </p>
+                <div class="captcha">
+                    <div id="captcha-image"></div>
+                    看不清？<a id="reload-captcha" href="javascript:void(0);">换一张</a>
+                </div>
+		        <p>
+                    <div id="login_info"></div>
+		            <input id="submit" type="submit" value="登  录" class="login-btn"/>
+                </p>
                 <p class="update">2014.10.27更新：
                     <ol class="update">
                         <li>开放注册，请大家点击<a href="main/register">这里</a>注册</li>
