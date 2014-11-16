@@ -192,7 +192,7 @@ class Management extends CI_Controller
         $uid = $this->input->post('uid');
         $tag = $this->input->post('tag');
 
-        if($tag){//修改密码
+        if($tag == 'true'){//修改密码
             $res = $this->mmanagement->update_user_changepassword($db, $username, md5($password), $groupid, $is_valid, $uid);
         }else {//不修改密码
             $res = $this->mmanagement->update_user_holdpassword($db, $username, $groupid, $is_valid, $uid);

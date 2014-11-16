@@ -4,6 +4,7 @@
 $(function(){
     var $uid;
     var $tag = true;
+
     $("#chose-user").change(function(event){
         event.preventDefault();
 
@@ -19,7 +20,6 @@ $(function(){
             userid: $('#chose-user').val()
         };
 
-        console.log(chose_user);
         $.ajax({
             url: "management/chose_user",
             type: "post",
@@ -28,7 +28,6 @@ $(function(){
             data: chose_user
         }).done(function (d) {
             da = JSON.parse(d);
-            console.log(da);
             fetch_project_list(da);
             $uid = da[0].userid;
         });
@@ -51,7 +50,6 @@ $(function(){
         for(;$j<$len;$j++){
             arrayObj.push(da[$j].pid);
         }
-        console.log(arrayObj);
         $('#auth-project').val(arrayObj);
     }
 
@@ -94,7 +92,6 @@ $(function(){
             dateType: "json",
             data: new_user
         }).done(function (d) {
-            console.log(d);
             if(d == 1){
                 $.bootstrapGrowl('恭喜您，修改成功！', {type: 'success'});
             } else if(d == 0){

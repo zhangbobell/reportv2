@@ -1,13 +1,11 @@
 <div class="row">
     <div class="condition col-md-12 fix">
         <label for="db-input" class="col-xs-2 col-md-1 control-label lh32">数据库：</label>
-        <div class="col-xs-2 col-md-1" data-link-field="db-input">
+        <div class="col-xs-2 col-md-2" data-link-field="db-input">
             <select class="form-control" id="db">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+                <?php foreach($authDB as $dbname => $projectname): ?>
+                    <option value="<?php echo $dbname; ?>"><?php echo $projectname;?></option>
+                <?php endforeach; ?>
             </select>
         </div>
 <!--        <label for="dtp_input2" class="col-xs-2 col-md-1 control-label lh32">日期：</label>-->

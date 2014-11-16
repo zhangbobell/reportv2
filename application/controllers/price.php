@@ -23,8 +23,12 @@ class Price extends CI_Controller {
             show_404();
         }
 
-        $data['title'] = "价格管控";
-        $data['username'] = $this->session->userdata('username');
+        $data = array(
+            'title' => "价格管控",
+            'username' => $this->session->userdata('username'),
+            'authDB' => $this->session->userdata('authDB'),
+            'groupID' => $this->session->userdata('groupID')
+        );
 
         $this->load->view('templates/header', $data);
         $this->load->view('price/header_add_control');
@@ -46,8 +50,12 @@ class Price extends CI_Controller {
             show_404();
         }
 
-        $data['title'] = "初次筛选";
-        $data['username'] = $this->session->userdata('username');
+        $data = array(
+            'title' => "初次筛选",
+            'username' => $this->session->userdata('username'),
+            'authDB' => $this->session->userdata('authDB'),
+            'groupID' => $this->session->userdata('groupID')
+        );
 
         $this->load->view('templates/header', $data);
         $this->load->view('price/header_add_' . $page);

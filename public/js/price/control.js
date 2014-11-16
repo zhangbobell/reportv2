@@ -5,7 +5,7 @@ $(function() {
     var data;
     var selectedIdx = 0;
     var condition = {
-        db: 'db_madebaokang',
+        db: $('#db').val(),
         updatetime: null,
         latestTime: null,
         sellernick: null
@@ -39,6 +39,11 @@ $(function() {
     setTimeout(function(){
         $('.sidebar').height($('.pct100').height());
     }, 50);
+
+    $('#db').on('change', function(){
+        condition.db = $(this).val();
+        initView();
+    })
 
     // 初始化界面
     function initView(){

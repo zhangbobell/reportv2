@@ -28,9 +28,8 @@
                     <div id="login_info"></div>
 		            <input id="submit" type="submit" value="登  录" class="login-btn"/>
                 </p>
-                <p class="update">2014.10.27更新：
+                <p class="update">2014.11.16更新：
                     <ol class="update">
-                        <li>开放注册，请大家点击<a href="main/register">这里</a>注册</li>
                         <li>乱价管控模块上线，欢迎测试。</li>
                     </ol>
                 </p>
