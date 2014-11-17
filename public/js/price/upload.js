@@ -458,7 +458,7 @@
                         type:"post",
                         async:false,
                         dateType:"json",
-                        data:{"excelName": fileName}
+                        data:{"excelName": fileName, db: db}
                     }).done(function(d){
 
                         //console.log(d);
@@ -597,7 +597,7 @@
                     type:"post",
                     async:false,
                     dateType:"json",
-                    data:{"excelName": fileName}
+                    data:{"excelName": fileName, db: db}
                 }).done(function(){
                     //alert( '价格刷新成功' );
                     $.bootstrapGrowl('价格刷新成功', {type: 'success'});
@@ -615,6 +615,12 @@
 
         $upload.addClass( 'state-' + state );
         updateTotalProgress();
+
+        var db = $('#db').val();
+
+        $('#db').on('change', function(){
+            db = $(this).val();
+        })
     });
 
 })( jQuery );

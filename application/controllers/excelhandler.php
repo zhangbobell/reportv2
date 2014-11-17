@@ -21,6 +21,7 @@ class excelHandler extends CI_Controller {
     public function analyze_excel($is_insert = 0)
     {
         $excelName = $this->input->post('excelName');
+        $db = $this->input->post('db');
 
         // 加载 excel 类
         $this->load->library('excel');
@@ -69,7 +70,7 @@ class excelHandler extends CI_Controller {
         }
 
         if($is_insert != 0)
-            $this->mexcel->insert_excel($data);
+            $this->mexcel->insert_excel($data, $db);
         else
             echo json_encode($data);
     }

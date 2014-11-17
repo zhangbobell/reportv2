@@ -11,11 +11,11 @@ class MExcel extends MY_model {
         parent::__construct();
     }
 
-    public function insert_excel($data)
+    public function insert_excel($data, $db)
     {
 
 
-        $sql = "INSERT INTO `meta_sku` (`updatetime`, `itemnum`, `min_price`, `is_wap`, `msg`)
+        $sql = "INSERT INTO `up_sku` (`updatetime`, `itemnum`, `min_price`, `is_wap`, `msg`)
                 VALUES (?, ?, ?, ?, ?)
                 ON DUPLICATE KEY
                 UPDATE
@@ -28,76 +28,90 @@ class MExcel extends MY_model {
 
         foreach($data as $cell)
         {
-            $this->set_record("db_madebaokang", $sql, $cell);
-            $this->update_crawl_item_sku($cell);
+            $this->my_query($db, $sql, $cell);
+            $this->update_meta_item($cell, $db);
         }
+
+        $this->_set_refresh_time($db, 'TAG_REFRESH_UPDATETIME_PRICE_ITEMNUM', $cell['updatetime'], '调整底价时间');
+        $this->_set_refresh_log_time($db, 'SYS_LOG_UPDATETIME_PRICE_ITEMNUM','底价刷入时间');
+
+
     }
 
-    public function update_crawl_item_sku($d)
+    public function update_meta_item($d, $db)
     {
         $datetime = date("Y-m-d");
 
-        $sql0 = "SELECT * FROM `crawl_item_sku` WHERE `itemnum` = ?";
+        $sql0 = "SELECT * FROM `meta_item` WHERE `itemnum` = ?";
 
-        $sql1 = "INSERT INTO `crawl_item_sku` (`tag_refresh_updatetime_price`, `itemnum`, `min_price`)
-                VALUES (?, ?, ?)
+        $sql1 = "INSERT INTO `meta_item` (`itemnum`, `min_price`)
+                VALUES (?, ?)
                 ON DUPLICATE KEY
                 UPDATE
-                `tag_refresh_updatetime_price` = VALUES(`tag_refresh_updatetime_price`),
                 `itemnum` = VALUES(`itemnum`),
                 `min_price` = VALUES(`min_price`)";
 
-        $sql2 = "INSERT INTO `crawl_item_sku` (`tag_refresh_updatetime_price`, `itemnum`, `min_price_wap`)
-                VALUES (?, ?, ?)
+        $sql2 = "INSERT INTO `meta_item` (`itemnum`, `min_price_wap`)
+                VALUES (?, ?)
                 ON DUPLICATE KEY
                 UPDATE
-                `tag_refresh_updatetime_price` = VALUES(`tag_refresh_updatetime_price`),
                 `itemnum` = VALUES(`itemnum`),
                 `min_price_wap` = VALUES(`min_price_wap`)";
 
-        $sql3 = "UPDATE `crawl_item_sku` SET `tag_refresh_updatetime_price` = ? , `min_price` = ?
+        $sql3 = "UPDATE `meta_item` SET `min_price` = ?
                 WHERE `itemnum` = ?";
 
-        $sql4 = "UPDATE `crawl_item_sku` SET `tag_refresh_updatetime_price` = ? , `min_price_wap` = ?
+        $sql4 = "UPDATE `meta_item` SET `min_price_wap` = ?
                 WHERE `itemnum` = ?";
 
-        //echo $this->get_result_array("db_madebaokang", $sql0, );
-        $config= $this->select_DB("db_madebaokang");
-        $this->load->database($config);
+        //echo $this->get_result_array($db, $sql0, );
+//        $config= $this->select_DB($db);
+//        $this->load->database($config);
 
-        $query = $this->db->query($sql0, $d['itemnum']);
+        $query = $this->my_query($db, $sql0, $d['itemnum']);
 
         if($query->num_rows() > 0)
         {
             if($d['is_wap'] == 0)
             {
-                $this->set_record("db_madebaokang", $sql3, Array('tag_refresh_updatetime_price'=>$datetime,
-                 'min_price'=>$d['min_price'], 'itemnum'=>(string)$d['itemnum']));
+                $this->set_record($db, $sql3, Array('min_price'=>$d['min_price'], 'itemnum'=>(string)$d['itemnum']));
             }
             else
             {
-                $this->set_record("db_madebaokang", $sql4, Array('tag_refresh_updatetime_price'=>$datetime,
-                 'min_price_wap'=>$d['min_price'], 'itemnum'=>(string)$d['itemnum']));
+                $this->set_record($db, $sql4, Array('min_price_wap'=>$d['min_price'], 'itemnum'=>(string)$d['itemnum']));
             }
         }
-        else
-        {
-            if($d['is_wap'] == 0)
-            {
-                $this->set_record("db_madebaokang", $sql1, Array('tag_refresh_updatetime_price'=>$datetime,
-                    'itemnum'=>$d['itemnum'], 'min_price'=>$d['min_price']));
-            }
-            else
-            {
-                $this->set_record("db_madebaokang", $sql2, Array('tag_refresh_updatetime_price'=>$datetime,
-                    'itemnum'=>$d['itemnum'], 'min_price_wap'=>$d['min_price']));
-            }
-        }
+//        else
+//        {
+//            if($d['is_wap'] == 0)
+//            {
+//                $this->set_record($db, $sql1, Array('itemnum'=>$d['itemnum'], 'min_price'=>$d['min_price']));
+//            }
+//            else
+//            {
+//                $this->set_record($db, $sql2, Array('itemnum'=>$d['itemnum'], 'min_price_wap'=>$d['min_price']));
+//            }
+//        }
+    }
 
+    private function _set_refresh_time($db, $ruleName, $updatetime, $comment) {
+        $sql = "INSERT INTO `etc_rule` (`name`, `type`, `rule`,`comment`)
+                VALUES (?, 'updatetime', ?, ?)
+                ON DUPLICATE KEY UPDATE
+                `rule` = VALUES(`rule`)";
 
+        return $this->my_query($db, $sql, array($ruleName, $updatetime, $comment));
+    }
 
+    private function _set_refresh_log_time($db, $ruleName, $comment) {
+        $logTime = date('Y-m-d H:i:s');
 
+        $sql = "INSERT INTO `etc_rule` (`name`, `type`, `rule`,`comment`)
+                VALUES (?, 'updatetime', ?, ?)
+                ON DUPLICATE KEY UPDATE
+                `rule` = VALUES(`rule`)";
 
+        return $this->my_query($db, $sql, array($ruleName, $logTime, $comment));
     }
 
 }

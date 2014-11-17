@@ -98,7 +98,7 @@
         if (pagingNeeded) {
             var $pager = $("<div>").addClass("paging");
             for (var i = 0; i < Math.ceil(opts.data.length / opts.pageSize) ; i++) {
-                $("<a>", { "text": "Page " + (i + 1), "href": "#", "data-i": (i + 1), "class": "p-link" }).bind("click", opts.onPageClick).appendTo($pager);
+                $("<a>", { "text": " " + (i + 1), "href": "#", "data-i": (i + 1), "class": "p-link" }).bind("click", opts.onPageClick).appendTo($pager);
             }
             $mrjsontableContainer.append($pager).addClass("paged");
         }
