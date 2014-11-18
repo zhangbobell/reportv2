@@ -6,7 +6,7 @@
  * Time: 下午5:49
  */
 
-class MY_model extends CI_Model
+class MY_Model extends CI_Model
 {
     function __construct()
     {
