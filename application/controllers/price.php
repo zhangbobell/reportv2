@@ -138,9 +138,10 @@ class Price extends CI_Controller {
         if (count($arr) != 0) {
             $record['min_price'] = $arr[0]['price_min'];
             $record['min_price_wap'] = $arr[0]['price_min_wap'];
+            $record['min_price_time'] = $arr[0]['updatetime'];
         }
 
-        echo $this->mprice->set_checked_record($db, $record);
+        echo ($this->mprice->set_checked_record($db, $record));
     }
 
     public function upload($page = "upload")
@@ -150,8 +151,12 @@ class Price extends CI_Controller {
             show_404();
         }
 
-        $data['title'] = "上传价格表";
-        $data['username'] = $this->session->userdata('username');
+        $data = array(
+            'title' => "上传价格表",
+            'username' => $this->session->userdata('username'),
+            'authDB' => $this->session->userdata('authDB'),
+            'groupID' => $this->session->userdata('groupID')
+        );
 
         $this->load->view('templates/header', $data);
         $this->load->view('price/header_add_' . $page);

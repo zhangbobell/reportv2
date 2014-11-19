@@ -20,9 +20,9 @@ class MPrice extends MY_model {
         $sql = "SELECT `a`.`updatetime`, `a`.`sellernick`, `ljNum`, `totalNum`, (`ljnum`/`totalnum`) as `ljRate`, `logTime`, `status`
                 FROM (
                     SELECT `updatetime`, `sellernick`, `itemid`,
-                    COUNT(IF((`zk_final_price_wap` < `min_price_wap` OR `zk_final_price` < `min_price`), `itemid`, null )) AS `ljnum`,
+                    COUNT(IF((`price_wap` < `min_price_wap` OR `price` < `min_price`), `itemid`, null )) AS `ljnum`,
                     COUNT(`itemid`) AS `totalnum`
-                    FROM `crawl_item_sku`
+                    FROM `meta_item`
                     WHERE `updatetime` = ?
                     GROUP BY `sellernick`
                 ) AS `a`
@@ -39,13 +39,13 @@ class MPrice extends MY_model {
         $sql_old = "SELECT `a`.`updatetime`, `a`.`sellernick`, `ljNum`, `totalNum`, (`ljnum`/`totalnum`) as `ljRate`, `logTime`, `status`
                      FROM (
                          SELECT `updatetime`, `sellernick`, `itemid`,
-                         COUNT(IF((`zk_final_price_wap` < `min_price_wap` OR `zk_final_price` < `min_price`), `itemid`, null )) AS `ljnum`,
+                         COUNT(IF((`price_wap` < `min_price_wap` OR `price` < `min_price`), `itemid`, null )) AS `ljnum`,
                          COUNT(`itemid`) AS `totalnum`
                          FROM (
-                                SELECT `crawl_shop_item`.`updatetime`, `crawl_shop_item`.`sellernick`, `crawl_item_sku`.`itemid`,`crawl_item_sku`.`itemnum`, `crawl_shop_item`.`zk_final_price`, `crawl_shop_item`.`zk_final_price_wap`, `min_price`, `min_price_wap`
+                                SELECT `crawl_shop_item`.`updatetime`, `crawl_shop_item`.`sellernick`, `meta_item`.`itemid`,`meta_item`.`itemnum`, `crawl_shop_item`.`zk_final_price` AS `price`, `crawl_shop_item`.`zk_final_price_wap` AS `price_wap`, `min_price`, `min_price_wap`
                                 FROM `crawl_shop_item`
-                                LEFT JOIN `crawl_item_sku`
-                                ON `crawl_shop_item`.`itemid` = `crawl_item_sku`.`itemid`
+                                LEFT JOIN `meta_item`
+                                ON `crawl_shop_item`.`itemid` = `meta_item`.`itemid`
                                 WHERE `crawl_shop_item`.`updatetime`= ?
                           ) as c
                          GROUP BY `sellernick`
@@ -81,11 +81,11 @@ class MPrice extends MY_model {
     }
 
     public function get_upset_price_product_array($db, $updatetime, $sellernick) {
-        $sql = "SELECT `sellernick`, `itemid`, `itemnum`, `zk_final_price`,`min_price`, `zk_final_price_wap`, `min_price_wap`, `is_reviewed_item`
-                FROM `crawl_item_sku`
+        $sql = "SELECT `sellernick`, `itemid`, `itemnum`, `price`,`min_price`, `price_wap`, `min_price_wap`, `is_reviewed_item`
+                FROM `meta_item`
                 WHERE `updatetime` = ?
                 AND `sellernick` = ?
-                AND (`zk_final_price_wap` < `min_price_wap` OR `zk_final_price` < `min_price`)";
+                AND (`price_wap` < `min_price_wap` OR `price` < `min_price`)";
 
         $arr = $this->get_result_array($db, $sql, array($updatetime, $sellernick));
 
@@ -121,8 +121,8 @@ class MPrice extends MY_model {
     }
 
     public function get_initial_screen_product_array($db, $updatetime) {
-        $sql = "SELECT `updatetime`, `sellernick`, `itemid`, `itemnum`, `zk_final_price`, `zk_final_price_wap`, `is_reviewed_item`
-                FROM `crawl_item_sku`
+        $sql = "SELECT `updatetime`, `sellernick`, `itemid`, `itemnum`, `price`, `price_wap`, `is_reviewed_item`
+                FROM `meta_item`
                 WHERE `updatetime` = ?";
 
         $arr = $this->get_result_array($db, $sql, array($updatetime));
@@ -143,7 +143,7 @@ class MPrice extends MY_model {
     }
 
     public function set_checked_record($db, $record) {
-        $sql = "INSERT INTO `crawl_item_sku` (`updatetime`, `sellernick`, `itemnum`, `itemid`, `is_reviewed_item`, `min_price`, `min_price_wap`)
+        $sql = "INSERT INTO `meta_item` (`updatetime`, `sellernick`, `itemnum`, `itemid`, `is_reviewed_item`, `min_price`, `min_price_wap`)
                 VALUES(?, ?, ?, ?, ?, ?, ?)
                 ON DUPLICATE KEY UPDATE
                 `sellernick` = VALUES(`sellernick`),
@@ -152,7 +152,11 @@ class MPrice extends MY_model {
                 `min_price` = VALUES(`min_price`),
                 `min_price_wap` = VALUES(`min_price_wap`)";
 
-        return $this->set_record($db, $sql, $record);
+        $res = $this->_set_refresh_time($db, 'TAG_REFRESH_UPDATETIME_ITEM', $record['min_price_time'], '改动货号价格最新日期');
+        $res = $res && $this->_set_refresh_log_time($db, 'SYS_LOG_UPDATETIME_ITEM', '改动货号写入最新日期');
+        $res = $res && $this->my_query($db, $sql, array($record['updatetime'], $record['sellernick'], $record['itemnum'], $record['itemid'], $record['is_reviewed_item'], $record['min_price'], $record['min_price_wap']));
+
+        return $res;
     }
 
     /*
@@ -174,7 +178,11 @@ class MPrice extends MY_model {
             if ($res === false)
                 return false;
         }
-        return true;
+
+        $res = $this->_set_refresh_time($db, 'TAG_REFRESH_UPDATETIME_PRICE', $latest_time, '爬虫抓取最新时间');
+        $res = $res && $this->_set_refresh_log_time($db, 'SYS_LOG_UPDATETIME_PRICE', '最新价格刷入时间');
+
+        return $res;
     }
 
     /*
@@ -198,22 +206,22 @@ class MPrice extends MY_model {
         // 得到创建记录的时间
         $createtime = date("Y-m-d");
 
-        $sql = "INSERT INTO `crawl_item_sku` (`createtime`, `updatetime`, `uid`, `sellernick`, `itemid`, `title`, `zk_final_price`, `zk_final_price_wap`, `total_sold_quantity`)
+        $sql = "INSERT INTO `meta_item` (`createtime`, `updatetime`, `uid`, `sellernick`, `itemid`, `title`, `price`, `price_wap`, `total_sold_quantity`)
                 VALUES ('$createtime', ?, ?, ?, ?, ?, ?, ?, ?)
                 ON DUPLICATE KEY UPDATE
                 `updatetime` = VALUES(`updatetime`),
                 `uid` = VALUES(`uid`),
                 `sellernick` = VALUES(`sellernick`),
                 `title` = VALUES(`title`),
-                `zk_final_price` = VALUES(`zk_final_price`),
-                `zk_final_price_wap` = VALUES(`zk_final_price_wap`),
+                `price` = VALUES(`price`),
+                `price_wap` = VALUES(`price_wap`),
                 `total_sold_quantity` = VALUES(`total_sold_quantity`)";
 
         return $this->my_query($db, $sql, $valArr);
     }
 
     public function test_insert($db) {
-        $sql = "INSERT INTO `crawl_item_sku` (`updatetime`, `itemid`) VALUES('2014-11-11', '". rand() ."')";
+        $sql = "INSERT INTO `meta_item` (`updatetime`, `itemid`) VALUES('2014-11-11', '". rand() ."')";
 
         return $this->my_query($db, $sql);
     }
@@ -241,7 +249,7 @@ class MPrice extends MY_model {
 
     public function get_unreviewed_count($db, $updatetime) {
         $sql = "SELECT COUNT(`is_reviewed_item`) AS `count_item`
-                FROM `crawl_item_sku`
+                FROM `meta_item`
                 WHERE `is_reviewed_item` = '0'
                 AND `updatetime` = ?";
 
@@ -249,12 +257,42 @@ class MPrice extends MY_model {
     }
 
     public function get_min_price($db, $itemnum) {
-        $sql = "SELECT sum(if(`is_wap` = '0', `price_min`, 0)) as `price_min`,
+        $sql = "SELECT `updatetime`, sum(if(`is_wap` = '0', `price_min`, 0)) as `price_min`,
                 sum(if(`is_wap` = '1', `price_min`, 0)) as `price_min_wap`
-                FROM `meta_sku`
-                WHERE `itemnum` = ?
-                GROUP BY `itemnum`";
+                FROM (
+                    SELECT `updatetime`, `itemnum`, `price_min`, `is_wap`
+                    FROM (
+                        SELECT `updatetime`, `itemnum`, `price_min`, `is_wap`
+                        FROM `up_sku`
+                        WHERE
+                        `itemnum` = ?
+                        ORDER BY `updatetime` desc
+                    ) AS `a`
+                    GROUP BY `itemnum`, `is_wap`
+                ) AS `b`";
 
         return $this->my_query($db, $sql, array($itemnum))->result_array();
+    }
+
+    private function _set_refresh_time($db, $ruleName, $updatetime, $comment) {
+        $sql = "INSERT INTO `etc_rule` (`name`, `type`, `rule`,`comment`)
+                VALUES (?, 'updatetime', ?, ?)
+                ON DUPLICATE KEY UPDATE
+                `rule` = VALUES(`rule`),
+                `comment` = VALUES(`comment`)";
+
+        return $this->my_query($db, $sql, array($ruleName, $updatetime, $comment));
+    }
+
+    private function _set_refresh_log_time($db, $ruleName, $comment) {
+        $logTime = date('Y-m-d H:i:s');
+
+        $sql = "INSERT INTO `etc_rule` (`name`, `type`, `rule`,`comment`)
+                VALUES (?, 'updatetime', ?, ?)
+                ON DUPLICATE KEY UPDATE
+                `rule` = VALUES(`rule`),
+                `comment` = VALUES(`comment`)";
+
+        return $this->my_query($db, $sql, array($ruleName, $logTime, $comment));
     }
 }

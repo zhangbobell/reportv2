@@ -42,6 +42,8 @@ $(function() {
 
     $('#db').on('change', function(){
         condition.db = $(this).val();
+
+        getLatestCrawlTime();
         initView();
     })
 
@@ -101,7 +103,7 @@ $(function() {
     }
 
     // 单击某行后获取指定用户的乱价商品列表
-    $("#upset-price-seller tbody tr").on('click', function(){
+    $("#upset-price-seller tbody tr").live('click', function(){
         selectedIdx = $(this).attr('data-i');
         condition.sellernick = data[selectedIdx].sellernick;
 

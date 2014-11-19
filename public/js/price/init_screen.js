@@ -5,10 +5,36 @@ $(function() {
 
     var data;
     var condition = {
-        db: 'db_madebaokang',
-        updatetime:'2014-10-27'
+        db: $('#db').val(),
+        updatetime: null
     };
-    fetchInitScreenList(condition);
+
+    getLatestCrawlTime();
+
+    setTimeout(function(){
+        $('.sidebar').height($('.pct100').height());
+    }, 50);
+
+    function getLatestCrawlTime() {
+        $.ajax({
+            url:"price/get_latest_crawl_time",
+            type:"post",
+            async:false,
+            dateType:"json",
+            data:condition
+        }).done(function(d){
+            condition.updatetime = d;
+//            console.log(condition);
+//            $('.form_date').datetimepicker('setEndDate', d);
+//            $('.form_date input.form-control').val(d);
+            fetchInitScreenList(condition);
+        });
+    }
+
+    $('#db').on('change', function(){
+        condition.db = $(this).val();
+        getLatestCrawlTime();
+    })
 
     function fetchInitScreenList(condition) {
         $.ajax({
@@ -74,7 +100,7 @@ $(function() {
     function fillInitScreen(d) {
         $("#init-sreen-product").mrjsontable({
             tableClass: "table table-bordered table-hover",
-            pageSize: 10,
+            pageSize: 50,
             editable: true,
             dg_id: "DG-show-record",
             updateCallback: updateCallback,
@@ -111,7 +137,7 @@ $(function() {
                 },
                 {
                     heading: "PC 端价格",
-                    data: "zk_final_price",
+                    data: "price",
                     type: "float",
                     sortable: true,
                     dg_visible: true,
@@ -119,7 +145,7 @@ $(function() {
                 },
                 {
                     heading: "移动端价格",
-                    data: "zk_final_price_wap",
+                    data: "price_wap",
                     type: "float",
                     sortable: true,
                     dg_visible: true,
