@@ -120,12 +120,20 @@ class MPrice extends MY_model {
         return $this->my_query($db, $sql, array($datetime, $sellernick, $username, $status, $msg));
     }
 
-    public function get_initial_screen_product_array($db, $updatetime) {
+    public function get_initial_screen_product_array($db, $updatetime, $startIndex, $pageSize,$orderBy, $isAsc) {
         $sql = "SELECT `updatetime`, `sellernick`, `itemid`, `itemnum`, `price`, `price_wap`, `is_reviewed_item`
                 FROM `meta_item`
-                WHERE `updatetime` = ?";
+                WHERE `updatetime` = ? ";
 
-        $arr = $this->get_result_array($db, $sql, array($updatetime));
+        if ($orderBy != '' && $isAsc == 'true') {
+            $sql .="ORDER BY $orderBy ASC ";
+        } else if ($orderBy != '' && $isAsc == 'false') {
+            $sql .="ORDER BY $orderBy DESC ";
+        }
+
+        $sql .= "LIMIT ?, ?";
+
+        $arr = $this->get_result_array($db, $sql, array($updatetime, $startIndex, $pageSize));
         foreach ($arr as $key => $row) {
             foreach($row as $k => $v) {
                 if ($k == 'itemid') {
@@ -257,12 +265,12 @@ class MPrice extends MY_model {
     }
 
     public function get_min_price($db, $itemnum) {
-        $sql = "SELECT `updatetime`, sum(if(`is_wap` = '0', `price_min`, 0)) as `price_min`,
-                sum(if(`is_wap` = '1', `price_min`, 0)) as `price_min_wap`
+        $sql = "SELECT `updatetime`, sum(if(`is_wap` = '0', `min_price`, 0)) as `min_price`,
+                sum(if(`is_wap` = '1', `min_price`, 0)) as `min_price_wap`
                 FROM (
-                    SELECT `updatetime`, `itemnum`, `price_min`, `is_wap`
+                    SELECT `updatetime`, `itemnum`, `min_price`, `is_wap`
                     FROM (
-                        SELECT `updatetime`, `itemnum`, `price_min`, `is_wap`
+                        SELECT `updatetime`, `itemnum`, `min_price`, `is_wap`
                         FROM `up_sku`
                         WHERE
                         `itemnum` = ?
@@ -294,5 +302,11 @@ class MPrice extends MY_model {
                 `comment` = VALUES(`comment`)";
 
         return $this->my_query($db, $sql, array($ruleName, $logTime, $comment));
+    }
+
+    public function get_meta_item_count($db, $updatetime) {
+        $sql = "SELECT COUNT(`itemid`) AS `item_count` FROM `meta_item` WHERE `updatetime` = ?";
+
+        return $this->my_query($db, $sql, array($updatetime))->result_array();
     }
 }

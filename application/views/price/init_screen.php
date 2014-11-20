@@ -8,6 +8,7 @@
                 <?php endforeach; ?>
             </select>
         </div>
+        <div class="col-md-3"><p class="text-info lh32" id="loading"></p></div>
 <!--        <label for="dtp_input2" class="col-xs-2 col-md-1 control-label lh32">日期：</label>-->
 <!--        <div class="input-group date form_date col-xs-4 col-md-3" data-date="" data-date-format="yyyy MM dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">-->
 <!--            <input class="form-control" size="16" type="text" value="" readonly>-->
@@ -19,4 +20,5 @@
     </div>
 
     <div class="col-md-12 fix" id="init-sreen-product"></div>
+    <div class="col-md-12 fix" id="pagination"></div>
 </div>
