@@ -5,7 +5,7 @@
             <!-- banner 部分开始 -->
             <div class="banner">
                     <h1 class="sys-title">追灿数据决策系统</h1>
-                    <span class="login-info">欢迎你，<?echo $username;?>&nbsp;&nbsp;<a href="login/logout">退出</a></span>
+                    <span class="login-info">欢迎你，<?php echo $username;?>&nbsp;&nbsp;<a href="login/logout">退出</a></span>
                 <!-- <ul class="pannel">
                         <li><a href="home.php"><div><img src="<?php //echo base_url().IMG_DIR;?>/images/3242.png" alt="主页" /></div><span>主页</span></a></li>
                             <li><a href="target.php"><div><img src="<?php //echo base_url().IMG_DIR;?>/images/3213.png" alt="目标" /></div><span>目标</span></a></li>
