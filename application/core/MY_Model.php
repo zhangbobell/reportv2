@@ -18,7 +18,7 @@ class MY_Model extends CI_Model
 
         /*$db_config['hostname'] = '192.168.1.90';
         $db_config['username'] = 'data';
-        $db_config['password'] = 'data2123';*/
+        $db_config['password'] = 'data2123'; */
         $db_config['hostname'] = '127.0.0.1';
         $db_config['username'] = 'root';
         $db_config['password'] = '931023';
