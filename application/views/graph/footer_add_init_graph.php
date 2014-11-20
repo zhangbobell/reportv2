@@ -1,0 +1,1 @@
+<script src="<?php echo base_url(). JS_DIR; ?>/graph/cooperation_status.js" type="text/javascript"></script>

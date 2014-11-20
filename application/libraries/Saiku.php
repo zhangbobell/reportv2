@@ -109,11 +109,11 @@ class Saiku
 
     public function get_json_data($saiku_file)
     {
-        $base = 'http://office.e-corp.cn:888/saiku/rest/saiku/';
+        $base = SAIKU_URL;
 
         $array = array(
-            'username' => 'lizarder',
-            'password' => '2sinxcosx'
+            'username' => SAIKU_USERNAME,
+            'password' => SAIKU_PASSWORD
         );
 
 
@@ -139,7 +139,6 @@ class Saiku
                 'xml' => $res['xml']
             )
         );
-        $metadata = json_decode( $r[ 'response' ], true );
 
         //利用建立好的QueryModel, 提交MDX并取回结果
         $qstring = $base.$session['username'].'/query/'.$new_query.'/result/flat';
@@ -149,6 +148,12 @@ class Saiku
         $results = json_decode( $r[ 'response' ], true);
 
         return json_encode($results);
+
+    }
+
+    // 获取所有的 saiku 文件
+    function getRepositoies()
+    {
 
     }
 
