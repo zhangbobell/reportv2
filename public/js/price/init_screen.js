@@ -200,6 +200,14 @@ $(function() {
                     dg_editable: true
                 },
                 {
+                    heading: "30天销量",
+                    data: "sales",
+                    type: "int",
+                    sortable: true,
+                    dg_visible: false,
+                    dg_editable: true
+                },
+                {
                     heading: "PC 端价格",
                     data: "price",
                     type: "float",

@@ -121,9 +121,15 @@ class MPrice extends MY_model {
     }
 
     public function get_initial_screen_product_array($db, $updatetime, $startIndex, $pageSize,$orderBy, $isAsc) {
-        $sql = "SELECT `updatetime`, `sellernick`, `itemid`, `itemnum`, `price`, `price_wap`, `is_reviewed_item`
+        $sql = "SELECT `updatetime`, `sellernick`, `itemid`, `itemnum`, `sales`, `price`, `price_wap`, `is_reviewed_item`
                 FROM `meta_item`
-                WHERE `updatetime` = ? ";
+                WHERE `updatetime` = ?
+                AND `sales` > '0'
+                AND `sellernick` IN (
+                    SELECT `sellernick`
+                    FROM `meta_cooperation`
+                    WHERE `status` > '0'
+                ) ";
 
         if ($orderBy != '' && $isAsc == 'true') {
             $sql .="ORDER BY $orderBy ASC ";
@@ -237,7 +243,8 @@ class MPrice extends MY_model {
     public function get_upset_history($db, $sellernick) {
         $sql = "SELECT `updatetime`, `account`, `status`, `msg`
                 FROM `status_price_log`
-                WHERE `sellernick` = ?";
+                WHERE `sellernick` = ?
+                ORDER BY `updatetime` DESC";
 
         $arr = $this->my_query($db, $sql, array($sellernick))->result_array();
         foreach ($arr as $key => $row) {
@@ -305,7 +312,15 @@ class MPrice extends MY_model {
     }
 
     public function get_meta_item_count($db, $updatetime) {
-        $sql = "SELECT COUNT(`itemid`) AS `item_count` FROM `meta_item` WHERE `updatetime` = ?";
+        $sql = "SELECT COUNT(`itemid`) AS `item_count`
+                FROM `meta_item`
+                WHERE `updatetime` = ?
+                AND `sales` > '0'
+                AND `sellernick` IN (
+                    SELECT `sellernick`
+                    FROM `meta_cooperation`
+                    WHERE `status` > '0'
+                )";
 
         return $this->my_query($db, $sql, array($updatetime))->result_array();
     }
