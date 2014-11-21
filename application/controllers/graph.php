@@ -11,6 +11,7 @@ class Graph extends CI_Controller {
     function __construct()
     {
         parent::__construct();
+        $this->load->library('saiku');
     }
 
     public function index()
@@ -33,7 +34,7 @@ class Graph extends CI_Controller {
 
 
 
-        $data['title'] = "查看报表";
+        $data['title'] = "第一时间";
         $data['username'] = $this->session->userdata('username');
 
 
@@ -56,7 +57,7 @@ class Graph extends CI_Controller {
 
 
 
-        $data['title'] = "查看报表";
+        $data['title'] = "渠道规模";
         $data['username'] = $this->session->userdata('username');
 
 
@@ -80,7 +81,7 @@ class Graph extends CI_Controller {
 
 
 
-        $data['title'] = "查看报表";
+        $data['title'] = "渠道质量";
         $data['username'] = $this->session->userdata('username');
 
 
@@ -104,7 +105,7 @@ class Graph extends CI_Controller {
 
 
 
-        $data['title'] = "查看报表";
+        $data['title'] = "品牌销售";
         $data['username'] = $this->session->userdata('username');
 
 
@@ -123,20 +124,19 @@ class Graph extends CI_Controller {
         $saikufile = $this->input->post('saikufile');
 //        $saikufile = 'report_monthly_cooperation_status_sellernick_num';
 
-        $this->load->library('saiku');
 
         //$res = json_decode($this->saiku->get_json_data('report_daily_cooperation_start_sellernick_num'));
-        $res = json_decode($this->saiku->get_json_data($saikufile));
+        $res = $this->saiku->get_json_data($saikufile);
 
 
-        $h = $res->height;
-        $w = $res->width;
+        $h = $res['height'];
+        $w = $res['width'];
 
         $columnName = array();
 
         for($i=0; $i<$w; $i++)
         {
-            $columnName[] = $res->cellset[0][$i]->value;
+            $columnName[] = $res['cellset'][0][$i]['value'];
         }
 
 
@@ -151,20 +151,20 @@ class Graph extends CI_Controller {
 
             for($j=0; $j<$w; $j++)
             {
-                if($res->cellset[$i][$j]->value != 'null')
+                if($res['cellset'][$i][$j]['value'] != 'null')
                 {
                     if($j != $w-1 && $j != $w-2)
                     {
-                        $temp = $temp.$res->cellset[$i][$j]->value.'-';
+                        $temp = $temp.$res['cellset'][$i][$j]['value'].'-';
                     }
                     elseif($j == $w-2)
                     {
-                        $temp = $temp.$res->cellset[$i][$j]->value;
+                        $temp = $temp.$res['cellset'][$i][$j]['value'];
                     }
 
                     else
                     {
-                        $data[] = array( strtotime($temp)*1000, (int)$res->cellset[$i][$j]->value);
+                        $data[] = array( strtotime($temp)*1000, (int)$res['cellset'][$i][$j]['value']);
 
                        //$time[] = $temp;
                     }
@@ -193,8 +193,25 @@ class Graph extends CI_Controller {
         echo json_encode($data);
 //        print_r($data);
 
+    }
 
+    public function get_chart_data_m() {
+        $saikufile = $this->input->post('saikufile');
+        $columns = $this->input->post('columns');
 
+        $res = $this->saiku->get_json_data($saikufile);
+        $r = $this->saiku->convert_data($res, $columns);
+
+        // 取到最小粒度的下标，即数据中最后一个
+        $nanoIdx = count($r) - 1;
+        $ret = $r[$nanoIdx];
+
+        // 对数据进行排序
+        foreach($columns as $k => $v) {
+            $ret[$k]->data = $this->saiku->sort_data($ret[$k]->data);
+        }
+
+        echo json_encode($ret);
     }
 
 

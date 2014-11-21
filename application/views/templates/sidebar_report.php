@@ -1,6 +1,6 @@
 <!-- sidebar 部分开始 -->
 <ul class="sidebar">
-    <li class="sidebar-title">查看报表</li>
+    <li class="sidebar-title">报表菜单</li>
     <li><a href="graph/init_graph">第一时间</a></li>
     <li><a href="graph/init_size">渠道规模</a></li>
     <li><a href="graph/init_quality">渠道质量</a></li>
