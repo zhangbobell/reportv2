@@ -1,5 +1,1 @@
-<div class="row">
-    <?php echo $json;?>
-
-
-</div>
+<div id="container" class="col-md-6">每日新招分销商数</div>
