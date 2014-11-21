@@ -1,4 +1,4 @@
-jQuery.fn.setTimeSeriesLineChart = function (titleName, valueTitle, value) {
+jQuery.fn.setTimeSeriesLineChart = function (titleName,subTitle, valueTitle, value) {
 	var thisSelector = this.selector;
     $(thisSelector).highcharts({
         chart: {
@@ -8,9 +8,7 @@ jQuery.fn.setTimeSeriesLineChart = function (titleName, valueTitle, value) {
             text: titleName
         },
         subtitle: {
-            text: document.ontouchstart === undefined ?
-                    'Click and drag in the plot area to zoom in' :
-                    'Pinch the chart to zoom in'
+            text: subTitle + '（鼠标选取局部，可放大查看）'
         },
         xAxis: {
             type: 'datetime',
@@ -50,8 +48,26 @@ jQuery.fn.setTimeSeriesLineChart = function (titleName, valueTitle, value) {
             type: 'area',
             name: valueTitle,
             pointInterval: 24 * 3600 * 1000,
-            pointStart: 1349712000000,
+
             data:  value
         }]
     });
 };
+
+jQuery.extend({
+    ajax_draw : function(ajax_url, saikufile, containerName, titleName, yName) {
+                    $.ajax({
+                        url: ajax_url,
+                        type:"post",
+                        async:false,
+                        dateType:"json",
+                        data:{"saikufile": saikufile}
+                    }).done(function(d){
+
+                        //console.log(d);
+                        var data = JSON.parse(d);
+
+                        $(containerName).setTimeSeriesLineChart(titleName,'', yName, data);
+                    });
+                }
+})

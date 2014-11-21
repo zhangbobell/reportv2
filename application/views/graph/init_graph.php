@@ -1,1 +1,4 @@
-<div id="container" class="col-md-6">每日新招分销商数</div>
+
+<div id="container1" class="col-md-12">正在加载...</div>
+<div id="container2" class="col-md-12">正在加载...</div>
+

@@ -47,9 +47,81 @@ class Graph extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
+    public function init_size($page = "init_size")
+    {
+        if ( ! file_exists('application/views/graph/'.$page.'.php'))
+        {
+            show_404();
+        }
+
+
+
+        $data['title'] = "查看报表";
+        $data['username'] = $this->session->userdata('username');
+
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('graph/header_add_init_graph');
+        $this->load->view('templates/banner');
+        $this->load->view('templates/sidebar_report');
+        $this->load->view('graph/' . $page, $data);
+        $this->load->view('templates/footer_script');
+        $this->load->view('graph/footer_add_' . $page);
+        $this->load->view('templates/footer');
+    }
+
+
+    public function init_quality($page = "init_quality")
+    {
+        if ( ! file_exists('application/views/graph/'.$page.'.php'))
+        {
+            show_404();
+        }
+
+
+
+        $data['title'] = "查看报表";
+        $data['username'] = $this->session->userdata('username');
+
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('graph/header_add_init_graph');
+        $this->load->view('templates/banner');
+        $this->load->view('templates/sidebar_report');
+        $this->load->view('graph/' . $page, $data);
+        $this->load->view('templates/footer_script');
+        $this->load->view('graph/footer_add_' . $page);
+        $this->load->view('templates/footer');
+    }
+
+
+    public function init_brand($page = "init_brand")
+    {
+        if ( ! file_exists('application/views/graph/'.$page.'.php'))
+        {
+            show_404();
+        }
+
+
+
+        $data['title'] = "查看报表";
+        $data['username'] = $this->session->userdata('username');
+
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('graph/header_add_init_graph');
+        $this->load->view('templates/banner');
+        $this->load->view('templates/sidebar_report');
+        $this->load->view('graph/' . $page, $data);
+        $this->load->view('templates/footer_script');
+        $this->load->view('graph/footer_add_' . $page);
+        $this->load->view('templates/footer');
+    }
+
     public function get_chart_data()
     {
         $saikufile = $this->input->post('saikufile');
+//        $saikufile = 'report_monthly_cooperation_status_sellernick_num';
 
         $this->load->library('saiku');
 
@@ -108,9 +180,18 @@ class Graph extends CI_Controller {
         }
 
 
+        usort($data, function($a, $b) {
+            $al = $a[0];
+            $bl = $b[0];
+            if ($al == $bl)
+                return 0;
+            return ($al < $bl) ? -1 : 1;
+        });
+
 
 
         echo json_encode($data);
+//        print_r($data);
 
 
 
