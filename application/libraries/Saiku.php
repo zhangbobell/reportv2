@@ -246,6 +246,54 @@ class Saiku
     }
 
     /*
+     * 柱状图转换数据格式
+     */
+    public function convert_data_bar($results, $colArr) {
+        $d = array();
+        $startIndex = $results['topOffset'];
+        $endIndex = $results['height'];
+        $width = $results['width'];
+        $data = $results['cellset'];
+
+        $series = $colArr;
+
+        for ($i = $startIndex ; $i < $endIndex; $i++) {
+            $str = '';
+            $level = 0;
+            $isYear = true;
+            for ($k = 0; $k < $width; $k++) {
+                $cell = $data[$i][$k];
+
+                if ($cell['type'] === 'ROW_HEADER' ) {
+                    if ($cell['value'] !== 'null') {
+
+                        if ($isYear) {
+                            $str .= $cell['value'];
+                            $isYear = false;
+                            continue;
+                        }
+
+                        $str .= '-'. $cell['value'];
+                        $level++;
+                    }
+                } else {
+                    $properties = $cell['properties'];
+                    $idx = ($properties['position'][0]);
+                    $raw = isset($properties['raw']) ? $properties['raw'] : null;
+
+                    $cellData = (float)$raw;
+
+                    $d[$level][$idx]->name = $series[$idx];
+                    $d[$level][$idx]->data[] = $cellData;
+//                    $d[$level][$idx]->date[] = convert_int_to_string(1000 * strtotime($str));
+                    $d[$level][$idx]->date[] = $str;
+                }
+            }
+        }
+
+        return $d;
+    }
+    /*
      * sort_data : 对数据中的日期进行排序
      * @param : $data -- 要排序的数据，必须是一个 php 数组
      * return ： 排序好的数据
