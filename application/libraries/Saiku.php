@@ -266,4 +266,74 @@ class Saiku
         return $data;
     }
 
+    /*
+     * add_data : 对数组中的数据进行累加
+     * @param : $data -- 要累加的数据，必须是一个 php 数组
+     * return ： 累加好的数据
+     *
+     * ps : 参数示例：
+     *      [[1348490000, 1], [1348490000, 1], [1348490000, 1], [1348490000, 1], [1348490000, 1]]
+     *
+     * */
+    public function add_data($data)
+    {
+        $tmp = 0;
+
+        for($i=0; $i<count($data); $i++)
+        {
+            $tmp = $tmp + $data[$i][1];
+            $data[$i][1] = $tmp;
+        }
+        return $data;
+    }
+
+
+    /*
+    * combine_data : 添加相同子结构的数组（目标数组）
+    * @param : $data -- 要处理的数据，必须是一个 php 数组
+    *          $target -- 是一个数值，表示目标值
+    * $d 结构：
+    *
+          [
+                {
+                    name: "销售额",
+                    data: [
+                                [
+                                    1388505600000,
+                                    634696.85
+                                ],
+                                [
+                                    1391184000000,
+                                    938359.85
+                                ],
+                                [
+                                    1393603200000,
+                                    1280103.65
+                                ]
+                          ]
+                }
+          ]
+    *
+    * return ： 处理好的数据
+    *
+    *
+    * */
+    public function combine_data($d, $target)
+    {
+        $start = $d[0]->data[0][0];
+        $end = $d[0]->data[count($d[0]->data)-1][0];
+        array_push($d,
+            array(
+                'name' => '年度目标',
+                'data' => array(array($start, $target), array($end, $target))
+            ),
+            array(
+                'name' => '平均月目标',
+                'data' => array(array($start, 0), array($end, $target))
+            )
+        );
+
+        return $d;
+    }
+
 }

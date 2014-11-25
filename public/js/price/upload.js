@@ -485,7 +485,7 @@
                                     type: "float"
                                 },
                                 {
-                                    heading: "是否打标",
+                                    heading: "是否手机端",
                                     data: "is_wap",
                                     type: "string"
                                 },

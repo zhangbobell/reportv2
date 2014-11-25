@@ -19,9 +19,9 @@ class Graph extends CI_Controller {
 
         $this->load->library('saiku');
 
-        $res = $this->saiku->get_json_data('report_daily_cooperation_start_sellernick_num');
+        $res = $this->saiku->get_json_data('sanqiang_report_daily_order');
 
-        echo $res;
+        print_r(json_encode($res));
 
     }
 
@@ -119,6 +119,29 @@ class Graph extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
+    public function init_target($page = "init_target")
+    {
+        if ( ! file_exists('application/views/graph/'.$page.'.php'))
+        {
+            show_404();
+        }
+
+
+
+        $data['title'] = "目标管理";
+        $data['username'] = $this->session->userdata('username');
+
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('graph/header_add_init_graph');
+        $this->load->view('templates/banner');
+        $this->load->view('templates/sidebar_report');
+        $this->load->view('graph/' . $page, $data);
+        $this->load->view('templates/footer_script');
+        $this->load->view('graph/footer_add_' . $page);
+        $this->load->view('templates/footer');
+    }
+
     public function get_chart_data()
     {
         $saikufile = $this->input->post('saikufile');
@@ -198,6 +221,10 @@ class Graph extends CI_Controller {
     public function get_chart_data_m() {
         $saikufile = $this->input->post('saikufile');
         $columns = $this->input->post('columns');
+//        $saikufile ='report_monthly_cooperation_active_rate';
+//        $columns = array('B2B 平台', '供销平台');
+
+
 
         $res = $this->saiku->get_json_data($saikufile);
         $r = $this->saiku->convert_data($res, $columns);
@@ -212,6 +239,33 @@ class Graph extends CI_Controller {
         }
 
         echo json_encode($ret);
+    }
+
+    //按月
+    public function get_chart_data_mm() {
+        $saikufile = $this->input->post('saikufile');
+        $columns = $this->input->post('columns');
+
+//        $saikufile = 'sanqiang_report_daily_order';
+//        $columns = array('销售额');
+
+        $res = $this->saiku->get_json_data($saikufile);
+        $r = $this->saiku->convert_data($res, $columns);
+
+        //
+        $nanoIdx = count($r) - 2;
+        $ret = $r[$nanoIdx];
+
+        // 对数据进行排序和求和
+        foreach($columns as $k => $v) {
+            $ret[$k]->data = $this->saiku->sort_data($ret[$k]->data);
+            $ret[$k]->data = $this->saiku->add_data($ret[$k]->data);
+        }
+
+        $ret = $this->saiku->combine_data($ret, 7000000);
+
+        echo json_encode($ret);
+
     }
 
 
