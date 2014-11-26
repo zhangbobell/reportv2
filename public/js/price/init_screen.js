@@ -6,7 +6,12 @@ $(function() {
     var data;
     var condition = {
         db: $('#db').val(),
-        updatetime: null
+        updatetime: null,
+        pageSize: 50,
+        requestPage: 0,
+        pageCount: null,
+        orderBy: null,
+        isAsc: null
     };
 
     getLatestCrawlTime();
@@ -27,6 +32,7 @@ $(function() {
 //            console.log(condition);
 //            $('.form_date').datetimepicker('setEndDate', d);
 //            $('.form_date input.form-control').val(d);
+            getItemCount(condition);
             fetchInitScreenList(condition);
         });
     }
@@ -34,6 +40,18 @@ $(function() {
     $('#db').on('change', function(){
         condition.db = $(this).val();
         getLatestCrawlTime();
+    })
+
+    $('.s-init').live('click', function(){
+        if (condition.isAsc === null) {
+            condition.isAsc = true;
+        } else {
+            condition.isAsc = !condition.isAsc;
+        }
+
+        condition.orderBy = $(this).attr('data-o');
+
+        fetchInitScreenList(condition);
     })
 
     function fetchInitScreenList(condition) {
@@ -48,8 +66,53 @@ $(function() {
 
             $("#init-sreen-product").html("");
             fillInitScreen(data);
+            fillPageLink();
+            setAsc();
         });
     }
+
+    function setAsc() {
+        var $orderBy = $('a[data-o="'+ (condition.orderBy) +'"]');
+        $orderBy.removeClass("s-A s-D");
+        if (condition.isAsc == true) {
+            $orderBy.addClass('s-A');
+        } else if (condition.isAsc == false) {
+            $orderBy.addClass('s-D');
+        }
+    }
+
+    function getItemCount(condition) {
+        $.ajax({
+            url:"price/get_meta_item_count",
+            type:"post",
+            async:false,
+            dateType:"json",
+            data:condition
+        }).done(function(d){
+            condition.pageCount = d;
+        });
+    }
+
+    function fillPageLink() {
+        $('#pagination').pagination({
+            items: condition.pageCount,
+            currentPage: (condition.requestPage + 1),
+            itemsOnPage: condition.pageSize,
+            prevText: '上一页',
+            nextText: '下一页',
+            hrefTextPrefix: '#',
+            cssStyle: 'light-theme',
+            selectOnClick: false,
+            onPageClick: function(){
+                condition.requestPage = this.currentPage;
+                fetchInitScreenList(condition);
+            }
+        });
+    }
+
+//    $('#pagination').pagination('onPageClick', function(){
+//        console.log(this.currentPage);
+//    });
 
     function setCheckedRecord(record) {
         $.ajax({
@@ -75,6 +138,7 @@ $(function() {
             dateType:"json",
             data:condition,
             success: function(d){
+                fetchInitScreenList(condition);
                 d ? $.bootstrapGrowl('更新数据完毕。', {type: 'success'}) : $.bootstrapGrowl('更新数据出错！', {type: 'danger'});
             }
         });
@@ -83,7 +147,7 @@ $(function() {
     // 确认修改 click 事件
     function updateCallback(){
         var record = {
-            db: 'db_madebaokang',
+            db: condition.db,
             sellernick: $('#dg-sellernick').val(),
             itemid: $($('#dg-url').val()).text(),
             itemnum: $('#dg-itemnum').val(),
@@ -100,7 +164,7 @@ $(function() {
     function fillInitScreen(d) {
         $("#init-sreen-product").mrjsontable({
             tableClass: "table table-bordered table-hover",
-            pageSize: 50,
+            pageSize: condition.pageSize,
             editable: true,
             dg_id: "DG-show-record",
             updateCallback: updateCallback,
@@ -133,6 +197,14 @@ $(function() {
                     type: "string",
                     sortable: true,
                     dg_visible: true,
+                    dg_editable: true
+                },
+                {
+                    heading: "30天销量",
+                    data: "sales",
+                    type: "int",
+                    sortable: true,
+                    dg_visible: false,
                     dg_editable: true
                 },
                 {
