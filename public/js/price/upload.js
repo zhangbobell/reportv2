@@ -454,7 +454,7 @@
                 case 'confirm':
                     $progress.hide();
                     $.ajax({
-                        url:"excelhandler/analyze_excel",
+                        url:"excelhandler/view_data",
                         type:"post",
                         async:false,
                         dateType:"json",
@@ -593,14 +593,17 @@
             } else if ( state === 'confirm' )
             {
                 $.ajax({
-                    url:"excelhandler/analyze_excel/1",
+                    url:"excelhandler/insert_data",
                     type:"post",
-                    async:false,
+                    async:true,
                     dateType:"json",
                     data:{"excelName": fileName, db: db}
-                }).done(function(){
-                    //alert( '价格刷新成功' );
-                    $.bootstrapGrowl('价格刷新成功', {type: 'success'});
+                }).done(function(d) {
+                    if (d) {
+                        $.bootstrapGrowl('价格刷新成功', {type: 'success'});
+                    } else {
+                        $.bootstrapGrowl('价格刷新失败', {type: 'success'});
+                    }
                 });
             }
         });
