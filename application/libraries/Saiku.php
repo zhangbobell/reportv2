@@ -147,7 +147,7 @@ class Saiku
         $r = $this->exec( $qstring, 'post', array('limit' => "0", 'mdx' => $mdx) );
         $results = json_decode( $r[ 'response' ], true);
 
-        return json_encode($results);
+        return $results;
 
     }
 
@@ -155,6 +155,233 @@ class Saiku
     function getRepositoies()
     {
 
+    }
+
+    /*
+     * convert_data : 对获取到的 json 进行格式转换，转换成 highcharts 所需的格式
+     * @param : $results -- 获取到的 json   $colArr -- 列名组成的数组
+     * return : $d -- 满足格式的 json
+     *
+     * ps : 因为 saiku 会对结果分不同的层次进行求和，若粒度到“日”，那么就会形成 “年--月--日” 三种级别的求和
+     *      本函数会返回三个粒度，$d[0] 对应年，$d[1] 对应月，$d[2] 对应日
+     *
+     *      依次类推，若粒度到“月”，则 $d[0] 对应年，$d[1] 对应月
+     *
+     * return example （以下是粒度到 “日” 的返回结果，会有年月日三个层次）:
+     * [
+     *      [
+     *          {
+     *              name: '列a',
+     *              data：[[1348490000, 1]]
+     *          },
+     *          {
+     *              name: '列b',
+     *              data：[[1348490000, 1]]
+     *          }
+     *      ],
+     *      [
+     *          {
+     *              name: '列a',
+     *              data：[[1348490000, 1], [1348490000, 1], [1348490000, 1]]
+     *          },
+     *          {
+     *              name: '列b',
+     *              data：[[1348490000, 1], [1348490000, 1], [1348490000, 1]]
+     *          }
+     *      ],
+     *      [
+     *          {
+     *              name: '列a',
+     *              data：[[1348490000, 1], [1348490000, 1], [1348490000, 1], [1348490000, 1], [1348490000, 1]]
+     *          },
+     *          {
+     *              name: '列b',
+     *              data：[[1348490000, 1], [1348490000, 1], [1348490000, 1], [1348490000, 1], [1348490000, 1]]
+     *          }
+     *      ]
+     * ]
+     */
+    public function convert_data($results, $colArr) {
+        $d = array();
+        $startIndex = $results['topOffset'];
+        $endIndex = $results['height'];
+        $width = $results['width'];
+        $data = $results['cellset'];
+
+        $series = $colArr;
+
+        for ($i = $startIndex; $i < $endIndex; $i++) {
+            $str = '';
+            $level = 0;
+            $isYear = true;
+            for ($k = 0; $k < $width; $k++) {
+                $cell = $data[$i][$k];
+
+                if ($cell['type'] === 'ROW_HEADER' ) {
+                    if ($cell['value'] !== 'null') {
+
+                        if ($isYear) {
+                            $str .= $cell['value'];
+                            $isYear = false;
+                            continue;
+                        }
+
+                        $str .= '-'. $cell['value'];
+                        $level++;
+                    }
+                } else {
+                    $properties = $cell['properties'];
+                    $idx = ($properties['position'][0]);
+                    $raw = isset($properties['raw']) ? $properties['raw'] : null;
+
+                    $cellData = array(1000 * strtotime($str), (float)$raw);
+
+                    $d[$level][$idx]->name = $series[$idx];
+                    $d[$level][$idx]->data[] = $cellData;
+                }
+            }
+        }
+
+        return $d;
+    }
+
+    /*
+     * 柱状图转换数据格式
+     */
+    public function convert_data_bar($results, $colArr) {
+        $d = array();
+        $startIndex = $results['topOffset'];
+        $endIndex = $results['height'];
+        $width = $results['width'];
+        $data = $results['cellset'];
+
+        $series = $colArr;
+
+        for ($i = $startIndex ; $i < $endIndex; $i++) {
+            $str = '';
+            $level = 0;
+            $isYear = true;
+            for ($k = 0; $k < $width; $k++) {
+                $cell = $data[$i][$k];
+
+                if ($cell['type'] === 'ROW_HEADER' ) {
+                    if ($cell['value'] !== 'null') {
+
+                        if ($isYear) {
+                            $str .= $cell['value'];
+                            $isYear = false;
+                            continue;
+                        }
+
+                        $str .= '-'. $cell['value'];
+                        $level++;
+                    }
+                } else {
+                    $properties = $cell['properties'];
+                    $idx = ($properties['position'][0]);
+                    $raw = isset($properties['raw']) ? $properties['raw'] : null;
+
+                    $cellData = (float)$raw;
+
+                    $d[$level][$idx]->name = $series[$idx];
+                    $d[$level][$idx]->data[] = $cellData;
+//                    $d[$level][$idx]->date[] = convert_int_to_string(1000 * strtotime($str));
+                    $d[$level][$idx]->date[] = $str;
+                }
+            }
+        }
+
+        return $d;
+    }
+    /*
+     * sort_data : 对数据中的日期进行排序
+     * @param : $data -- 要排序的数据，必须是一个 php 数组
+     * return ： 排序好的数据
+     *
+     * ps : 参数示例：
+     *      [[1348490000, 1], [1348490000, 1], [1348490000, 1], [1348490000, 1], [1348490000, 1]]
+     *
+     * */
+    public function sort_data($data) {
+        usort($data, function($a, $b) {
+            $al = $a[0];
+            $bl = $b[0];
+            if ($al == $bl)
+                return 0;
+            return ($al < $bl) ? -1 : 1;
+        });
+
+        return $data;
+    }
+
+    /*
+     * add_data : 对数组中的数据进行累加
+     * @param : $data -- 要累加的数据，必须是一个 php 数组
+     * return ： 累加好的数据
+     *
+     * ps : 参数示例：
+     *      [[1348490000, 1], [1348490000, 1], [1348490000, 1], [1348490000, 1], [1348490000, 1]]
+     *
+     * */
+    public function add_data($data)
+    {
+        $tmp = 0;
+
+        for($i=0; $i<count($data); $i++)
+        {
+            $tmp = $tmp + $data[$i][1];
+            $data[$i][1] = $tmp;
+        }
+        return $data;
+    }
+
+
+    /*
+    * combine_data : 添加相同子结构的数组（目标数组）
+    * @param : $data -- 要处理的数据，必须是一个 php 数组
+    *          $target -- 是一个数值，表示目标值
+    * $d 结构：
+    *
+          [
+                {
+                    name: "销售额",
+                    data: [
+                                [
+                                    1388505600000,
+                                    634696.85
+                                ],
+                                [
+                                    1391184000000,
+                                    938359.85
+                                ],
+                                [
+                                    1393603200000,
+                                    1280103.65
+                                ]
+                          ]
+                }
+          ]
+    *
+    * return ： 处理好的数据
+    *
+    *
+    * */
+    public function combine_data($d, $target)
+    {
+        $start = $d[0]->data[0][0];
+        $end = $d[0]->data[count($d[0]->data)-1][0];
+        array_push($d,
+            array(
+                'name' => '年度目标',
+                'data' => array(array($start, $target), array($end, $target))
+            ),
+            array(
+                'name' => '平均月目标',
+                'data' => array(array($start, 0), array($end, $target))
+            )
+        );
+
+        return $d;
     }
 
 }

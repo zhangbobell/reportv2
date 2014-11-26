@@ -1,2 +1,7 @@
 .idea
 .idea/*
+public/images/captcha
+public/images/captcha/*
+public/upload
+public/upload/*
+public/third-party/saiku/saiku.cookie
