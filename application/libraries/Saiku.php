@@ -384,4 +384,102 @@ class Saiku
         return $d;
     }
 
+    public function combine_data_m($d, $target)
+    {
+        $m_num = $this->get_month_day_num();
+        $str1 = date('m').'/1/'.date('Y');
+        $str2 = date('m').'/'.$m_num.'/'.date('Y');
+        $start = strtotime($str1) * 1000;
+        $end = strtotime($str2) * 1000;
+
+        $num = count($d['data']);
+
+        $incre_data = $target / $m_num;
+
+
+
+        $tar = array();
+
+        for ($i=0; $i<$num; ++$i)
+        {
+            if($d['data'][$i][1] < ($incre_data * ($i + 1)))
+                $tar[] =array($d['data'][$i][0], $d['data'][$i][1]);
+            else
+                $tar[] =array($d['data'][$i][0], $incre_data * ($i + 1));
+        }
+
+
+        $tar[] = array($end, $target);
+
+        return array($d,
+                    array(
+                        'name' => '月目标',
+                        'data' => array(array($start, $target), array($end, $target))
+                    ),
+                    array(
+                        'name' => '每日目标',
+                        'data' => $tar
+                    )
+        );
+
+
+
+    }
+
+    public function chose_month_data($d)
+    {
+        $str1 = date('m').'/1/'.date('Y');
+        $str2 = date('m').'/'.$this->get_month_day_num().'/'.date('Y');
+        $start = strtotime($str1) * 1000;
+        $end = strtotime($str2) * 1000;
+
+        $num = count($d[0]->data);
+        $arr = array();
+
+        for ($i=0; $i<$num; $i++)
+        {
+            if( $d[0]->data[$i][0] >= $start && $d[0]->data[$i][0] <= $end)
+            {
+                $arr[] = $d[0]->data[$i];
+            }
+        }
+
+        return array(
+            'name' => $d[0]->name,
+            'data' => $arr
+        );
+    }
+
+    public function get_month_day_num()
+    {
+        $str_month = date('m');
+        $y = date('Y') * 1;
+
+        switch ($str_month)
+        {
+            case '1': case '3': case '5': case '7': case '8': case '10': case '12':
+                return 31;
+                break;
+            case '4': case '6': case '9': case '11':
+                return 30;
+                break;
+            case '2':
+                if($y % 100 == 0)
+                {
+                    if($y % 400 == 0)
+                        return 29;
+                    else
+                        return 28;
+                }
+                if($y % 4 == 0 && $y % 100 != 0)
+                    return 29;
+                else
+                    return 28;
+                break;
+        }
+
+    }
+
 }
+
+

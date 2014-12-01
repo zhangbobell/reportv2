@@ -25,7 +25,7 @@ class Graph extends CI_Controller {
 
     }
 
-    public function init_graph($page = "init_graph")
+    public function init_first($page = "init_first")
     {
         if ( ! file_exists('application/views/graph/'.$page.'.php'))
         {
@@ -39,7 +39,7 @@ class Graph extends CI_Controller {
 
 
         $this->load->view('templates/header', $data);
-        $this->load->view('graph/header_add_' . $page);
+        $this->load->view('graph/header_add_init_graph');
         $this->load->view('templates/banner');
         $this->load->view('templates/sidebar_report');
         $this->load->view('graph/' . $page, $data);
@@ -48,7 +48,7 @@ class Graph extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
-    public function init_size($page = "init_size")
+    public function init_tendency($page = "init_tendency")
     {
         if ( ! file_exists('application/views/graph/'.$page.'.php'))
         {
@@ -72,7 +72,7 @@ class Graph extends CI_Controller {
     }
 
 
-    public function init_quality($page = "init_quality")
+    public function init_product($page = "init_product")
     {
         if ( ! file_exists('application/views/graph/'.$page.'.php'))
         {
@@ -96,28 +96,7 @@ class Graph extends CI_Controller {
     }
 
 
-    public function init_brand($page = "init_brand")
-    {
-        if ( ! file_exists('application/views/graph/'.$page.'.php'))
-        {
-            show_404();
-        }
 
-
-
-        $data['title'] = "品牌销售";
-        $data['username'] = $this->session->userdata('username');
-
-
-        $this->load->view('templates/header', $data);
-        $this->load->view('graph/header_add_init_graph');
-        $this->load->view('templates/banner');
-        $this->load->view('templates/sidebar_report');
-        $this->load->view('graph/' . $page, $data);
-        $this->load->view('templates/footer_script');
-        $this->load->view('graph/footer_add_' . $page);
-        $this->load->view('templates/footer');
-    }
 
     public function init_target($page = "init_target")
     {
@@ -242,7 +221,7 @@ class Graph extends CI_Controller {
     }
 
     //按月
-    public function get_chart_data_mm() {
+    public function get_chart_data_m1() {
         $saikufile = $this->input->post('saikufile');
         $columns = $this->input->post('columns');
 
@@ -268,6 +247,42 @@ class Graph extends CI_Controller {
 
     }
 
+    public function get_chart_data_m2() {
+        $saikufile = $this->input->post('saikufile');
+        $columns = $this->input->post('columns');
+        $target = $this->input->post('attach');
+//        $saikufile = 'report_daily_cooperation_start_sellernick_num';
+//        $columns = array('销售额');
+
+
+        $res = $this->saiku->get_json_data($saikufile);
+        $r = $this->saiku->convert_data($res, $columns);
+
+        // 取到最小粒度的下标，即数据中最后一个
+        $nanoIdx = count($r) - 1;
+        $ret = $r[$nanoIdx];
+
+        // 对数据进行排序
+        foreach($columns as $k => $v) {
+            $ret[$k]->data = $this->saiku->sort_data($ret[$k]->data);
+        //    $ret[$k]->data = $this->saiku->add_data($ret[$k]->data);
+        }
+
+        $ret = $this->saiku->chose_month_data($ret);
+
+        $ret['data'] = $this->saiku->add_data($ret['data']);
+
+        $ret = $this->saiku->combine_data_m($ret, (int)$target);
+        echo json_encode($ret);
+
+
+
+
+
+    }
+
 
 }
+
+
 
