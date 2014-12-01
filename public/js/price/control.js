@@ -283,7 +283,7 @@ $(function() {
                 },
                 {
                     heading: "PC 端价格",
-                    data: "zk_final_price",
+                    data: "price",
                     type: "float",
                     sortable: true,
                     dg_visible: true,
@@ -299,7 +299,7 @@ $(function() {
                 },
                 {
                     heading: "移动端价格",
-                    data: "zk_final_price_wap",
+                    data: "price_wap",
                     type: "float",
                     sortable: true,
                     dg_visible: true,
