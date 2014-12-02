@@ -14,16 +14,7 @@ class Graph extends CI_Controller {
         $this->load->library('saiku');
     }
 
-    public function index()
-    {
 
-        $this->load->library('saiku');
-
-        $res = $this->saiku->get_json_data('sanqiang_report_daily_order');
-
-        print_r(json_encode($res));
-
-    }
 
     public function init_first($page = "init_first")
     {
@@ -241,7 +232,12 @@ class Graph extends CI_Controller {
             $ret[$k]->data = $this->saiku->add_data($ret[$k]->data);
         }
 
-        $ret = $this->saiku->combine_data($ret, 7000000);
+        $username = 'admin';
+        $this->load->model('targetprocess');
+        $target = $this->targetprocess->get_target($username);
+        $tar = $target[0]['target'];
+
+        $ret = $this->saiku->combine_data($ret, (int)$tar);
 
         echo json_encode($ret);
 
@@ -274,12 +270,52 @@ class Graph extends CI_Controller {
 
         $ret = $this->saiku->combine_data_m($ret, (int)$target);
         echo json_encode($ret);
-
-
-
-
-
     }
+
+
+    //周
+    public function test()
+    {
+
+        $saikufile ='report_weekly_order_close_rate';
+        $columns = array('追灿招募');
+
+
+
+        $res = $this->saiku->get_json_data($saikufile);
+        $r = $this->saiku->convert_data_week($res, $columns);
+
+        // 取到最小粒度的下标，即数据中最后一个
+        $nanoIdx = count($r) - 1;
+        $ret = $r[$nanoIdx];
+
+        // 对数据进行排序
+        foreach($columns as $k => $v) {
+            $ret[$k]->data = $this->saiku->sort_data($ret[$k]->data);
+        }
+
+        echo json_encode($ret);
+    }
+
+    public function submit_target()
+    {
+        $target = $_POST['target'];
+        $username = $_POST['user'];
+
+        $this->load->model('targetprocess');
+        $this->targetprocess->insert_target($target, $username);
+    }
+
+    public function get_target()
+    {
+
+        $username = 'admin';
+        $this->load->model('targetprocess');
+        $target = $this->targetprocess->get_target($username);
+        $tar = $target[0]['target'];
+        echo $tar;
+    }
+
 
 
 }

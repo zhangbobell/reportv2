@@ -245,6 +245,50 @@ class Saiku
         return $d;
     }
 
+// 转换数据：日期为 年-周
+    public function convert_data_week($results, $colArr) {
+        $d = array();
+        $startIndex = $results['topOffset'];
+        $endIndex = $results['height'];
+        $width = $results['width'];
+        $data = $results['cellset'];
+
+        $series = $colArr;
+
+        for ($i = $startIndex; $i < $endIndex; $i++) {
+            $str = '';
+            $level = 0;
+            $isYear = true;
+            for ($k = 0; $k < $width; $k++) {
+                $cell = $data[$i][$k];
+
+                if ($cell['type'] === 'ROW_HEADER' ) {
+                    if ($cell['value'] !== 'null') {
+
+                        if ($isYear) {
+                            $str .= $cell['value'];
+                            $isYear = false;
+                            continue;
+                        }
+
+                        $str .= '年'. $cell['value'];
+                        $level++;
+                    }
+                } else {
+                    $properties = $cell['properties'];
+                    $idx = ($properties['position'][0]);
+                    $raw = isset($properties['raw']) ? $properties['raw'] : null;
+
+                    $cellData = array($str.'周', (float)$raw);
+
+                    $d[$level][$idx]->name = $series[$idx];
+                    $d[$level][$idx]->data[] = $cellData;
+                }
+            }
+        }
+
+        return $d;
+    }
     /*
      * 柱状图转换数据格式
      */
