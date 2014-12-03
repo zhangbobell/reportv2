@@ -112,6 +112,7 @@ $.fn.drawLineChart = function(lineChart, xhrOpt) {
         url: xhrOpt.url,
         saikufile: xhrOpt.saikufile,
         columns: lineChart.columns,
+        attach: '' || lineChart.target,
         cb: function(d) {
             lineChart.series = JSON.parse(d);
             $(thisSelector).lineChart(lineChart);
@@ -137,7 +138,7 @@ jQuery.extend({
             type:"post",
             async:true,
             dateType:"json",
-            data:{"saikufile": o.saikufile, columns: o.columns},
+            data:{"saikufile": o.saikufile, columns: o.columns, attach: o.attach},
             success: o.cb
         });
     }

@@ -14,18 +14,9 @@ class Graph extends CI_Controller {
         $this->load->library('saiku');
     }
 
-    public function index()
-    {
 
-        $this->load->library('saiku');
 
-        $res = $this->saiku->get_json_data('report_daily_cooperation_start_sellernick_num');
-
-        echo $res;
-
-    }
-
-    public function init_graph($page = "init_graph")
+    public function init_first($page = "init_first")
     {
         if ( ! file_exists('application/views/graph/'.$page.'.php'))
         {
@@ -39,7 +30,7 @@ class Graph extends CI_Controller {
 
 
         $this->load->view('templates/header', $data);
-        $this->load->view('graph/header_add_' . $page);
+        $this->load->view('graph/header_add_init_graph');
         $this->load->view('templates/banner');
         $this->load->view('templates/sidebar_report');
         $this->load->view('graph/' . $page, $data);
@@ -48,7 +39,7 @@ class Graph extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
-    public function init_size($page = "init_size")
+    public function init_tendency($page = "init_tendency")
     {
         if ( ! file_exists('application/views/graph/'.$page.'.php'))
         {
@@ -72,7 +63,7 @@ class Graph extends CI_Controller {
     }
 
 
-    public function init_quality($page = "init_quality")
+    public function init_product($page = "init_product")
     {
         if ( ! file_exists('application/views/graph/'.$page.'.php'))
         {
@@ -96,7 +87,9 @@ class Graph extends CI_Controller {
     }
 
 
-    public function init_brand($page = "init_brand")
+
+
+    public function init_target($page = "init_target")
     {
         if ( ! file_exists('application/views/graph/'.$page.'.php'))
         {
@@ -105,7 +98,7 @@ class Graph extends CI_Controller {
 
 
 
-        $data['title'] = "品牌销售";
+        $data['title'] = "目标管理";
         $data['username'] = $this->session->userdata('username');
 
 
@@ -198,6 +191,10 @@ class Graph extends CI_Controller {
     public function get_chart_data_m() {
         $saikufile = $this->input->post('saikufile');
         $columns = $this->input->post('columns');
+//        $saikufile ='report_monthly_cooperation_active_rate';
+//        $columns = array('B2B 平台', '供销平台');
+
+
 
         $res = $this->saiku->get_json_data($saikufile);
         $r = $this->saiku->convert_data($res, $columns);
@@ -214,6 +211,114 @@ class Graph extends CI_Controller {
         echo json_encode($ret);
     }
 
+    //按月
+    public function get_chart_data_m1() {
+        $saikufile = $this->input->post('saikufile');
+        $columns = $this->input->post('columns');
+
+//        $saikufile = 'sanqiang_report_daily_order';
+//        $columns = array('销售额');
+
+        $res = $this->saiku->get_json_data($saikufile);
+        $r = $this->saiku->convert_data($res, $columns);
+
+        //
+        $nanoIdx = count($r) - 2;
+        $ret = $r[$nanoIdx];
+
+        // 对数据进行排序和求和
+        foreach($columns as $k => $v) {
+            $ret[$k]->data = $this->saiku->sort_data($ret[$k]->data);
+            $ret[$k]->data = $this->saiku->add_data($ret[$k]->data);
+        }
+
+        $username = 'admin';
+        $this->load->model('targetprocess');
+        $target = $this->targetprocess->get_target($username);
+        $tar = $target[0]['target'];
+
+        $ret = $this->saiku->combine_data($ret, (int)$tar);
+
+        echo json_encode($ret);
+
+    }
+
+    public function get_chart_data_m2() {
+        $saikufile = $this->input->post('saikufile');
+        $columns = $this->input->post('columns');
+        $target = $this->input->post('attach');
+//        $saikufile = 'report_daily_cooperation_start_sellernick_num';
+//        $columns = array('销售额');
+
+
+        $res = $this->saiku->get_json_data($saikufile);
+        $r = $this->saiku->convert_data($res, $columns);
+
+        // 取到最小粒度的下标，即数据中最后一个
+        $nanoIdx = count($r) - 1;
+        $ret = $r[$nanoIdx];
+
+        // 对数据进行排序
+        foreach($columns as $k => $v) {
+            $ret[$k]->data = $this->saiku->sort_data($ret[$k]->data);
+        //    $ret[$k]->data = $this->saiku->add_data($ret[$k]->data);
+        }
+
+        $ret = $this->saiku->chose_month_data($ret);
+
+        $ret['data'] = $this->saiku->add_data($ret['data']);
+
+        $ret = $this->saiku->combine_data_m($ret, (int)$target);
+        echo json_encode($ret);
+    }
+
+
+    //周
+    public function test()
+    {
+
+        $saikufile ='report_weekly_order_close_rate';
+        $columns = array('追灿招募');
+
+
+
+        $res = $this->saiku->get_json_data($saikufile);
+        $r = $this->saiku->convert_data_week($res, $columns);
+
+        // 取到最小粒度的下标，即数据中最后一个
+        $nanoIdx = count($r) - 1;
+        $ret = $r[$nanoIdx];
+
+        // 对数据进行排序
+        foreach($columns as $k => $v) {
+            $ret[$k]->data = $this->saiku->sort_data($ret[$k]->data);
+        }
+
+        echo json_encode($ret);
+    }
+
+    public function submit_target()
+    {
+        $target = $_POST['target'];
+        $username = $_POST['user'];
+
+        $this->load->model('targetprocess');
+        $this->targetprocess->insert_target($target, $username);
+    }
+
+    public function get_target()
+    {
+
+        $username = 'admin';
+        $this->load->model('targetprocess');
+        $target = $this->targetprocess->get_target($username);
+        $tar = $target[0]['target'];
+        echo $tar;
+    }
+
+
 
 }
+
+
 

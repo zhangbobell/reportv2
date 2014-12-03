@@ -1,10 +1,11 @@
 <!-- sidebar 部分开始 -->
 <ul class="sidebar">
     <li class="sidebar-title">报表菜单</li>
-    <li><a href="graph/init_graph">第一时间</a></li>
-    <li><a href="graph/init_size">渠道规模</a></li>
-    <li><a href="graph/init_quality">渠道质量</a></li>
-    <li><a href="graph/init_brand">品牌销售</a></li>
+    <li><a href="graph/init_first">第一时间</a></li>
+    <li><a href="graph/init_tendency">趋势</a></li>
+    <li><a href="graph/init_target">目标管理</a></li>
+    <li><a href="graph/init_product">产品渠道分布</a></li>
+
     <!--        <li><a href="price/inputTarget/">录入下周目标</a></li>-->
     <!--        <li><a href="price/inputComplete">录入今日完成</a></li>-->
 </ul>

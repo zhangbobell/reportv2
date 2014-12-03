@@ -118,8 +118,13 @@ class Price extends CI_Controller {
     public function get_init_screen_product() {
         $db = $this->input->post('db');
         $updatetime = $this->input->post('updatetime');
+        $requestPage = $this->input->post('requestPage');
+        $pageSize = $this->input->post('pageSize') + 0;
+        $startIndex = $requestPage * $pageSize;
+        $orderBy = $this->input->post('orderBy');
+        $isAsc = $this->input->post('isAsc');
 
-        echo json_encode($this->mprice->get_initial_screen_product_array($db, $updatetime));
+        echo json_encode($this->mprice->get_initial_screen_product_array($db, $updatetime, $startIndex, $pageSize, $orderBy, $isAsc));
     }
 
     public function set_checked_record() {
@@ -136,8 +141,8 @@ class Price extends CI_Controller {
 
         $arr = $this->mprice->get_min_price($db, $record['itemnum']);
         if (count($arr) != 0) {
-            $record['min_price'] = $arr[0]['price_min'];
-            $record['min_price_wap'] = $arr[0]['price_min_wap'];
+            $record['min_price'] = $arr[0]['min_price'];
+            $record['min_price_wap'] = $arr[0]['min_price_wap'];
             $record['min_price_time'] = $arr[0]['updatetime'];
         }
 
@@ -193,6 +198,15 @@ class Price extends CI_Controller {
         $db = $this->input->post('db');
 
         echo $this->mprice->latest_crawl_item_time($db);
+    }
+
+    public function get_meta_item_count($db = null, $updatetime = null) {
+        $db = ($this->input->post('db')) ? ($this->input->post('db')) : $db;
+        $updatetime = ($this->input->post('updatetime')) ? ($this->input->post('updatetime')) : $updatetime;
+
+        $res = $this->mprice->get_meta_item_count($db, $updatetime);
+
+        echo $res[0]['item_count'];
     }
 
 }
