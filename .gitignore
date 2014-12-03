@@ -1,2 +1,6 @@
 .idea
 .idea/*
+public/upload
+public/upload/*
+public/images/captcha
+public/images/captcha/*
