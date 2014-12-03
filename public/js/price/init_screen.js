@@ -14,11 +14,37 @@ $(function() {
         isAsc: null
     };
 
-    getLatestCrawlTime();
+    $('#datetime-picker').datetimepicker({
+        pickDate: true,                 //en/disables the date picker
+        pickTime: false,                 //en/disables the time picker
+        useMinutes: false,               //en/disables the minutes picker
+        useSeconds: false,               //en/disables the seconds picker
+        useCurrent: false,               //when true, picker will set the value to the current date/time
+        minuteStepping:1,               //set the minute stepping
+        showToday: true,                 //shows the today indicator
+        language:'zh-cn',                  //sets language locale
+        defaultDate:"",                 //sets a default date, accepts js dates, strings and moment objects
+        disabledDates:[
+            moment("11/25/2014")
+//            new Date(2014, 11 - 1, 21)
+        ],                //an array of dates that can be selected
+        icons : {
+            time: 'glyphicon glyphicon-time',
+            date: 'glyphicon glyphicon-calendar',
+            up:   'glyphicon glyphicon-chevron-up',
+            down: 'glyphicon glyphicon-chevron-down'
+        },
+        useStrict: false,               //use "strict" when validating dates
+        sideBySide: false,              //show the date and time picker side by side
+        daysOfWeekDisabled:[]         //for example use daysOfWeekDisabled: [0,6] to disable weekends
+//        disabledDates: [
+//            moment("12/25/2013")
+////            new Date(2013, 11 - 1, 21),
+////            "11/22/2013 00:53"
+//        ]
+    });
 
-    setTimeout(function(){
-        $('.sidebar').height($('.pct100').height());
-    }, 50);
+    getLatestCrawlTime();
 
     function getLatestCrawlTime() {
         $.ajax({

@@ -21,7 +21,7 @@ class MY_Model extends CI_Model
         $db_config['password'] = 'data2123'*/;
         $db_config['hostname'] = '127.0.0.1';
         $db_config['username'] = 'root';
-        $db_config['password'] = '931023';
+        $db_config['password'] = 'root';
         $db_config['database'] = $databaseName;
         $db_config['dbdriver'] = 'mysqli';
         $db_config['dbprefix'] = '';
@@ -79,5 +79,51 @@ class MY_Model extends CI_Model
         $this->load->database($config);
 
         return $this->db->query($sql, $valArr);
+    }
+
+    /*
+     * batch_insert: 批量插入数据库（也可用于更新，使用 on duplicate key update）
+     * @param: $db -- 选择的数据库
+     *         $sql -- SQL 语句（只带一个问号）
+     *         $valArr -- 包含要更新的值的二维数组，可以是关联数组
+     *         $n[可选] -- 一次批量操作的数量， 默认是500条
+     * return: true/false
+     * */
+    public function batch_insert($db, $sql, $valArr, $n = 500) {
+        $i = 0;
+        $sqlStr = '';
+        $res = true; // 最后返回的结果
+        foreach($valArr as $row) {
+            $rowStr = implode("', '", array_values($row));
+            $sqlStr = $sqlStr."('$rowStr'),";
+            $sqlStr = str_replace("''", 'NULL', $sqlStr);
+            $i++;
+
+            if ($i === $n) {
+                $res = $res && $this->_exec_batch_insert($db, $sql, $sqlStr);
+                $i = 0;
+            }
+        }
+
+        // 最后剩余不足500条的，一起插入
+        if ($i != 0) {
+            $res = $res && $this->_exec_batch_insert($db, $sql, $sqlStr);
+        }
+
+        return $res;
+    }
+
+    /*
+     * _exec_batch_insert: 执行批量插入数据库
+     * @param: $db -- 选择的数据库
+     *         $sql -- SQL 语句（只带一个问号）
+     *         $sqlStr -- 拼凑好的 sql 中的值语句，带结尾的“,”的
+     * return: true/false
+     * */
+    private function _exec_batch_insert($db, $sql, $sqlStr) {
+        $sqlStr = rtrim($sqlStr, ',');
+        $sql = str_replace('?', $sqlStr, $sql);
+
+        return $this->my_query($db, $sql);
     }
 }

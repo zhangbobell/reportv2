@@ -456,17 +456,20 @@
                     $.ajax({
                         url:"excelhandler/view_data",
                         type:"post",
-                        async:false,
+                        async: true,
                         dateType:"json",
-                        data:{"excelName": fileName, db: db}
+                        data:{"excelName": fileName, db: db},
+                        beforeSend: function(){
+                            $('#loading').css('display', 'block');
+                        }
                     }).done(function(d){
 
-                        //console.log(d);
+                        $('#loading').css('display', 'none');
                         var dd = JSON.parse(d);
 
                         $("#preview-excel").mrjsontable({
                             tableClass: "table table-bordered table-hover",
-                            pageSize: 10,
+                            pageSize: 20,
                             columns: [
                                 {
                                     heading: "更新时间",
@@ -485,7 +488,7 @@
                                     type: "float"
                                 },
                                 {
-                                    heading: "是否打标",
+                                    heading: "是否是移动端价格",
                                     data: "is_wap",
                                     type: "string"
                                 },
@@ -595,10 +598,14 @@
                 $.ajax({
                     url:"excelhandler/insert_data",
                     type:"post",
-                    async:true,
+                    async: true,
                     dateType:"json",
-                    data:{"excelName": fileName, db: db}
+                    data:{"excelName": fileName, db: db},
+                    beforeSend: function(){
+                        $('#loading').css('display', 'block');
+                    }
                 }).done(function(d) {
+                    $('#loading').css('display', 'none');
                     if (d) {
                         $.bootstrapGrowl('价格刷新成功', {type: 'success'});
                     } else {
