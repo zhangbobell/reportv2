@@ -16,12 +16,12 @@ class MY_Model extends CI_Model
     public function select_DB($databaseName)
     {
 
-        /*$db_config['hostname'] = '192.168.1.90';
+        $db_config['hostname'] = '192.168.1.90';
         $db_config['username'] = 'data';
-        $db_config['password'] = 'data2123'*/;
-        $db_config['hostname'] = '127.0.0.1';
+        $db_config['password'] = 'data2123';
+        /*$db_config['hostname'] = '127.0.0.1';
         $db_config['username'] = 'root';
-        $db_config['password'] = 'root';
+        $db_config['password'] = 'root';*/
         $db_config['database'] = $databaseName;
         $db_config['dbdriver'] = 'mysqli';
         $db_config['dbprefix'] = '';
@@ -94,6 +94,9 @@ class MY_Model extends CI_Model
         $sqlStr = '';
         $res = true; // 最后返回的结果
         foreach($valArr as $row) {
+            foreach($row as $k => $v) {
+                $row[$k] = str_replace("'", "\'", $v);
+            }
             $rowStr = implode("', '", array_values($row));
             $sqlStr = $sqlStr."('$rowStr'),";
             $sqlStr = str_replace("''", 'NULL', $sqlStr);
@@ -101,6 +104,7 @@ class MY_Model extends CI_Model
 
             if ($i === $n) {
                 $res = $res && $this->_exec_batch_insert($db, $sql, $sqlStr);
+                $sqlStr = '';
                 $i = 0;
             }
         }

@@ -1,6 +1,6 @@
 <div class="row">
     <label for="db-input" class="col-xs-2 col-md-1 control-label lh32">数据库：</label>
-    <?php $this->load->view('widget/db-picker')?>
+    <?php $this->load->view('widget/db_picker')?>
 
     <div class="col-md-12 mt50 mb10" id="unreviewed-count"></div>
     <div class="col-md-12 fix" id="upset-price-seller"></div>

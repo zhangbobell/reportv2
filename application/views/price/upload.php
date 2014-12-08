@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-12 fix">
         <label for="db-input" class="col-xs-2 col-md-1 control-label lh32">数据库：</label>
-        <?php $this->load->view('widget/db-picker')?>
+        <?php $this->load->view('widget/db_picker')?>
     </div>
     <div class="col-md-12 mt20">
         <p>请按照以下格式保存 Excel 文件（更新时间列单元格格式设定为文本）。实例 Excel 下载，点击 <a target="_blank" href="<?php echo base_url().UP_DIR; ?>/upload.xlsx">这里</a></p>
