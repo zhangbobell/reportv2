@@ -12,27 +12,26 @@ class TargetProcess extends MY_model {
         parent::__construct();
     }
 
-    function insert_target($target, $username)
+    function insert_target($username, $period, $t_type, $target)
     {
-//        echo $username;
-//        echo '<br>';
-//        echo $target;
 
-        $sql = "INSERT INTO `t_target` (`username`, `target`)
-                VALUES (?, ?)
+        $sql = "INSERT INTO `user_target` (`username`, `period`, `t_type`, `target`)
+                VALUES (?, ?, ?, ?)
                 ON DUPLICATE KEY
                 UPDATE
                 `username` = VALUES(`username`),
+                `period` = VALUES(`period`),
+                `t_type` = VALUES(`t_type`),
                 `target` = VALUES(`target`)";
 
-        $this->my_query('user_target', $sql, array($username, $target));
+        return $this->my_query('db_sanqiang', $sql, array($username, $period, $t_type, $target));
 
     }
 
-    function get_target($username)
+    function get_target($username, $period, $t_type)
     {
-        $sql = "SELECT `target` FROM `t_target` WHERE `username` = ? ";
-        return $this->get_result_array('user_target', $sql, $username);
+        $sql = "SELECT `target` FROM `user_target` WHERE `username` = ? AND `period` = ? AND `t_type` = ?";
+        return $this->get_result_array('db_sanqiang', $sql, array($username, $period, $t_type));
     }
 
 

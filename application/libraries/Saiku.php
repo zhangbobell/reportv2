@@ -68,11 +68,16 @@ class Saiku
         $result = curl_exec($ch);
         $info = curl_getinfo($ch);
 
+
+
         return array( 'response' => $result, 'info' => $info );
     }
 
     public function login($base, $arr) {
         $r = $this->exec($base.'session/');
+
+
+
 
         $session = json_decode($r['response'], true);
 
@@ -82,16 +87,6 @@ class Saiku
             $r = $this->exec($base. 'session/', $method, $arr);
 
             return $r;
-
-
-            if ($r[ 'info' ][ 'http_code' ] == '200')
-            {
-                $r = $this->exec($base.'session/');
-                $session = json_decode( $r[ 'response' ], true );
-
-                return $session;
-            }
-
         }
 
         return $session;
@@ -101,6 +96,7 @@ class Saiku
         $qstring = $base.$session['username'].'/repository/'.urlencode($repName);
 
         $r = $this->exec($qstring);
+
         $res = json_decode($r['response'], true);
 
         return $res;
@@ -122,6 +118,11 @@ class Saiku
         $res = $this->fetchRepository($base, $session, $saiku_file);
 
         $xml = simplexml_load_string($res['xml']);
+
+        if(!$xml)
+            return 0;
+
+
         $attr = $xml->attributes();
 
 
@@ -129,6 +130,8 @@ class Saiku
         $new_query = $this->guid();
         $new_query = trim($new_query,'{}');
         $qstring = $base.$session['username'].'/query/'.$new_query;
+
+        // $r
         $r = $this->exec( $qstring, 'post', array(
                 'type' => $attr->type,
                 'connection' => $attr->connection, //

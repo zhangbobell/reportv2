@@ -114,8 +114,16 @@ $.fn.drawLineChart = function(lineChart, xhrOpt) {
         columns: lineChart.columns,
         attach: '' || lineChart.target,
         cb: function(d) {
-            lineChart.series = JSON.parse(d);
-            $(thisSelector).lineChart(lineChart);
+            if(d == 0)
+            {
+                $(thisSelector).text('saiku文件不存在');
+            }
+            else
+            {
+                lineChart.series = JSON.parse(d);
+                $(thisSelector).lineChart(lineChart);
+            }
+
         }
     });
 }
@@ -140,6 +148,17 @@ jQuery.extend({
             dateType:"json",
             data:{"saikufile": o.saikufile, columns: o.columns, attach: o.attach},
             success: o.cb
+        });
+    },
+
+    xhr0: function(o) {
+        $.ajax({
+            url: o.url,
+            type:"post",
+            async: true,
+            dateType:"json",
+            data: o.data,
+            success: o.success
         });
     }
 })
