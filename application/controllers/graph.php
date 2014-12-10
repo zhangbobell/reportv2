@@ -370,6 +370,10 @@ class Graph extends CI_Controller {
         return $tar;
     }
 
+    public function get7($saikufile = 'report_weekly_level_num') {
+        echo json_encode($this->saiku->get_json_data($saikufile));
+    }
+
 
 
 }
