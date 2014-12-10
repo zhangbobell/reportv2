@@ -211,16 +211,37 @@ class Graph extends CI_Controller {
         echo json_encode($ret);
     }
 
+    // 获取年周的数据
+    public function get_chart_data_week()
+    {
+
+//        $saikufile ='report_weekly_level';
+//        $columns = array('无评级', '银卡', '金卡', '白金卡');
+        $saikufile = $this->input->post('saikufile');
+        $columns = $this->input->post('columns');
+
+
+        $res = $this->saiku->get_json_data($saikufile);
+        $r = $this->saiku->convert_data_week($res, $columns);
+
+        // 取到最小粒度的下标，即数据中最后一个
+        $nanoIdx = count($r) - 1;
+        $ret = $r[$nanoIdx];
+
+        // 无需排序
+        echo json_encode($ret);
+    }
+
     // saiku数据格式年月
     public function get_chart_data_m0() {
-//        $saikufile = $this->input->post('saikufile');
-//        $columns = $this->input->post('columns');
-//        $tmp = $this->input->post('attach'); // 传递period和t_type
+        $saikufile = $this->input->post('saikufile');
+        $columns = $this->input->post('columns');
+        $tmp = $this->input->post('attach'); // 传递period和t_type
 
 
-        $saikufile = 'report_monthly_cooperation_num';
-        $columns = array('销售额');
-        $tmp = array('1', '2');
+//        $saikufile = 'report_monthly_cooperation_num';
+//        $columns = array('销售额');
+//        $tmp = array('1', '2');
 
         $res = $this->saiku->get_json_data($saikufile);
         if($res == 0)
@@ -277,7 +298,7 @@ class Graph extends CI_Controller {
 
         $target = $this->get_target($tmp[0], $tmp[1]);
 
-        $ret = $this->saiku->combine_data($ret, (int)$target);
+        $ret = $this->saiku->combine_data($ret, (float)$target);
 
         echo json_encode($ret);
 
@@ -317,30 +338,7 @@ class Graph extends CI_Controller {
 //    }
 
 
-    //周
-    public function test()
-    {
 
-//        $saikufile ='report_weekly_cooperation_end_sellernick_num';
-        $saikufile ='';
-        $columns = array('追灿招募');
-
-
-
-        $res = $this->saiku->get_json_data($saikufile);
-        $r = $this->saiku->convert_data_week($res, $columns);
-
-        // 取到最小粒度的下标，即数据中最后一个
-        $nanoIdx = count($r) - 1;
-        $ret = $r[$nanoIdx];
-
-        // 对数据进行排序
-        foreach($columns as $k => $v) {
-            $ret[$k]->data = $this->saiku->sort_data($ret[$k]->data);
-        }
-
-      //  echo json_encode($ret);
-    }
 
     public function submit_target()
     {
@@ -367,7 +365,56 @@ class Graph extends CI_Controller {
         return $tar;
     }
 
+    public function randtest() {
 
+        $data1 = array();
+        $data2 = array();
+        $data3 = array();
+        $data4 = array();
+        $data5 = array();
+
+        for ($i = 0; $i < 12; $i++)
+        {
+            $data1[] = array((float)$i+(float)rand(1, 100) / 100, rand(10, 100));
+            $data2[] = array((float)$i+(float)rand(1, 100) / 100, rand(10, 100));
+            $data3[] = array((float)$i+(float)rand(1, 100) / 100, rand(10, 100));
+            $data4[] = array((float)$i+(float)rand(1, 100) / 100, rand(10, 100));
+            $data5[] = array((float)$i+(float)rand(1, 100) / 100, rand(10, 100));
+        }
+
+        $ret = array(
+            array('name'=>'a', 'data'=>$data1),
+            array('name'=>'b', 'data'=>$data2),
+            array('name'=>'c', 'data'=>$data3),
+            array('name'=>'d', 'data'=>$data4),
+            array('name'=>'e', 'data'=>$data5),
+        );
+
+        return ($ret);
+    }
+
+    public function conv()
+    {
+        $d = $this->randtest();
+        $d0 = $d;
+
+        $l = count($d[0]['data']);
+        for($i=0; $i<count($d0); $i++)
+        {
+            for($j=0; $j<$l; $j++)
+            {
+                if($i == 0)
+                    $d[$i]['data'][$j][0] = 0;
+                else
+                {
+                    $d[$i]['data'][$j][0] = $d[$i-1]['data'][$j][1];
+                    $d[$i]['data'][$j][1] = $d[$i]['data'][$j][0] + $d0[$i]['data'][$j][1];
+                }
+            }
+        }
+
+        echo json_encode($d);
+    }
 
 
 }

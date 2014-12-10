@@ -4,6 +4,19 @@
 
 $(function(){
 
+    function draw1(){
+        $('#container1').drawLineChart({
+            title: '乱价率', // 主标题
+            subtitle: '副标题 for test', // 副标题
+            xLabel: '日期', // x 轴标题
+            yLabel: '乱价率', // y 轴标题
+            columns: ['乱价率'], // 系列的名称
+            target: ['1', '1']
+        }, {
+            url: 'graph/get_chart_data_m1', // ajax 请求地址
+            saikufile: 'report_dayly_wrong_price_rate' // ajax 请求的 saiku 文件
+        });
+    }
     function draw2(){
         $('#container2').drawLineChart({
             title: '追灿招募商家数量', // 主标题
@@ -31,8 +44,25 @@ $(function(){
         });
     }
 
+    draw1();
     draw2();
     draw3();
+
+    $('#btn1').on('click', function(){
+        $.xhr0({
+            url: 'graph/submit_target',
+            data: {target: $('#target1').val(), user: $('#user').val(), period: $('#period1').val(), t_type: $('#t_type1').val()},
+            success: function(d){
+                d = JSON.parse(d);
+
+                if (d == 1) {
+                    draw1();
+                } else {
+                    alert('input target failed.');
+                }
+            }
+        })
+    });
 
     $('#btn2').on('click', function(){
         $.xhr0({
