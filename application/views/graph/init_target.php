@@ -1,5 +1,17 @@
 <input type="hidden" id="user" value="<?php echo $username;?>"/>
 
+<div id="container1" class="col-md-10">乱价率目标加载中...</div>
+<div  class="col-md-2">
+    <div class="form-group">
+        <label for="target">乱价率目标</label>
+        <input type="text" class="form-control" name="target" id="target1" placeholder="请输入目标">
+        <input type="hidden" id="period1" value="1"/>
+        <input type="hidden" id="t_type1" value="1"/>
+        <button id="btn1" type="button" class="btn btn-primary mt10 r">提交</button>
+    </div>
+</div>
+
+
 <div id="container2" class="col-md-10">追灿招募商家数量目标加载中...</div>
 <div  class="col-md-2">
     <div class="form-group">
