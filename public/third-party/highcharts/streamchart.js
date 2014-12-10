@@ -7,17 +7,23 @@ jQuery.fn.setTimeSeriesLineChart_stream = function (titleName,subTitle, valueTit
         title: {
             text: titleName
         },
-//        subtitle: {
-//            text: subTitle
-//        },
-//
-//        yAxis: {
-//            title: {
-//                text: valueTitle
-//            }
-//        },
+        subtitle: {
+            text: subTitle
+        },
+
+        yAxis: {
+            title: {
+                text: valueTitle
+            }
+        },
         legend: {
             enabled: false
+        },
+        tooltip: {
+            formatter: function () {
+                return '<b>' + this.series.name +
+                    '</b> : <b>' + (this.point.high - this.point.low) + '</b>';
+            }
         },
 
         series: [{
@@ -35,20 +41,26 @@ $.fn.lineChart_stream = function (lineChart) {
         title: {
             text: lineChart.title
         },
-//        subtitle: {
-//            text: lineChart.subtitle
-//        },
-//        xAxis: {
-//
-//            text: lineChart.xLabel
-//        },
-//        yAxis: {
-//            title: {
-//                text: lineChart.yLabel
-//            }
-//        },
+        subtitle: {
+            text: lineChart.subtitle
+        },
+        xAxis: {
+
+            text: lineChart.xLabel
+        },
+        yAxis: {
+            title: {
+                text: lineChart.yLabel
+            }
+        },
         legend: {
             enabled: false
+        },
+        tooltip: {
+            formatter: function () {
+                return '<b>' + this.series.name +
+                    '</b> : <b>' + (this.point.high - this.point.low) + '</b>';
+            }
         },
         series: lineChart.series
     });
