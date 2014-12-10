@@ -23,4 +23,4 @@
             <!-- banner 部分结束 -->
 
             <!-- 主体部分部分开始 -->
-            <div class="pct100 fix">
+            <div class="pct100 fix bg39">

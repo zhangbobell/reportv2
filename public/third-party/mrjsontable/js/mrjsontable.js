@@ -96,10 +96,14 @@
 
 
         if (pagingNeeded) {
-            var $pager = $("<div>").addClass("paging");
+            var $pager = $("<ul>").addClass("paging");
             for (var i = 0; i < Math.ceil(opts.data.length / opts.pageSize) ; i++) {
-                $("<a>", { "text": " " + (i + 1), "href": "#", "data-i": (i + 1), "class": "p-link" }).bind("click", opts.onPageClick).appendTo($pager);
+                var $li = $('<li>');
+                $("<a>", { "text": (i + 1), "href": "#", "data-i": (i + 1), "class": "p-link" }).bind("click", opts.onPageClick).appendTo($li);
+                $li.appendTo($pager)
             }
+
+            $pager.find('li:eq(0) a').addClass('current');
             $mrjsontableContainer.append($pager).addClass("paged");
         }
 
@@ -205,6 +209,10 @@
             }
         },
         onPageClick: function () {
+
+            $(this).parent().parent().find('.p-link').removeClass('current');
+            $(this).addClass('current');
+
             var $thisGrid = $(this).parents(".mrjt");
 
             var pageSize = $thisGrid.attr("data-ps");

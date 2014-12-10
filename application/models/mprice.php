@@ -120,7 +120,7 @@ class MPrice extends MY_model {
         return $this->my_query($db, $sql, array($datetime, $sellernick, $username, $status, $msg));
     }
 
-    public function get_initial_screen_product_array($db, $updatetime, $startIndex, $pageSize,$orderBy, $isAsc) {
+    public function get_initial_screen_product_array($db, $updatetime, $startIndex, $pageSize, $orderBy, $isAsc) {
         $sql = "SELECT `updatetime`, `sellernick`, `itemid`, `itemnum`, `sales`, `price`, `price_wap`, `is_reviewed_item`
                 FROM `meta_item`
                 WHERE `updatetime` = ?
@@ -186,14 +186,14 @@ class MPrice extends MY_model {
         // 获取到最新的爬取时间
         $latest_time = $this->latest_crawl_item_time($db);
 
-        $lasted_crawl = $this->my_query($db, $sql, array($latest_time));
-        foreach ($lasted_crawl->result_array() as $row) {
-            $res = $this->_insert_to_meta_item($db, $row);
-            if ($res === false)
-                return false;
+        $lasted_crawl = $this->my_query($db, $sql, array($latest_time))->result_array();
+        foreach ($lasted_crawl as $key => $row) {
+            array_unshift($lasted_crawl[$key], date("Y-m-d"));
         }
 
-        $res = $this->_set_refresh_time($db, 'TAG_REFRESH_UPDATETIME_PRICE', $latest_time, '爬虫抓取最新时间');
+        $res = $this->_insert_to_meta_item($db, $lasted_crawl, 1000);
+
+        $res = $res && $this->_set_refresh_time($db, 'TAG_REFRESH_UPDATETIME_PRICE', $latest_time, '爬虫抓取最新时间');
         $res = $res && $this->_set_refresh_log_time($db, 'SYS_LOG_UPDATETIME_PRICE', '最新价格刷入时间');
 
         return $res;
@@ -213,15 +213,12 @@ class MPrice extends MY_model {
 
     /*
      * _insert_to_meta_item: 将记录插入到 meta_item 表中
-     * @param : $db -- 数据库名 $valArr -- 需要填充的数组
+     * @param : $db -- 数据库名 $valArr -- 需要填充的数组 $n -- 批量操作条数
      * return : boolean -- 执行的结果
      * */
-    private function _insert_to_meta_item($db, $valArr) {
-        // 得到创建记录的时间
-        $createtime = date("Y-m-d");
-
+    private function _insert_to_meta_item($db, $valArr, $n) {
         $sql = "INSERT INTO `meta_item` (`createtime`, `updatetime`, `uid`, `sellernick`, `itemid`, `title`, `price`, `price_wap`, `total_sold_quantity`)
-                VALUES ('$createtime', ?, ?, ?, ?, ?, ?, ?, ?)
+                VALUES ?
                 ON DUPLICATE KEY UPDATE
                 `updatetime` = VALUES(`updatetime`),
                 `uid` = VALUES(`uid`),
@@ -231,7 +228,7 @@ class MPrice extends MY_model {
                 `price_wap` = VALUES(`price_wap`),
                 `total_sold_quantity` = VALUES(`total_sold_quantity`)";
 
-        return $this->my_query($db, $sql, $valArr);
+        return $this->batch_insert($db, $sql, $valArr, $n);
     }
 
     public function test_insert($db) {
@@ -323,5 +320,11 @@ class MPrice extends MY_model {
                 )";
 
         return $this->my_query($db, $sql, array($updatetime))->result_array();
+    }
+
+    public function get_available_datetime($db) {
+        $sql = "SELECT `updatetime` FROM `meta_item` GROUP BY `updatetime` ORDER BY `updatetime` ASC";
+
+        return $this->my_query($db, $sql)->result_array();
     }
 }

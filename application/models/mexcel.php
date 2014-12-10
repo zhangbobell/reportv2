@@ -13,10 +13,19 @@ class MExcel extends MY_model {
 
     public function insert_excel($data, $db)
     {
+        $res = true;
+        $res = $res && $this->_insert_up_sku($db, $data); // 插入到 up_sku 表
+        $res = $res && $this->_update_meta_item($db, $data);// 更新 meta_item 里面的价格
 
+        $res = $res && $this->_set_refresh_time($db, 'TAG_REFRESH_UPDATETIME_PRICE_ITEMNUM', $data[0]['updatetime'], '调整底价时间');
+        $res = $res && $this->_set_refresh_log_time($db, 'SYS_LOG_UPDATETIME_PRICE_ITEMNUM','底价刷入时间');
 
+        return $res;
+    }
+
+    private function _insert_up_sku($db, $data) {
         $sql = "INSERT INTO `up_sku` (`updatetime`, `itemnum`, `min_price`, `is_wap`, `msg`)
-                VALUES (?, ?, ?, ?, ?)
+                VALUES ?
                 ON DUPLICATE KEY
                 UPDATE
                 `updatetime` = VALUES(`updatetime`),
@@ -25,74 +34,76 @@ class MExcel extends MY_model {
                 `is_wap` = VALUES(`is_wap`),
                 `msg` = VALUES(`msg`)";
 
-
-        foreach($data as $cell)
-        {
-            $this->my_query($db, $sql, $cell);
-            $this->update_meta_item($cell, $db);
-        }
-
-        $this->_set_refresh_time($db, 'TAG_REFRESH_UPDATETIME_PRICE_ITEMNUM', $cell['updatetime'], '调整底价时间');
-        $this->_set_refresh_log_time($db, 'SYS_LOG_UPDATETIME_PRICE_ITEMNUM','底价刷入时间');
-
-
+        return $this->batch_insert($db, $sql, $data);
     }
 
-    public function update_meta_item($d, $db)
-    {
-        $datetime = date("Y-m-d");
-
-        $sql0 = "SELECT * FROM `meta_item` WHERE `itemnum` = ?";
-
-        $sql1 = "INSERT INTO `meta_item` (`itemnum`, `min_price`)
-                VALUES (?, ?)
+    private function _update_meta_item($db, $data) {
+        $sql = "INSERT INTO `meta_item` (`itemid`, `itemnum`, `min_price`, `min_price_wap`)
+                VALUES ?
                 ON DUPLICATE KEY
                 UPDATE
-                `itemnum` = VALUES(`itemnum`),
-                `min_price` = VALUES(`min_price`)";
-
-        $sql2 = "INSERT INTO `meta_item` (`itemnum`, `min_price_wap`)
-                VALUES (?, ?)
-                ON DUPLICATE KEY
-                UPDATE
-                `itemnum` = VALUES(`itemnum`),
+                `min_price` = VALUES(`min_price`),
                 `min_price_wap` = VALUES(`min_price_wap`)";
 
-        $sql3 = "UPDATE `meta_item` SET `min_price` = ?
-                WHERE `itemnum` = ?";
+        $trans_data = $this->_transform_table($db, $data);
 
-        $sql4 = "UPDATE `meta_item` SET `min_price_wap` = ?
-                WHERE `itemnum` = ?";
+        return $this->batch_insert($db, $sql, $trans_data);
+    }
 
-        //echo $this->get_result_array($db, $sql0, );
-//        $config= $this->select_DB($db);
-//        $this->load->database($config);
+    /*
+     * _transform_table : 根据上传的表格，变换二维数组到以下格式： itemid -- itemnum -- min_price -- min_price_wap
+     * */
+    private function  _transform_table($db, $data) {
+        $wap_price = array();
+        $pc_price = array();
 
-        $query = $this->my_query($db, $sql0, $d['itemnum']);
-
-        if($query->num_rows() > 0)
-        {
-            if($d['is_wap'] == 0)
-            {
-                $this->set_record($db, $sql3, Array('min_price'=>$d['min_price'], 'itemnum'=>(string)$d['itemnum']));
-            }
-            else
-            {
-                $this->set_record($db, $sql4, Array('min_price_wap'=>$d['min_price'], 'itemnum'=>(string)$d['itemnum']));
+        foreach($data as $row) {
+            if ($row['is_wap'] == 0) {
+                $pc_price[$row['itemnum']] = $row['min_price'];
+            } else {
+                $wap_price[$row['itemnum']] = $row['min_price'];
             }
         }
-//        else
-//        {
-//            if($d['is_wap'] == 0)
-//            {
-//                $this->set_record($db, $sql1, Array('itemnum'=>$d['itemnum'], 'min_price'=>$d['min_price']));
-//            }
-//            else
-//            {
-//                $this->set_record($db, $sql2, Array('itemnum'=>$d['itemnum'], 'min_price_wap'=>$d['min_price']));
-//            }
-//        }
+
+        $id_map = $this->_get_itemid_map($db, $data);
+
+        foreach($id_map as $key => $row) {
+            $itemnum = $row['itemnum'];
+
+            if (array_key_exists($itemnum, $pc_price)) {
+                $id_map[$key]['min_price'] = $pc_price[$itemnum];
+            } else {
+                $id_map[$key]['min_price'] = null;
+            }
+
+            if (array_key_exists($itemnum, $wap_price)) {
+                $id_map[$key]['min_price_wap'] = $wap_price[$itemnum];
+            } else {
+                $id_map[$key]['min_price_wap'] = null;
+            }
+        }
+
+        return $id_map;
     }
+
+    /*
+     * _get_itemid_map : 从 meta_item 表中获取到 itemid 和 itemnum 的一一对应关系
+     *
+     * */
+    private function _get_itemid_map($db, $data) {
+
+        $itemnum_arr = array();
+        foreach($data as $row) {
+            $itemnum_arr[] = $row['itemnum'];
+        }
+        $itemnums = implode("', '", array_values($itemnum_arr));
+
+        $sql = "SELECT `itemid`, `itemnum` FROM `meta_item` WHERE `itemnum` in ('$itemnums')";
+        $itemids = $this->my_query($db, $sql);
+
+        return $itemids->result_array();
+    }
+
 
     private function _set_refresh_time($db, $ruleName, $updatetime, $comment) {
         $sql = "INSERT INTO `etc_rule` (`name`, `type`, `rule`,`comment`)
