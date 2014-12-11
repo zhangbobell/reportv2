@@ -6,3 +6,5 @@
 <!--<div id="container5" class="col-md-12">追灿招募最近7天成交额（合作状态）正在加载...</div>-->
 <!--<div id="container6" class="col-md-12">追灿招募商家数量（合作状态）正在加载...</div>-->
 <!---->
+<div id="container1"></div>
+<div id="container2"></div>

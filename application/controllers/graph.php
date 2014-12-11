@@ -185,14 +185,45 @@ class Graph extends CI_Controller {
 
     }
 
+    // 获取年月日数据（所有的）
     public function get_chart_data_m() {
         $saikufile = $this->input->post('saikufile');
         $columns = $this->input->post('columns');
-//        $saikufile ='report_monthly_cooperation_active_rate';
-//        $columns = array('B2B 平台', '供销平台');
+
+        $ret = $this->get_data_daily($saikufile, $columns);
+
+        echo json_encode($ret);
+    }
 
 
+    // 获取年月日数据（只取最新的）
+    public function get_data_daily_last() {
+        $saikufile = $this->input->post('saikufile', true);
+        $columns = $this->input->post('columns', true);
 
+//        $saikufile ='report_lost_shop';
+//        $columns = array('流失商家数');
+
+        $ret = $this->get_data_daily($saikufile, $columns);
+
+        $arr = array();
+        foreach($ret as $val) {
+            $lastIdx = count($val->data) - 1;
+            $row['name'] = $val->name;
+            $row['curTag'] = $val->data[$lastIdx][0];
+            $row['curValue'] = $val->data[$lastIdx][1];
+            $row['prevTag'] = $val->data[$lastIdx - 1][0];
+            $row['prevValue'] = $val->data[$lastIdx - 1][1];
+
+            $arr[] = $row;
+        }
+
+        echo json_encode($arr);
+
+    }
+
+    // 获取年月日数据(base)
+    public function get_data_daily($saikufile, $columns) {
         $res = $this->saiku->get_json_data($saikufile);
         if($res == 0)
             return 0;
@@ -208,28 +239,57 @@ class Graph extends CI_Controller {
             $ret[$k]->data = $this->saiku->sort_data($ret[$k]->data);
         }
 
-        echo json_encode($ret);
+        return $ret;
     }
 
-    // 获取年周的数据
+    //===================================================================================================
+
+    // 获取年周的数据（所有数据）
     public function get_chart_data_week()
     {
-
-//        $saikufile ='report_weekly_level';
-//        $columns = array('无评级', '银卡', '金卡', '白金卡');
         $saikufile = $this->input->post('saikufile');
         $columns = $this->input->post('columns');
 
+        $ret = $this->get_data_weekly($saikufile, $columns);
 
-        $res = $this->saiku->get_json_data($saikufile);
-        $r = $this->saiku->convert_data_week($res, $columns);
+        // 无需排序
+        echo json_encode($ret);
+    }
+
+    // 取年周的数据（只取最新的）
+    public function get_data_weekly_last() {
+
+        $saikufile = $this->input->post('saikufile', true);
+        $columns = $this->input->post('columns', true);
+
+        $ret = $this->get_data_weekly($saikufile, $columns);
+
+        $arr = array();
+        foreach($ret as $val) {
+            $lastIdx = count($val->data) - 1;
+            $row['name'] = $val->name;
+            $row['curTag'] = $val->data[$lastIdx][0];
+            $row['curValue'] = $val->data[$lastIdx][1];
+            $row['prevTag'] = $val->data[$lastIdx - 1][0];
+            $row['prevValue'] = $val->data[$lastIdx - 1][1];
+
+            $arr[] = $row;
+        }
+
+        echo json_encode($arr);
+    }
+
+    // 取年周的数据(base)
+    public function get_data_weekly($skFile, $cols) {
+
+        $res = $this->saiku->get_json_data($skFile);
+        $r = $this->saiku->convert_data_week($res, $cols);
 
         // 取到最小粒度的下标，即数据中最后一个
         $nanoIdx = count($r) - 1;
         $ret = $r[$nanoIdx];
 
-        // 无需排序
-        echo json_encode($ret);
+        return $ret;
     }
 
     // saiku数据格式年月
