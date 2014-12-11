@@ -10,7 +10,7 @@ $(function(){
         yLabel: '成交额', // y 轴标题
         columns: ['unname', '儿童', '女', '情侣','男'] // 两个系列的名称
     }, {
-        url: 'graph/conv', // ajax 请求地址
+        url: 'graph/get_chart_data_stream', // ajax 请求地址
         saikufile: 'report_dayly_deal_num' // ajax 请求的 saiku 文件
     });
 

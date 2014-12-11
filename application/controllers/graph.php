@@ -214,6 +214,33 @@ class Graph extends CI_Controller {
         echo json_encode($ret);
     }
 
+    public function get_chart_data_stream()
+    {
+        $saikufile = $this->input->post('saikufile');
+        $columns = $this->input->post('columns');
+//        $saikufile ='report_dayly_deal_num';
+//        $columns = array('unname', '儿童', '女', '情侣','男');
+
+
+
+        $res = $this->saiku->get_json_data($saikufile);
+        if($res == 0)
+            return 0;
+
+        $r = $this->saiku->convert_data($res, $columns);
+
+        // 取到最小粒度的下标，即数据中最后一个
+        $nanoIdx = count($r) - 1;
+        $ret = $r[$nanoIdx];
+
+        // 对数据进行排序
+        foreach($columns as $k => $v) {
+            $ret[$k]->data = $this->saiku->sort_data($ret[$k]->data);
+        }
+        //echo json_encode($ret[0]->data);
+        echo json_encode($this->conv_stream($ret));
+    }
+
     // 获取年周的数据
     public function get_chart_data_week()
     {
@@ -368,55 +395,54 @@ class Graph extends CI_Controller {
         return $tar;
     }
 
-    public function randtest() {
+//    public function randtest() {
+//
+//        $data1 = array();
+//        $data2 = array();
+//        $data3 = array();
+//        $data4 = array();
+//        $data5 = array();
+//
+//        for ($i = 0; $i < 12; $i++)
+//        {
+//            $data1[] = array((float)$i+(float)rand(1, 100) / 100, rand(10, 100));
+//            $data2[] = array((float)$i+(float)rand(1, 100) / 100, rand(10, 100));
+//            $data3[] = array((float)$i+(float)rand(1, 100) / 100, rand(10, 100));
+//            $data4[] = array((float)$i+(float)rand(1, 100) / 100, rand(10, 100));
+//            $data5[] = array((float)$i+(float)rand(1, 100) / 100, rand(10, 100));
+//        }
+//
+//        $ret = array(
+//            array('name'=>'a', 'data'=>$data1),
+//            array('name'=>'b', 'data'=>$data2),
+//            array('name'=>'c', 'data'=>$data3),
+//            array('name'=>'d', 'data'=>$data4),
+//            array('name'=>'e', 'data'=>$data5),
+//        );
+//
+//        return ($ret);
+//    }
 
-        $data1 = array();
-        $data2 = array();
-        $data3 = array();
-        $data4 = array();
-        $data5 = array();
-
-        for ($i = 0; $i < 12; $i++)
-        {
-            $data1[] = array((float)$i+(float)rand(1, 100) / 100, rand(10, 100));
-            $data2[] = array((float)$i+(float)rand(1, 100) / 100, rand(10, 100));
-            $data3[] = array((float)$i+(float)rand(1, 100) / 100, rand(10, 100));
-            $data4[] = array((float)$i+(float)rand(1, 100) / 100, rand(10, 100));
-            $data5[] = array((float)$i+(float)rand(1, 100) / 100, rand(10, 100));
-        }
-
-        $ret = array(
-            array('name'=>'a', 'data'=>$data1),
-            array('name'=>'b', 'data'=>$data2),
-            array('name'=>'c', 'data'=>$data3),
-            array('name'=>'d', 'data'=>$data4),
-            array('name'=>'e', 'data'=>$data5),
-        );
-
-        return ($ret);
-    }
-
-    public function conv()
+    public function conv_stream($d)
     {
-        $d = $this->randtest();
         $d0 = $d;
 
-        $l = count($d[0]['data']);
+        $l = count($d[0]->data);
         for($i=0; $i<count($d0); $i++)
         {
             for($j=0; $j<$l; $j++)
             {
                 if($i == 0)
-                    $d[$i]['data'][$j][0] = 0;
+                    $d[$i]->data[$j][0] = 0;
                 else
                 {
-                    $d[$i]['data'][$j][0] = $d[$i-1]['data'][$j][1];
-                    $d[$i]['data'][$j][1] = $d[$i]['data'][$j][0] + $d0[$i]['data'][$j][1];
+                    $d[$i]->data[$j][0] = $d[$i-1]->data[$j][1];
+                    $d[$i]->data[$j][1] = $d[$i]->data[$j][0] + $d0[$i]->data[$j][1];
                 }
             }
         }
 
-        echo json_encode($d);
+        return $d;
     }
 
 }
