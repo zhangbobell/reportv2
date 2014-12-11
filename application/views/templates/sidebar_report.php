@@ -11,4 +11,4 @@
 </ul>
 <!-- sidebar 部分结束 -->
 <!-- main 部分开始 -->
-<div class="main container-fluid">
+<div class="main container-fluid bgwh">

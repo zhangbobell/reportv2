@@ -4,4 +4,5 @@ public/images/captcha
 public/images/captcha/*
 public/upload
 public/upload/*
-public/third-party/saiku/saiku.cookie
+public/third-party/saiku
+public/third-party/saiku/*

@@ -75,11 +75,11 @@ class Price extends CI_Controller {
     public function get_upset_price_seller() {
         $db = $this->input->post('db');
         $updatetime = $this->input->post('updatetime');
-        $latestTime = $this->input->post('latestTime');
+//        $latestTime = $this->input->post('latestTime');
 
-        $is_history = ($updatetime === $latestTime);
+//        $is_history = ($updatetime === $latestTime);
 
-        echo json_encode($this->mprice->get_upset_price_seller_array($db, $updatetime, $is_history));
+        echo json_encode($this->mprice->get_upset_price_seller_array($db, $updatetime, false));
     }
 
     /*
@@ -200,13 +200,18 @@ class Price extends CI_Controller {
         echo $this->mprice->latest_crawl_item_time($db);
     }
 
-    public function get_meta_item_count($db = null, $updatetime = null) {
-        $db = ($this->input->post('db')) ? ($this->input->post('db')) : $db;
-        $updatetime = ($this->input->post('updatetime')) ? ($this->input->post('updatetime')) : $updatetime;
+    public function get_meta_item_count() {
+        $db = $this->input->post('db', true);
+        $updatetime = $this->input->post('updatetime', true);
 
         $res = $this->mprice->get_meta_item_count($db, $updatetime);
 
         echo $res[0]['item_count'];
     }
 
+    public function get_available_datetime() {
+        $db = $this->input->post('db');
+
+        echo json_encode($this->mprice->get_available_datetime($db));
+    }
 }
