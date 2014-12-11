@@ -2,7 +2,8 @@ jQuery.fn.setTimeSeriesLineChart_stream = function (titleName,subTitle, valueTit
     var thisSelector = this.selector;
     $(thisSelector).highcharts({
         chart: {
-            type: 'areasplinerange'
+            type: 'areasplinerange',
+            zoomType: 'x'
         },
         title: {
             text: titleName
@@ -19,6 +20,7 @@ jQuery.fn.setTimeSeriesLineChart_stream = function (titleName,subTitle, valueTit
         legend: {
             enabled: false
         },
+
         tooltip: {
             formatter: function () {
                 return '<b>' + this.series.name +
@@ -36,7 +38,8 @@ $.fn.lineChart_stream = function (lineChart) {
     var thisSelector = this.selector;
     $(thisSelector).highcharts({
         chart: {
-            type: 'areasplinerange'
+            type: 'areasplinerange',
+            zoomType: 'x'
         },
         title: {
             text: lineChart.title
@@ -56,6 +59,7 @@ $.fn.lineChart_stream = function (lineChart) {
         legend: {
             enabled: false
         },
+
         tooltip: {
             formatter: function () {
                 return '<b>' + this.series.name +
