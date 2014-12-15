@@ -13,6 +13,7 @@ class Graph extends CI_Controller
     {
         parent::__construct();
         $this->load->library('saiku');
+        $this->load->model('mgraph');
     }
 
     // 绘制页面
@@ -117,7 +118,7 @@ class Graph extends CI_Controller
         if($res == 0)
             return 0;
 
-        $r = $this->saiku->convert_data($res, $columns);
+        $r = $this->mgraph->convert_data($res, $columns);
 
         // 取到最小粒度的下标，即数据中最后一个
         $nanoIdx = count($r) - 1;
@@ -125,7 +126,7 @@ class Graph extends CI_Controller
 
         // 对数据进行排序
         foreach($columns as $k => $v) {
-            $ret[$k]->data = $this->saiku->sort_data($ret[$k]->data);
+            $ret[$k]->data = $this->mgrah->sort_data($ret[$k]->data);
         }
 
         echo json_encode($ret);
@@ -139,7 +140,7 @@ class Graph extends CI_Controller
 
 
         $res = $this->saiku->get_json_data($saikufile);
-        $r = $this->saiku->convert_data_yw($res, $columns);
+        $r = $this->mgrah->convert_data_yw($res, $columns);
 
         // 取到最小粒度的下标，即数据中最后一个
         $nanoIdx = count($r) - 1;
@@ -160,18 +161,18 @@ class Graph extends CI_Controller
         if($res == 0)
             return 0;
 
-        $r = $this->saiku->convert_data($res, $columns);
+        $r = $this->mgrah->convert_data($res, $columns);
 
         $nanoIdx = count($r) - 1;
         $ret = $r[$nanoIdx];
 
         // 对数据进行排序
         foreach($columns as $k => $v) {
-            $ret[$k]->data = $this->saiku->sort_data($ret[$k]->data);
+            $ret[$k]->data = $this->mgrah->sort_data($ret[$k]->data);
         }
 
         $target = $this->get_target($tmp[0], $tmp[1]);
-        $ret = $this->saiku->combine_data_ym($ret, (int)$target);
+        $ret = $this->mgrah->combine_data_ym($ret, (int)$target);
 
         echo json_encode($ret);
 
@@ -188,19 +189,19 @@ class Graph extends CI_Controller
         if($res == 0)
             return 0;
 
-        $r = $this->saiku->convert_data($res, $columns);
+        $r = $this->mgrah->convert_data($res, $columns);
         //
         $nanoIdx = count($r) - 2;
         $ret = $r[$nanoIdx];
 
         // 对数据进行排序和求和
         foreach($columns as $k => $v) {
-            $ret[$k]->data = $this->saiku->sort_data($ret[$k]->data);
-            $ret[$k]->data = $this->saiku->add_data($ret[$k]->data);
+            $ret[$k]->data = $this->mgrah->sort_data($ret[$k]->data);
+            $ret[$k]->data = $this->mgrah->add_data($ret[$k]->data);
         }
 
         $target = $this->get_target($tmp[0], $tmp[1]);
-        $ret = $this->saiku->combine_data_ym($ret, (float)$target);
+        $ret = $this->mgrah->combine_data_ym($ret, (float)$target);
         echo json_encode($ret);
 
     }
@@ -216,19 +217,19 @@ class Graph extends CI_Controller
         if($res == 0)
             return 0;
 
-        $r = $this->saiku->convert_data($res, $columns);
+        $r = $this->mgrah->convert_data($res, $columns);
 
         $nanoIdx = count($r) - 2;
         $ret = $r[$nanoIdx];
 
         // 对数据进行排序
         foreach($columns as $k => $v) {
-            $ret[$k]->data = $this->saiku->sort_data($ret[$k]->data);
+            $ret[$k]->data = $this->mgrah->sort_data($ret[$k]->data);
         }
 
 
         $target = $this->get_target($tmp[0], $tmp[1]);
-        $ret = $this->saiku->combine_data_y($ret, (float)$target);
+        $ret = $this->mgrah->combine_data_y($ret, (float)$target);
         echo json_encode($ret);
 
     }
@@ -245,7 +246,7 @@ class Graph extends CI_Controller
         if($res == 0)
             return 0;
 
-        $r = $this->saiku->convert_data($res, $columns);
+        $r = $this->mgrah->convert_data($res, $columns);
 
         // 取到最小粒度的下标，即数据中最后一个
         $nanoIdx = count($r) - 1;
@@ -253,15 +254,15 @@ class Graph extends CI_Controller
 
         // 对数据进行排序
         foreach($columns as $k => $v) {
-            $ret[$k]->data = $this->saiku->sort_data($ret[$k]->data);
-        //    $ret[$k]->data = $this->saiku->add_data($ret[$k]->data);
+            $ret[$k]->data = $this->mgrah->sort_data($ret[$k]->data);
+        //    $ret[$k]->data = $this->mgrah->add_data($ret[$k]->data);
         }
 
-        $ret = $this->saiku->chose_month_data($ret);
+        $ret = $this->mgrah->chose_month_data($ret);
 
-        $ret['data'] = $this->saiku->add_data($ret['data']);
+        $ret['data'] = $this->mgrah->add_data($ret['data']);
 
-        $ret = $this->saiku->combine_data_md($ret, (int)$target);
+        $ret = $this->mgrah->combine_data_md($ret, (int)$target);
         echo json_encode($ret);
     }
 
@@ -275,13 +276,13 @@ class Graph extends CI_Controller
         if($res == 0)
             return 0;
 
-        $r = $this->saiku->convert_data($res, $columns);
+        $r = $this->mgrah->convert_data($res, $columns);
 
         // 取到最小粒度的下标，即数据中最后一个
         $nanoIdx = count($r) - 1;
         $ret = $r[$nanoIdx];
 
-        echo json_encode($this->saiku->linear2stream($ret));
+        echo json_encode($this->mgrah->linear2stream($ret));
     }
 
     // 提交目标至db
