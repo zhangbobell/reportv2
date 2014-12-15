@@ -6,16 +6,16 @@
  * Time: 上午9:09
  */
 
-class Graph extends CI_Controller {
-
+class Graph extends CI_Controller
+{
+    // 构造函数
     function __construct()
     {
         parent::__construct();
         $this->load->library('saiku');
     }
 
-
-
+    // 绘制页面
     public function init_first($page = "init_first")
     {
         if ( ! file_exists('application/views/graph/'.$page.'.php'))
@@ -61,7 +61,6 @@ class Graph extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
-
     public function init_product($page = "init_product")
     {
         if ( ! file_exists('application/views/graph/'.$page.'.php'))
@@ -83,9 +82,6 @@ class Graph extends CI_Controller {
         $this->load->view('graph/footer_add_' . $page);
         $this->load->view('templates/footer');
     }
-
-
-
 
     public function init_target($page = "init_target")
     {
@@ -109,89 +105,13 @@ class Graph extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
-    public function get_chart_data()
+
+    // 获取数据给js模块来绘图
+    // x轴：年-月-日  series：saiku数据
+    public function sk_ymd()
     {
         $saikufile = $this->input->post('saikufile');
-//        $saikufile = 'report_monthly_cooperation_status_sellernick_num';
-
-
-        //$res = json_decode($this->saiku->get_json_data('report_daily_cooperation_start_sellernick_num'));
-        $res = $this->saiku->get_json_data($saikufile);
-
-
-        $h = $res['height'];
-        $w = $res['width'];
-
-        $columnName = array();
-
-        for($i=0; $i<$w; $i++)
-        {
-            $columnName[] = $res['cellset'][0][$i]['value'];
-        }
-
-
-        $h_notnull = $h - 1;
-
-        $data = array();
-       // $time = array();
-
-        for($i=1; $i<$h; $i++)
-        {
-            $temp = '';
-
-            for($j=0; $j<$w; $j++)
-            {
-                if($res['cellset'][$i][$j]['value'] != 'null')
-                {
-                    if($j != $w-1 && $j != $w-2)
-                    {
-                        $temp = $temp.$res['cellset'][$i][$j]['value'].'-';
-                    }
-                    elseif($j == $w-2)
-                    {
-                        $temp = $temp.$res['cellset'][$i][$j]['value'];
-                    }
-
-                    else
-                    {
-                        $data[] = array( strtotime($temp)*1000, (int)$res['cellset'][$i][$j]['value']);
-
-                       //$time[] = $temp;
-                    }
-                }
-
-                else
-                {
-                    $h_notnull--;
-                    break;
-                }
-            }
-
-        }
-
-
-        usort($data, function($a, $b) {
-            $al = $a[0];
-            $bl = $b[0];
-            if ($al == $bl)
-                return 0;
-            return ($al < $bl) ? -1 : 1;
-        });
-
-
-
-        echo json_encode($data);
-//        print_r($data);
-
-    }
-
-    public function get_chart_data_m() {
-        $saikufile = $this->input->post('saikufile');
         $columns = $this->input->post('columns');
-//        $saikufile ='report_monthly_cooperation_active_rate';
-//        $columns = array('B2B 平台', '供销平台');
-
-
 
         $res = $this->saiku->get_json_data($saikufile);
         if($res == 0)
@@ -211,45 +131,15 @@ class Graph extends CI_Controller {
         echo json_encode($ret);
     }
 
-    public function get_chart_data_stream()
+    // x轴：年-周     series：saiku数据
+    public function sk_yw()
     {
-        $saikufile = $this->input->post('saikufile');
-        $columns = $this->input->post('columns');
-//        $saikufile ='report_dayly_deal_num';
-//        $columns = array('unname', '儿童', '女', '情侣','男');
-
-
-
-        $res = $this->saiku->get_json_data($saikufile);
-        if($res == 0)
-            return 0;
-
-        $r = $this->saiku->convert_data($res, $columns);
-
-        // 取到最小粒度的下标，即数据中最后一个
-        $nanoIdx = count($r) - 1;
-        $ret = $r[$nanoIdx];
-
-        // 对数据进行排序
-        foreach($columns as $k => $v) {
-            $ret[$k]->data = $this->saiku->sort_data($ret[$k]->data);
-        }
-        //echo json_encode($ret[0]->data);
-        echo json_encode($this->conv_stream($ret));
-    }
-
-    // 获取年周的数据
-    public function get_chart_data_week()
-    {
-
-//        $saikufile ='report_weekly_level';
-//        $columns = array('无评级', '银卡', '金卡', '白金卡');
         $saikufile = $this->input->post('saikufile');
         $columns = $this->input->post('columns');
 
 
         $res = $this->saiku->get_json_data($saikufile);
-        $r = $this->saiku->convert_data_week($res, $columns);
+        $r = $this->saiku->convert_data_yw($res, $columns);
 
         // 取到最小粒度的下标，即数据中最后一个
         $nanoIdx = count($r) - 1;
@@ -259,16 +149,12 @@ class Graph extends CI_Controller {
         echo json_encode($ret);
     }
 
-    // saiku数据格式年月
-    public function get_chart_data_m0() {
+    // x轴：年-月-日  series：saiku数据 & 目标
+    public function sk_ymd_t()
+    {
         $saikufile = $this->input->post('saikufile');
         $columns = $this->input->post('columns');
         $tmp = $this->input->post('attach'); // 传递period和t_type
-
-
-//        $saikufile = 'report_monthly_cooperation_num';
-//        $columns = array('销售额');
-//        $tmp = array('1', '2');
 
         $res = $this->saiku->get_json_data($saikufile);
         if($res == 0)
@@ -276,42 +162,33 @@ class Graph extends CI_Controller {
 
         $r = $this->saiku->convert_data($res, $columns);
 
-        //
         $nanoIdx = count($r) - 1;
         $ret = $r[$nanoIdx];
 
-        // 对数据进行排序和求和
+        // 对数据进行排序
         foreach($columns as $k => $v) {
             $ret[$k]->data = $this->saiku->sort_data($ret[$k]->data);
-          //  $ret[$k]->data = $this->saiku->add_data($ret[$k]->data);
         }
 
-
         $target = $this->get_target($tmp[0], $tmp[1]);
-
-        $ret = $this->saiku->combine_data($ret, (int)$target);
+        $ret = $this->saiku->combine_data_ym($ret, (int)$target);
 
         echo json_encode($ret);
 
     }
 
     // saiku数据格式年月日->就行月份求和得到->年月
-    public function get_chart_data_m1() {
+    // x轴：年-月     series：saiku数据月求和 & 目标
+    public function sk_ym_add_t() {
         $saikufile = $this->input->post('saikufile', true);
         $columns = $this->input->post('columns', true);
         $tmp = $this->input->post('attach', true); // 传递period和t_type
-
-//
-//        $saikufile = 'sanqiang_report_daily_order';
-//        $columns = array('销售额');
-//        $tmp = array('1', '2');
 
         $res = $this->saiku->get_json_data($saikufile);
         if($res == 0)
             return 0;
 
         $r = $this->saiku->convert_data($res, $columns);
-
         //
         $nanoIdx = count($r) - 2;
         $ret = $r[$nanoIdx];
@@ -322,52 +199,93 @@ class Graph extends CI_Controller {
             $ret[$k]->data = $this->saiku->add_data($ret[$k]->data);
         }
 
-
         $target = $this->get_target($tmp[0], $tmp[1]);
-
-        $ret = $this->saiku->combine_data($ret, (float)$target);
-
+        $ret = $this->saiku->combine_data_ym($ret, (float)$target);
         echo json_encode($ret);
 
     }
 
-//    public function get_chart_data_m2() {
-//        $saikufile = $this->input->post('saikufile');
-//        $columns = $this->input->post('columns');
-//        $target = $this->input->post('attach');
-////        $saikufile = 'report_daily_cooperation_start_sellernick_num';
-////        $columns = array('销售额');
-//
-//
-//        $res = $this->saiku->get_json_data($saikufile);
-//
-//        if($res == 0)
-//            return 0;
-//
-//        $r = $this->saiku->convert_data($res, $columns);
-//
-//        // 取到最小粒度的下标，即数据中最后一个
-//        $nanoIdx = count($r) - 1;
-//        $ret = $r[$nanoIdx];
-//
-//        // 对数据进行排序
-//        foreach($columns as $k => $v) {
-//            $ret[$k]->data = $this->saiku->sort_data($ret[$k]->data);
-//        //    $ret[$k]->data = $this->saiku->add_data($ret[$k]->data);
-//        }
-//
-//        $ret = $this->saiku->chose_month_data($ret);
-//
-//        $ret['data'] = $this->saiku->add_data($ret['data']);
-//
-//        $ret = $this->saiku->combine_data_m($ret, (int)$target);
-//        echo json_encode($ret);
-//    }
+    // saiku数据格式年月日->就行月份均值得到->年月
+    // x轴：年-月     series：saiku数据月平均 & 年目标
+    public function sk_ym_avg_t() {
+        $saikufile = $this->input->post('saikufile', true);
+        $columns = $this->input->post('columns', true);
+        $tmp = $this->input->post('attach', true); // 传递period和t_type
+
+        $res = $this->saiku->get_json_data($saikufile);
+        if($res == 0)
+            return 0;
+
+        $r = $this->saiku->convert_data($res, $columns);
+
+        $nanoIdx = count($r) - 2;
+        $ret = $r[$nanoIdx];
+
+        // 对数据进行排序
+        foreach($columns as $k => $v) {
+            $ret[$k]->data = $this->saiku->sort_data($ret[$k]->data);
+        }
 
 
+        $target = $this->get_target($tmp[0], $tmp[1]);
+        $ret = $this->saiku->combine_data_y($ret, (float)$target);
+        echo json_encode($ret);
 
+    }
 
-    public function submit_target()
+    // 从一年的数据中获取当月的数据 结构 年-月-日
+    // x轴：月-日     series：saiku当月数据 & 月目标 & 时时日目标
+    public function sk_md_t() {
+        $saikufile = $this->input->post('saikufile');
+        $columns = $this->input->post('columns');
+        $target = $this->input->post('attach');
+
+        $res = $this->saiku->get_json_data($saikufile);
+
+        if($res == 0)
+            return 0;
+
+        $r = $this->saiku->convert_data($res, $columns);
+
+        // 取到最小粒度的下标，即数据中最后一个
+        $nanoIdx = count($r) - 1;
+        $ret = $r[$nanoIdx];
+
+        // 对数据进行排序
+        foreach($columns as $k => $v) {
+            $ret[$k]->data = $this->saiku->sort_data($ret[$k]->data);
+        //    $ret[$k]->data = $this->saiku->add_data($ret[$k]->data);
+        }
+
+        $ret = $this->saiku->chose_month_data($ret);
+
+        $ret['data'] = $this->saiku->add_data($ret['data']);
+
+        $ret = $this->saiku->combine_data_md($ret, (int)$target);
+        echo json_encode($ret);
+    }
+
+    // 绘制河流图
+    // x轴：序号（按年月日时间顺序排列）series：saiku数据
+    public function sk_stream()
+    {
+        $saikufile = $this->input->post('saikufile');
+        $columns = $this->input->post('columns');
+        $res = $this->saiku->get_json_data($saikufile);
+        if($res == 0)
+            return 0;
+
+        $r = $this->saiku->convert_data($res, $columns);
+
+        // 取到最小粒度的下标，即数据中最后一个
+        $nanoIdx = count($r) - 1;
+        $ret = $r[$nanoIdx];
+
+        echo json_encode($this->saiku->linear2stream($ret));
+    }
+
+    // 提交目标至db
+    public  function submit_target()
     {
         $target = $this->input->post('target', true);
         $username = $this->input->post('user', true);
@@ -379,68 +297,25 @@ class Graph extends CI_Controller {
         echo $this->targetprocess->insert_target($username, $period, $t_type, $target);
 
     }
-
-    public function get_target($period, $t_type)
+    // 从db中获取目标
+    private function get_target($period, $t_type)
     {
 
         $username = $this->session->userdata('username');
         $this->load->model('targetprocess');
-//        $period = '0';
-//        $t_type = '0';
         $target = $this->targetprocess->get_target($username, $period, $t_type);
         $tar = $target[0]['target'];
         return $tar;
     }
 
-//    public function randtest() {
-//
-//        $data1 = array();
-//        $data2 = array();
-//        $data3 = array();
-//        $data4 = array();
-//        $data5 = array();
-//
-//        for ($i = 0; $i < 12; $i++)
-//        {
-//            $data1[] = array((float)$i+(float)rand(1, 100) / 100, rand(10, 100));
-//            $data2[] = array((float)$i+(float)rand(1, 100) / 100, rand(10, 100));
-//            $data3[] = array((float)$i+(float)rand(1, 100) / 100, rand(10, 100));
-//            $data4[] = array((float)$i+(float)rand(1, 100) / 100, rand(10, 100));
-//            $data5[] = array((float)$i+(float)rand(1, 100) / 100, rand(10, 100));
-//        }
-//
-//        $ret = array(
-//            array('name'=>'a', 'data'=>$data1),
-//            array('name'=>'b', 'data'=>$data2),
-//            array('name'=>'c', 'data'=>$data3),
-//            array('name'=>'d', 'data'=>$data4),
-//            array('name'=>'e', 'data'=>$data5),
-//        );
-//
-//        return ($ret);
-//    }
 
-    public function conv_stream($d)
+
+    public function debug_raw($skfile)
     {
-        $d0 = $d;
-
-        $l = count($d[0]->data);
-        for($i=0; $i<count($d0); $i++)
-        {
-            for($j=0; $j<$l; $j++)
-            {
-                if($i == 0)
-                    $d[$i]->data[$j][0] = 0;
-                else
-                {
-                    $d[$i]->data[$j][0] = $d[$i-1]->data[$j][1];
-                    $d[$i]->data[$j][1] = $d[$i]->data[$j][0] + $d0[$i]->data[$j][1];
-                }
-            }
-        }
-
-        return $d;
+        $res = $this->saiku->get_json_data($skfile);
+        echo json_encode($res);
     }
+
 
 
 }

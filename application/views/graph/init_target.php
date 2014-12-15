@@ -35,3 +35,14 @@
     </div>
 </div>
 
+<div id="container4" class="col-md-10">非授权占比（销售额）目标加载中...</div>
+<div  class="col-md-2">
+    <div class="form-group">
+        <label for="target">非授权占比（销售额）目标</label>
+        <input type="text" class="form-control" name="target" id="target4" placeholder="请输入目标">
+        <input type="hidden" id="period4" value="1"/>
+        <input type="hidden" id="t_type4" value="0"/>
+        <button id="btn4" type="button" class="btn btn-primary mt10 r">提交</button>
+    </div>
+</div>
+

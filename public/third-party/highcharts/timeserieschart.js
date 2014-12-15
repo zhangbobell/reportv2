@@ -114,13 +114,13 @@ $.fn.drawLineChart = function(lineChart, xhrOpt) {
         columns: lineChart.columns,
         attach: '' || lineChart.target,
         cb: function(d) {
-            if(d == 0)
+            if(d['flag'] == 0)
             {
-                $(thisSelector).text('saiku文件不存在');
+                $(thisSelector).text(d['err']);
             }
             else
             {
-                lineChart.series = JSON.parse(d);
+                lineChart.series = JSON.parse(d['res']);
                 $(thisSelector).lineChart(lineChart);
             }
 

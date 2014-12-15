@@ -24,7 +24,7 @@ define('JS_DIR','public/js');
 define('UP_DIR','public/upload');
 define('TP_DIR','public/third-party');
 define('PUB_DIR','public');
-define('SAIKU_URL','http://115.200.225.154:888/saiku/rest/saiku/');
+define('SAIKU_URL','http://office.e-corp.cn:888/saiku/rest/saiku/');
 define('SAIKU_USERNAME','lizarder');
 define('SAIKU_PASSWORD','2sinxcosx');
 
