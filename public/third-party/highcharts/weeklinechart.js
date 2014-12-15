@@ -132,8 +132,16 @@ jQuery.extend({
             url: ajax_url,
             saikufile: saikufile,
             cb: function(d) {
-                var data = JSON.parse(d);
-                $(containerName).setTimeSeriesLineChart_week(titleName,'', yName, data);
+                if(d['flag'] == 0)
+                {
+                    $(thisSelector).text(d['err']);
+                }
+                else
+                {
+                    lineChart.series = JSON.parse(d['res']);
+                    $(thisSelector).lineChart(lineChart);
+                }
+
             }
         });
     },
