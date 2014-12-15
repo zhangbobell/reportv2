@@ -153,7 +153,7 @@ class Graph extends CI_Controller
 
     private function _sk_yw($saikufile, $columns) {
         $res = $this->saiku->get_json_data($saikufile);
-        $r = $this->mgraph->convert_data_yw($res, $columns);
+        $r = $this->mgraph->convert_data_yw($res['res'], $columns);
 
         // 取到最小粒度的下标，即数据中最后一个
         $nanoIdx = count($r) - 1;

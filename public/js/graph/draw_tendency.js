@@ -1,15 +1,16 @@
 $(function(){
-//
-//    $('#container9').drawLineChart_week({
-//        title: '追灿招募最近7天成交额（分销商评级）', // 主标题
-//        subtitle: '副标题 for test', // 副标题
-//        xLabel: '序号', // x 轴标题
-//        yLabel: '成交额', // y 轴标题
-//        columns: ['无评级', '银卡', '金卡', '白金卡'] // 两个系列的名称
-//    }, {
-//        url: 'graph/get_chart_data_week', // ajax 请求地址
-//        saikufile: 'report_weekly_level' // ajax 请求的 saiku 文件
-//    });
+
+    $('#container9').drawLineChart_week({
+        title: '追灿招募最近7天成交额（分销商评级）', // 主标题
+        subtitle: '副标题 for test', // 副标题
+        xLabel: '序号', // x 轴标题
+        yLabel: '成交额', // y 轴标题
+        columns: ['追灿招募无评级', '非追灿招募无评级', '追灿招募银卡', '非追灿招募银卡', '追灿招募金卡', '非追灿招募金卡',
+            '追灿招募白金卡', '非追灿招募白金卡', '追灿招募钻石卡', '非追灿招募钻石卡', '追灿招募金钻石卡', '非追灿招募金钻石卡']
+    }, {
+        url: 'graph/sk_yw', // ajax 请求地址
+        saikufile: 'report_weekly_level' // ajax 请求的 saiku 文件
+    });
 //
 //
 //    $('#container6').drawLineChart({
