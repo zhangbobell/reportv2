@@ -64,7 +64,7 @@ define('tree', ['d3'], function(d3){
                 links = tree.links(nodes);
 
             // Normalize for fixed-depth.
-            nodes.forEach(function(d) { d.y = d.depth * 180; });
+            nodes.forEach(function(d) { d.y = d.depth * 120; });
 
             // Update the nodes…
             var node = svg.selectAll("g.node")
@@ -80,7 +80,7 @@ define('tree', ['d3'], function(d3){
                         .duration(200)
                         .style("opacity", .9);
 
-                    div.html("上期销售额：" + d.prevValue + "<br/>"  + "本期销售额：" + d.curValue)
+                    div.html(d.prevTag + "：" + d.prevValue + "<br/>"  + d.curTag +"：" + d.curValue)
                         .style("left", (d3.event.pageX) + "px")
                         .style("top", (d3.event.pageY-42) + "px");
                 })
@@ -119,7 +119,7 @@ define('tree', ['d3'], function(d3){
                     if (d._children) {
                         return "lightsteelblue"
                     } else {
-                        if (d.curValue < d.prevValue) {
+                        if ((d.curValue < d.prevValue && d.isNormal) || (d.curValue > d.prevValue && !d.isNormal)) {
                             return "#f00";
                         } else {
                             return "#0f0";
