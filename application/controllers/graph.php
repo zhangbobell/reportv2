@@ -119,13 +119,24 @@ class Graph extends CI_Controller
         echo json_encode($ret);
     }
 
+    public function get_data_daily_last() {
+        $saikufile = $this->input->post('saikufile', true);
+        $columns = $this->input->post('columns', true);
+
+        $ret = $this->_sk_ymd($saikufile, $columns);
+
+        $ret = $this->_get_last($ret);
+
+        echo json_encode($ret);
+    }
+
     // 获取所有“日”的数据
     private  function _sk_ymd($saikufile, $columns) {
         $res = $this->saiku->get_json_data($saikufile);
-        if($res == 0)
-            return 0;
+        if($res['flag'] == 0)
+            return $res;
 
-        $r = $this->mgraph->convert_data($res, $columns);
+        $r = $this->mgraph->convert_data($res['res'], $columns);
 
         // 取到最小粒度的下标，即数据中最后一个
         $nanoIdx = count($r) - 1;
@@ -136,7 +147,9 @@ class Graph extends CI_Controller
             $ret[$k]->data = $this->mgraph->sort_data($ret[$k]->data);
         }
 
-        return $ret;
+        $res['res'] = $ret;
+
+        return $res;
     }
 
     // x轴：年-周     series：saiku数据
@@ -145,21 +158,61 @@ class Graph extends CI_Controller
         $saikufile = $this->input->post('saikufile');
         $columns = $this->input->post('columns');
 
+        $ret = $this->_sk_yw($saikufile, $columns);
+
+        echo json_encode($ret);
+    }
+
+    // 取年周的数据（只取最新的）
+    public function get_data_weekly_last() {
+
+        $saikufile = $this->input->post('saikufile', true);
+        $columns = $this->input->post('columns', true);
 
         $ret = $this->_sk_yw($saikufile, $columns);
+
+        $ret = $this->_get_last($ret);
 
         echo json_encode($ret);
     }
 
     private function _sk_yw($saikufile, $columns) {
         $res = $this->saiku->get_json_data($saikufile);
-        $r = $this->mgraph->convert_data_yw($res, $columns);
+        if($res['flag'] == 0)
+            return $res;
+
+        $r = $this->mgraph->convert_data_yw($res['res'], $columns);
 
         // 取到最小粒度的下标，即数据中最后一个
         $nanoIdx = count($r) - 1;
         $ret = $r[$nanoIdx];
+        $res['res'] = $ret;
 
         // 无需排序
+        return $res;
+    }
+
+    // 根据年周或年月日的返回的数据，取最近两组的数据
+    private function _get_last($ret) {
+        if ($ret['flag'] == 0) {
+            echo json_encode($ret);
+            return;
+        }
+
+        $arr = array();
+        foreach($ret['res'] as $val) {
+            $lastIdx = count($val->data) - 1;
+            $row['name'] = $val->name;
+            $row['curTag'] = $val->data[$lastIdx][0];
+            $row['curValue'] = $val->data[$lastIdx][1];
+            $row['prevTag'] = $val->data[$lastIdx - 1][0];
+            $row['prevValue'] = $val->data[$lastIdx - 1][1];
+
+            $arr[] = $row;
+        }
+
+        $ret['res'] = $arr;
+
         return $ret;
     }
 
