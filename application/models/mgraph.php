@@ -423,5 +423,22 @@ class MGraph extends MY_model {
         return $d;
     }
 
+    public function get_data_daily_last($skfile, $col) {
+        $ret = $this->get_data_daily($skfile, $col);
+
+        $arr = array();
+        foreach($ret as $val) {
+            $lastIdx = count($val->data) - 1;
+            $row['name'] = $val->name;
+            $row['curTag'] = $val->data[$lastIdx][0];
+            $row['curValue'] = $val->data[$lastIdx][1];
+            $row['prevTag'] = $val->data[$lastIdx - 1][0];
+            $row['prevValue'] = $val->data[$lastIdx - 1][1];
+
+            $arr[] = $row;
+        }
+
+        echo json_encode($arr);
+    }
 
 }
