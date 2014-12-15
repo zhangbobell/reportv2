@@ -114,6 +114,13 @@ class Graph extends CI_Controller
         $saikufile = $this->input->post('saikufile');
         $columns = $this->input->post('columns');
 
+        $ret = $this->_sk_ymd($saikufile, $columns);
+
+        echo json_encode($ret);
+    }
+
+    // 获取所有“日”的数据
+    private  function _sk_ymd($saikufile, $columns) {
         $res = $this->saiku->get_json_data($saikufile);
         if($res == 0)
             return 0;
@@ -129,7 +136,7 @@ class Graph extends CI_Controller
             $ret[$k]->data = $this->mgraph->sort_data($ret[$k]->data);
         }
 
-        echo json_encode($ret);
+        return $ret;
     }
 
     // x轴：年-周     series：saiku数据
@@ -139,6 +146,12 @@ class Graph extends CI_Controller
         $columns = $this->input->post('columns');
 
 
+        $ret = $this->_sk_yw($saikufile, $columns);
+
+        echo json_encode($ret);
+    }
+
+    private function _sk_yw($saikufile, $columns) {
         $res = $this->saiku->get_json_data($saikufile);
         $r = $this->mgraph->convert_data_yw($res, $columns);
 
@@ -147,7 +160,7 @@ class Graph extends CI_Controller
         $ret = $r[$nanoIdx];
 
         // 无需排序
-        echo json_encode($ret);
+        return $ret;
     }
 
     // x轴：年-月-日  series：saiku数据 & 目标

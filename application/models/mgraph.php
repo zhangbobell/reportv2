@@ -87,7 +87,8 @@ class MGraph extends MY_model {
                     }
                 } else {
                     $properties = $cell['properties'];
-                    $idx = ($properties['position'][0]);
+                    $tmp = explode(":", $properties['position']);
+                    $idx = (int)($tmp[0]);
                     $raw = isset($properties['raw']) ? $properties['raw'] : null;
 
                     $cellData = array(1000 * strtotime($str), (float)$raw);
@@ -132,7 +133,8 @@ class MGraph extends MY_model {
                     }
                 } else {
                     $properties = $cell['properties'];
-                    $idx = ($properties['position'][0]);
+                    $tmp = explode(":", $properties['position']);
+                    $idx = (int)($tmp[0]);
                     $raw = isset($properties['raw']) ? $properties['raw'] : null;
 
                     $cellData = array($str.'周', (float)$raw);
@@ -177,7 +179,8 @@ class MGraph extends MY_model {
                     }
                 } else {
                     $properties = $cell['properties'];
-                    $idx = ($properties['position'][0]);
+                    $tmp = explode(":", $properties['position']);
+                    $idx = (int)($tmp[0]);
                     $raw = isset($properties['raw']) ? $properties['raw'] : null;
 
                     $cellData = (float)$raw;
