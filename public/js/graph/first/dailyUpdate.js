@@ -40,10 +40,15 @@ define('dailyUpdate', ['jquery', 'utils', 'moment'], function($, utils, moment){
     function convertData(d) {
         var data = JSON.parse(d);
 
-        $.each(data, function(idx, ele){
+        $.each(data['res'], function(idx, ele){
             ele.parent = '渠道健康度';
             ele.curTag = moment(ele.curTag).format('YYYY-MM-DD');
             ele.prevTag = moment(ele.prevTag).format('YYYY-MM-DD');
+
+            if (ele.curValue < 1) {
+                ele.curValue = Math.round(ele.curValue * 10000) / 100 + '%';
+                ele.prevValue = Math.round(ele.prevValue * 10000) / 100 + '%';
+            }
         });
 
         return data;

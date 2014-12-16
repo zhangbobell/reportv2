@@ -34,7 +34,8 @@ define('tree', ['d3'], function(d3){
             root;
 
         var tree = d3.layout.tree()
-            .size([height, width]);
+            .size([height, width])
+            .separation(function(a, b) {return a.parent == b.parent ? 300 : 400; });
 
         var diagonal = d3.svg.diagonal()
             .projection(function(d) { return [d.x, d.y]; });
@@ -45,7 +46,7 @@ define('tree', ['d3'], function(d3){
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-        var div = d3.select("body").append("div")
+        var div = d3.select(selector).append("div")
             .attr("class", "tooltip")
             .style("opacity", 0);
 

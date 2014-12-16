@@ -79,17 +79,17 @@ require(['jquery', 'd3', 'jStorage', 'tree', 'weeklyUpdate', 'loading', 'dailyUp
                             isNormal: true
                         }];
 
-                        $.each(sales, function(idx, ele){
+                        $.each(sales['res'], function(idx, ele){
                             ele.isNormal = true;
                             data.push(ele);
                         });
 
-                        $.each(sellers, function(idx, ele){
+                        $.each(sellers['res'], function(idx, ele){
                             ele.isNormal = true;
                             data.push(ele);
                         });
 
-                        $.jStorage.set('salesData', data, {TTL: 300000});
+//                        $.jStorage.set('salesData', data, {TTL: 300000});
 
                         tree.draw('#container1', data);
 
@@ -121,22 +121,22 @@ require(['jquery', 'd3', 'jStorage', 'tree', 'weeklyUpdate', 'loading', 'dailyUp
                         isNormal: true
                     }];
 
-                    $.each(close, function(idx, ele){
+                    $.each(close['res'], function(idx, ele){
                         ele.isNormal = false;
                         data.push(ele);
                     });
 
-                    $.each(lost, function(idx, ele){
+                    $.each(lost['res'], function(idx, ele){
                         ele.isNormal = false;
                         data.push(ele);
                     });
 
-                    $.each(upset, function(idx, ele){
+                    $.each(upset['res'], function(idx, ele){
                         ele.isNormal = false;
                         data.push(ele);
                     });
 
-                    $.jStorage.set('healthData', data, {TTL: 300000});
+//                    $.jStorage.set('healthData', data, {TTL: 300000});
                     tree.draw('#container2', data);
 
                     return dtd.resolve();
