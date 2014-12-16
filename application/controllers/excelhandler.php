@@ -38,8 +38,9 @@ class excelHandler extends CI_Controller {
         //        c表示列数 序号从0开始
 
         // 获取表格的总行数和总列数
-        $colNum = PHPExcel_Cell::columnIndexFromString($sheet->getHighestColumn());
+//        $colNum = PHPExcel_Cell::columnIndexFromString($sheet->getHighestColumn());
         $rowNum = $sheet->getHighestRow();
+        $colNum = 5;
 
 
         for($j=1; $j<$rowNum+1; $j++)
