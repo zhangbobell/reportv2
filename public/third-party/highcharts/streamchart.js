@@ -18,7 +18,7 @@ jQuery.fn.setTimeSeriesLineChart_stream = function (titleName,subTitle, valueTit
             }
         },
         legend: {
-            enabled: false
+            enabled: true
         },
 
         tooltip: {
@@ -57,7 +57,7 @@ $.fn.lineChart_stream = function (lineChart) {
             }
         },
         legend: {
-            enabled: false
+            enabled: true
         },
 
         tooltip: {
@@ -79,13 +79,14 @@ $.fn.drawLineChart_stream = function(lineChart, xhrOpt) {
         columns: lineChart.columns,
         attach: '' || lineChart.target,
         cb: function(d) {
-            if(d == 0)
+            d = JSON.parse(d);
+            if(d['flag'] == 0)
             {
-                $(thisSelector).text('saiku文件不存在');
+                $(thisSelector).text(d['err']);
             }
             else
             {
-                lineChart.series = JSON.parse(d);
+                lineChart.series = d['res'];
                 $(thisSelector).lineChart_stream(lineChart);
             }
 

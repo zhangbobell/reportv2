@@ -119,6 +119,17 @@ class Graph extends CI_Controller
         echo json_encode($ret);
     }
 
+    // x轴：年-月  series：saiku数据
+    public function sk_ym()
+    {
+        $saikufile = $this->input->post('saikufile');
+        $columns = $this->input->post('columns');
+
+        $ret = $this->_sk_ym($saikufile, $columns);
+
+        echo json_encode($ret);
+    }
+
     public function get_data_daily_last() {
         $saikufile = $this->input->post('saikufile', true);
         $columns = $this->input->post('columns', true);
@@ -130,6 +141,8 @@ class Graph extends CI_Controller
         echo json_encode($ret);
     }
 
+
+
     // 获取所有“日”的数据
     private  function _sk_ymd($saikufile, $columns) {
         $res = $this->saiku->get_json_data($saikufile);
@@ -140,6 +153,28 @@ class Graph extends CI_Controller
 
         // 取到最小粒度的下标，即数据中最后一个
         $nanoIdx = count($r) - 1;
+        $ret = $r[$nanoIdx];
+
+        // 对数据进行排序
+        foreach($columns as $k => $v) {
+            $ret[$k]->data = $this->mgraph->sort_data($ret[$k]->data);
+        }
+
+        $res['res'] = $ret;
+
+        return $res;
+    }
+
+    // 获取所有“月”的数据
+    private  function _sk_ym($saikufile, $columns) {
+        $res = $this->saiku->get_json_data($saikufile);
+        if($res['flag'] == 0)
+            return $res;
+
+        $r = $this->mgraph->convert_data($res['res'], $columns);
+
+        // 取到最小粒度的下标，即数据中最后一个
+        $nanoIdx = count($r) - 2;
         $ret = $r[$nanoIdx];
 
         // 对数据进行排序
@@ -216,7 +251,7 @@ class Graph extends CI_Controller
         return $ret;
     }
 
-    // x轴：年-月-日  series：saiku数据 & 目标
+    // x轴：年-月 (求和)  series：saiku数据 & 目标
     public function sk_ymd_t()
     {
         $saikufile = $this->input->post('saikufile');
@@ -224,23 +259,27 @@ class Graph extends CI_Controller
         $tmp = $this->input->post('attach'); // 传递period和t_type
 
         $res = $this->saiku->get_json_data($saikufile);
-        if($res == 0)
-            return 0;
+        if($res['flag'] == 0)
+        {
+            echo json_encode($res);
+            return;
+        }
 
-        $r = $this->mgraph->convert_data($res, $columns);
+        $r = $this->mgraph->convert_data($res['res'], $columns);
 
-        $nanoIdx = count($r) - 1;
+        $nanoIdx = count($r) - 2;
         $ret = $r[$nanoIdx];
 
         // 对数据进行排序
         foreach($columns as $k => $v) {
             $ret[$k]->data = $this->mgraph->sort_data($ret[$k]->data);
+            $ret[$k]->data = $this->mgraph->add_data($ret[$k]->data);
         }
 
         $target = $this->get_target($tmp[0], $tmp[1]);
         $ret = $this->mgraph->combine_data_ym($ret, (int)$target);
-
-        echo json_encode($ret);
+        $res['res'] = $ret;
+        echo json_encode($res);
 
     }
 
@@ -280,23 +319,27 @@ class Graph extends CI_Controller
         $tmp = $this->input->post('attach', true); // 传递period和t_type
 
         $res = $this->saiku->get_json_data($saikufile);
-        if($res == 0)
-            return 0;
+        if($res['flag'] == 0)
+        {
+            echo json_encode($res);
+            return;
+        }
 
-        $r = $this->mgraph->convert_data($res, $columns);
+        $r = $this->mgraph->convert_data($res['res'], $columns);
 
-        $nanoIdx = count($r) - 2;
+        $nanoIdx = count($r) - 1;
         $ret = $r[$nanoIdx];
 
         // 对数据进行排序
         foreach($columns as $k => $v) {
             $ret[$k]->data = $this->mgraph->sort_data($ret[$k]->data);
         }
-
+        $ret = $this->mgraph->chose_month_data($ret);
 
         $target = $this->get_target($tmp[0], $tmp[1]);
         $ret = $this->mgraph->combine_data_y($ret, (float)$target);
-        echo json_encode($ret);
+        $res['res'] = $ret;
+        echo json_encode($res);
 
     }
 
@@ -305,50 +348,60 @@ class Graph extends CI_Controller
     public function sk_md_t() {
         $saikufile = $this->input->post('saikufile');
         $columns = $this->input->post('columns');
-        $target = $this->input->post('attach');
+        $tmp = $this->input->post('attach', true); // 传递period和t_type
 
         $res = $this->saiku->get_json_data($saikufile);
 
-        if($res == 0)
-            return 0;
+        if($res['flag'] == 0)
+        {
+            echo json_encode($res);
+            return;
+        }
 
-        $r = $this->mgraph->convert_data($res, $columns);
+        $r = $this->mgraph->convert_data($res['res'], $columns);
 
         // 取到最小粒度的下标，即数据中最后一个
         $nanoIdx = count($r) - 1;
         $ret = $r[$nanoIdx];
-
-        // 对数据进行排序
-        foreach($columns as $k => $v) {
-            $ret[$k]->data = $this->mgraph->sort_data($ret[$k]->data);
-        //    $ret[$k]->data = $this->mgraph->add_data($ret[$k]->data);
-        }
-
         $ret = $this->mgraph->chose_month_data($ret);
-
         $ret['data'] = $this->mgraph->add_data($ret['data']);
 
+
+
+        $target = $this->get_target($tmp[0], $tmp[1]);
+
         $ret = $this->mgraph->combine_data_md($ret, (int)$target);
-        echo json_encode($ret);
+        $res['res'] = $ret;
+        echo json_encode($res);
     }
 
     // 绘制河流图
     // x轴：序号（按年月日时间顺序排列）series：saiku数据
     public function sk_stream()
     {
-        $saikufile = $this->input->post('saikufile');
-        $columns = $this->input->post('columns');
+//        $saikufile = $this->input->post('saikufile');
+//        $columns = $this->input->post('columns');
+
+        $saikufile = 'report_month_order_category_num';
+        $columns = array('儿童unname','儿童上衣','儿童套装','女式上衣','女式内裤','女式内衣套装','女式秋裤','女式背心','女式马甲',
+            '女式t恤','女式休闲裤','女式打底裤','女式短衫','女式长衫','女式上衣','女式中裤','女式家居服套装','女式睡裙','女式短裤',
+            '女式长裤','女式袜子','情侣内衣','情侣家居服','男士unname','男士上衣','男士内裤','男士内衣套装','男士秋裤','男士背心',
+            '男士马甲','男士T恤','男士上衣','男士中裤','男士家居服套装','男士短裤','男士长裤','男士袜子');
         $res = $this->saiku->get_json_data($saikufile);
-        if($res == 0)
-            return 0;
+        if($res['flag'] == 0)
+        {
+            echo json_encode($res);
+            return;
+        }
 
-        $r = $this->mgraph->convert_data($res, $columns);
+//        $r = $this->mgraph->convert_data($res['res'], $columns);
+//
+//        // 取到最小粒度的下标，即数据中最后一个
+//        $nanoIdx = count($r) - 1;
+//        $ret = $r[$nanoIdx];
+//        $res['res'] = $this->mgraph->linear2stream($ret);
 
-        // 取到最小粒度的下标，即数据中最后一个
-        $nanoIdx = count($r) - 1;
-        $ret = $r[$nanoIdx];
-
-        echo json_encode($this->mgraph->linear2stream($ret));
+        echo json_encode($res);
     }
 
     // 提交目标至db

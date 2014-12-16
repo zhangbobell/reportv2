@@ -112,13 +112,14 @@ $.fn.drawLineChart_week = function(lineChart, xhrOpt) {
         columns: lineChart.columns,
         attach: '' || lineChart.target,
         cb: function(d) {
-            if(d == 0)
+            d = JSON.parse(d);
+            if(d['flag'] == 0)
             {
-                $(thisSelector).text('saiku文件不存在');
+                $(thisSelector).text(d['err']);
             }
             else
             {
-                lineChart.series = JSON.parse(d);
+                lineChart.series = d['res'];
                 $(thisSelector).lineChart_week(lineChart);
             }
 
@@ -132,16 +133,8 @@ jQuery.extend({
             url: ajax_url,
             saikufile: saikufile,
             cb: function(d) {
-                if(d['flag'] == 0)
-                {
-                    $(thisSelector).text(d['err']);
-                }
-                else
-                {
-                    lineChart.series = JSON.parse(d['res']);
-                    $(thisSelector).lineChart(lineChart);
-                }
-
+                var data = JSON.parse(d);
+                $(containerName).setTimeSeriesLineChart(titleName,'', yName, data);
             }
         });
     },

@@ -114,13 +114,14 @@ $.fn.drawLineChart = function(lineChart, xhrOpt) {
         columns: lineChart.columns,
         attach: '' || lineChart.target,
         cb: function(d) {
+            d = JSON.parse(d);
             if(d['flag'] == 0)
             {
                 $(thisSelector).text(d['err']);
             }
             else
             {
-                lineChart.series = JSON.parse(d['res']);
+                lineChart.series = d['res'];
                 $(thisSelector).lineChart(lineChart);
             }
 

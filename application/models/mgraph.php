@@ -292,16 +292,16 @@ class MGraph extends MY_model {
     // 只需要添加 年目标
     public function combine_data_y($d, $target)
     {
-        $start = $d[0]->data[0][0];
-        $end = $d[0]->data[count($d[0]->data)-1][0];
-        array_push($d,
-            array(
-                'name' => '目标',
-                'data' => array(array($start, $target), array($end, $target))
-            )
-        );
+        $start = $d['data'][0][0];
+        $end = $d['data'][count($d['data'] )-1][0];
+        return array($d,
+                    array(
+                        'name' => '目标',
+                        'data' => array(array($start, $target), array($end, $target))
+                    )
+                );
 
-        return $d;
+
     }
 
     // 输入的数组是 月-日 结构
