@@ -441,4 +441,55 @@ class MGraph extends MY_model {
         echo json_encode($arr);
     }
 
+    //  $results -- getjsondata 的原始返回结果 $gran -- 返回的粒度，默认为最小粒度
+    public function convert2table($results, $gran = 0) {
+        $d = array();
+        $startIndex = $results['topOffset'];
+        $endIndex = $results['height'];
+        $width = $results['width'];
+        $data = $results['cellset'];
+        $maxLevel = 0;
+
+        for ($i = $startIndex; $i < $endIndex; $i++) {
+            $str = '';
+            $level = 0;
+            $isYear = true;
+            $isFirst = true;
+            $nano = array();
+
+            for ($k = 0; $k < $width; $k++) {
+                $cell = $data[$i][$k];
+
+                if ($cell['type'] === 'ROW_HEADER' ) {
+                    if ($cell['value'] !== 'null') {
+
+                        if ($isYear) {
+                            $str .= $cell['value'];
+                            $isYear = false;
+                            continue;
+                        }
+
+                        $str .= '-'. $cell['value'];
+                        $level++;
+                        if ($level > $maxLevel) {
+                            $maxLevel = $level;
+                        }
+                    }
+                } else {
+                    $properties = $cell['properties'];
+                    $raw = isset($properties['raw']) ? $properties['raw'] : null;
+
+                    if ($isFirst) {
+                        $nano[] = $str;
+                        $isFirst = false;
+                    }
+                    $nano[] = $raw;
+                }
+            }
+            $d[$level][] = $nano;
+        }
+
+        return $d[$maxLevel - $gran];
+    }
+
 }

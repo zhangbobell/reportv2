@@ -26,8 +26,6 @@ define('weeklyUpdate', ['jquery', 'utils'], function($, utils){
 
         $.each(data['res'], function(idx, ele){
             ele.parent = '销售额（周）';
-            ele.curValue = Math.round(ele.curValue * 100) / 100;
-            ele.prevValue = Math.round(ele.prevValue * 100) / 100;
         });
 
         return data;

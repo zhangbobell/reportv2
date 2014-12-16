@@ -25,7 +25,7 @@ define('tree', ['d3'], function(d3){
         });
 
         // ************** Generate the tree diagram	 *****************
-        var margin = {top: 80, right: 120, bottom: 20, left: 120},
+        var margin = {top: 80, right: 120, bottom: 20, left: 480},
             width = 960 - margin.right - margin.left,
             height = 500 - margin.top - margin.bottom;
 
@@ -35,7 +35,8 @@ define('tree', ['d3'], function(d3){
 
         var tree = d3.layout.tree()
             .size([height, width])
-            .separation(function(a, b) {return a.parent == b.parent ? 300 : 400; });
+            .nodeSize([1, 1])
+            .separation(function(a, b) {return a.parent == b.parent ? 100 : 100; });
 
         var diagonal = d3.svg.diagonal()
             .projection(function(d) { return [d.x, d.y]; });
@@ -46,7 +47,7 @@ define('tree', ['d3'], function(d3){
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-        var div = d3.select(selector).append("div")
+        var div = d3.select('body').append("div")
             .attr("class", "tooltip")
             .style("opacity", 0);
 
@@ -81,7 +82,7 @@ define('tree', ['d3'], function(d3){
                         .duration(200)
                         .style("opacity", .9);
 
-                    div.html(d.prevTag + "：" + d.prevValue + "<br/>"  + d.curTag +"：" + d.curValue)
+                    div.html(d.prevTag + "：" + _per(d.prevValue) + "<br/>"  + d.curTag +"：" + _per(d.curValue))
                         .style("left", (d3.event.pageX) + "px")
                         .style("top", (d3.event.pageY-42) + "px");
                 })
@@ -106,7 +107,7 @@ define('tree', ['d3'], function(d3){
                 .attr("y", function(d) { return d.children || d._children ? -20 : 20; })
                 .attr("dy", ".35em")
                 .attr("text-anchor", "middle")
-                .text(function(d) { return d.curValue; })
+                .text(function(d) { return _per(d.curValue); })
                 .style("fill-opacity", 1e-6);
 
             // Transition nodes to their new position.
@@ -120,7 +121,7 @@ define('tree', ['d3'], function(d3){
                     if (d._children) {
                         return "lightsteelblue"
                     } else {
-                        if ((d.curValue < d.prevValue && d.isNormal) || (d.curValue > d.prevValue && !d.isNormal)) {
+                        if ((Math.abs(d.curValue) < Math.abs(d.prevValue) && d.isNormal) || (Math.abs(d.curValue) > Math.abs(d.prevValue) && !d.isNormal)) {
                             return "#f00";
                         } else {
                             return "#0f0";
@@ -186,6 +187,16 @@ define('tree', ['d3'], function(d3){
                 d._children = null;
             }
             update(d);
+        }
+
+        function _per(d) {
+            if (d < 1 && d != 0) {
+                return Math.round(d * 10000) / 100 + '%';
+            } else if (Math.round(d) != d) {
+                return Math.round(d * 100) / 100;
+            } else {
+                return d;
+            }
         }
 
     }

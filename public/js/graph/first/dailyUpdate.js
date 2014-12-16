@@ -37,6 +37,18 @@ define('dailyUpdate', ['jquery', 'utils', 'moment'], function($, utils, moment){
         });
     }
 
+    function getUpset0() {
+        var saikufile = 'report_dayly_luanjia';
+
+        return utils.xhr({
+            url: 'graph/get_data_daily_last',
+            data: {
+                saikufile: saikufile,
+                columns: ['乱价商品数量', '平均乱价幅度', '渠道乱价率']
+            }
+        });
+    }
+
     function convertData(d) {
         var data = JSON.parse(d);
 
@@ -44,11 +56,6 @@ define('dailyUpdate', ['jquery', 'utils', 'moment'], function($, utils, moment){
             ele.parent = '渠道健康度';
             ele.curTag = moment(ele.curTag).format('YYYY-MM-DD');
             ele.prevTag = moment(ele.prevTag).format('YYYY-MM-DD');
-
-            if (ele.curValue < 1) {
-                ele.curValue = Math.round(ele.curValue * 10000) / 100 + '%';
-                ele.prevValue = Math.round(ele.prevValue * 10000) / 100 + '%';
-            }
         });
 
         return data;
@@ -58,6 +65,7 @@ define('dailyUpdate', ['jquery', 'utils', 'moment'], function($, utils, moment){
         getClose: getClose,
         getLost: getLost,
         getUpset: getUpset,
+        getUpset0: getUpset0,
         convertData: convertData
     };
 });

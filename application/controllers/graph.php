@@ -375,11 +375,42 @@ class Graph extends CI_Controller
         return $tar;
     }
 
+    /**
+     * 获取 0 销量商家数量
+     *
+     */
+    public function get_zero_sales_num() {
+        $saikufile = $this->input->post('saikufile', true);
 
+        $res = $this->saiku->get_json_data($saikufile);
+        $res['res'] = $this->mgraph->convert2table($res['res']);
+
+
+        if ($res['flag'] == 0) {
+            echo json_encode($res);
+            return;
+        }
+
+        $arr = array();
+        foreach($res['res'] as $val) {
+            $row['name'] = $val[0] == 'No' ? '非30天新招商家' : '30天新招商家';
+            $row['curTag'] = '0 销量商家数量';
+            $row['curValue'] = $val[2];
+            $row['prevTag'] = '0 销量商家占比';
+            $row['prevValue'] = 1 - $val[3];
+
+            $arr[] = $row;
+        }
+
+        $res['res'] = $arr;
+
+        echo json_encode($res);
+    }
 
     public function debug_raw($skfile)
     {
         $res = $this->saiku->get_json_data($skfile);
+        $res['res'] = $this->mgraph->convert2table($res['res']);
         echo json_encode($res);
     }
 
