@@ -52,11 +52,15 @@ define('dailyUpdate', ['jquery', 'utils', 'moment'], function($, utils, moment){
     function convertData(d) {
         var data = JSON.parse(d);
 
-        $.each(data['res'], function(idx, ele){
-            ele.parent = '渠道健康度';
-            ele.curTag = moment(ele.curTag).format('YYYY-MM-DD');
-            ele.prevTag = moment(ele.prevTag).format('YYYY-MM-DD');
-        });
+        if (data['flag'] == 0) {
+            return data;
+        } else {
+            $.each(data['res'], function(idx, ele){
+                ele.parent = '渠道健康度';
+                ele.curTag = moment(ele.curTag).format('YYYY-MM-DD');
+                ele.prevTag = moment(ele.prevTag).format('YYYY-MM-DD');
+            });
+        }
 
         return data;
     }

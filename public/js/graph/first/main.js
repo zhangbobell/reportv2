@@ -89,22 +89,39 @@ require(['jquery', 'd3', 'jStorage', 'tree', 'weeklyUpdate', 'loading', 'dailyUp
                             isNormal: true
                         }];
 
-                        $.each(sales['res'], function(idx, ele){
-                            ele.isNormal = true;
-                            data.push(ele);
-                        });
+                        if (sales['flag'] == 0) {
+                            $('#info').append('<div>').text(sales['err'] + '，无法获取销售额，请刷新重试！');
+                            $('#info').css('display', 'block');
+                        } else {
+                            $.each(sales['res'], function(idx, ele){
+                                ele.isNormal = true;
+                                data.push(ele);
+                            });
+                        }
 
-                        $.each(sellers['res'], function(idx, ele){
-                            ele.isNormal = true;
-                            data.push(ele);
-                        });
+                        if (sellers['flag'] == 0) {
+                            $('#info').append('<div>').text(sellers['err'] + '，无法获取商家数目，请刷新重试！');
+                            $('#info').css('display', 'block');
+                        } else {
+                            $.each(sellers['res'], function(idx, ele){
+                                ele.isNormal = true;
+                                data.push(ele);
+                            });
+                        }
 
-                        $.each(zero['res'], function(idx, ele){
-                            ele.isNormal = true;
-                            data.push(ele);
-                        });
+                        if (zero['flag'] == 0) {
+                            $('#info').append('<div>').text(zero['err'] + '，无法获取 0 销量商家，请刷新重试！');
+                            $('#info').css('display', 'block');
+                        } else {
+                            $.each(zero['res'], function(idx, ele){
+                                ele.isNormal = true;
+                                data.push(ele);
+                            });
+                        }
 
-                        $.jStorage.set('salesData', data, {TTL: 300000});
+                        if (sales['flag'] && sellers['flag'] && zero['flag']) {
+                            $.jStorage.set('salesData', data, {TTL: 24*3600*1000});
+                        }
 
                         tree.draw('#container1', data);
 
@@ -139,29 +156,45 @@ require(['jquery', 'd3', 'jStorage', 'tree', 'weeklyUpdate', 'loading', 'dailyUp
 
                     // isNormal 是绝对值越大越好
 
-                    $.each(close['res'], function(idx, ele){
-                        ele.isNormal = false;
-                        data.push(ele);
-                    });
+                    if (close['flag'] == 0) {
+                        $('#info').append('<div>').text(close['err'] + '，无法获取订单关闭比率，请刷新重试！');
+                        $('#info').css('display', 'block');
+                    } else {
+                        $.each(close['res'], function(idx, ele){
+                            ele.isNormal = false;
+                            data.push(ele);
+                        });
+                    }
 
-                    $.each(lost['res'], function(idx, ele){
-                        ele.isNormal = false;
-                        data.push(ele);
-                    });
+                    if (lost['flag'] == 0) {
+                        $('#info').append('<div>').text(lost['err'] + '，无法获取流失商家数，请刷新重试！');
+                        $('#info').css('display', 'block');
+                    } else {
+                        $.each(lost['res'], function(idx, ele){
+                            ele.isNormal = false;
+                            data.push(ele);
+                        });
+                    }
+
 
 //                    $.each(upset['res'], function(idx, ele){
 //                        ele.isNormal = false;
 //                        data.push(ele);
 //                    });
 
-                    $.each(upset0['res'], function(idx, ele){
-                        ele.isNormal = false;
-                        data.push(ele);
-                    });
+                    if (upset0['flag'] == 0) {
+                        $('#info').append('<div>').text(upset0['err'] + '，无法获取乱价情况，请刷新重试！');
+                        $('#info').css('display', 'block');
+                    } else {
+                        $.each(upset0['res'], function(idx, ele){
+                            ele.isNormal = false;
+                            data.push(ele);
+                        });
+                    }
 
-
-
-                    $.jStorage.set('healthData', data, {TTL: 300000});
+                    if (close['flag'] && lost['flag'] && upset0['flag']) {
+                        $.jStorage.set('healthData', data, {TTL: 24*3600*1000});
+                    }
                     tree.draw('#container2', data);
 
                     return dtd.resolve();

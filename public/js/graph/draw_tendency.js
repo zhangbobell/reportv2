@@ -1,6 +1,6 @@
 $(function(){
 
-    $('#container1').drawLineChart({
+    $('#container2-1').drawLineChart({
         title: '追灿招募成交额（不包含运费）', // 主标题
         subtitle: '', // 副标题
         xLabel: '日期', // x 轴标题
@@ -11,7 +11,7 @@ $(function(){
         saikufile: 'report_dayly_chengjiao_zc' // ajax 请求的 saiku 文件
     });
 
-    $('#container2').drawLineChart_week({
+    $('#container2-2').drawLineChart_week({
         title: '追灿招募最近7天成交额（分销商评级）', // 主标题
         subtitle: '', // 副标题
         xLabel: '序号', // x 轴标题
@@ -22,7 +22,7 @@ $(function(){
         saikufile: 'report_weekly_level_new' // ajax 请求的 saiku 文件
     });
 
-    $('#container3').drawLineChart({
+    $('#container2-3').drawLineChart({
         title: '追灿招募商家数量', // 主标题
         subtitle: '', // 副标题
         xLabel: '日期', // x 轴标题
@@ -33,7 +33,7 @@ $(function(){
         saikufile: 'report_dayly_all_num' // ajax 请求的 saiku 文件
     });
 
-    $('#container4').drawLineChart_week({
+    $('#container2-4').drawLineChart_week({
         title: '追灿招募商家数量（分销商评级）', // 主标题
         subtitle: '', // 副标题
         xLabel: '序号', // x 轴标题
@@ -44,7 +44,7 @@ $(function(){
         saikufile: 'report_weekly_level_num' // ajax 请求的 saiku 文件
     });
 
-    $('#container5').drawLineChart({
+    $('#container2-5').drawLineChart({
         title: '平均上架商品数（追灿招募）', // 主标题
         subtitle: '', // 副标题
         xLabel: '日期', // x 轴标题
@@ -55,7 +55,7 @@ $(function(){
         saikufile: 'report_up_item' // ajax 请求的 saiku 文件
     });
 
-    $('#container6').drawLineChart({
+    $('#container2-6').drawLineChart({
         title: '追灿招募上架率', // 主标题
         subtitle: '', // 副标题
         xLabel: '日期', // x 轴标题
@@ -66,7 +66,7 @@ $(function(){
         saikufile: 'report_up_rate' // ajax 请求的 saiku 文件
     });
 
-    $('#container7').drawLineChart({
+    $('#container2-7').drawLineChart({
         title: '30天动销率', // 主标题
         subtitle: '', // 副标题
         xLabel: '日期', // x 轴标题
@@ -77,7 +77,7 @@ $(function(){
         saikufile: 'report_monthly_dongxiao_rate_zc' // ajax 请求的 saiku 文件
     });
 
-    $('#container8').drawLineChart({
+    $('#container2-8').drawLineChart({
         title: '全网销售额', // 主标题
         subtitle: '', // 副标题
         xLabel: '日期', // x 轴标题
@@ -88,7 +88,7 @@ $(function(){
         saikufile: 'report_dayly_chengjiao' // ajax 请求的 saiku 文件
     });
 
-    $('#container9').drawLineChart({
+    $('#container2-9').drawLineChart({
         title: '渠道乱价率', // 主标题
         subtitle: '', // 副标题
         xLabel: '日期', // x 轴标题
@@ -99,7 +99,7 @@ $(function(){
         saikufile: 'report_dayly_wrong_price_rate_zc' // ajax 请求的 saiku 文件
     });
 
-    $('#container10').drawLineChart({
+    $('#container2-10').drawLineChart({
         title: '订单退款率', // 主标题
         subtitle: '', // 副标题
         xLabel: '日期', // x 轴标题
@@ -110,9 +110,9 @@ $(function(){
         saikufile: 'report_dayly_tuikuan_rate' // ajax 请求的 saiku 文件
     });
 
-    $('#container11').drawLineChart({
+    $('#container2-11').drawLineChart({
         title: '订单关闭率', // 主标题
-        subtitle: '副标题 for test', // 副标题
+        subtitle: '', // 副标题
         xLabel: '日期', // x 轴标题
         yLabel: '关闭率', // y 轴标题
         columns: ['追灿招募','非追灿招募'] // 系列的名称

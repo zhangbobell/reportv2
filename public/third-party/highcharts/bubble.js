@@ -99,25 +99,31 @@ $.fn.bubbleChart = function (bubbleChart) {
 $.fn.drawbubbleChart = function(bubbleChart, xhrOpt) {
     var thisSelector = this.selector;
 
-    $.xhr({
-        url: xhrOpt.url,
-        saikufile: xhrOpt.saikufile,
-        columns: bubbleChart.columns,
-        attach: '' || bubbleChart.target,
-        cb: function(d) {
-            d = JSON.parse(d);
-            if(d['flag'] == 0)
-            {
-                $(thisSelector).text(d['err']);
-            }
-            else
-            {
-                bubbleChart.series = d['res'];
-                $(thisSelector).bubbleChart(bubbleChart);
-            }
+    if ((d = $.jStorage.get(thisSelector))) {
+        bubbleChart.series = d['res'];
+        $(thisSelector).bubbleChart(bubbleChart);
+    } else {
+        $.xhr({
+            url: xhrOpt.url,
+            saikufile: xhrOpt.saikufile,
+            columns: bubbleChart.columns,
+            attach: '' || bubbleChart.target,
+            cb: function(d) {
+                d = JSON.parse(d);
+                if(d['flag'] == 0)
+                {
+                    $(thisSelector).text(d['err']);
+                }
+                else
+                {
+                    $.jStorage.set(thisSelector, d, {TTL: 24*3600*1000});
+                    bubbleChart.series = d['res'];
+                    $(thisSelector).bubbleChart(bubbleChart);
+                }
 
-        }
-    });
+            }
+        });
+    }
 }
 
 jQuery.extend({

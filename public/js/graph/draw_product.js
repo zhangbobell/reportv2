@@ -3,7 +3,7 @@ $(function(){
 
 
 
-    $('#container1').drawLineChart_stream({
+    $('#container4-1').drawLineChart_stream({
         title: '销售商品数量', // 主标题
         subtitle: '', // 副标题
         xLabel: '日期', // x 轴标题
@@ -17,7 +17,7 @@ $(function(){
         saikufile: 'report_month_order_category_num' // ajax 请求的 saiku 文件
     });
 
-    $('#container2').drawLineChart_stream({
+    $('#container4-2').drawLineChart_stream({
         title: '铺货商品数量', // 主标题
         subtitle: '', // 副标题
         xLabel: '日期', // x 轴标题
@@ -28,7 +28,7 @@ $(function(){
         saikufile: 'report_dayly_leimu_puhuo' // ajax 请求的 saiku 文件
     });
 
-    $('#container3').drawbubbleChart({
+    $('#container4-3').drawbubbleChart({
         title: '铺货商品数量', // 主标题
         subtitle: '', // 副标题
         xLabel: '日期', // x 轴标题

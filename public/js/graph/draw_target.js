@@ -4,7 +4,7 @@
 
 $(function(){
     function draw0(){
-        $('#container0').drawLineChart({
+        $('#container3-0').drawLineChart({
             title: '年销售额', // 主标题
             subtitle: '', // 副标题
             xLabel: '日期', // x 轴标题
@@ -18,7 +18,7 @@ $(function(){
     }
 
     function draw1(){
-        $('#container1').drawLineChart({
+        $('#container3-1').drawLineChart({
             title: '乱价率', // 主标题
             subtitle: '', // 副标题
             xLabel: '日期', // x 轴标题
@@ -31,9 +31,9 @@ $(function(){
         });
     }
     function draw2(){
-        $('#container2').drawLineChart({
-            title: '追灿招募商家数量', // 主标题
-            subtitle: '副标题 for test', // 副标题
+        $('#container3-2').drawLineChart({
+            title: '追灿招募销售额', // 主标题
+            subtitle: '', // 副标题
             xLabel: '日期', // x 轴标题
             yLabel: '销售额', // y 轴标题
             columns: ['销售额'], // 系列的名称
@@ -44,9 +44,9 @@ $(function(){
         });
     }
     function draw3(){
-        $('#container3').drawLineChart({
+        $('#container3-3').drawLineChart({
             title: '铺货商家数量', // 主标题
-            subtitle: '副标题 for test', // 副标题
+            subtitle: '', // 副标题
             xLabel: '日期', // x 轴标题
             yLabel: '商家数量', // y 轴标题
             columns: ['商家数量'], // 系列的名称
@@ -57,7 +57,7 @@ $(function(){
         });
     }
 //    function draw4(){
-//        $('#container4').drawLineChart({
+//        $('#container3-4').drawLineChart({
 //            title: '非授权占比（销售额）', // 主标题
 //            subtitle: '副标题 for test', // 副标题
 //            xLabel: '日期', // x 轴标题
@@ -70,7 +70,7 @@ $(function(){
 //        });
 //    }
     function draw5(){
-        $('#container5').drawLineChart({
+        $('#container3-5').drawLineChart({
             title: '月累计招商数量', // 主标题
             subtitle: '', // 副标题
             xLabel: '日期', // x 轴标题

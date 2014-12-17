@@ -426,9 +426,10 @@ class MGraph extends MY_model {
         $start = strtotime($str1) * 1000;
         $end = strtotime($str2) * 1000;
 
+//var_dump($d);
         $num = count($d['data']);
 
-        $incre_data = $target / $m_num;
+        $incre_data = (float)$target / (float)$m_num;
 
         $tar = array();
 
@@ -464,6 +465,7 @@ class MGraph extends MY_model {
         $str2 = date('m').'/'.$this->get_month_day_num().'/'.date('Y');
         $start = strtotime($str1) * 1000;
         $end = strtotime($str2) * 1000;
+//        var_dump($d[0]->data);
 
         $num = count($d[0]->data);
         $arr = array();
@@ -604,4 +606,9 @@ class MGraph extends MY_model {
         return $d[$maxLevel - $gran];
     }
 
+    public function get_saiku_map($db) {
+        $sql = "SELECT `ref_name`, `saikufile`, `fields` FROM `saiku_map` WHERE `is_valid` = '1'";
+
+        return $this->my_query($db, $sql);
+    }
 }
