@@ -15,7 +15,8 @@ require.config({
         'loading': '../../price/control/loading',
         'tree': 'tree',
         'weeklyUpdate': 'weeklyUpdate',
-        'dailyUpdate': 'dailyUpdate'
+        'dailyUpdate': 'dailyUpdate',
+        'monthlyUpdate': 'monthlyUpdate'
     },
     shim : {
         'bootstrap': {
@@ -28,7 +29,7 @@ require.config({
     }
 });
 
-require(['jquery', 'd3', 'jStorage', 'tree', 'weeklyUpdate', 'loading', 'dailyUpdate'], function($, d3, jStorage, tree, weeklyUpdate, loading, dailyUpdate){
+require(['jquery', 'd3', 'jStorage', 'tree', 'weeklyUpdate', 'loading', 'dailyUpdate', 'monthlyUpdate'], function($, d3, jStorage, tree, weeklyUpdate, loading, dailyUpdate, monthlyUpdate){
 
 
     $(function(){
@@ -63,11 +64,12 @@ require(['jquery', 'd3', 'jStorage', 'tree', 'weeklyUpdate', 'loading', 'dailyUp
             var dtd = $.Deferred();
 
             function draw() {
-                $.when(weeklyUpdate.getSales(), weeklyUpdate.getSellers())
-                    .then(function(sales, sellers){
+                $.when(weeklyUpdate.getSales(), weeklyUpdate.getSellers(), monthlyUpdate.getZero())
+                    .then(function(sales, sellers, zero){
 
                         var sales = weeklyUpdate.convertSales(sales[0]);
                         var sellers = weeklyUpdate.convertSellers(sellers[0]);
+                        var zero = monthlyUpdate.convertZero(zero[0]);
 
                         var data = [{
                             name: '销售额（周）',
@@ -77,14 +79,27 @@ require(['jquery', 'd3', 'jStorage', 'tree', 'weeklyUpdate', 'loading', 'dailyUp
                             prevValue: null,
                             parent: 'null',
                             isNormal: true
+                        },{
+                            name: '0 销量商家',
+                            curTag: '本周',
+                            curValue: null,
+                            prevTag: '上周',
+                            prevValue: null,
+                            parent: '销售额（周）',
+                            isNormal: true
                         }];
 
-                        $.each(sales, function(idx, ele){
+                        $.each(sales['res'], function(idx, ele){
                             ele.isNormal = true;
                             data.push(ele);
                         });
 
-                        $.each(sellers, function(idx, ele){
+                        $.each(sellers['res'], function(idx, ele){
+                            ele.isNormal = true;
+                            data.push(ele);
+                        });
+
+                        $.each(zero['res'], function(idx, ele){
                             ele.isNormal = true;
                             data.push(ele);
                         });
@@ -106,10 +121,11 @@ require(['jquery', 'd3', 'jStorage', 'tree', 'weeklyUpdate', 'loading', 'dailyUp
             var dtd = $.Deferred();
 
             function draw() {
-                $.when(dailyUpdate.getClose(), dailyUpdate.getLost(), dailyUpdate.getUpset()).then(function(close, lost, upset){
+                $.when(dailyUpdate.getClose(), dailyUpdate.getLost(), dailyUpdate.getUpset0()).then(function(close, lost, upset0){
                     var close = dailyUpdate.convertData(close[0]);
                     var lost = dailyUpdate.convertData(lost[0]);
-                    var upset = dailyUpdate.convertData(upset[0]);
+//                    var upset = dailyUpdate.convertData(upset[0]);
+                    var upset0 = dailyUpdate.convertData(upset0[0]);
 
                     var data = [{
                         name: '渠道健康度',
@@ -121,20 +137,29 @@ require(['jquery', 'd3', 'jStorage', 'tree', 'weeklyUpdate', 'loading', 'dailyUp
                         isNormal: true
                     }];
 
-                    $.each(close, function(idx, ele){
+                    // isNormal 是绝对值越大越好
+
+                    $.each(close['res'], function(idx, ele){
                         ele.isNormal = false;
                         data.push(ele);
                     });
 
-                    $.each(lost, function(idx, ele){
+                    $.each(lost['res'], function(idx, ele){
                         ele.isNormal = false;
                         data.push(ele);
                     });
 
-                    $.each(upset, function(idx, ele){
+//                    $.each(upset['res'], function(idx, ele){
+//                        ele.isNormal = false;
+//                        data.push(ele);
+//                    });
+
+                    $.each(upset0['res'], function(idx, ele){
                         ele.isNormal = false;
                         data.push(ele);
                     });
+
+
 
                     $.jStorage.set('healthData', data, {TTL: 300000});
                     tree.draw('#container2', data);

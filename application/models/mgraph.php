@@ -102,6 +102,118 @@ class MGraph extends MY_model {
         return $d;
     }
 
+    public function convert_data_leaf($results, $colArr)
+    {
+        $d = array();
+        $startIndex = $results['topOffset'];
+        $endIndex = $results['height'];
+        $width = $results['width'];
+        $data = $results['cellset'];
+
+        $series = $colArr;
+
+        $leaf = array();
+
+        for ($k = 0; $k < $width; $k++) {
+            $cell = $data[$startIndex-1][$k];
+            if ($cell['value'] == 'null')
+                $leaf[] = false;
+            else
+                $leaf[] = true;
+        }
+
+        for ($i = $startIndex; $i < $endIndex; $i++)
+        {
+            $str = '';
+            $it = 0;
+
+            if($data[$i][1]['value'] != 'null')
+            {
+                $str = $data[$i][0]['value'].'-'.$data[$i][1]['value'];
+
+                for ($k = 2; $k < $width; $k++)
+                {
+                    if($leaf[$k])
+                    {
+                        $d[$it]->name = $series[$it];
+                        $d[$it]->data[] = array(1000 * strtotime($str), (float)$data[$i][$k]['value']);
+                        $it++;
+                    }
+                }
+            }
+        }
+
+        return $d;
+    }
+    public function convert_data_bubble($results)
+    {
+
+        $startIndex = $results['topOffset'];
+        $endIndex = $results['height'];
+        $width = $results['width'];
+        $data = $results['cellset'];
+
+//        $series = $colArr;
+
+        $series = array();
+        $latest = array();
+
+        for ($k = 3; $k < $width; $k++)
+        {
+            $series[] = $data[$startIndex-1][$k]['value'];
+            $latest[] = (float)$data[$endIndex-1][$k]['value'];
+
+        }
+        $late30 = array();
+
+        for ($i = 3; $i < $width; $i++)
+        {
+            for($j = $endIndex-31; $j < $endIndex; $j++)
+            {
+                $tmp = (float)$data[$j][$i]['value'];
+                if($data[$j][2]['value'] != 'null')
+                {
+                    $late30[$i-3][] = array($j, $tmp);
+                }
+            }
+        }
+
+        $this->load->library('PolynomialRegression');
+        $slope =array();
+        foreach ($late30 as $item)
+        {
+            foreach ( $item as $dataPoint )
+            {
+                if($dataPoint[ 1 ] != 0 )
+                    $this->polynomialregression->addData( (float)$dataPoint[ 0 ], (float)$dataPoint[ 1 ] );
+            }
+
+            $coefficients = $this->polynomialregression->getCoefficients();
+            $slope[] = (float)$coefficients[ 1 ];
+        }
+        $data_bubble = array();
+
+//        $stand_latest = array();
+//        for($i = 0; $i < $width-3; $i++)
+//        {
+//            $stand_latest[] = (float)$latest[$i] / (max($latest) - min($latest));
+//        }
+
+        for ($i = 0; $i < $width-3; $i++)
+        {
+            $data_bubble[] = array(
+                'name' => $series[$i],
+                'data' => array(array($slope[$i], $latest[$i], $latest[$i]))
+            );
+        }
+
+
+
+
+
+        return $data_bubble;
+    }
+
     // 转换数据：日期为 年-周
     public function convert_data_yw($results, $colArr) {
         $d = array();
@@ -439,6 +551,57 @@ class MGraph extends MY_model {
         }
 
         echo json_encode($arr);
+    }
+
+    //  $results -- getjsondata 的原始返回结果 $gran -- 返回的粒度，默认为最小粒度
+    public function convert2table($results, $gran = 0) {
+        $d = array();
+        $startIndex = $results['topOffset'];
+        $endIndex = $results['height'];
+        $width = $results['width'];
+        $data = $results['cellset'];
+        $maxLevel = 0;
+
+        for ($i = $startIndex; $i < $endIndex; $i++) {
+            $str = '';
+            $level = 0;
+            $isYear = true;
+            $isFirst = true;
+            $nano = array();
+
+            for ($k = 0; $k < $width; $k++) {
+                $cell = $data[$i][$k];
+
+                if ($cell['type'] === 'ROW_HEADER' ) {
+                    if ($cell['value'] !== 'null') {
+
+                        if ($isYear) {
+                            $str .= $cell['value'];
+                            $isYear = false;
+                            continue;
+                        }
+
+                        $str .= '-'. $cell['value'];
+                        $level++;
+                        if ($level > $maxLevel) {
+                            $maxLevel = $level;
+                        }
+                    }
+                } else {
+                    $properties = $cell['properties'];
+                    $raw = isset($properties['raw']) ? $properties['raw'] : null;
+
+                    if ($isFirst) {
+                        $nano[] = $str;
+                        $isFirst = false;
+                    }
+                    $nano[] = $raw;
+                }
+            }
+            $d[$level][] = $nano;
+        }
+
+        return $d[$maxLevel - $gran];
     }
 
 }

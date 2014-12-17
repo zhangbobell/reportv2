@@ -30,11 +30,11 @@ class Saiku
     );
 
 
-    private function guid()
+    private function guid($repName)
     {
 
-        mt_srand((double)microtime()*10000); // optional for php 4.2.0 and up.
-        $charid = strtoupper(md5(uniqid(rand(), true)));
+//        mt_srand((double)microtime()*10000); // optional for php 4.2.0 and up.
+        $charid = strtoupper(md5($repName));
         $hyphen = chr(45);
         $uuid = chr(123)
             .substr($charid, 0, 8).$hyphen
@@ -127,11 +127,11 @@ class Saiku
         return $xml;
     }
 
-    private function queryModel($base, $session, $res, $xml)
+    private function queryModel($base, $session, $res, $xml, $repName)
     {
         $attr = $xml->attributes();
         // 自定义MDX，需要先建立一个QueryModel, QueryModel可以复用
-        $new_query = $this->guid();
+        $new_query = $this->guid($repName);
         $new_query = trim($new_query,'{}');
         $qstring = $base.$session['username'].'/query/'.$new_query;
         // $r
@@ -187,7 +187,7 @@ class Saiku
         if(!$xml = $this->getXml($res))
             return $this->stateInfo;
 
-        if(!$new_query = $this->queryModel($base, $session, $res, $xml))
+        if(!$new_query = $this->queryModel($base, $session, $res, $xml, $saiku_file))
             return $this->stateInfo;
 
         if(!$results = $this->queryMdx($base, $session, $new_query, $xml))

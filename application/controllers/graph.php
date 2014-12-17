@@ -379,14 +379,9 @@ class Graph extends CI_Controller
     // x轴：序号（按年月日时间顺序排列）series：saiku数据
     public function sk_stream()
     {
-//        $saikufile = $this->input->post('saikufile');
-//        $columns = $this->input->post('columns');
+        $saikufile = $this->input->post('saikufile');
+        $columns = $this->input->post('columns');
 
-        $saikufile = 'report_month_order_category_num';
-        $columns = array('儿童unname','儿童上衣','儿童套装','女式上衣','女式内裤','女式内衣套装','女式秋裤','女式背心','女式马甲',
-            '女式t恤','女式休闲裤','女式打底裤','女式短衫','女式长衫','女式上衣','女式中裤','女式家居服套装','女式睡裙','女式短裤',
-            '女式长裤','女式袜子','情侣内衣','情侣家居服','男士unname','男士上衣','男士内裤','男士内衣套装','男士秋裤','男士背心',
-            '男士马甲','男士T恤','男士上衣','男士中裤','男士家居服套装','男士短裤','男士长裤','男士袜子');
         $res = $this->saiku->get_json_data($saikufile);
         if($res['flag'] == 0)
         {
@@ -394,12 +389,53 @@ class Graph extends CI_Controller
             return;
         }
 
-//        $r = $this->mgraph->convert_data($res['res'], $columns);
-//
-//        // 取到最小粒度的下标，即数据中最后一个
-//        $nanoIdx = count($r) - 1;
-//        $ret = $r[$nanoIdx];
-//        $res['res'] = $this->mgraph->linear2stream($ret);
+        $r = $this->mgraph->convert_data($res['res'], $columns);
+
+        // 取到最小粒度的下标，即数据中最后一个
+        $nanoIdx = count($r) - 1;
+        $ret = $r[$nanoIdx];
+        $res['res'] = $this->mgraph->linear2stream($ret);
+
+        echo json_encode($res);
+    }
+
+    public function sk_stream_leaf()
+    {
+        $saikufile = $this->input->post('saikufile');
+        $columns = $this->input->post('columns');
+
+        $res = $this->saiku->get_json_data($saikufile);
+        if($res['flag'] == 0)
+        {
+            echo json_encode($res);
+            return;
+        }
+
+        $r = $this->mgraph->convert_data_leaf($res['res'], $columns);
+
+
+        $res['res'] = $this->mgraph->linear2stream($r);
+
+        echo json_encode($res);
+    }
+
+
+    public function sk_stream_bubble()
+    {
+        $saikufile = $this->input->post('saikufile');
+//        $saikufile = 'report_daily_sellernick_up_item_num';
+
+        $res = $this->saiku->get_json_data($saikufile);
+        if($res['flag'] == 0)
+        {
+            echo json_encode($res);
+            return;
+        }
+
+        $res['res'] = $this->mgraph->convert_data_bubble($res['res']);
+
+
+       //  = $this->mgraph->linear2stream($r);
 
         echo json_encode($res);
     }
@@ -428,15 +464,70 @@ class Graph extends CI_Controller
         return $tar;
     }
 
+    /**
+     * 获取 0 销量商家数量
+     *
+     */
+    public function get_zero_sales_num() {
+        $saikufile = $this->input->post('saikufile', true);
+
+        $res = $this->saiku->get_json_data($saikufile);
+        $res['res'] = $this->mgraph->convert2table($res['res']);
 
 
-    public function debug_raw($skfile)
-    {
-        $res = $this->saiku->get_json_data($skfile);
+        if ($res['flag'] == 0) {
+            echo json_encode($res);
+            return;
+        }
+
+        $arr = array();
+        foreach($res['res'] as $val) {
+            $row['name'] = $val[0] == 'No' ? '非30天新招商家' : '30天新招商家';
+            $row['curTag'] = '0 销量商家数量';
+            $row['curValue'] = $val[2];
+            $row['prevTag'] = '0 销量商家占比';
+            $row['prevValue'] = 1 - $val[3];
+
+            $arr[] = $row;
+        }
+
+        $res['res'] = $arr;
+
         echo json_encode($res);
     }
 
 
+
+    public function test()
+    {
+        $d = array(
+            array(
+                'name' => 'a',
+                'data' => array(array(97,36,79), array(38,23,33),array(57,86,31))),
+            array(
+                'name' => 'b',
+                'data' => array(array(25,10,87))),
+            array('name' => 'c',
+                'data' => array(array(47,47,21), array(30,77,82)))
+            );
+        $data = array(
+            'flag' => 1,
+            'res' => $d
+        );
+
+        echo json_encode($data);
+    }
+
+    public function debug_raw($skfile)
+    {
+
+        $res = $this->saiku->get_json_data($skfile);
+//        $res['res'] = $this->mgraph->convert_data_bubble($res['res']);
+        $r = $this->mgraph->convert_data_bubble($res['res']);
+
+        echo json_encode($r);
+//        var_dump($r);
+    }
 
 }
 

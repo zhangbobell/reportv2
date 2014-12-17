@@ -24,7 +24,8 @@ jQuery.fn.setTimeSeriesLineChart_stream = function (titleName,subTitle, valueTit
         tooltip: {
             formatter: function () {
                 return '<b>' + this.series.name +
-                    '</b> : <b>' + (this.point.high - this.point.low) + '</b>';
+                    '</b> : <b>' + (this.point.high - this.point.low) +
+                    '</b><br />x: <b>'  + this.point.x;
             }
         },
 
@@ -63,7 +64,8 @@ $.fn.lineChart_stream = function (lineChart) {
         tooltip: {
             formatter: function () {
                 return '<b>' + this.series.name +
-                    '</b> : <b>' + (this.point.high - this.point.low) + '</b>';
+                    '</b> : <b>' + (this.point.high - this.point.low) +
+                    '</b><br />x: <b>'  + this.point.x;
             }
         },
         series: lineChart.series
