@@ -89,20 +89,32 @@ require(['jquery', 'd3', 'jStorage', 'tree', 'weeklyUpdate', 'loading', 'dailyUp
                             isNormal: true
                         }];
 
-                        $.each(sales['res'], function(idx, ele){
-                            ele.isNormal = true;
-                            data.push(ele);
-                        });
+                        if (sales['flag'] == 0) {
+                            $('#info').append('<div>').text(sales['err'] + ' 请刷新重试！')
+                        } else {
+                            $.each(sales['res'], function(idx, ele){
+                                ele.isNormal = true;
+                                data.push(ele);
+                            });
+                        }
 
-                        $.each(sellers['res'], function(idx, ele){
-                            ele.isNormal = true;
-                            data.push(ele);
-                        });
+                        if (sellers['flag'] == 0) {
+                            $('#info').append('<div>').text(sales['err'] + ' 请刷新重试！')
+                        } else {
+                            $.each(sellers['res'], function(idx, ele){
+                                ele.isNormal = true;
+                                data.push(ele);
+                            });
+                        }
 
-                        $.each(zero['res'], function(idx, ele){
-                            ele.isNormal = true;
-                            data.push(ele);
-                        });
+                        if (zero['flag'] == 0) {
+                            $('#info').append('<div>').text(sales['err'] + ' 请刷新重试！')
+                        } else {
+                            $.each(zero['res'], function(idx, ele){
+                                ele.isNormal = true;
+                                data.push(ele);
+                            });
+                        }
 
                         $.jStorage.set('salesData', data, {TTL: 300000});
 
@@ -139,27 +151,38 @@ require(['jquery', 'd3', 'jStorage', 'tree', 'weeklyUpdate', 'loading', 'dailyUp
 
                     // isNormal 是绝对值越大越好
 
-                    $.each(close['res'], function(idx, ele){
-                        ele.isNormal = false;
-                        data.push(ele);
-                    });
+                    if (close['flag'] == 0) {
+                        $('#info').append('<div>').text(sales['err'] + ' 请刷新重试！')
+                    } else {
+                        $.each(close['res'], function(idx, ele){
+                            ele.isNormal = false;
+                            data.push(ele);
+                        });
+                    }
 
-                    $.each(lost['res'], function(idx, ele){
-                        ele.isNormal = false;
-                        data.push(ele);
-                    });
+                    if (lost['flag'] == 0) {
+                        $('#info').append('<div>').text(sales['err'] + ' 请刷新重试！')
+                    } else {
+                        $.each(lost['res'], function(idx, ele){
+                            ele.isNormal = false;
+                            data.push(ele);
+                        });
+                    }
+
 
 //                    $.each(upset['res'], function(idx, ele){
 //                        ele.isNormal = false;
 //                        data.push(ele);
 //                    });
 
-                    $.each(upset0['res'], function(idx, ele){
-                        ele.isNormal = false;
-                        data.push(ele);
-                    });
-
-
+                    if (upset0['flag'] == 0) {
+                        $('#info').append('<div>').text(sales['err'] + ' 请刷新重试！')
+                    } else {
+                        $.each(upset0['res'], function(idx, ele){
+                            ele.isNormal = false;
+                            data.push(ele);
+                        });
+                    }
 
                     $.jStorage.set('healthData', data, {TTL: 300000});
                     tree.draw('#container2', data);
