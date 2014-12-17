@@ -492,4 +492,9 @@ class MGraph extends MY_model {
         return $d[$maxLevel - $gran];
     }
 
+    public function get_saiku_map($db) {
+        $sql = "SELECT `ref_name`, `saikufile`, `fields` FROM `saiku_map` WHERE `is_valid` = '1'";
+
+        return $this->my_query($db, $sql);
+    }
 }

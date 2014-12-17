@@ -13,9 +13,13 @@ define('monthlyUpdate', ['utils'], function(utils){
     function convertZero(d) {
         var data = JSON.parse(d);
 
-        $.each(data['res'], function(idx, ele){
-            ele.parent = '0 销量商家';
-        });
+        if (data['flag'] == 0) {
+            return data;
+        } else {
+            $.each(data['res'], function(idx, ele){
+                ele.parent = '0 销量商家';
+            });
+        }
 
         return data;
     }

@@ -7,5 +7,6 @@
 <!--<div id="container6" class="col-md-12">追灿招募商家数量（合作状态）正在加载...</div>-->
 <!---->
 <p class="alert alert-danger" id="info"></p>
+<div class="col-md-12 fix"><button type="button" class="btn btn-primary r" onclick="$.jStorage.flush(); window.location.reload(true);">刷新数据</button></div>
 <div id="container1"></div>
 <div id="container2"></div>

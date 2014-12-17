@@ -8,12 +8,26 @@
 
 class Graph extends CI_Controller
 {
+    private $sk_map;
+    private $sk_fields;
+
     // 构造函数
     function __construct()
     {
         parent::__construct();
         $this->load->library('saiku');
         $this->load->model('mgraph');
+
+
+        if (($res = $this->mgraph->get_saiku_map('db_sanqiang'))) {
+            foreach ($res->result_array() as $row) {
+                $this->sk_map[$row['ref_name']] = $row['saikufile'];
+                $this->sk_fields[$row['ref_name']] = explode(',', $row['fields']);
+            }
+        } else {
+            echo '获取 saiku 映射表失败！';
+            return;
+        }
     }
 
     // 绘制页面
@@ -112,7 +126,8 @@ class Graph extends CI_Controller
     public function sk_ymd()
     {
         $saikufile = $this->input->post('saikufile');
-        $columns = $this->input->post('columns');
+        $saikufile = $this->sk_map[$saikufile];
+        $columns = $this->sk_fields[$saikufile];
 
         $ret = $this->_sk_ymd($saikufile, $columns);
 
@@ -121,7 +136,8 @@ class Graph extends CI_Controller
 
     public function get_data_daily_last() {
         $saikufile = $this->input->post('saikufile', true);
-        $columns = $this->input->post('columns', true);
+        $saikufile = $this->sk_map[$saikufile];
+        $columns = $this->sk_fields[$saikufile];
 
         $ret = $this->_sk_ymd($saikufile, $columns);
 
@@ -156,7 +172,8 @@ class Graph extends CI_Controller
     public function sk_yw()
     {
         $saikufile = $this->input->post('saikufile');
-        $columns = $this->input->post('columns');
+        $saikufile = $this->sk_map[$saikufile];
+        $columns = $this->sk_fields[$saikufile];
 
         $ret = $this->_sk_yw($saikufile, $columns);
 
@@ -167,7 +184,8 @@ class Graph extends CI_Controller
     public function get_data_weekly_last() {
 
         $saikufile = $this->input->post('saikufile', true);
-        $columns = $this->input->post('columns', true);
+        $saikufile = $this->sk_map[$saikufile];
+        $columns = $this->sk_fields[$saikufile];
 
         $ret = $this->_sk_yw($saikufile, $columns);
 
@@ -195,8 +213,7 @@ class Graph extends CI_Controller
     // 根据年周或年月日的返回的数据，取最近两组的数据
     private function _get_last($ret) {
         if ($ret['flag'] == 0) {
-            echo json_encode($ret);
-            return;
+            return $ret;
         }
 
         $arr = array();
@@ -220,7 +237,8 @@ class Graph extends CI_Controller
     public function sk_ymd_t()
     {
         $saikufile = $this->input->post('saikufile');
-        $columns = $this->input->post('columns');
+        $saikufile = $this->sk_map[$saikufile];
+        $columns = $this->sk_fields[$saikufile];
         $tmp = $this->input->post('attach'); // 传递period和t_type
 
         $res = $this->saiku->get_json_data($saikufile);
@@ -248,7 +266,8 @@ class Graph extends CI_Controller
     // x轴：年-月     series：saiku数据月求和 & 目标
     public function sk_ym_add_t() {
         $saikufile = $this->input->post('saikufile', true);
-        $columns = $this->input->post('columns', true);
+        $saikufile = $this->sk_map[$saikufile];
+        $columns = $this->sk_fields[$saikufile];
         $tmp = $this->input->post('attach', true); // 传递period和t_type
 
         $res = $this->saiku->get_json_data($saikufile);
@@ -276,7 +295,8 @@ class Graph extends CI_Controller
     // x轴：年-月     series：saiku数据月平均 & 年目标
     public function sk_ym_avg_t() {
         $saikufile = $this->input->post('saikufile', true);
-        $columns = $this->input->post('columns', true);
+        $saikufile = $this->sk_map[$saikufile];
+        $columns = $this->sk_fields[$saikufile];
         $tmp = $this->input->post('attach', true); // 传递period和t_type
 
         $res = $this->saiku->get_json_data($saikufile);
@@ -304,7 +324,8 @@ class Graph extends CI_Controller
     // x轴：月-日     series：saiku当月数据 & 月目标 & 时时日目标
     public function sk_md_t() {
         $saikufile = $this->input->post('saikufile');
-        $columns = $this->input->post('columns');
+        $saikufile = $this->sk_map[$saikufile];
+        $columns = $this->sk_fields[$saikufile];
         $target = $this->input->post('attach');
 
         $res = $this->saiku->get_json_data($saikufile);
@@ -337,7 +358,8 @@ class Graph extends CI_Controller
     public function sk_stream()
     {
         $saikufile = $this->input->post('saikufile');
-        $columns = $this->input->post('columns');
+        $saikufile = $this->sk_map[$saikufile];
+        $columns = $this->sk_fields[$saikufile];
         $res = $this->saiku->get_json_data($saikufile);
         if($res == 0)
             return 0;
@@ -367,7 +389,6 @@ class Graph extends CI_Controller
     // 从db中获取目标
     private function get_target($period, $t_type)
     {
-
         $username = $this->session->userdata('username');
         $this->load->model('targetprocess');
         $target = $this->targetprocess->get_target($username, $period, $t_type);
@@ -381,14 +402,14 @@ class Graph extends CI_Controller
      */
     public function get_zero_sales_num() {
         $saikufile = $this->input->post('saikufile', true);
+        $saikufile = $this->sk_map[$saikufile];
 
         $res = $this->saiku->get_json_data($saikufile);
         $res['res'] = $this->mgraph->convert2table($res['res']);
 
 
         if ($res['flag'] == 0) {
-            echo json_encode($res);
-            return;
+            return $res;
         }
 
         $arr = array();

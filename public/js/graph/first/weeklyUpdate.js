@@ -24,9 +24,13 @@ define('weeklyUpdate', ['jquery', 'utils'], function($, utils){
     function convertSales(d) {
         var data = JSON.parse(d);
 
-        $.each(data['res'], function(idx, ele){
-            ele.parent = '销售额（周）';
-        });
+        if (data['flag'] == 0) {
+            return data;
+        } else {
+            $.each(data['res'], function(idx, ele){
+                ele.parent = '销售额（周）';
+            });
+        }
 
         return data;
     }
@@ -34,9 +38,13 @@ define('weeklyUpdate', ['jquery', 'utils'], function($, utils){
     function convertSellers(d) {
         var data = JSON.parse(d);
 
-        $.each(data['res'], function(idx, ele){
-            ele.parent = ele.name.substr(0, ele.name.length - 2) + '销售额';
-        });
+        if (data['flag'] == 0) {
+            return data;
+        } else {
+            $.each(data['res'], function(idx, ele){
+                ele.parent = ele.name.substr(0, ele.name.length - 2) + '销售额';
+            });
+        }
 
         return data;
     }
