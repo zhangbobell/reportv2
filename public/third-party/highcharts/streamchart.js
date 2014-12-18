@@ -18,13 +18,14 @@ jQuery.fn.setTimeSeriesLineChart_stream = function (titleName,subTitle, valueTit
             }
         },
         legend: {
-            enabled: false
+            enabled: true
         },
 
         tooltip: {
             formatter: function () {
                 return '<b>' + this.series.name +
-                    '</b> : <b>' + (this.point.high - this.point.low) + '</b>';
+                    '</b> : <b>' + (this.point.high - this.point.low) +
+                    '</b><br />x: <b>'  + this.point.x;
             }
         },
 
@@ -57,13 +58,14 @@ $.fn.lineChart_stream = function (lineChart) {
             }
         },
         legend: {
-            enabled: false
+            enabled: true
         },
 
         tooltip: {
             formatter: function () {
                 return '<b>' + this.series.name +
-                    '</b> : <b>' + (this.point.high - this.point.low) + '</b>';
+                    '</b> : <b>' + (this.point.high - this.point.low) +
+                    '</b><br />x: <b>'  + this.point.x;
             }
         },
         series: lineChart.series
@@ -73,24 +75,32 @@ $.fn.lineChart_stream = function (lineChart) {
 $.fn.drawLineChart_stream = function(lineChart, xhrOpt) {
     var thisSelector = this.selector;
 
-    $.xhr_stream({
-        url: xhrOpt.url,
-        saikufile: xhrOpt.saikufile,
-        columns: lineChart.columns,
-        attach: '' || lineChart.target,
-        cb: function(d) {
-            if(d == 0)
-            {
-                $(thisSelector).text('saiku文件不存在');
-            }
-            else
-            {
-                lineChart.series = JSON.parse(d);
-                $(thisSelector).lineChart_stream(lineChart);
-            }
+    if ((d = $.jStorage.get(thisSelector))) {
+        lineChart.series = d['res'];
+        $(thisSelector).lineChart_stream(lineChart);
+    } else {
+        $.xhr_stream({
+            url: xhrOpt.url,
+            saikufile: xhrOpt.saikufile,
+            columns: lineChart.columns,
+            attach: '' || lineChart.target,
+            cb: function(d) {
+                d = JSON.parse(d);
+                if(d['flag'] == 0)
+                {
+                    $(thisSelector).text(d['err']);
+                }
+                else
+                {
+                    $.jStorage.set(thisSelector, d, {TTL: 24*3600*1000});
+                    lineChart.series = d['res'];
+                    $(thisSelector).lineChart_stream(lineChart);
+                }
 
-        }
-    });
+            }
+        });
+    }
+
 }
 
 jQuery.extend({

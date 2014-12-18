@@ -1,8 +1,9 @@
-jQuery.fn.setTimeSeriesLineChart_week = function (titleName,subTitle, valueTitle, value) {
+jQuery.fn.setBubbleChart = function (titleName,subTitle, valueTitle, value) {
     var thisSelector = this.selector;
     $(thisSelector).highcharts({
         chart: {
-            zoomType: 'x'
+            type: 'bubble',
+            zoomType: 'xy'
         },
         title: {
             text: titleName
@@ -10,12 +11,60 @@ jQuery.fn.setTimeSeriesLineChart_week = function (titleName,subTitle, valueTitle
         subtitle: {
             text: subTitle + '（鼠标选取局部，可放大查看）'
         },
-        xAxis: {
 
-        },
         yAxis: {
             title: {
                 text: valueTitle
+            }
+        },
+        tooltip: {
+            formatter: function () {
+                return '<b>' + this.series.name +
+                    '</b><br /><b>增长系数: ' + this.point.x +
+                    '</b><br /><b>最新数据: ' + this.point.y + '</b>';
+
+            }
+        },
+
+
+        series: [{
+
+            name: valueTitle,
+
+
+            data:  value
+        }]
+    });
+};
+
+$.fn.bubbleChart = function (bubbleChart) {
+    var thisSelector = this.selector;
+    $(thisSelector).highcharts({
+        chart: {
+            type: 'bubble',
+            zoomType: 'xy'
+        },
+        title: {
+            text: bubbleChart.title
+        },
+        subtitle: {
+            text: bubbleChart.subtitle + '（鼠标选取局部区域可放大查看）'
+        },
+        xAxis: {
+
+            text: bubbleChart.xLabel
+        },
+        yAxis: {
+            title: {
+                text: bubbleChart.yLabel
+            }
+        },
+        tooltip: {
+            formatter: function () {
+                return '<b>' + this.series.name +
+                    '</b><br /><b>增长系数: ' + this.point.x +
+                    '</b><br /><b>最新数据: ' + this.point.y + '</b>';
+
             }
         },
         legend: {
@@ -43,103 +92,53 @@ jQuery.fn.setTimeSeriesLineChart_week = function (titleName,subTitle, valueTitle
             }
         },
 
-        series: [{
-            type: 'area',
-            name: valueTitle,
-            pointInterval: 24 * 3600 * 1000,
-
-            data:  value
-        }]
+        series: bubbleChart.series
     });
 };
 
-$.fn.lineChart_week = function (lineChart) {
-    var thisSelector = this.selector;
-    $(thisSelector).highcharts({
-        chart: {
-            zoomType: 'x'
-        },
-        title: {
-            text: lineChart.title
-        },
-        subtitle: {
-            text: lineChart.subtitle + '（鼠标选取局部区域可放大查看）'
-        },
-        xAxis: {
-
-            text: lineChart.xLabel
-        },
-        yAxis: {
-            title: {
-                text: lineChart.yLabel
-            }
-        },
-        legend: {
-            enabled: true
-        },
-        plotOptions: {
-            area: {
-                fillColor: {
-                    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1},
-                    stops: [
-                        [0, Highcharts.getOptions().colors[0]],
-                        [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
-                    ]
-                },
-                marker: {
-                    radius: 2
-                },
-                lineWidth: 1,
-                states: {
-                    hover: {
-                        lineWidth: 1
-                    }
-                },
-                threshold: null
-            }
-        },
-
-        series: lineChart.series
-    });
-};
-
-$.fn.drawLineChart_week = function(lineChart, xhrOpt) {
+$.fn.drawbubbleChart = function(bubbleChart, xhrOpt) {
     var thisSelector = this.selector;
 
-    $.xhr_week({
-        url: xhrOpt.url,
-        saikufile: xhrOpt.saikufile,
-        columns: lineChart.columns,
-        attach: '' || lineChart.target,
-        cb: function(d) {
-            d = JSON.parse(d);
-            if(d['flag'] == 0)
-            {
-                $(thisSelector).text(d['err']);
-            }
-            else
-            {
-                lineChart.series = d['res'];
-                $(thisSelector).lineChart_week(lineChart);
-            }
+    if ((d = $.jStorage.get(thisSelector))) {
+        bubbleChart.series = d['res'];
+        $(thisSelector).bubbleChart(bubbleChart);
+    } else {
+        $.xhr({
+            url: xhrOpt.url,
+            saikufile: xhrOpt.saikufile,
+            columns: bubbleChart.columns,
+            attach: '' || bubbleChart.target,
+            cb: function(d) {
+                d = JSON.parse(d);
+                if(d['flag'] == 0)
+                {
+                    $(thisSelector).text(d['err']);
+                }
+                else
+                {
+                    $.jStorage.set(thisSelector, d, {TTL: 24*3600*1000});
+                    bubbleChart.series = d['res'];
+                    $(thisSelector).bubbleChart(bubbleChart);
+                }
 
-        }
-    });
+            }
+        });
+    }
 }
 
 jQuery.extend({
-    ajax_draw_week : function(ajax_url, saikufile, containerName, titleName, yName) {
-        $.xhr_week({
+    ajax_draw : function(ajax_url, saikufile, containerName, titleName, yName) {
+        $.xhr({
             url: ajax_url,
             saikufile: saikufile,
             cb: function(d) {
                 var data = JSON.parse(d);
-                $(containerName).setTimeSeriesLineChart(titleName,'', yName, data);
+                $(containerName).setBubbleChart(titleName,'', yName, data);
             }
         });
     },
 
-    xhr_week: function(o) {
+    xhr: function(o) {
         $.ajax({
             url: o.url,
             type:"post",
@@ -150,7 +149,7 @@ jQuery.extend({
         });
     },
 
-    xhr0_week: function(o) {
+    xhr0: function(o) {
         $.ajax({
             url: o.url,
             type:"post",

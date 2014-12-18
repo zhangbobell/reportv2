@@ -15,7 +15,8 @@ require.config({
         'loading': '../../price/control/loading',
         'tree': 'tree',
         'weeklyUpdate': 'weeklyUpdate',
-        'dailyUpdate': 'dailyUpdate'
+        'dailyUpdate': 'dailyUpdate',
+        'monthlyUpdate': 'monthlyUpdate'
     },
     shim : {
         'bootstrap': {
@@ -28,7 +29,7 @@ require.config({
     }
 });
 
-require(['jquery', 'd3', 'jStorage', 'tree', 'weeklyUpdate', 'loading', 'dailyUpdate'], function($, d3, jStorage, tree, weeklyUpdate, loading, dailyUpdate){
+require(['jquery', 'd3', 'jStorage', 'tree', 'weeklyUpdate', 'loading', 'dailyUpdate', 'monthlyUpdate'], function($, d3, jStorage, tree, weeklyUpdate, loading, dailyUpdate, monthlyUpdate){
 
 
     $(function(){
@@ -63,11 +64,12 @@ require(['jquery', 'd3', 'jStorage', 'tree', 'weeklyUpdate', 'loading', 'dailyUp
             var dtd = $.Deferred();
 
             function draw() {
-                $.when(weeklyUpdate.getSales(), weeklyUpdate.getSellers())
-                    .then(function(sales, sellers){
+                $.when(weeklyUpdate.getSales(), weeklyUpdate.getSellers(), monthlyUpdate.getZero())
+                    .then(function(sales, sellers, zero){
 
                         var sales = weeklyUpdate.convertSales(sales[0]);
                         var sellers = weeklyUpdate.convertSellers(sellers[0]);
+                        var zero = monthlyUpdate.convertZero(zero[0]);
 
                         var data = [{
                             name: '销售额（周）',
@@ -77,19 +79,49 @@ require(['jquery', 'd3', 'jStorage', 'tree', 'weeklyUpdate', 'loading', 'dailyUp
                             prevValue: null,
                             parent: 'null',
                             isNormal: true
+                        },{
+                            name: '0 销量商家',
+                            curTag: '本周',
+                            curValue: null,
+                            prevTag: '上周',
+                            prevValue: null,
+                            parent: '销售额（周）',
+                            isNormal: true
                         }];
 
-                        $.each(sales, function(idx, ele){
-                            ele.isNormal = true;
-                            data.push(ele);
-                        });
+                        if (sales['flag'] == 0) {
+                            $('#info').append('<div>').text(sales['err'] + '，无法获取销售额，请刷新重试！');
+                            $('#info').css('display', 'block');
+                        } else {
+                            $.each(sales['res'], function(idx, ele){
+                                ele.isNormal = true;
+                                data.push(ele);
+                            });
+                        }
 
-                        $.each(sellers, function(idx, ele){
-                            ele.isNormal = true;
-                            data.push(ele);
-                        });
+                        if (sellers['flag'] == 0) {
+                            $('#info').append('<div>').text(sellers['err'] + '，无法获取商家数目，请刷新重试！');
+                            $('#info').css('display', 'block');
+                        } else {
+                            $.each(sellers['res'], function(idx, ele){
+                                ele.isNormal = true;
+                                data.push(ele);
+                            });
+                        }
 
-                        $.jStorage.set('salesData', data, {TTL: 300000});
+                        if (zero['flag'] == 0) {
+                            $('#info').append('<div>').text(zero['err'] + '，无法获取 0 销量商家，请刷新重试！');
+                            $('#info').css('display', 'block');
+                        } else {
+                            $.each(zero['res'], function(idx, ele){
+                                ele.isNormal = true;
+                                data.push(ele);
+                            });
+                        }
+
+                        if (sales['flag'] && sellers['flag'] && zero['flag']) {
+                            $.jStorage.set('salesData', data, {TTL: 24*3600*1000});
+                        }
 
                         tree.draw('#container1', data);
 
@@ -106,10 +138,11 @@ require(['jquery', 'd3', 'jStorage', 'tree', 'weeklyUpdate', 'loading', 'dailyUp
             var dtd = $.Deferred();
 
             function draw() {
-                $.when(dailyUpdate.getClose(), dailyUpdate.getLost(), dailyUpdate.getUpset()).then(function(close, lost, upset){
+                $.when(dailyUpdate.getClose(), dailyUpdate.getLost(), dailyUpdate.getUpset0()).then(function(close, lost, upset0){
                     var close = dailyUpdate.convertData(close[0]);
                     var lost = dailyUpdate.convertData(lost[0]);
-                    var upset = dailyUpdate.convertData(upset[0]);
+//                    var upset = dailyUpdate.convertData(upset[0]);
+                    var upset0 = dailyUpdate.convertData(upset0[0]);
 
                     var data = [{
                         name: '渠道健康度',
@@ -121,22 +154,47 @@ require(['jquery', 'd3', 'jStorage', 'tree', 'weeklyUpdate', 'loading', 'dailyUp
                         isNormal: true
                     }];
 
-                    $.each(close, function(idx, ele){
-                        ele.isNormal = false;
-                        data.push(ele);
-                    });
+                    // isNormal 是绝对值越大越好
 
-                    $.each(lost, function(idx, ele){
-                        ele.isNormal = false;
-                        data.push(ele);
-                    });
+                    if (close['flag'] == 0) {
+                        $('#info').append('<div>').text(close['err'] + '，无法获取订单关闭比率，请刷新重试！');
+                        $('#info').css('display', 'block');
+                    } else {
+                        $.each(close['res'], function(idx, ele){
+                            ele.isNormal = false;
+                            data.push(ele);
+                        });
+                    }
 
-                    $.each(upset, function(idx, ele){
-                        ele.isNormal = false;
-                        data.push(ele);
-                    });
+                    if (lost['flag'] == 0) {
+                        $('#info').append('<div>').text(lost['err'] + '，无法获取流失商家数，请刷新重试！');
+                        $('#info').css('display', 'block');
+                    } else {
+                        $.each(lost['res'], function(idx, ele){
+                            ele.isNormal = false;
+                            data.push(ele);
+                        });
+                    }
 
-                    $.jStorage.set('healthData', data, {TTL: 300000});
+
+//                    $.each(upset['res'], function(idx, ele){
+//                        ele.isNormal = false;
+//                        data.push(ele);
+//                    });
+
+                    if (upset0['flag'] == 0) {
+                        $('#info').append('<div>').text(upset0['err'] + '，无法获取乱价情况，请刷新重试！');
+                        $('#info').css('display', 'block');
+                    } else {
+                        $.each(upset0['res'], function(idx, ele){
+                            ele.isNormal = false;
+                            data.push(ele);
+                        });
+                    }
+
+                    if (close['flag'] && lost['flag'] && upset0['flag']) {
+                        $.jStorage.set('healthData', data, {TTL: 24*3600*1000});
+                    }
                     tree.draw('#container2', data);
 
                     return dtd.resolve();
