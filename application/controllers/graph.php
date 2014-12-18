@@ -63,7 +63,7 @@ class Graph extends CI_Controller
 
 
 
-        $data['title'] = "渠道规模";
+        $data['title'] = "趋势";
         $data['username'] = $this->session->userdata('username');
 
 
@@ -83,11 +83,10 @@ class Graph extends CI_Controller
             show_404();
         }
 
-
-
-        $data['title'] = "渠道质量";
+        $data['title'] = "产品渠道分布";
         $data['username'] = $this->session->userdata('username');
 
+        $data['tag1'] = $this->mgraph->get_tag1('db_sanqiang')->result_array();
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/banner');
@@ -509,7 +508,7 @@ class Graph extends CI_Controller
 
         $arr = array();
         foreach($res['res'] as $val) {
-            $row['name'] = $val[0] == 'No' ? '非30天新招商家' : '30天新招商家';
+            $row['name'] = $val[0] == 'No' ? '30天前招商家' : '30天新招商家';
             $row['curTag'] = '0 销量商家数量';
             $row['curValue'] = $val[2];
             $row['prevTag'] = '0 销量商家占比';
@@ -545,16 +544,80 @@ class Graph extends CI_Controller
         echo json_encode($data);
     }
 
+    public function get_tag2() {
+        $tag1 = $this->input->post('tag1', true);
+
+        if ($tag1 == 'All') {
+            echo json_encode('null');
+        } else {
+            echo json_encode($this->mgraph->get_tag2('db_sanqiang', $tag1)->result_array());
+        }
+    }
+
+    public function get_tag3() {
+        $tag1 = $this->input->post('tag1', true);
+        $tag2 = $this->input->post('tag2', true);
+
+        if ($tag2 == 'All') {
+            echo json_encode('null');
+        } else {
+            echo json_encode($this->mgraph->get_tag3('db_sanqiang', $tag1, $tag2)->result_array());
+        }
+    }
+
+    public function redraw_bubble()
+    {
+        $saikufile = $this->input->post('saikufile', true);
+        $saikufile = $this->sk_map[$saikufile];
+        $tag1 = $this->input->post('tag1', true);
+        $tag2 = $this->input->post('tag2', true);
+        $tag3 = $this->input->post('tag3', true);
+
+        $res = $this->saiku->get_json_data($saikufile);
+        if($res['flag'] == 0)
+        {
+            echo json_encode($res);
+            return;
+        }
+
+        $res['res'] = $this->mgraph->convert_data_bubble($res['res']);
+        $res['res'] = $this->_filter($res['res'], $tag1, $tag2, $tag3);
+
+        echo json_encode($res);
+    }
+
+    private function _filter($res, $tag1, $tag2, $tag3) {
+        $filted = $this->mgraph->get_filtered_name('db_sanqiang', $tag1, $tag2, $tag3)->result_array();
+        $tr_filted = array();
+        $temp = array();
+
+        foreach($filted as $item) {
+            foreach($item as $v) {
+                $tr_filted[$v] = $v;
+            }
+        }
+
+        foreach($res as $item) {
+            if(isset($tr_filted[$item['name']])) {
+                $temp[] = $item;
+            }
+        }
+
+        return $temp;
+    }
+
     public function debug_raw($skfile)
     {
 
         $res = $this->saiku->get_json_data($skfile);
 //        $res['res'] = $this->mgraph->convert_data_bubble($res['res']);
-        $r = $this->mgraph->convert_data_bubble($res['res']);
+//        $r = $this->mgraph->convert_data_bubble($res['res']);
 
-        echo json_encode($r);
+        echo json_encode($res);
 //        var_dump($r);
     }
+
+
 
 }
 

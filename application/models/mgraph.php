@@ -611,4 +611,44 @@ class MGraph extends MY_model {
 
         return $this->my_query($db, $sql);
     }
+
+    public function get_tag1($db) {
+        $sql = "SELECT `tag1` FROM `meta_sku` WHERE `tag1` <> 'NULL' GROUP BY `tag1`";
+
+        return $this->my_query($db, $sql);
+    }
+
+    public function get_tag2($db, $tag1) {
+        $sql = "SELECT `tag2` FROM `meta_sku` WHERE `tag1`=? GROUP BY `tag2`";
+
+        return $this->my_query($db, $sql, array($tag1));
+    }
+
+    public function get_tag3($db, $tag1, $tag2) {
+        $sql = "SELECT `tag3` FROM `meta_sku` WHERE `tag1`=? AND `tag2`=? GROUP BY `tag2`";
+
+        return $this->my_query($db, $sql, array($tag1, $tag2));
+    }
+
+    public function get_filtered_name($db, $tag1, $tag2, $tag3) {
+        $sql = "SELECT `itemnum` FROM `meta_sku`";
+
+        if ($tag1 != 'All') {
+            $ctag1 = $tag1 == 'uname' ? '': $tag1;
+            $sql .= " WHERE `tag1` = '$ctag1'";
+
+            if ($tag2 != 'All') {
+                $ctag2 = $tag2 == 'uname' ? '': $tag2;
+                $sql .= " AND `tag2` = '$ctag2'";
+
+                if ($tag3 != 'All') {
+                    $ctag3 = $tag3 == 'uname' ? '': $tag3;
+                    $sql .= " AND `tag3` = '$ctag3'";
+                }
+
+            }
+        }
+
+        return $this->my_query($db, $sql);
+    }
 }
