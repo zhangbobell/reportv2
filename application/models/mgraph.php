@@ -145,6 +145,7 @@ class MGraph extends MY_model {
 
         return $d;
     }
+
     public function convert_data_bubble($results)
     {
 
@@ -158,23 +159,19 @@ class MGraph extends MY_model {
         $series = array();
         $latest = array();
 
-        for ($k = 3; $k < $width; $k++)
+        for ($k = 1; $k < $width; $k++)
         {
             $series[] = $data[$startIndex-1][$k]['value'];
             $latest[] = (float)$data[$endIndex-1][$k]['value'];
-
         }
-        $late30 = array();
 
-        for ($i = 3; $i < $width; $i++)
+
+        for ($i = 1; $i < $width; $i++)
         {
-            for($j = $endIndex-31; $j < $endIndex; $j++)
+            for($j = $startIndex+1; $j < $endIndex; $j++)
             {
                 $tmp = (float)$data[$j][$i]['value'];
-                if($data[$j][2]['value'] != 'null')
-                {
-                    $late30[$i-3][] = array($j, $tmp);
-                }
+                $late30[$i-1][] = array($j, $tmp);
             }
         }
 
@@ -187,7 +184,13 @@ class MGraph extends MY_model {
             foreach ( $item as $dataPoint )
             {
                 if($dataPoint[ 1 ] != 0 )
+                {
                     $this->polynomialregression->addData( (float)$dataPoint[ 0 ], (float)$dataPoint[ 1 ] );
+//                    echo $dataPoint[ 0 ].' : '.$dataPoint[ 1 ] ."<br />";
+
+
+                }
+
             }
 
             $coefficients = $this->polynomialregression->getCoefficients();
@@ -387,20 +390,49 @@ class MGraph extends MY_model {
     // 需要添加 年目标 & 平均月目标
     public function combine_data_ym($d, $target)
     {
-        $start = $d[0]->data[0][0];
-        $end = $d[0]->data[count($d[0]->data)-1][0];
-        array_push($d,
+        $start = $d['data'][0][0];
+        $end = $d['data'][count($d['data'])-1][0];
+
+        $dateArr = array('12/31/'.(date('Y')-1), '1/31/'.date('Y'), '2/28/'.date('Y'), '3/31/'.date('Y'), '4/30/'.date('Y'),
+                         '5/31/'.date('Y'), '6/30/'.date('Y'), '7/31/'.date('Y'), '8/31/'.date('Y'), '9/30/'.date('Y'),
+                         '10/31/'.date('Y'), '11/30/'.date('Y') );
+
+        $incre = (float)$target / 12;
+        $tar = array();
+        $num = count($d['data']);
+
+        for($i = 0; $i<12; ++$i)
+        {
+            if($i < $num)
+            {
+                if($d['data'][$i][1] <=  $incre * ($i + 1))
+                {
+                    $tar[] = array(strtotime($dateArr[$i]) * 1000, $d['data'][$i][1]);
+                }
+                else
+                {
+                    $tar[] = array(strtotime($dateArr[$i]) * 1000, $incre * ($i+1));
+                }
+            }
+            else
+            {
+                $tar[] = array(strtotime($dateArr[$i]) * 1000, $incre* ($i+1));
+            }
+
+        }
+
+
+        return array(
             array(
                 'name' => '年度目标',
                 'data' => array(array($start, $target), array($end, $target))
             ),
             array(
                 'name' => '平均月目标',
-                'data' => array(array($start, 0), array($end, $target))
-            )
+                'data' => $tar
+            ),
+            $d,
         );
-
-        return $d;
     }
 
     // 只需要添加 年目标
@@ -408,11 +440,12 @@ class MGraph extends MY_model {
     {
         $start = $d['data'][0][0];
         $end = $d['data'][count($d['data'] )-1][0];
-        return array($d,
+        return array(
                     array(
                         'name' => '目标',
                         'data' => array(array($start, $target), array($end, $target))
-                    )
+                    ),
+                    $d
                 );
 
 
@@ -432,21 +465,30 @@ class MGraph extends MY_model {
         $num = count($d['data']);
 
         $incre_data = (float)$target / (float)$m_num;
+//        $incre_day  = ((float)$end - (float)$start) / (float)$m_num;
 
         $tar = array();
 
-        for ($i=0; $i<$num; ++$i)
+        for ($i=0; $i<$m_num; ++$i)
         {
-            if($d['data'][$i][1] < ($incre_data * ($i + 1)))
-                $tar[] =array($d['data'][$i][0], $d['data'][$i][1]);
+            if($i < $num)
+            {
+                if($d['data'][$i][1] < ($incre_data * ($i + 1)))
+                    $tar[] =array(strtotime(date('m').'/'.($i+1).'/'.date('Y')) * 1000, $d['data'][$i][1]);
+                else
+                    $tar[] =array(strtotime(date('m').'/'.($i+1).'/'.date('Y')) * 1000, $incre_data * ($i + 1));
+            }
             else
-                $tar[] =array($d['data'][$i][0], $incre_data * ($i + 1));
+            {
+                $tar[] =array(strtotime(date('m').'/'.($i+1).'/'.date('Y')) * 1000, $incre_data * ($i + 1));
+            }
+
         }
 
 
         $tar[] = array($end, $target);
 
-        return array($d,
+        return array(
             array(
                 'name' => '月目标',
                 'data' => array(array($start, $target), array($end, $target))
@@ -454,11 +496,37 @@ class MGraph extends MY_model {
             array(
                 'name' => '每日目标',
                 'data' => $tar
-            )
+            ),
+            $d
         );
 
 
 
+    }
+    // 从多年的数据中湖区当年的数据 结构 年-月-日
+    public function chose_year_data($d)
+    {
+        $str1 = '12/31/'.(date('Y')-1);
+        $str2 = '12/30/'.date('Y');
+        $start = strtotime($str1) * 1000;
+        $end = strtotime($str2) * 1000;
+//        var_dump($d[0]->data);
+
+        $num = count($d[0]->data);
+        $arr = array();
+
+        for ($i=0; $i<$num; $i++)
+        {
+            if( $d[0]->data[$i][0] >= $start && $d[0]->data[$i][0] <= $end)
+            {
+                $arr[] = $d[0]->data[$i];
+            }
+        }
+
+        return array(
+            'name' => $d[0]->name,
+            'data' => $arr
+        );
     }
     // 从一年的数据中获取当月的数据 结构 年-月-日
     public function chose_month_data($d)

@@ -288,13 +288,19 @@ class Graph extends CI_Controller
         $nanoIdx = count($r) - 2;
         $ret = $r[$nanoIdx];
 
-        // 对数据进行排序
-        foreach($columns as $k => $v) {
-            $ret[$k]->data = $this->mgraph->sort_data($ret[$k]->data);
-            $ret[$k]->data = $this->mgraph->add_data($ret[$k]->data);
-        }
+        $ret = $this->mgraph->chose_year_data($ret);
+
+//        var_dump($ret);
+
+        $ret['data'] = $this->mgraph->add_data($ret['data']);
+//        // 对数据进行排序
+//        foreach($columns as $k => $v) {
+//            $ret[$k]->data = $this->mgraph->sort_data($ret[$k]->data);
+//            $ret[$k]->data = $this->mgraph->add_data($ret[$k]->data);
+//        }
 
         $target = $this->get_target($tmp[0], $tmp[1]);
+//        $ret = array($ret);
         $ret = $this->mgraph->combine_data_ym($ret, (int)$target);
         $res['res'] = $ret;
         echo json_encode($res);
@@ -474,6 +480,7 @@ class Graph extends CI_Controller
         }
 
         $res['res'] = $this->mgraph->convert_data_bubble($res['res']);
+//        $res['res'] = $this->mgraph->shai($res['res']);
 
 
        //  = $this->mgraph->linear2stream($r);

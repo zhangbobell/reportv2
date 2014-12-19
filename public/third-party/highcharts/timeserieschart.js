@@ -12,7 +12,11 @@ jQuery.fn.setTimeSeriesLineChart = function (titleName,subTitle, valueTitle, val
         },
         xAxis: {
             type: 'datetime',
-            minRange: 14 * 24 * 3600000 // fourteen days
+            minRange: 14 * 24 * 3600000, // fourteen days
+            labels: {
+                format: '{value:%m-%d}',
+                align: 'left'
+            }
         },
         yAxis: {
             title: {
@@ -69,7 +73,11 @@ $.fn.lineChart = function (lineChart) {
         xAxis: {
             type: 'datetime',
             minRange: 14 * 24 * 3600000, // fourteen days
-            text: lineChart.xLabel
+            text: lineChart.xLabel,
+            labels: {
+                format: '{value:%m-%d}',
+                align: 'left'
+            }
         },
         yAxis: {
             title: {
@@ -78,6 +86,14 @@ $.fn.lineChart = function (lineChart) {
         },
         legend: {
             enabled: true
+        },
+        tooltip: {
+            formatter: function () {
+                return '<b>' + this.series.name +
+                    '</b><br /><b>日期: ' + Highcharts.dateFormat('%Y-%m-%d', this.point.x) +
+                    '</b><br /><b>数据: ' + this.point.y + '</b>';
+
+            }
         },
         plotOptions: {
             area: {

@@ -12,7 +12,7 @@ $(function(){
     });
 
     $('#container2-2').drawLineChart_week({
-        title: '追灿招募最近7天成交额（分销商评级）', // 主标题
+        title: '追灿招募商家数量（分销商评级）', // 主标题
         subtitle: '', // 副标题
         xLabel: '序号', // x 轴标题
         yLabel: '成交额', // y 轴标题
@@ -34,7 +34,7 @@ $(function(){
     });
 
     $('#container2-4').drawLineChart_week({
-        title: '追灿招募商家数量（分销商评级）', // 主标题
+        title: '追灿招募成交额（分销商评级）', // 主标题
         subtitle: '', // 副标题
         xLabel: '序号', // x 轴标题
         yLabel: '商家数量', // y 轴标题
