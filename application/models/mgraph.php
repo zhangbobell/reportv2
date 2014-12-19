@@ -178,10 +178,12 @@ class MGraph extends MY_model {
             }
         }
 
-        $this->load->library('PolynomialRegression');
         $slope =array();
         foreach ($late30 as $item)
         {
+            bcscale( 10 );
+            $this->load->library('polynomialregression', array('numberOfCoefficient' => 2));
+
             foreach ( $item as $dataPoint )
             {
                 if($dataPoint[ 1 ] != 0 )

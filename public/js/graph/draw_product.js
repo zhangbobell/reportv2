@@ -38,6 +38,26 @@ $(function(){
         saikufile: 'report_daily_sellernick_up_item_num' // ajax 请求的 saiku 文件
     });
 
+    $('#container4-4').drawbubbleChart({
+        title: '铺货数量', // 主标题
+        subtitle: '', // 副标题
+        xLabel: '日期', // x 轴标题
+        yLabel: '铺货数量'
+    }, {
+        url: 'graph/sk_stream_bubble', // ajax 请求地址
+        saikufile: 'report_recently_itemnum_up_num' // ajax 请求的 saiku 文件
+    });
+
+    $('#container4-5').drawbubbleChart({
+        title: '商品销量', // 主标题
+        subtitle: '', // 副标题
+        xLabel: '日期', // x 轴标题
+        yLabel: '商品销量'
+    }, {
+        url: 'graph/sk_stream_bubble', // ajax 请求地址
+        saikufile: 'report_recently_itemnum_sales_num' // ajax 请求的 saiku 文件
+    });
+
 
 
 

@@ -444,6 +444,16 @@ class Graph extends CI_Controller
         echo json_encode($res);
     }
 
+    public function object_to_array($obj){
+        $arr = array();
+        $_arr = is_object($obj)? get_object_vars($obj) :$obj;
+        foreach ($_arr as $key => $val){
+            $val=(is_array($val)) || is_object($val) ? $this->object_to_array($val) :$val;
+            $arr[$key] = $val;
+        }
+        return $arr;
+
+    }
 
     public function sk_stream_bubble()
     {
@@ -452,6 +462,11 @@ class Graph extends CI_Controller
 
 
         $res = $this->saiku->get_json_data($saikufile);
+//        $string = file_get_contents("http://localhost/reportv2/public/upload/report_daily_sellernick_up_item_num.json");
+//        $res = json_decode($string);
+//
+//        $res = $this->object_to_array($res);
+
         if($res['flag'] == 0)
         {
             echo json_encode($res);

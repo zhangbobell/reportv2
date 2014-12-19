@@ -98,7 +98,7 @@
  * @package PolynomialRegression
  * @link http://PolynomialRegression.drque.net/ Project home page.
  */
-class PolynomialRegression {
+class Polynomialregression {
     private $xPowers;
     private $xyPowers;
     private $numberOfCoefficient;
@@ -111,9 +111,9 @@ class PolynomialRegression {
      * @param int $numberOfCoefficient Number of coefficients in polynomial (degree
      *   of polynomial + 1).
      */
-    public function __construct( $numberOfCoefficient = 2 )
+    public function __construct( $param = array('numberOfCoefficient' => 2) )
     {
-        $this->numberOfCoefficient = $numberOfCoefficient;
+        $this->numberOfCoefficient = $param['numberOfCoefficient'];
         $this->reset();
 
     } // __construct
