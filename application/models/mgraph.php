@@ -186,9 +186,6 @@ class MGraph extends MY_model {
                 if($dataPoint[ 1 ] != 0 )
                 {
                     $this->polynomialregression->addData( (float)$dataPoint[ 0 ], (float)$dataPoint[ 1 ] );
-//                    echo $dataPoint[ 0 ].' : '.$dataPoint[ 1 ] ."<br />";
-
-
                 }
 
             }
@@ -197,12 +194,6 @@ class MGraph extends MY_model {
             $slope[] = (float)$coefficients[ 1 ];
         }
         $data_bubble = array();
-
-//        $stand_latest = array();
-//        for($i = 0; $i < $width-3; $i++)
-//        {
-//            $stand_latest[] = (float)$latest[$i] / (max($latest) - min($latest));
-//        }
 
         for ($i = 0; $i < $width-3; $i++)
         {
@@ -695,7 +686,7 @@ class MGraph extends MY_model {
     }
 
     public function get_tag3($db, $tag1, $tag2) {
-        $sql = "SELECT `tag3` FROM `meta_sku` WHERE `tag1`=? AND `tag2`=? GROUP BY `tag2`";
+        $sql = "SELECT `tag3` FROM `meta_sku` WHERE `tag1`=? AND `tag2`=? GROUP BY `tag3`";
 
         return $this->my_query($db, $sql, array($tag1, $tag2));
     }

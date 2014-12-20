@@ -134,7 +134,6 @@ $(function(){
         $('#loading span').text('正在重新绘图...');
         $('#loading').css('display', 'block');
 
-        $.jStorage.flush();
         $.xhr0({
             url: 'graph/redraw_bubble',
             data: {saikufile: 'report_recently_itemnum_sales_num', tag1: $('#tag451').val(), tag2: $('#tag452').val(), tag3: $('#tag453').val()},
@@ -148,7 +147,7 @@ $(function(){
                 };
 
                 bubbleChart.series = d['res'];
-                $('#container4-4').bubbleChart(bubbleChart);
+                $('#container4-5').bubbleChart(bubbleChart);
                 $('#loading').css('display', 'none');
             }
         });

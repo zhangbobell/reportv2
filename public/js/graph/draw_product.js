@@ -35,7 +35,7 @@ $(function(){
         yLabel: '铺货商品数量'
     }, {
         url: 'graph/sk_stream_bubble', // ajax 请求地址
-        saikufile: 'report_daily_sellernick_up_num_new' // ajax 请求的 saiku 文件
+        saikufile: 'report_recently_sellernick_up_num' // ajax 请求的 saiku 文件
     });
 
     $('#container4-4').drawbubbleChart({
