@@ -3,7 +3,7 @@
 <div id="container4-2" class="col-md-12">铺货商品数量正在加载...</div>
 <div id="container4-3" class="col-md-12">所有渠道商家铺货量正在加载...</div>
 <div class="col-md-12 mt20">
-    <div class="col-md-12 mt20 mb30" id="filter">
+    <div class="col-md-12 mt20 mb30 fix" id="filter">
         <div class="col-md-3" id="tag441-wrap">
             <select class="form-control" id="tag441">
                 <option value="All">全部</option>
@@ -21,7 +21,7 @@
     <div id="container4-4" class="col-md-12">所有产品铺货量正在加载...</div>
 </div>
 <div class="col-md-12 mt20">
-    <div class="col-md-12 mt20 mb30" id="filter">
+    <div class="col-md-12 mt20 mb30 fix" id="filter">
         <div class="col-md-3" id="tag451-wrap">
             <select class="form-control" id="tag451">
                 <option value="All">全部</option>
