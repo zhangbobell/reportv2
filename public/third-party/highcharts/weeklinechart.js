@@ -106,25 +106,31 @@ $.fn.lineChart_week = function (lineChart) {
 $.fn.drawLineChart_week = function(lineChart, xhrOpt) {
     var thisSelector = this.selector;
 
-    $.xhr_week({
-        url: xhrOpt.url,
-        saikufile: xhrOpt.saikufile,
-        columns: lineChart.columns,
-        attach: '' || lineChart.target,
-        cb: function(d) {
-            d = JSON.parse(d);
-            if(d['flag'] == 0)
-            {
-                $(thisSelector).text(d['err']);
-            }
-            else
-            {
-                lineChart.series = d['res'];
-                $(thisSelector).lineChart_week(lineChart);
-            }
+    if ((d = $.jStorage.get(thisSelector)) && thisSelector[10] != '3') {
+        lineChart.series = d['res'];
+        $(thisSelector).lineChart_week(lineChart);
+    } else {
+        $.xhr_week({
+            url: xhrOpt.url,
+            saikufile: xhrOpt.saikufile,
+            columns: lineChart.columns,
+            attach: '' || lineChart.target,
+            cb: function(d) {
+                d = JSON.parse(d);
+                if(d['flag'] == 0)
+                {
+                    $(thisSelector).text(d['err']);
+                }
+                else
+                {
+                    $.jStorage.set(thisSelector, d, {TTL: 24*3600*1000});
+                    lineChart.series = d['res'];
+                    $(thisSelector).lineChart_week(lineChart);
+                }
 
-        }
-    });
+            }
+        });
+    }
 }
 
 jQuery.extend({
