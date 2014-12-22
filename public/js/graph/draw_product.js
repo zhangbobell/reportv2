@@ -65,7 +65,7 @@ $(function(){
 //    });
 
     $('#container4-7').drawLineChart_stream({
-        title: '商家销售额', // 主标题
+        title: '合作商家销售额', // 主标题
         subtitle: '', // 副标题
         xLabel: '日期', // x 轴标题
         yLabel: '商家销售额'
@@ -82,6 +82,16 @@ $(function(){
     }, {
         url: 'graph/sk_stream_leaf', // ajax 请求地址
         saikufile: 'report_monthly_tags_up_num' // ajax 请求的 saiku 文件
+    });
+
+    $('#container4-9').drawLineChart_stream({
+        title: '非合作商家销售额', // 主标题
+        subtitle: '', // 副标题
+        xLabel: '日期', // x 轴标题
+        yLabel: '商家销售额'
+    }, {
+        url: 'graph/sk_stream_leaf', // ajax 请求地址
+        saikufile: 'report_monthly_sellernick_sales_fee_0' // ajax 请求的 saiku 文件
     });
 
 

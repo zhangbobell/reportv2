@@ -49,7 +49,7 @@ $.fn.lineChart_stream = function (lineChart) {
             text: lineChart.subtitle
         },
         xAxis: {
-
+            categories: lineChart.ticks,
             text: lineChart.xLabel
         },
         yAxis: {
@@ -65,7 +65,7 @@ $.fn.lineChart_stream = function (lineChart) {
             formatter: function () {
                 return '<b>' + this.series.name +
                     '</b> : <b>' + (this.point.high - this.point.low) +
-                    '</b><br />x: <b>'  + this.point.x;
+                    '</b><br /><b>'  + lineChart.ticks[this.point.x];
             }
         },
         series: lineChart.series
@@ -77,6 +77,7 @@ $.fn.drawLineChart_stream = function(lineChart, xhrOpt) {
 
     if ((d = $.jStorage.get(thisSelector))) {
         lineChart.series = d['res'];
+        lineChart.ticks = d['ticks'];
         $(thisSelector).lineChart_stream(lineChart);
     } else {
         $.xhr_stream({
@@ -94,6 +95,7 @@ $.fn.drawLineChart_stream = function(lineChart, xhrOpt) {
                 {
                     $.jStorage.set(thisSelector, d, {TTL: 24*3600*1000});
                     lineChart.series = d['res'];
+                    lineChart.ticks = d['ticks'];
                     $(thisSelector).lineChart_stream(lineChart);
                 }
 

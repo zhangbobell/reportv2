@@ -602,6 +602,16 @@ class MGraph extends MY_model {
         return $d;
     }
 
+    public function getStreamXticks($d) {
+        $ticks = array();
+
+        foreach($d[0]->data as $item) {
+            $ticks[] = gmdate("Y-m", (string)($item[0] / 1000));
+        }
+
+        return $ticks;
+    }
+
     public function get_data_daily_last($skfile, $col) {
         $ret = $this->get_data_daily($skfile, $col);
 

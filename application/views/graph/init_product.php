@@ -41,5 +41,6 @@
     </div>
     <div id="container4-5" class="col-md-12">所有产品销量正在加载...</div>
 </div>
-<div id="container4-7" class="col-md-12" style="height: 900px">商家销售额正在加载...</div>
+<div id="container4-7" class="col-md-12" style="height: 900px">合作商家销售额正在加载...</div>
+<div id="container4-9" class="col-md-12" style="height: 900px">非合作商家销售额正在加载...</div>
 
