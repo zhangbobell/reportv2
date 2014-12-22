@@ -102,7 +102,7 @@ class MGraph extends MY_model {
         return $d;
     }
 
-    public function convert_data_leaf($results, $colArr)
+    public function convert_data_leaf($results, $colArr, $isAuto)
     {
         $d = array();
         $startIndex = $results['topOffset'];
@@ -110,16 +110,20 @@ class MGraph extends MY_model {
         $width = $results['width'];
         $data = $results['cellset'];
 
-        $series = $colArr;
-
         $leaf = array();
 
         for ($k = 0; $k < $width; $k++) {
             $cell = $data[$startIndex-1][$k];
             if ($cell['value'] == 'null')
                 $leaf[] = false;
-            else
+            else {
                 $leaf[] = true;
+                $series[] = $cell['value'];
+            }
+        }
+
+        if (!$isAuto) {
+            $series = $colArr;
         }
 
         for ($i = $startIndex; $i < $endIndex; $i++)
@@ -135,7 +139,7 @@ class MGraph extends MY_model {
                 {
                     if($leaf[$k])
                     {
-                        $d[$it]->name = $series[$it];
+                        $d[$it]->name = $isAuto ? $series[$k] : $series[$it];
                         $d[$it]->data[] = array(1000 * strtotime($str), (float)$data[$i][$k]['value']);
                         $it++;
                     }

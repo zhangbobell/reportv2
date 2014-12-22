@@ -442,7 +442,11 @@ class Graph extends CI_Controller
             return;
         }
 
-        $r = $this->mgraph->convert_data_leaf($res['res'], $columns);
+        if (count($columns) > 0 && $columns[0] != '') {
+            $r = $this->mgraph->convert_data_leaf($res['res'], $columns, false);
+        } else {
+            $r = $this->mgraph->convert_data_leaf($res['res'], $columns, true);
+        }
 
 
         $res['res'] = $this->mgraph->linear2stream($r);
@@ -632,7 +636,7 @@ class Graph extends CI_Controller
     {
 
         $res = $this->saiku->get_json_data($skfile);
-//        $res['res'] = $this->mgraph->convert_data_bubble($res['res']);
+        $res['res'] = $this->mgraph->convert_data_leaf($res['res'], null, true);
 //        $r = $this->mgraph->convert_data_bubble($res['res']);
 
         echo json_encode($res);
