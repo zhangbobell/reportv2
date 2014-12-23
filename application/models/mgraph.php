@@ -180,20 +180,20 @@ class MGraph extends MY_model {
         }
 
         $slope =array();
+
+        bcscale( 10 );
+        $this->load->library('polynomialregression', array('numberOfCoefficient' => 2));
         foreach ($late30 as $item)
         {
-            bcscale( 10 );
-            $this->load->library('polynomialregression', array('numberOfCoefficient' => 2));
-
+            $this->polynomialregression->reset();
             foreach ( $item as $dataPoint )
             {
-                if($dataPoint[ 1 ] != 0 )
-                {
+//                if($dataPoint[ 1 ] != 0 )
+//                {
                     $this->polynomialregression->addData( (float)$dataPoint[ 0 ], (float)$dataPoint[ 1 ] );
-                }
+//                }
 
             }
-
             $coefficients = $this->polynomialregression->getCoefficients();
             $slope[] = (float)$coefficients[ 1 ];
         }
@@ -206,9 +206,6 @@ class MGraph extends MY_model {
                 'data' => array(array($slope[$i], $latest[$i], $latest[$i]))
             );
         }
-
-
-
 
 
         return $data_bubble;

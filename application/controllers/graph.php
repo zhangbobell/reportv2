@@ -486,9 +486,6 @@ class Graph extends CI_Controller
         $res['res'] = $this->mgraph->convert_data_bubble($res['res']);
 //        $res['res'] = $this->mgraph->shai($res['res']);
 
-
-       //  = $this->mgraph->linear2stream($r);
-
         echo json_encode($res);
     }
 
@@ -636,9 +633,9 @@ class Graph extends CI_Controller
     {
 
         $res = $this->saiku->get_json_data($skfile);
-        $res['res'] = $this->mgraph->convert_data_leaf($res['res'], null, true);
+//        $res['res'] = $this->mgraph->convert_data_leaf($res['res'], null, true);
 //        $res['res'] = $this->mgraph->linear2stream($res['res']);
-//        $r = $this->mgraph->convert_data_bubble($res['res']);
+        $res['res'] = $this->mgraph->convert_data_bubble($res['res']);
 
         echo json_encode($res);
 //        var_dump($r);
