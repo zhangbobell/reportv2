@@ -195,7 +195,7 @@ class MGraph extends MY_model {
 
             }
             $coefficients = $this->polynomialregression->getCoefficients();
-            $slope[] = (float)$coefficients[ 1 ];
+            $slope[] = round(atan((float)$coefficients[ 1 ]) * 180 / pi(), 2);
         }
         $data_bubble = array();
 
