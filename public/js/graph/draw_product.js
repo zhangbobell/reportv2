@@ -2,7 +2,7 @@ $(function(){
     $('#container4-1').drawLineChart_stream({
         title: '类目销量', // 主标题
         subtitle: '', // 副标题
-        xLabel: '日期', // x 轴标题
+        xLabel: '月份', // x 轴标题
         yLabel: '销量', // y 轴标题
         columns: ['unname-unname','unname上衣','儿童套装','女式上衣','女式内裤','女式内衣套装','女式秋裤','女式背心','女式马甲',
             '女式t恤','女式休闲裤','女式打底裤','女式短衫','女式长衫','女式上衣','女式中裤','女式家居服套装','女式睡裙','女式短裤',
@@ -27,7 +27,7 @@ $(function(){
     $('#container4-3').drawbubbleChart({
         title: '商家铺货商品数量趋势', // 主标题
         subtitle: '', // 副标题
-        xLabel: '日期', // x 轴标题
+        xLabel: '增长系数', // x 轴标题
         yLabel: '铺货商品数量'
     }, {
         url: 'graph/sk_stream_bubble', // ajax 请求地址
@@ -37,7 +37,7 @@ $(function(){
     $('#container4-4').drawbubbleChart({
         title: '货号铺货数量趋势', // 主标题
         subtitle: '', // 副标题
-        xLabel: '日期', // x 轴标题
+        xLabel: '增长系数', // x 轴标题
         yLabel: '铺货数量'
     }, {
         url: 'graph/sk_stream_bubble', // ajax 请求地址
@@ -47,7 +47,7 @@ $(function(){
     $('#container4-5').drawbubbleChart({
         title: '货号销量趋势', // 主标题
         subtitle: '', // 副标题
-        xLabel: '日期', // x 轴标题
+        xLabel: '增长系数', // x 轴标题
         yLabel: '商品销量'
     }, {
         url: 'graph/sk_stream_bubble', // ajax 请求地址

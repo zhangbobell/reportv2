@@ -51,8 +51,9 @@ $.fn.bubbleChart = function (bubbleChart) {
             text: bubbleChart.subtitle + '（鼠标选取局部区域可放大查看）'
         },
         xAxis: {
-
-            text: bubbleChart.xLabel
+            title: {
+                text: bubbleChart.xLabel
+            }
         },
         yAxis: {
             title: {

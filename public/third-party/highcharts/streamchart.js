@@ -50,7 +50,9 @@ $.fn.lineChart_stream = function (lineChart) {
         },
         xAxis: {
             categories: lineChart.ticks,
-            text: lineChart.xLabel
+            title: {
+                text: lineChart.xLabel
+            }
         },
         yAxis: {
             title: {

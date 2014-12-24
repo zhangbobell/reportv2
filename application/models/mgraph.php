@@ -603,7 +603,7 @@ class MGraph extends MY_model {
         $ticks = array();
 
         foreach($d[0]->data as $item) {
-            $ticks[] = gmdate("Y-m", (string)($item[0] / 1000));
+            $ticks[] = date("Y-m", (string)($item[0] / 1000));
         }
 
         return $ticks;
