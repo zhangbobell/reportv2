@@ -219,13 +219,13 @@
             var page = $(this).attr("data-i");
 
             $("tbody tr", $thisGrid).each(function (tr_index, tr_item) {
-                $(this).hide();
+                $(this).css('display', 'none');
 
                 var pageStart = ((page - 1) * pageSize) + 1;
                 var pageEnd = page * pageSize;
 
                 if ((tr_index + 1) >= pageStart && (tr_index + 1) <= pageEnd) {
-                    $(this).show();
+                    $(this).removeAttr('style');
                 }
             });
 
