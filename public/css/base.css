@@ -279,3 +279,13 @@ li.sidebar-title {
           -webkit-transform: scale(1.0);
       }
 }
+
+/*------------------------------------------------ 任务列表 -------------------------------------------------------*/
+
+.task-list li {
+    list-style-type: none;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin-left: -25px;
+}

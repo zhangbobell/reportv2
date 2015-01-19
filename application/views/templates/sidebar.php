@@ -8,6 +8,7 @@
         <li><a href="management/user/">用户管理</a></li>
         <li><a href="management/project/">项目管理</a></li>
         <li><a href="graph/init_first">报表模块</a></li>
+        <li><a href="task/my_task">任务模块</a></li>
     <?php endif; ?>
 <!--        <li><a href="price/inputTarget/">录入下周目标</a></li>-->
 <!--        <li><a href="price/inputComplete">录入今日完成</a></li>-->
