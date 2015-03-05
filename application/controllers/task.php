@@ -23,8 +23,8 @@ class Task extends CI_Controller {
         $authDB = $this->session->userdata('authDB');
 
         if (!$authDB || count($authDB) == 0) {
-            show_error('没有授权的数据库，请登录或联系管理员');
-            exit();
+                show_error('没有授权的数据库，请登录或联系管理员');
+                exit();
         }
 
         $firstDB = '';
@@ -44,14 +44,22 @@ class Task extends CI_Controller {
             'task_list' => $task_list
         );
 
-        $this->load->view('templates/header', $data);
-        $this->load->view('task/header_add_'.$page);
-        $this->load->view('templates/banner');
-        $this->load->view('templates/sidebar_task');
-        $this->load->view('task/'.$page);
-        $this->load->view('templates/footer_script');
-        $this->load->view('task/footer_add_'.$page);
-        $this->load->view('templates/footer');
+//        $this->load->view('templates/header', $data);
+//        $this->load->view('task/header_add_'.$page);
+//        $this->load->view('templates/banner');
+//        $this->load->view('templates/sidebar_task');
+//        $this->load->view('task/'.$page);
+//        $this->load->view('templates/footer_script');
+//        $this->load->view('task/footer_add_'.$page);
+//        $this->load->view('templates/footer');
+        $this->load->view('templates/header_task', $data);
+        $this->load->view('templates/sliderbar_task');
+        $this->load->view('templates/banner_task');
+        $this->load->view('task/task_home');
+        $this->load->view('templates/footer_task');
+        $this->load->view('templates/footer_task_script');
+        $this->load->view('templates/footer_function_task');
+        $this->load->view('templates/footer_final_task');
     }
 
     public function assign($page = 'assign') {
