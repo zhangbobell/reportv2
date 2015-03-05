@@ -52,10 +52,11 @@ class Task extends CI_Controller {
 //        $this->load->view('templates/footer_script');
 //        $this->load->view('task/footer_add_'.$page);
 //        $this->load->view('templates/footer');
+
         $this->load->view('templates/header_task', $data);
         $this->load->view('templates/sliderbar_task');
         $this->load->view('templates/banner_task');
-        $this->load->view('task/task_home');
+        $this->load->view('task/task_mytask');
         $this->load->view('templates/footer_task');
         $this->load->view('templates/footer_task_script');
         $this->load->view('templates/footer_function_task');
