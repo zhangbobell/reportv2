@@ -59,11 +59,11 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -86,9 +86,9 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a7.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a6.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -111,8 +111,8 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -135,10 +135,10 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a7.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -161,7 +161,7 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -184,10 +184,10 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -210,9 +210,9 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a7.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a6.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -235,8 +235,8 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -259,9 +259,9 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -284,7 +284,7 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -307,9 +307,9 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a7.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a6.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -363,11 +363,11 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -390,9 +390,9 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a7.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a6.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -415,8 +415,8 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -439,10 +439,10 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a7.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -465,7 +465,7 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -488,10 +488,10 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -514,9 +514,9 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a7.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a6.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -539,8 +539,8 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -563,9 +563,9 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -588,7 +588,7 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -611,9 +611,9 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a7.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a6.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -667,11 +667,11 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -694,9 +694,9 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a7.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a6.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -719,8 +719,8 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -743,10 +743,10 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a7.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -769,7 +769,7 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -792,10 +792,10 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -818,9 +818,9 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a7.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a6.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -843,8 +843,8 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -867,9 +867,9 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -892,7 +892,7 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -915,9 +915,9 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a7.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a6.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -971,11 +971,11 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -998,9 +998,9 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a7.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a6.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1023,8 +1023,8 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1047,10 +1047,10 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a7.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1073,7 +1073,7 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1096,10 +1096,10 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1122,9 +1122,9 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a7.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a6.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1147,8 +1147,8 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1171,9 +1171,9 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1196,7 +1196,7 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1219,9 +1219,9 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a7.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a6.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1275,11 +1275,11 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1302,9 +1302,9 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a7.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a6.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1327,8 +1327,8 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1351,10 +1351,10 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a7.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1377,7 +1377,7 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1400,10 +1400,10 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1426,9 +1426,9 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a7.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a6.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1451,8 +1451,8 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1475,9 +1475,9 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1500,7 +1500,7 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1523,9 +1523,9 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a7.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a6.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1579,11 +1579,11 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1606,9 +1606,9 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a7.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a6.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1631,8 +1631,8 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1655,10 +1655,10 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a7.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1681,7 +1681,7 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1704,10 +1704,10 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1730,9 +1730,9 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a7.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a6.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1755,8 +1755,8 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1779,9 +1779,9 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1804,7 +1804,7 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1827,9 +1827,9 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a7.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a6.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1883,11 +1883,11 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1910,9 +1910,9 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a7.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a6.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1935,8 +1935,8 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1959,10 +1959,10 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a7.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -1985,7 +1985,7 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -2008,10 +2008,10 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -2034,9 +2034,9 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a7.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a6.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -2059,8 +2059,8 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -2083,9 +2083,9 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -2108,7 +2108,7 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -2131,9 +2131,9 @@
         </div>
     </td>
     <td class="project-people">
-        <a href=""><img alt="image" class="img-circle" src="img/a7.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a6.jpg"></a>
-        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
+        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
     </td>
     <td class="project-actions">
         <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>

@@ -37,7 +37,7 @@
                         IN+
                     </div>
                 </li>
-                <li class="active">
+                <li>
                     <a href="index.html"><i class="fa fa-th-large"></i>
                         <span class="nav-label">首页</span>
                         <span class="label label-warning pull-right"></span>
@@ -55,7 +55,7 @@
                         <span class="label label-warning pull-right"></span>
                     </a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="taskmanage.html"><i class="fa fa-diamond"></i>
                         <span class="nav-label">智能任务管理</span>
                         <span class="label label-primary pull-right">NEW</span>
