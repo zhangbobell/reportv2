@@ -13,11 +13,15 @@ class MTask extends MY_Model {
     }
 
     public function get_task_list_by_username($db, $username) {
-        $sql = "SELECT `action_id`, `action_name`
-                FROM `meta_action`
-                LEFT JOIN `etc_privileges`.`etc_user` AS `a`
-                ON `meta_action`.`username`=`a`.`username`
-                WHERE `meta_action`.`username` = ?";
+//        $sql = "SELECT `action_id`, `action_name`
+//                FROM `meta_action`
+//                LEFT JOIN `etc_privileges`.`etc_user` AS `a`
+//                ON `meta_action`.`username`=`a`.`username`
+//                WHERE `meta_action`.`username` = ?";
+
+        $sql = "SELECT `createtime`, `due_date`, `task_id`, `task_cat`, `task_title`, `task_desc`, `creator`
+                FROM `dim_bpm_activity`
+                WHERE `assignee` = ?";
 
         return $this->my_query($db, $sql, array($username));
     }

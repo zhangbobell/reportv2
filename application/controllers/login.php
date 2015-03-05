@@ -29,7 +29,7 @@ class Login extends CI_Controller
         $data['title'] = "用户登录";
 
         $this->load->view('login/'.$page, $data);
-        $this->load->view('login/login_footer');
+//        $this->load->view('login/login_footer');
 
     }
 
@@ -101,35 +101,36 @@ class Login extends CI_Controller
         define("PASSWORD_ERROR", "1");
         define("LOGIN_SUCCESS", "0");
 
-        $captcha = $this->input->post('captcha', true);
+//        $captcha = $this->input->post('captcha', true);
         $username = $this->input->post('username', true);
-        $password =  $this->input->post("password", true);
+        $password =  $this->input->post('password', true);
 
         //验证输入的验证码字段
-        if($captcha != $this->session->userdata('captcha') )
+        // 新版暂无验证码字段
+        /*if($captcha != $this->session->userdata('captcha') )
         {
             echo CAPTCHA_ERROR;
             return;
-        }
-
+        }*/
 
         $this->load->model("mlogin");
 
         //验证用户名密码
-        $record = $this->mlogin->validate_user($username, $password);
+        $record = $this->mlogin->validate_user($username, md5($password));
         if($record==-1)
         {
-            echo PASSWORD_ERROR;
-            return;
+//            echo PASSWORD_ERROR;
+
+            redirect('login/index');
         }
         else
         {
-            echo LOGIN_SUCCESS;
+//            echo LOGIN_SUCCESS;
 
             //删除验证码
-            $this->del_captcha();
-            $this->session->unset_userdata('captcha');
-            $this->session->unset_userdata('captcha_url');
+//            $this->del_captcha();
+//            $this->session->unset_userdata('captcha');
+//            $this->session->unset_userdata('captcha_url');
 
             //设置session数据
             $authDB =  $this->mlogin->get_auth_DB($record['userid']);
@@ -143,6 +144,8 @@ class Login extends CI_Controller
 
             //插入日志文件
             $this->mlogin->insert_log_message($username, "login", $this->input->ip_address());
+
+            redirect('task/my_task');
         }
 
     }

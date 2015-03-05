@@ -16,6 +16,10 @@ class MY_Model extends CI_Model
     public function select_DB($databaseName)
     {
 
+//        $db_config['hostname'] = '192.168.1.110';
+//        $db_config['username'] = 'kettle';
+//        $db_config['password'] = 'root';
+//        $db_config['port'] = 33060;
         $db_config['hostname'] = '192.168.1.90';
         $db_config['username'] = 'data';
         $db_config['password'] = 'data2123';
