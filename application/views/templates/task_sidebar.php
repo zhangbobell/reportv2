@@ -50,7 +50,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="decision.html"><i class="fa fa-bar-chart-o"></i>
+                    <a href="task/decision"><i class="fa fa-bar-chart-o"></i>
                         <span class="nav-label">云决策平台</span>
                         <span class="label label-warning pull-right"></span>
                     </a>
@@ -62,7 +62,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="process.html"><i class="fa fa-edit"></i>
+                    <a href="task/process"><i class="fa fa-edit"></i>
                         <span class="nav-label">流程定制平台 </span>
                         <span class="label label-warning pull-right"></span>
                     </a>

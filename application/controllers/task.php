@@ -15,8 +15,11 @@ class Task extends CI_Controller {
     }
 
     public function home() {
+        $data = array(
+            'title' => "首页",
+        );
 
-        $this->load->view('templates/task_header');
+        $this->load->view('templates/task_header', $data);
         $this->load->view('templates/task_sidebar');
         $this->load->view('templates/task_banner');
         $this->load->view('task/task_home');
@@ -27,10 +30,44 @@ class Task extends CI_Controller {
     }
 
     public function advisory() {
-        $this->load->view('templates/task_header');
+        $data = array(
+            'title' => "全案咨询",
+        );
+
+        $this->load->view('templates/task_header', $data);
         $this->load->view('templates/task_sidebar');
         $this->load->view('templates/task_banner');
         $this->load->view('task/task_advisory');
+        $this->load->view('templates/task_footer');
+        $this->load->view('templates/task_footer_script');
+        $this->load->view('templates/task_footer_function');
+        $this->load->view('templates/task_footer_final');
+    }
+
+    public function decision() {
+        $data = array(
+            'title' => "云决策平台",
+        );
+
+        $this->load->view('templates/task_header', $data);
+        $this->load->view('templates/task_sidebar');
+        $this->load->view('templates/task_banner');
+        $this->load->view('task/task_decision');
+        $this->load->view('templates/task_footer');
+        $this->load->view('templates/task_footer_script');
+        $this->load->view('templates/task_footer_function');
+        $this->load->view('templates/task_footer_final');
+    }
+
+    public function process() {
+        $data = array(
+            'title' => "流程定制平台",
+        );
+
+        $this->load->view('templates/task_header', $data);
+        $this->load->view('templates/task_sidebar');
+        $this->load->view('templates/task_banner');
+        $this->load->view('task/task_process');
         $this->load->view('templates/task_footer');
         $this->load->view('templates/task_footer_script');
         $this->load->view('templates/task_footer_function');
