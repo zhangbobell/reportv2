@@ -14,7 +14,7 @@ class Task extends CI_Controller {
         $this->load->model('mtask');
     }
 
-    public function home() {
+    public function home($page = 'home') {
         $data = array(
             'title' => "首页",
         );
@@ -22,14 +22,14 @@ class Task extends CI_Controller {
         $this->load->view('templates/task_header', $data);
         $this->load->view('templates/task_sidebar');
         $this->load->view('templates/task_banner');
-        $this->load->view('task/task_home');
+        $this->load->view('task/task_'.$page);
         $this->load->view('templates/task_footer');
         $this->load->view('templates/task_footer_script');
         $this->load->view('templates/task_footer_function');
         $this->load->view('templates/task_footer_final');
     }
 
-    public function advisory() {
+    public function advisory($page = 'advisory') {
         $data = array(
             'title' => "全案咨询",
         );
@@ -37,14 +37,14 @@ class Task extends CI_Controller {
         $this->load->view('templates/task_header', $data);
         $this->load->view('templates/task_sidebar');
         $this->load->view('templates/task_banner');
-        $this->load->view('task/task_advisory');
+        $this->load->view('task/task_'.$page);
         $this->load->view('templates/task_footer');
         $this->load->view('templates/task_footer_script');
         $this->load->view('templates/task_footer_function');
         $this->load->view('templates/task_footer_final');
     }
 
-    public function decision() {
+    public function decision($page = 'decision') {
         $data = array(
             'title' => "云决策平台",
         );
@@ -52,14 +52,14 @@ class Task extends CI_Controller {
         $this->load->view('templates/task_header', $data);
         $this->load->view('templates/task_sidebar');
         $this->load->view('templates/task_banner');
-        $this->load->view('task/task_decision');
+        $this->load->view('task/task_'.$page);
         $this->load->view('templates/task_footer');
         $this->load->view('templates/task_footer_script');
         $this->load->view('templates/task_footer_function');
         $this->load->view('templates/task_footer_final');
     }
 
-    public function process() {
+    public function process($page = 'process') {
         $data = array(
             'title' => "流程定制平台",
         );
@@ -67,10 +67,30 @@ class Task extends CI_Controller {
         $this->load->view('templates/task_header', $data);
         $this->load->view('templates/task_sidebar');
         $this->load->view('templates/task_banner');
-        $this->load->view('task/task_process');
+        $this->load->view('task/task_'.$page);
         $this->load->view('templates/task_footer');
         $this->load->view('templates/task_footer_script');
         $this->load->view('templates/task_footer_function');
+        $this->load->view('templates/task_footer_final');
+    }
+
+    public function mailpage($page = 'mailpage') {
+        $data = array(
+            'title' => "联系我们",
+        );
+
+        $this->load->view('templates/task_header', $data);
+        $this->load->view('task/task_header_add_'.$page);
+        $this->load->view('templates/task_sidebar');
+        $this->load->view('templates/task_banner');
+        $this->load->view('task/task_'.$page);
+
+        $this->load->view('templates/task_footer');
+
+        $this->load->view('templates/task_footer_script');
+        $this->load->view('task/task_footer_script_add_'.$page);
+        $this->load->view('templates/task_footer_function');
+        $this->load->view('task/task_footer_function_add_'.$page);
         $this->load->view('templates/task_footer_final');
     }
 
@@ -104,30 +124,14 @@ class Task extends CI_Controller {
             'task_list' => $task_list
         );
 
-//        $this->load->view('templates/header', $data);
-//        $this->load->view('task/header_add_'.$page);
-//        $this->load->view('templates/banner');
-//        $this->load->view('templates/sidebar_task');
-//        $this->load->view('task/'.$page);
-//        $this->load->view('templates/footer_script');
-//        $this->load->view('task/footer_add_'.$page);
-//        $this->load->view('templates/footer');
-
         $this->load->view('templates/task_header', $data);
-//        $this->load->view('task/task_header_add_mailpage');  // test mail
         $this->load->view('templates/task_sidebar');
         $this->load->view('templates/task_banner');
-//        $this->load->view('task/task_home');   // home page test
-        $this->load->view('task/task_mytask');   // task page test
-//        $this->load->view('task/task_taskdetail');   // task detail page test
-//        $this->load->view('task/task_mailpage');  // 未完成：需要附加CSS  js
+        $this->load->view('task/task_mytask');
 
         $this->load->view('templates/task_footer');
-
         $this->load->view('templates/task_footer_script');
-//        $this->load->view('task/task_footer_script_add_mailpage');  // test mail
         $this->load->view('templates/task_footer_function');
-//        $this->load->view('task/task_footer_function_add_mailpage);
         $this->load->view('templates/task_footer_final');
     }
 
