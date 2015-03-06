@@ -22,7 +22,6 @@
                             <div id="tab-0" class="tab-pane active">
                                 <div class="ibox">
                                     <div class="ibox-title">
-                                        <h5>All projects assigned to this account--0</h5>
                                         <div class="ibox-tools">
                                             <a href="" class="btn btn-primary btn-xs">Create new project</a>
                                         </div>
@@ -98,279 +97,32 @@
                                         <div class="project-list">
                                             <table class="table table-hover">
                                                 <tbody>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Contract with Zender Company</a>
-                                                        <br/>
-                                                        <small>Created 14.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 48%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 48%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">There are many variations of passages</a>
-                                                        <br/>
-                                                        <small>Created 11.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 28%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 28%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-default">Unactive</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Many desktop publishing packages and web</a>
-                                                        <br/>
-                                                        <small>Created 10.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 8%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 8%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Letraset sheets containing</a>
-                                                        <br/>
-                                                        <small>Created 22.07.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 83%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 83%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Contrary to popular belief</a>
-                                                        <br/>
-                                                        <small>Created 14.07.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 97%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 97%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Contract with Zender Company</a>
-                                                        <br/>
-                                                        <small>Created 14.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 48%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 48%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">There are many variations of passages</a>
-                                                        <br/>
-                                                        <small>Created 11.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 28%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 28%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-default">Unactive</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Many desktop publishing packages and web</a>
-                                                        <br/>
-                                                        <small>Created 10.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 8%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 8%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Letraset sheets containing</a>
-                                                        <br/>
-                                                        <small>Created 22.07.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 83%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 83%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Contrary to popular belief</a>
-                                                        <br/>
-                                                        <small>Created 14.07.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 97%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 97%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">There are many variations of passages</a>
-                                                        <br/>
-                                                        <small>Created 11.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 28%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 28%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
+                                                <?php foreach($task_list as $item):?>
+                                                    <tr>
+                                                        <td class="project-status">
+                                                            <span class="label label-primary">Active</span>
+                                                        </td>
+                                                        <td class="project-title">
+                                                            <a href="task/detail/db_jiuyang/<?php echo $item['task_id'];?>">任务---<?php echo $item['task_id'];?></a>
+                                                            <br/>
+                                                            <small>创建时间 <?php echo $item['createtime'];?></small>
+                                                        </td>
+                                                        <td class="project-completion">
+                                                            <small>Completion with: 8%</small>
+                                                            <div class="progress progress-mini">
+                                                                <div style="width: 8%;" class="progress-bar"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="project-people">
+                                                            <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
+                                                            <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+                                                        </td>
+                                                        <td class="project-actions">
+                                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+                                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                                        </td>
+                                                    </tr>
+                                                <?php endforeach;?>
                                                 </tbody>
 
                                             </table>
@@ -402,279 +154,32 @@
                                         <div class="project-list">
                                             <table class="table table-hover">
                                                 <tbody>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Contract with Zender Company</a>
-                                                        <br/>
-                                                        <small>Created 14.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 48%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 48%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">There are many variations of passages</a>
-                                                        <br/>
-                                                        <small>Created 11.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 28%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 28%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-default">Unactive</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Many desktop publishing packages and web</a>
-                                                        <br/>
-                                                        <small>Created 10.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 8%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 8%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Letraset sheets containing</a>
-                                                        <br/>
-                                                        <small>Created 22.07.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 83%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 83%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Contrary to popular belief</a>
-                                                        <br/>
-                                                        <small>Created 14.07.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 97%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 97%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Contract with Zender Company</a>
-                                                        <br/>
-                                                        <small>Created 14.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 48%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 48%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">There are many variations of passages</a>
-                                                        <br/>
-                                                        <small>Created 11.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 28%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 28%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-default">Unactive</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Many desktop publishing packages and web</a>
-                                                        <br/>
-                                                        <small>Created 10.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 8%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 8%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Letraset sheets containing</a>
-                                                        <br/>
-                                                        <small>Created 22.07.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 83%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 83%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Contrary to popular belief</a>
-                                                        <br/>
-                                                        <small>Created 14.07.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 97%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 97%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">There are many variations of passages</a>
-                                                        <br/>
-                                                        <small>Created 11.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 28%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 28%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
+                                                <?php foreach($task_list as $item):?>
+                                                    <tr>
+                                                        <td class="project-status">
+                                                            <span class="label label-primary">Active</span>
+                                                        </td>
+                                                        <td class="project-title">
+                                                            <a href="task/detail/db_jiuyang/<?php echo $item['task_id'];?>">任务---<?php echo $item['task_id'];?></a>
+                                                            <br/>
+                                                            <small>创建时间 <?php echo $item['createtime'];?></small>
+                                                        </td>
+                                                        <td class="project-completion">
+                                                            <small>Completion with: 8%</small>
+                                                            <div class="progress progress-mini">
+                                                                <div style="width: 8%;" class="progress-bar"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="project-people">
+                                                            <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
+                                                            <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+                                                        </td>
+                                                        <td class="project-actions">
+                                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+                                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                                        </td>
+                                                    </tr>
+                                                <?php endforeach;?>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -704,279 +209,32 @@
                                         <div class="project-list">
                                             <table class="table table-hover">
                                                 <tbody>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Contract with Zender Company</a>
-                                                        <br/>
-                                                        <small>Created 14.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 48%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 48%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">There are many variations of passages</a>
-                                                        <br/>
-                                                        <small>Created 11.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 28%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 28%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-default">Unactive</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Many desktop publishing packages and web</a>
-                                                        <br/>
-                                                        <small>Created 10.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 8%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 8%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Letraset sheets containing</a>
-                                                        <br/>
-                                                        <small>Created 22.07.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 83%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 83%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Contrary to popular belief</a>
-                                                        <br/>
-                                                        <small>Created 14.07.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 97%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 97%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Contract with Zender Company</a>
-                                                        <br/>
-                                                        <small>Created 14.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 48%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 48%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">There are many variations of passages</a>
-                                                        <br/>
-                                                        <small>Created 11.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 28%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 28%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-default">Unactive</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Many desktop publishing packages and web</a>
-                                                        <br/>
-                                                        <small>Created 10.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 8%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 8%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Letraset sheets containing</a>
-                                                        <br/>
-                                                        <small>Created 22.07.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 83%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 83%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Contrary to popular belief</a>
-                                                        <br/>
-                                                        <small>Created 14.07.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 97%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 97%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">There are many variations of passages</a>
-                                                        <br/>
-                                                        <small>Created 11.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 28%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 28%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
+                                                <?php foreach($task_list as $item):?>
+                                                    <tr>
+                                                        <td class="project-status">
+                                                            <span class="label label-primary">Active</span>
+                                                        </td>
+                                                        <td class="project-title">
+                                                            <a href="task/detail/db_jiuyang/<?php echo $item['task_id'];?>">任务---<?php echo $item['task_id'];?></a>
+                                                            <br/>
+                                                            <small>创建时间 <?php echo $item['createtime'];?></small>
+                                                        </td>
+                                                        <td class="project-completion">
+                                                            <small>Completion with: 8%</small>
+                                                            <div class="progress progress-mini">
+                                                                <div style="width: 8%;" class="progress-bar"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="project-people">
+                                                            <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
+                                                            <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+                                                        </td>
+                                                        <td class="project-actions">
+                                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+                                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                                        </td>
+                                                    </tr>
+                                                <?php endforeach;?>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -1007,279 +265,32 @@
                                         <div class="project-list">
                                             <table class="table table-hover">
                                                 <tbody>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Contract with Zender Company</a>
-                                                        <br/>
-                                                        <small>Created 14.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 48%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 48%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">There are many variations of passages</a>
-                                                        <br/>
-                                                        <small>Created 11.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 28%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 28%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-default">Unactive</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Many desktop publishing packages and web</a>
-                                                        <br/>
-                                                        <small>Created 10.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 8%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 8%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Letraset sheets containing</a>
-                                                        <br/>
-                                                        <small>Created 22.07.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 83%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 83%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Contrary to popular belief</a>
-                                                        <br/>
-                                                        <small>Created 14.07.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 97%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 97%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Contract with Zender Company</a>
-                                                        <br/>
-                                                        <small>Created 14.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 48%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 48%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">There are many variations of passages</a>
-                                                        <br/>
-                                                        <small>Created 11.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 28%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 28%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-default">Unactive</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Many desktop publishing packages and web</a>
-                                                        <br/>
-                                                        <small>Created 10.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 8%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 8%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Letraset sheets containing</a>
-                                                        <br/>
-                                                        <small>Created 22.07.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 83%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 83%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Contrary to popular belief</a>
-                                                        <br/>
-                                                        <small>Created 14.07.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 97%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 97%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">There are many variations of passages</a>
-                                                        <br/>
-                                                        <small>Created 11.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 28%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 28%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
+                                                <?php foreach($task_list as $item):?>
+                                                    <tr>
+                                                        <td class="project-status">
+                                                            <span class="label label-primary">Active</span>
+                                                        </td>
+                                                        <td class="project-title">
+                                                            <a href="task/detail/db_jiuyang/<?php echo $item['task_id'];?>">任务---<?php echo $item['task_id'];?></a>
+                                                            <br/>
+                                                            <small>创建时间 <?php echo $item['createtime'];?></small>
+                                                        </td>
+                                                        <td class="project-completion">
+                                                            <small>Completion with: 8%</small>
+                                                            <div class="progress progress-mini">
+                                                                <div style="width: 8%;" class="progress-bar"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="project-people">
+                                                            <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
+                                                            <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+                                                        </td>
+                                                        <td class="project-actions">
+                                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+                                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                                        </td>
+                                                    </tr>
+                                                <?php endforeach;?>
                                                 </tbody>
 
                                             </table>
@@ -1311,279 +322,32 @@
                                         <div class="project-list">
                                             <table class="table table-hover">
                                                 <tbody>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Contract with Zender Company</a>
-                                                        <br/>
-                                                        <small>Created 14.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 48%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 48%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">There are many variations of passages</a>
-                                                        <br/>
-                                                        <small>Created 11.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 28%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 28%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-default">Unactive</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Many desktop publishing packages and web</a>
-                                                        <br/>
-                                                        <small>Created 10.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 8%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 8%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Letraset sheets containing</a>
-                                                        <br/>
-                                                        <small>Created 22.07.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 83%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 83%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Contrary to popular belief</a>
-                                                        <br/>
-                                                        <small>Created 14.07.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 97%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 97%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Contract with Zender Company</a>
-                                                        <br/>
-                                                        <small>Created 14.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 48%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 48%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">There are many variations of passages</a>
-                                                        <br/>
-                                                        <small>Created 11.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 28%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 28%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-default">Unactive</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Many desktop publishing packages and web</a>
-                                                        <br/>
-                                                        <small>Created 10.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 8%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 8%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Letraset sheets containing</a>
-                                                        <br/>
-                                                        <small>Created 22.07.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 83%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 83%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Contrary to popular belief</a>
-                                                        <br/>
-                                                        <small>Created 14.07.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 97%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 97%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">There are many variations of passages</a>
-                                                        <br/>
-                                                        <small>Created 11.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 28%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 28%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
+                                                <?php foreach($task_list as $item):?>
+                                                    <tr>
+                                                        <td class="project-status">
+                                                            <span class="label label-primary">Active</span>
+                                                        </td>
+                                                        <td class="project-title">
+                                                            <a href="task/detail/db_jiuyang/<?php echo $item['task_id'];?>">任务---<?php echo $item['task_id'];?></a>
+                                                            <br/>
+                                                            <small>创建时间 <?php echo $item['createtime'];?></small>
+                                                        </td>
+                                                        <td class="project-completion">
+                                                            <small>Completion with: 8%</small>
+                                                            <div class="progress progress-mini">
+                                                                <div style="width: 8%;" class="progress-bar"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="project-people">
+                                                            <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
+                                                            <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+                                                        </td>
+                                                        <td class="project-actions">
+                                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+                                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                                        </td>
+                                                    </tr>
+                                                <?php endforeach;?>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -1614,279 +378,32 @@
                                         <div class="project-list">
                                             <table class="table table-hover">
                                                 <tbody>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Contract with Zender Company</a>
-                                                        <br/>
-                                                        <small>Created 14.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 48%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 48%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">There are many variations of passages</a>
-                                                        <br/>
-                                                        <small>Created 11.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 28%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 28%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-default">Unactive</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Many desktop publishing packages and web</a>
-                                                        <br/>
-                                                        <small>Created 10.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 8%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 8%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Letraset sheets containing</a>
-                                                        <br/>
-                                                        <small>Created 22.07.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 83%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 83%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Contrary to popular belief</a>
-                                                        <br/>
-                                                        <small>Created 14.07.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 97%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 97%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Contract with Zender Company</a>
-                                                        <br/>
-                                                        <small>Created 14.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 48%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 48%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">There are many variations of passages</a>
-                                                        <br/>
-                                                        <small>Created 11.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 28%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 28%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-default">Unactive</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Many desktop publishing packages and web</a>
-                                                        <br/>
-                                                        <small>Created 10.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 8%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 8%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Letraset sheets containing</a>
-                                                        <br/>
-                                                        <small>Created 22.07.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 83%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 83%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a1.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">Contrary to popular belief</a>
-                                                        <br/>
-                                                        <small>Created 14.07.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 97%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 97%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="project-status">
-                                                        <span class="label label-primary">Active</span>
-                                                    </td>
-                                                    <td class="project-title">
-                                                        <a href="project_detail.html">There are many variations of passages</a>
-                                                        <br/>
-                                                        <small>Created 11.08.2014</small>
-                                                    </td>
-                                                    <td class="project-completion">
-                                                        <small>Completion with: 28%</small>
-                                                        <div class="progress progress-mini">
-                                                            <div style="width: 28%;" class="progress-bar"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="project-people">
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a6.jpg"></a>
-                                                        <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                    </td>
-                                                </tr>
+                                                <?php foreach($task_list as $item):?>
+                                                    <tr>
+                                                        <td class="project-status">
+                                                            <span class="label label-primary">Active</span>
+                                                        </td>
+                                                        <td class="project-title">
+                                                            <a href="task/detail/db_jiuyang/<?php echo $item['task_id'];?>">任务---<?php echo $item['task_id'];?></a>
+                                                            <br/>
+                                                            <small>创建时间 <?php echo $item['createtime'];?></small>
+                                                        </td>
+                                                        <td class="project-completion">
+                                                            <small>Completion with: 8%</small>
+                                                            <div class="progress progress-mini">
+                                                                <div style="width: 8%;" class="progress-bar"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="project-people">
+                                                            <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
+                                                            <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+                                                        </td>
+                                                        <td class="project-actions">
+                                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+                                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                                        </td>
+                                                    </tr>
+                                                <?php endforeach;?>
                                                 </tbody>
                                             </table>
                                         </div>

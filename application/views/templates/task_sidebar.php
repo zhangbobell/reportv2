@@ -56,7 +56,7 @@
                     </a>
                 </li>
                 <li class="active">
-                    <a href="taskmanage.html"><i class="fa fa-diamond"></i>
+                    <a href="task/my_task"><i class="fa fa-diamond"></i>
                         <span class="nav-label">智能任务管理</span>
                         <span class="label label-primary pull-right">NEW</span>
                     </a>
