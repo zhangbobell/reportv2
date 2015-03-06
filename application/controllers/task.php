@@ -190,7 +190,7 @@ class Task extends CI_Controller {
 
         $data = array(
             'title' => '任务详情',
-            'details' => $task_detail
+            'task_detail' => $task_detail,
         );
 
         $this->load->view('templates/task_header', $data);
