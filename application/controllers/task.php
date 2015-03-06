@@ -53,18 +53,18 @@ class Task extends CI_Controller {
 //        $this->load->view('task/footer_add_'.$page);
 //        $this->load->view('templates/footer');
 
-        $this->load->view('templates/header_task', $data);
-        $this->load->view('templates/sliderbar_task');
-        $this->load->view('templates/banner_task');
-//        $this->load->view('task/task_home');
-        $this->load->view('task/task_mytask');
-//        $this->load->view('task/task_taskdetail');
+        $this->load->view('templates/task_header', $data);
+        $this->load->view('templates/task_sidebar');
+        $this->load->view('templates/task_banner');
+//        $this->load->view('task/task_home');   // home page test
+        $this->load->view('task/task_mytask');   // task page test
+//        $this->load->view('task/task_taskdetail');   // task detail page test
 //        $this->load->view('task/task_decisionmail');  // 未完成：需要附加CSS  js
 
-        $this->load->view('templates/footer_task');
-        $this->load->view('templates/footer_task_script');
-        $this->load->view('templates/footer_function_task');
-        $this->load->view('templates/footer_final_task');
+        $this->load->view('templates/task_footer');
+        $this->load->view('templates/task_footer_script');
+        $this->load->view('templates/task_footer_function');
+        $this->load->view('templates/task_footer_final');
     }
 
     public function assign($page = 'assign') {
