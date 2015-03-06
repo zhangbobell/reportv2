@@ -54,16 +54,20 @@ class Task extends CI_Controller {
 //        $this->load->view('templates/footer');
 
         $this->load->view('templates/task_header', $data);
+        $this->load->view('task/task_header_add_mailpage');  // test mail
         $this->load->view('templates/task_sidebar');
         $this->load->view('templates/task_banner');
-//        $this->load->view('task/task_home');   // home page test
-        $this->load->view('task/task_mytask');   // task page test
+        $this->load->view('task/task_home');   // home page test
+//        $this->load->view('task/task_mytask');   // task page test
 //        $this->load->view('task/task_taskdetail');   // task detail page test
-//        $this->load->view('task/task_decisionmail');  // 未完成：需要附加CSS  js
+//        $this->load->view('task/task_mailpage');  // 未完成：需要附加CSS  js
 
         $this->load->view('templates/task_footer');
+
         $this->load->view('templates/task_footer_script');
+        $this->load->view('task/task_footer_script_add_mailpage');  // test mail
         $this->load->view('templates/task_footer_function');
+        $this->load->view('task/task_footer_function_add_mailpage');  // test mail
         $this->load->view('templates/task_footer_final');
     }
 
