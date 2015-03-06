@@ -128,7 +128,7 @@ class MTask extends MY_Model {
     }
 
     public function get_task_detail($db, $id) {
-        $sql = "Select * FROM `raw_activity_tag` where `task_id` = ? ";
+        $sql = "Select `target` FROM `raw_activity_tag` where `task_id` = ? ";
 
         return $this->mtask->my_query($db, $sql, array($id))->result_array();
     }

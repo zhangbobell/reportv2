@@ -22,6 +22,7 @@
                             <div id="tab-0" class="tab-pane active">
                                 <div class="ibox">
                                     <div class="ibox-title">
+                                        <h5>All projects assigned to this account--0</h5>
                                         <div class="ibox-tools">
                                             <a href="" class="btn btn-primary btn-xs">Create new project</a>
                                         </div>
@@ -47,9 +48,9 @@
                                                             <span class="label label-primary">Active</span>
                                                         </td>
                                                         <td class="project-title">
-                                                            <a href="project_detail.html">任务---<?php echo $item['task_id'];?></a>
+                                                            <a href="task/detail/db_jiuyang/<?php echo $item['task_id'];?>">任务---<?php echo $item['task_id'];?></a>
                                                             <br/>
-                                                            <small>Created <?php echo $item['createtime'];?></small>
+                                                            <small>创建时间 <?php echo $item['createtime'];?></small>
                                                         </td>
                                                         <td class="project-completion">
                                                             <small>Completion with: 8%</small>
@@ -68,7 +69,6 @@
                                                     </tr>
                                                 <?php endforeach;?>
                                                 </tbody>
-
                                             </table>
                                         </div>
                                     </div>

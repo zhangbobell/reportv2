@@ -35,9 +35,8 @@
     <div class="col-lg-5">
         <dl class="dl-horizontal">
 
-            <dt>创建人:</dt> <dd>Alex Smith</dd>
+            <dt>目标对象:</dt> <dd><?php echo $details['target'];?></dd>
 
-            <dt>客户:</dt> <dd><a href="#" class="text-navy"> Z Company</a> </dd>
             <dt>记录:</dt> <dd>  162</dd>
 
             <dt>截止日期:</dt> <dd>04/03/2015</dd>

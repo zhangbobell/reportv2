@@ -193,6 +193,12 @@ class Task extends CI_Controller {
             'details' => $task_detail
         );
 
-      $this->load->view('ddddd', $data);
+        $this->load->view('templates/task_header', $data);
+        $this->load->view('templates/task_sidebar');
+        $this->load->view('templates/task_banner');
+        $this->load->view('task/task_taskdetail');
+        $this->load->view('templates/task_footer');
+        $this->load->view('templates/task_footer_script');
+        $this->load->view('templates/task_footer_function');
     }
 }
