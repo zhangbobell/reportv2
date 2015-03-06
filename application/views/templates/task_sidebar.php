@@ -38,13 +38,13 @@
                     </div>
                 </li>
                 <li>
-                    <a href="index.html"><i class="fa fa-th-large"></i>
+                    <a href="task/home"><i class="fa fa-th-large"></i>
                         <span class="nav-label">首页</span>
                         <span class="label label-warning pull-right"></span>
                     </a>
                 </li>
                 <li>
-                    <a href="advisory.html"><i class="fa fa-globe"></i>
+                    <a href="task/advisory"><i class="fa fa-globe"></i>
                         <span class="nav-label">全案咨询</span>
                         <span class="label label-warning pull-right"></span>
                     </a>

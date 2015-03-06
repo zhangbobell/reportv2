@@ -14,6 +14,29 @@ class Task extends CI_Controller {
         $this->load->model('mtask');
     }
 
+    public function home() {
+
+        $this->load->view('templates/task_header');
+        $this->load->view('templates/task_sidebar');
+        $this->load->view('templates/task_banner');
+        $this->load->view('task/task_home');
+        $this->load->view('templates/task_footer');
+        $this->load->view('templates/task_footer_script');
+        $this->load->view('templates/task_footer_function');
+        $this->load->view('templates/task_footer_final');
+    }
+
+    public function advisory() {
+        $this->load->view('templates/task_header');
+        $this->load->view('templates/task_sidebar');
+        $this->load->view('templates/task_banner');
+        $this->load->view('task/task_advisory');
+        $this->load->view('templates/task_footer');
+        $this->load->view('templates/task_footer_script');
+        $this->load->view('templates/task_footer_function');
+        $this->load->view('templates/task_footer_final');
+    }
+
     public function my_task($page = 'my_task') {
         if ( ! file_exists('application/views/task/'.$page.'.php')) {
             show_404();
@@ -67,7 +90,8 @@ class Task extends CI_Controller {
         $this->load->view('templates/task_footer_script');
 //        $this->load->view('task/task_footer_script_add_mailpage');  // test mail
         $this->load->view('templates/task_footer_function');
-//        $this->load->view('task/task_footer_function_add_mailp
+//        $this->load->view('task/task_footer_function_add_mailpage);
+        $this->load->view('templates/task_footer_final');
     }
 
     public function assign($page = 'assign') {
@@ -200,5 +224,6 @@ class Task extends CI_Controller {
         $this->load->view('templates/task_footer');
         $this->load->view('templates/task_footer_script');
         $this->load->view('templates/task_footer_function');
+        $this->load->view('templates/task_footer_final');
     }
 }
