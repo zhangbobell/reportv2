@@ -54,21 +54,20 @@ class Task extends CI_Controller {
 //        $this->load->view('templates/footer');
 
         $this->load->view('templates/task_header', $data);
-        $this->load->view('task/task_header_add_mailpage');  // test mail
+//        $this->load->view('task/task_header_add_mailpage');  // test mail
         $this->load->view('templates/task_sidebar');
         $this->load->view('templates/task_banner');
-        $this->load->view('task/task_home');   // home page test
-//        $this->load->view('task/task_mytask');   // task page test
+//        $this->load->view('task/task_home');   // home page test
+        $this->load->view('task/task_mytask');   // task page test
 //        $this->load->view('task/task_taskdetail');   // task detail page test
 //        $this->load->view('task/task_mailpage');  // 未完成：需要附加CSS  js
 
         $this->load->view('templates/task_footer');
 
         $this->load->view('templates/task_footer_script');
-        $this->load->view('task/task_footer_script_add_mailpage');  // test mail
+//        $this->load->view('task/task_footer_script_add_mailpage');  // test mail
         $this->load->view('templates/task_footer_function');
-        $this->load->view('task/task_footer_function_add_mailpage');  // test mail
-        $this->load->view('templates/task_footer_final');
+//        $this->load->view('task/task_footer_function_add_mailp
     }
 
     public function assign($page = 'assign') {
@@ -182,5 +181,18 @@ class Task extends CI_Controller {
         $res = $this->mtask->add_assign($db, $actiId, $username, $actType, $actName);
 
         echo json_encode($res);
+    }
+
+    // 任务详情页面
+    public function detail($db, $id = '0') {
+
+        $task_detail = $this->mtask->get_task_detail($db, $id);
+
+        $data = array(
+            'title' => '任务详情',
+            'details' => $task_detail
+        );
+
+      $this->load->view('ddddd', $data);
     }
 }
