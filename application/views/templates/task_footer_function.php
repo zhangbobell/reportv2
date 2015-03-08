@@ -7,6 +7,7 @@
                 showMethod: 'slideDown',
                 timeOut: 4000
             };
-            toastr.success('Responsive Admin Theme', 'Welcome to INSPINIA');
+            toastr.success('admin@e-corp.cn', '欢迎来到追灿');
 
         }, 1300);
+    });

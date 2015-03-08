@@ -106,7 +106,7 @@
                                                                             <?php echo $item['target'];?>
                                                                         </td>
                                                                         <td>
-                                                                            <?php echo $item['action_id'];?>
+                                                                            <?php echo $task_base[0]['assignee'];?>
                                                                         </td>
                                                                         <td>
                                                                             <p class="small">

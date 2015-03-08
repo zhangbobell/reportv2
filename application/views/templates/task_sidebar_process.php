@@ -55,13 +55,13 @@
                         <span class="label label-warning pull-right"></span>
                     </a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="task/my_task"><i class="fa fa-diamond"></i>
                         <span class="nav-label">智能任务管理</span>
                         <span class="label label-primary pull-right">NEW</span>
                     </a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="task/process"><i class="fa fa-edit"></i>
                         <span class="nav-label">流程定制平台 </span>
                         <span class="label label-warning pull-right"></span>

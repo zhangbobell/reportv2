@@ -20,7 +20,8 @@ class Task extends CI_Controller {
         );
 
         $this->load->view('templates/task_header', $data);
-        $this->load->view('templates/task_sidebar');
+        $this->load->view('templates/task_sidebar_home');
+//        $this->load->view('templates/task_sidebar');
         $this->load->view('templates/task_banner');
         $this->load->view('task/task_'.$page);
         $this->load->view('templates/task_footer');
@@ -35,12 +36,15 @@ class Task extends CI_Controller {
         );
 
         $this->load->view('templates/task_header', $data);
-        $this->load->view('templates/task_sidebar');
+        $this->load->view('templates/task_sidebar_advisory');
+//        $this->load->view('templates/task_sidebar');
         $this->load->view('templates/task_banner');
         $this->load->view('task/task_'.$page);
         $this->load->view('templates/task_footer');
         $this->load->view('templates/task_footer_script');
+        $this->load->view('task/task_footer_script_add_'.$page);
         $this->load->view('templates/task_footer_function');
+        $this->load->view('task/task_footer_function_add_'.$page);
         $this->load->view('templates/task_footer_final');
     }
 
@@ -50,7 +54,8 @@ class Task extends CI_Controller {
         );
 
         $this->load->view('templates/task_header', $data);
-        $this->load->view('templates/task_sidebar');
+        $this->load->view('templates/task_sidebar_decision');
+//        $this->load->view('templates/task_sidebar');
         $this->load->view('templates/task_banner');
         $this->load->view('task/task_'.$page);
         $this->load->view('templates/task_footer');
@@ -65,7 +70,8 @@ class Task extends CI_Controller {
         );
 
         $this->load->view('templates/task_header', $data);
-        $this->load->view('templates/task_sidebar');
+        $this->load->view('templates/task_sidebar_process');
+//        $this->load->view('templates/task_sidebar');
         $this->load->view('templates/task_banner');
         $this->load->view('task/task_'.$page);
         $this->load->view('templates/task_footer');
@@ -74,17 +80,39 @@ class Task extends CI_Controller {
         $this->load->view('templates/task_footer_final');
     }
 
-    public function mailpage($page = 'mailpage') {
+    public function mailpage($prepage, $page = 'mailpage') {
         $data = array(
             'title' => "联系我们",
         );
 
         $this->load->view('templates/task_header', $data);
         $this->load->view('task/task_header_add_'.$page);
-        $this->load->view('templates/task_sidebar');
+        $this->load->view('templates/task_sidebar_'.$prepage);
+//        $this->load->view('templates/task_sidebar');
         $this->load->view('templates/task_banner');
         $this->load->view('task/task_'.$page);
 
+        $this->load->view('templates/task_footer');
+
+        $this->load->view('templates/task_footer_script');
+        $this->load->view('task/task_footer_script_add_'.$page);
+        $this->load->view('templates/task_footer_function');
+        $this->load->view('task/task_footer_function_add_'.$page);
+        $this->load->view('templates/task_footer_final');
+    }
+
+    public function summary($page = 'summary') {
+        $data = array(
+            'title' => "任务概要",
+        );
+
+        $this->load->view('templates/task_header', $data);
+        $this->load->view('task/task_header_add_'.$page);
+        $this->load->view('templates/task_sidebar_mytask');
+//        $this->load->view('templates/task_sidebar');
+        $this->load->view('templates/task_banner');
+
+        $this->load->view('task/task_'.$page);
         $this->load->view('templates/task_footer');
 
         $this->load->view('templates/task_footer_script');
@@ -126,7 +154,8 @@ class Task extends CI_Controller {
         );
 
         $this->load->view('templates/task_header', $data);
-        $this->load->view('templates/task_sidebar');
+        $this->load->view('templates/task_sidebar_mytask');
+//        $this->load->view('templates/task_sidebar');
         $this->load->view('templates/task_banner');
         $this->load->view('task/task_mytask');
 
@@ -149,7 +178,8 @@ class Task extends CI_Controller {
         );
 
         $this->load->view('templates/task_header', $data);
-        $this->load->view('templates/task_sidebar');
+        $this->load->view('templates/task_sidebar_mytask');
+//        $this->load->view('templates/task_sidebar');
         $this->load->view('templates/task_banner');
         $this->load->view('task/task_taskdetail');
         $this->load->view('templates/task_footer');

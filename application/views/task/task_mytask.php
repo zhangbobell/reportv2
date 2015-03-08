@@ -23,6 +23,9 @@
                                 <div class="ibox">
                                     <div class="ibox-title">
                                         <div class="ibox-tools">
+                                            <a href="task/summary" class="btn btn-primary btn-xs">Management</a>
+                                        </div>
+                                        <div class="ibox-tools">
                                             <a href="" class="btn btn-primary btn-xs">Create new project</a>
                                         </div>
                                     </div>
@@ -61,14 +64,10 @@
                                                             <small>创建时间 <?php echo $item['createtime'];?></small>
                                                         </td>
                                                         <td class="project-completion">
-                                                            <small>Completion with: 8%</small>
-                                                            <div class="progress progress-mini">
-                                                                <div style="width: 8%;" class="progress-bar"></div>
-                                                            </div>
+                                                            <small>备注：无</small>
                                                         </td>
                                                         <td class="project-people">
-                                                            <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                            <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+                                                            <?php echo $item['creator']?>
                                                         </td>
                                                         <td class="project-actions">
                                                             <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -86,7 +85,9 @@
                             <div id="tab-1" class="tab-pane">
                                 <div class="ibox">
                                     <div class="ibox-title">
-                                        <h5>All projects assigned to this account--1</h5>
+                                        <div class="ibox-tools">
+                                            <a href="" class="btn btn-primary btn-xs">Management</a>
+                                        </div>
                                         <div class="ibox-tools">
                                             <a href="" class="btn btn-primary btn-xs">Create new project</a>
                                         </div>
@@ -126,16 +127,12 @@
                                                             <br/>
                                                             <small>创建时间 <?php echo $item['createtime'];?></small>
                                                         </td>
-                                                        <td class="project-completion">
-                                                            <small>Completion with: 8%</small>
-                                                            <div class="progress progress-mini">
-                                                                <div style="width: 8%;" class="progress-bar"></div>
-                                                            </div>
-                                                        </td>
-                                                        <td class="project-people">
-                                                            <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                            <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                        </td>
+                                                            <td class="project-completion">
+                                                                <small>备注：无</small>
+                                                            </td>
+                                                            <td class="project-people">
+                                                                <?php echo $item['creator']?>
+                                                            </td>
                                                         <td class="project-actions">
                                                             <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
                                                             <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
@@ -154,7 +151,9 @@
                             <div id="tab-2" class="tab-pane">
                                 <div class="ibox">
                                     <div class="ibox-title">
-                                        <h5>All projects assigned to this account--2</h5>
+                                        <div class="ibox-tools">
+                                            <a href="" class="btn btn-primary btn-xs">Management</a>
+                                        </div>
                                         <div class="ibox-tools">
                                             <a href="" class="btn btn-primary btn-xs">Create new project</a>
                                         </div>
@@ -195,14 +194,10 @@
                                                                 <small>创建时间 <?php echo $item['createtime'];?></small>
                                                             </td>
                                                             <td class="project-completion">
-                                                                <small>Completion with: 8%</small>
-                                                                <div class="progress progress-mini">
-                                                                    <div style="width: 8%;" class="progress-bar"></div>
-                                                                </div>
+                                                                <small>备注：无</small>
                                                             </td>
                                                             <td class="project-people">
-                                                                <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                                <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+                                                                <?php echo $item['creator']?>
                                                             </td>
                                                             <td class="project-actions">
                                                                 <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -221,7 +216,9 @@
                             <div id="tab-3" class="tab-pane">
                                 <div class="ibox">
                                     <div class="ibox-title">
-                                        <h5>All projects assigned to this account--3</h5>
+                                        <div class="ibox-tools">
+                                            <a href="" class="btn btn-primary btn-xs">Management</a>
+                                        </div>
                                         <div class="ibox-tools">
                                             <a href="" class="btn btn-primary btn-xs">Create new project</a>
                                         </div>
@@ -261,14 +258,10 @@
                                                                 <small>创建时间 <?php echo $item['createtime'];?></small>
                                                             </td>
                                                             <td class="project-completion">
-                                                                <small>Completion with: 8%</small>
-                                                                <div class="progress progress-mini">
-                                                                    <div style="width: 8%;" class="progress-bar"></div>
-                                                                </div>
+                                                                <small>备注：无</small>
                                                             </td>
                                                             <td class="project-people">
-                                                                <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                                <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+                                                                <?php echo $item['creator']?>
                                                             </td>
                                                             <td class="project-actions">
                                                                 <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -287,7 +280,9 @@
                             <div id="tab-4" class="tab-pane">
                                 <div class="ibox">
                                     <div class="ibox-title">
-                                        <h5>All projects assigned to this account--4</h5>
+                                        <div class="ibox-tools">
+                                            <a href="" class="btn btn-primary btn-xs">Management</a>
+                                        </div>
                                         <div class="ibox-tools">
                                             <a href="" class="btn btn-primary btn-xs">Create new project</a>
                                         </div>
@@ -328,14 +323,10 @@
                                                                 <small>创建时间 <?php echo $item['createtime'];?></small>
                                                             </td>
                                                             <td class="project-completion">
-                                                                <small>Completion with: 8%</small>
-                                                                <div class="progress progress-mini">
-                                                                    <div style="width: 8%;" class="progress-bar"></div>
-                                                                </div>
+                                                                <small>备注：无</small>
                                                             </td>
                                                             <td class="project-people">
-                                                                <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                                <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+                                                                <?php echo $item['creator']?>
                                                             </td>
                                                             <td class="project-actions">
                                                                 <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -355,7 +346,9 @@
                             <div id="tab-5" class="tab-pane">
                                 <div class="ibox">
                                     <div class="ibox-title">
-                                        <h5>All projects assigned to this account--5</h5>
+                                        <div class="ibox-tools">
+                                            <a href="" class="btn btn-primary btn-xs">Management</a>
+                                        </div>
                                         <div class="ibox-tools">
                                             <a href="" class="btn btn-primary btn-xs">Create new project</a>
                                         </div>
@@ -396,14 +389,10 @@
                                                                 <small>创建时间 <?php echo $item['createtime'];?></small>
                                                             </td>
                                                             <td class="project-completion">
-                                                                <small>Completion with: 8%</small>
-                                                                <div class="progress progress-mini">
-                                                                    <div style="width: 8%;" class="progress-bar"></div>
-                                                                </div>
+                                                                <small>备注：无</small>
                                                             </td>
                                                             <td class="project-people">
-                                                                <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                                <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+                                                                <?php echo $item['creator']?>
                                                             </td>
                                                             <td class="project-actions">
                                                                 <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
@@ -422,7 +411,9 @@
                             <div id="tab-6" class="tab-pane">
                                 <div class="ibox">
                                     <div class="ibox-title">
-                                        <h5>All projects assigned to this account--6</h5>
+                                        <div class="ibox-tools">
+                                            <a href="" class="btn btn-primary btn-xs">Management</a>
+                                        </div>
                                         <div class="ibox-tools">
                                             <a href="" class="btn btn-primary btn-xs">Create new project</a>
                                         </div>
@@ -463,14 +454,10 @@
                                                                 <small>创建时间 <?php echo $item['createtime'];?></small>
                                                             </td>
                                                             <td class="project-completion">
-                                                                <small>Completion with: 8%</small>
-                                                                <div class="progress progress-mini">
-                                                                    <div style="width: 8%;" class="progress-bar"></div>
-                                                                </div>
+                                                                <small>备注：无</small>
                                                             </td>
                                                             <td class="project-people">
-                                                                <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                                <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+                                                                <?php echo $item['creator']?>
                                                             </td>
                                                             <td class="project-actions">
                                                                 <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>

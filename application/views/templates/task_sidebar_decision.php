@@ -49,13 +49,13 @@
                         <span class="label label-warning pull-right"></span>
                     </a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="task/decision"><i class="fa fa-bar-chart-o"></i>
                         <span class="nav-label">云决策平台</span>
                         <span class="label label-warning pull-right"></span>
                     </a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="task/my_task"><i class="fa fa-diamond"></i>
                         <span class="nav-label">智能任务管理</span>
                         <span class="label label-primary pull-right">NEW</span>

@@ -14,7 +14,7 @@
                     <a href="mailbox.html" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Discard email"><i class="fa fa-times"></i> Discard</a>
                 </div>
                 <h2>
-                    Compse mail
+                    追灿邮件
                 </h2>
             </div>
             <div class="mail-box">
@@ -25,23 +25,29 @@
                     <form class="form-horizontal" method="get">
                         <div class="form-group"><label class="col-sm-2 control-label">To:</label>
 
-                            <div class="col-sm-10"><input type="text" class="form-control" value="alex.smith@corporat.com"></div>
+                            <div class="col-sm-10"><input type="text" class="form-control" value="admin@e-corp.cn"></div>
                         </div>
                         <div class="form-group"><label class="col-sm-2 control-label">Subject:</label>
 
-                            <div class="col-sm-10"><input type="text" class="form-control" value=""></div>
+                            <div class="col-sm-10"><input type="text" class="form-control" value="平台开通"></div>
                         </div>
                     </form>
 
                 </div>
 
-                <div class="mail-text h-200">
+                <div class="mail-text h-300">
 
                     <div class="summernote">
-                        <h3>Hello Jonathan! </h3>
-                        dummy text of the printing and typesetting industry. <strong>Lorem Ipsum has been the industry's</strong> standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
-                        typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+                    <pre>
+                        <h4>管理员你好!</h4>  我申请试用云决策平台的免费试用，以下是我的相关信息：
+                    <strong>企业信息：</strong>
+                                企业名称：                        成立时间：
+                                所属行业：                        主营产品：
+                    <strong>申请人信息：</strong>
+                                申请人 ：                         职位   ：
+                                手机号 ：                         邮箱   ：
+                    <strong>申请理由：</strong>
+                    </pre>
                         <br/>
                         <br/>
                     </div>
