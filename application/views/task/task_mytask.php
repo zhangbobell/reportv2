@@ -44,10 +44,19 @@
                                                 <?php foreach($task_list as $item):?>
                                                     <tr>
                                                         <td class="project-status">
-                                                            <span class="label label-primary">Active</span>
+                                                            <?php
+                                                                if (time()>strtotime($item['due_date'])) {
+                                                                    $class = 'label-default';
+                                                                    $caption = 'Unactive';
+                                                                } else {
+                                                                    $class = 'label-primary';
+                                                                    $caption = 'Active';
+                                                                }
+                                                            ?>
+                                                            <span class="label <?php echo $class;?>"><?php echo $caption;?></span>
                                                         </td>
                                                         <td class="project-title">
-                                                            <a href="task/detail/db_jiuyang/<?php echo $item['task_id'];?>">任务---<?php echo $item['task_id'];?></a>
+                                                            <a href="task/detail/db_jiuyang/<?php echo $item['task_id'];?>">任务代号<?php echo $item['task_id'];?></a>
                                                             <br/>
                                                             <small>创建时间 <?php echo $item['createtime'];?></small>
                                                         </td>
@@ -98,9 +107,19 @@
                                             <table class="table table-hover">
                                                 <tbody>
                                                 <?php foreach($task_list as $item):?>
-                                                    <tr>
+                                                    <?php if('1' == $item['task_cat']) { ?>
+                                                        <tr>
                                                         <td class="project-status">
-                                                            <span class="label label-primary">Active</span>
+                                                        <?php
+                                                        if (time()>strtotime($item['due_date'])) {
+                                                            $class = 'label-default';
+                                                            $caption = 'Unactive';
+                                                        } else {
+                                                            $class = 'label-primary';
+                                                            $caption = 'Active';
+                                                        }
+                                                        ?>
+                                                        <span class="label <?php echo $class;?>"><?php echo $caption;?></span>
                                                         </td>
                                                         <td class="project-title">
                                                             <a href="task/detail/db_jiuyang/<?php echo $item['task_id'];?>">任务---<?php echo $item['task_id'];?></a>
@@ -121,7 +140,8 @@
                                                             <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
                                                             <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
                                                         </td>
-                                                    </tr>
+                                                        </tr>
+                                                    <?php } ?>
                                                 <?php endforeach;?>
                                                 </tbody>
 
@@ -155,30 +175,41 @@
                                             <table class="table table-hover">
                                                 <tbody>
                                                 <?php foreach($task_list as $item):?>
-                                                    <tr>
-                                                        <td class="project-status">
-                                                            <span class="label label-primary">Active</span>
-                                                        </td>
-                                                        <td class="project-title">
-                                                            <a href="task/detail/db_jiuyang/<?php echo $item['task_id'];?>">任务---<?php echo $item['task_id'];?></a>
-                                                            <br/>
-                                                            <small>创建时间 <?php echo $item['createtime'];?></small>
-                                                        </td>
-                                                        <td class="project-completion">
-                                                            <small>Completion with: 8%</small>
-                                                            <div class="progress progress-mini">
-                                                                <div style="width: 8%;" class="progress-bar"></div>
-                                                            </div>
-                                                        </td>
-                                                        <td class="project-people">
-                                                            <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                            <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                        </td>
-                                                        <td class="project-actions">
-                                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                        </td>
-                                                    </tr>
+                                                    <?php if('2' == $item['task_cat']) { ?>
+                                                        <tr>
+                                                            <td class="project-status">
+                                                                <?php
+                                                                if (time()>strtotime($item['due_date'])) {
+                                                                    $class = 'label-default';
+                                                                    $caption = 'Unactive';
+                                                                } else {
+                                                                    $class = 'label-primary';
+                                                                    $caption = 'Active';
+                                                                }
+                                                                ?>
+                                                                <span class="label <?php echo $class;?>"><?php echo $caption;?></span>
+                                                            </td>
+                                                            <td class="project-title">
+                                                                <a href="task/detail/db_jiuyang/<?php echo $item['task_id'];?>">任务---<?php echo $item['task_id'];?></a>
+                                                                <br/>
+                                                                <small>创建时间 <?php echo $item['createtime'];?></small>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with: 8%</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 8%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="project-people">
+                                                                <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
+                                                                <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+                                                            </td>
+                                                            <td class="project-actions">
+                                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+                                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                                            </td>
+                                                        </tr>
+                                                    <?php } ?>
                                                 <?php endforeach;?>
                                                 </tbody>
                                             </table>
@@ -210,30 +241,41 @@
                                             <table class="table table-hover">
                                                 <tbody>
                                                 <?php foreach($task_list as $item):?>
-                                                    <tr>
-                                                        <td class="project-status">
-                                                            <span class="label label-primary">Active</span>
-                                                        </td>
-                                                        <td class="project-title">
-                                                            <a href="task/detail/db_jiuyang/<?php echo $item['task_id'];?>">任务---<?php echo $item['task_id'];?></a>
-                                                            <br/>
-                                                            <small>创建时间 <?php echo $item['createtime'];?></small>
-                                                        </td>
-                                                        <td class="project-completion">
-                                                            <small>Completion with: 8%</small>
-                                                            <div class="progress progress-mini">
-                                                                <div style="width: 8%;" class="progress-bar"></div>
-                                                            </div>
-                                                        </td>
-                                                        <td class="project-people">
-                                                            <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                            <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                        </td>
-                                                        <td class="project-actions">
-                                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                        </td>
-                                                    </tr>
+                                                    <?php if('3' == $item['task_cat']) { ?>
+                                                        <tr>
+                                                            <td class="project-status">
+                                                                <?php
+                                                                if (time()>strtotime($item['due_date'])) {
+                                                                    $class = 'label-default';
+                                                                    $caption = 'Unactive';
+                                                                } else {
+                                                                    $class = 'label-primary';
+                                                                    $caption = 'Active';
+                                                                }
+                                                                ?>
+                                                                <span class="label <?php echo $class;?>"><?php echo $caption;?></span>
+                                                            </td>
+                                                            <td class="project-title">
+                                                                <a href="task/detail/db_jiuyang/<?php echo $item['task_id'];?>">任务---<?php echo $item['task_id'];?></a>
+                                                                <br/>
+                                                                <small>创建时间 <?php echo $item['createtime'];?></small>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with: 8%</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 8%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="project-people">
+                                                                <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
+                                                                <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+                                                            </td>
+                                                            <td class="project-actions">
+                                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+                                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                                            </td>
+                                                        </tr>
+                                                    <?php } ?>
                                                 <?php endforeach;?>
                                                 </tbody>
                                             </table>
@@ -266,30 +308,41 @@
                                             <table class="table table-hover">
                                                 <tbody>
                                                 <?php foreach($task_list as $item):?>
-                                                    <tr>
-                                                        <td class="project-status">
-                                                            <span class="label label-primary">Active</span>
-                                                        </td>
-                                                        <td class="project-title">
-                                                            <a href="task/detail/db_jiuyang/<?php echo $item['task_id'];?>">任务---<?php echo $item['task_id'];?></a>
-                                                            <br/>
-                                                            <small>创建时间 <?php echo $item['createtime'];?></small>
-                                                        </td>
-                                                        <td class="project-completion">
-                                                            <small>Completion with: 8%</small>
-                                                            <div class="progress progress-mini">
-                                                                <div style="width: 8%;" class="progress-bar"></div>
-                                                            </div>
-                                                        </td>
-                                                        <td class="project-people">
-                                                            <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                            <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                        </td>
-                                                        <td class="project-actions">
-                                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                        </td>
-                                                    </tr>
+                                                    <?php if('4' == $item['task_cat']) { ?>
+                                                        <tr>
+                                                            <td class="project-status">
+                                                                <?php
+                                                                if (time()>strtotime($item['due_date'])) {
+                                                                    $class = 'label-default';
+                                                                    $caption = 'Unactive';
+                                                                } else {
+                                                                    $class = 'label-primary';
+                                                                    $caption = 'Active';
+                                                                }
+                                                                ?>
+                                                                <span class="label <?php echo $class;?>"><?php echo $caption;?></span>
+                                                            </td>
+                                                            <td class="project-title">
+                                                                <a href="task/detail/db_jiuyang/<?php echo $item['task_id'];?>">任务---<?php echo $item['task_id'];?></a>
+                                                                <br/>
+                                                                <small>创建时间 <?php echo $item['createtime'];?></small>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with: 8%</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 8%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="project-people">
+                                                                <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
+                                                                <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+                                                            </td>
+                                                            <td class="project-actions">
+                                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+                                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                                            </td>
+                                                        </tr>
+                                                    <?php } ?>
                                                 <?php endforeach;?>
                                                 </tbody>
 
@@ -323,30 +376,41 @@
                                             <table class="table table-hover">
                                                 <tbody>
                                                 <?php foreach($task_list as $item):?>
-                                                    <tr>
-                                                        <td class="project-status">
-                                                            <span class="label label-primary">Active</span>
-                                                        </td>
-                                                        <td class="project-title">
-                                                            <a href="task/detail/db_jiuyang/<?php echo $item['task_id'];?>">任务---<?php echo $item['task_id'];?></a>
-                                                            <br/>
-                                                            <small>创建时间 <?php echo $item['createtime'];?></small>
-                                                        </td>
-                                                        <td class="project-completion">
-                                                            <small>Completion with: 8%</small>
-                                                            <div class="progress progress-mini">
-                                                                <div style="width: 8%;" class="progress-bar"></div>
-                                                            </div>
-                                                        </td>
-                                                        <td class="project-people">
-                                                            <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                            <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                        </td>
-                                                        <td class="project-actions">
-                                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                        </td>
-                                                    </tr>
+                                                    <?php if('5' == $item['task_cat']) { ?>
+                                                        <tr>
+                                                            <td class="project-status">
+                                                                <?php
+                                                                if (time()>strtotime($item['due_date'])) {
+                                                                    $class = 'label-default';
+                                                                    $caption = 'Unactive';
+                                                                } else {
+                                                                    $class = 'label-primary';
+                                                                    $caption = 'Active';
+                                                                }
+                                                                ?>
+                                                                <span class="label <?php echo $class;?>"><?php echo $caption;?></span>
+                                                            </td>
+                                                            <td class="project-title">
+                                                                <a href="task/detail/db_jiuyang/<?php echo $item['task_id'];?>">任务---<?php echo $item['task_id'];?></a>
+                                                                <br/>
+                                                                <small>创建时间 <?php echo $item['createtime'];?></small>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with: 8%</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 8%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="project-people">
+                                                                <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
+                                                                <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+                                                            </td>
+                                                            <td class="project-actions">
+                                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+                                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                                            </td>
+                                                        </tr>
+                                                    <?php } ?>
                                                 <?php endforeach;?>
                                                 </tbody>
                                             </table>
@@ -379,30 +443,41 @@
                                             <table class="table table-hover">
                                                 <tbody>
                                                 <?php foreach($task_list as $item):?>
-                                                    <tr>
-                                                        <td class="project-status">
-                                                            <span class="label label-primary">Active</span>
-                                                        </td>
-                                                        <td class="project-title">
-                                                            <a href="task/detail/db_jiuyang/<?php echo $item['task_id'];?>">任务---<?php echo $item['task_id'];?></a>
-                                                            <br/>
-                                                            <small>创建时间 <?php echo $item['createtime'];?></small>
-                                                        </td>
-                                                        <td class="project-completion">
-                                                            <small>Completion with: 8%</small>
-                                                            <div class="progress progress-mini">
-                                                                <div style="width: 8%;" class="progress-bar"></div>
-                                                            </div>
-                                                        </td>
-                                                        <td class="project-people">
-                                                            <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
-                                                            <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
-                                                        </td>
-                                                        <td class="project-actions">
-                                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                                                        </td>
-                                                    </tr>
+                                                    <?php if('6' == $item['task_cat']) { ?>
+                                                        <tr>
+                                                            <td class="project-status">
+                                                                <?php
+                                                                if (time()>strtotime($item['due_date'])) {
+                                                                    $class = 'label-default';
+                                                                    $caption = 'Unactive';
+                                                                } else {
+                                                                    $class = 'label-primary';
+                                                                    $caption = 'Active';
+                                                                }
+                                                                ?>
+                                                                <span class="label <?php echo $class;?>"><?php echo $caption;?></span>
+                                                            </td>
+                                                            <td class="project-title">
+                                                                <a href="task/detail/db_jiuyang/<?php echo $item['task_id'];?>">任务---<?php echo $item['task_id'];?></a>
+                                                                <br/>
+                                                                <small>创建时间 <?php echo $item['createtime'];?></small>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with: 8%</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 8%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="project-people">
+                                                                <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg"></a>
+                                                                <a href=""><img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg"></a>
+                                                            </td>
+                                                            <td class="project-actions">
+                                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+                                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                                            </td>
+                                                        </tr>
+                                                    <?php } ?>
                                                 <?php endforeach;?>
                                                 </tbody>
                                             </table>

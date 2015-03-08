@@ -116,6 +116,7 @@ class Task extends CI_Controller {
 
         $task_list = $this->mtask->get_task_list_by_username($firstDB, $username)->result_array();
 
+
         $data = array(
             'title' => "我的任务",
             'username' => $username,
@@ -129,6 +130,28 @@ class Task extends CI_Controller {
         $this->load->view('templates/task_banner');
         $this->load->view('task/task_mytask');
 
+        $this->load->view('templates/task_footer');
+        $this->load->view('templates/task_footer_script');
+        $this->load->view('templates/task_footer_function');
+        $this->load->view('templates/task_footer_final');
+    }
+
+    // 任务详情页面
+    public function detail($db, $id = '0') {
+
+        $task_detail = $this->mtask->get_task_detail($db, $id);
+        $task_base = $this->mtask->get_task_list_by_id($db, $id)->result_array();
+
+        $data = array(
+            'title' => '任务详情',
+            'task_detail' => $task_detail,
+            'task_base' => $task_base
+        );
+
+        $this->load->view('templates/task_header', $data);
+        $this->load->view('templates/task_sidebar');
+        $this->load->view('templates/task_banner');
+        $this->load->view('task/task_taskdetail');
         $this->load->view('templates/task_footer');
         $this->load->view('templates/task_footer_script');
         $this->load->view('templates/task_footer_function');
@@ -246,25 +269,5 @@ class Task extends CI_Controller {
         $res = $this->mtask->add_assign($db, $actiId, $username, $actType, $actName);
 
         echo json_encode($res);
-    }
-
-    // 任务详情页面
-    public function detail($db, $id = '0') {
-
-        $task_detail = $this->mtask->get_task_detail($db, $id);
-
-        $data = array(
-            'title' => '任务详情',
-            'task_detail' => $task_detail,
-        );
-
-        $this->load->view('templates/task_header', $data);
-        $this->load->view('templates/task_sidebar');
-        $this->load->view('templates/task_banner');
-        $this->load->view('task/task_taskdetail');
-        $this->load->view('templates/task_footer');
-        $this->load->view('templates/task_footer_script');
-        $this->load->view('templates/task_footer_function');
-        $this->load->view('templates/task_footer_final');
     }
 }

@@ -26,6 +26,14 @@ class MTask extends MY_Model {
         return $this->my_query($db, $sql, array($username));
     }
 
+    public function get_task_list_by_id($db, $id) {
+        $sql = "SELECT `due_date`,`task_title`,`task_desc`,`creator`,`assignee`,`task_id`,`task_cat`
+                FROM `dim_bpm_activity`
+                WHERE `task_id` = ?";
+
+        return $this->my_query($db, $sql, array($id));
+    }
+
     public function get_task_detail_by_id($db, $id) {
         $sql = "SELECT `raw_activity_tag`.`createtime`, `raw_activity_tag`.`updatetime`, `activity_target`, `meta_action`.`action_type`, `action_type_category`, `action_type_detail`, `action_tag`
                 FROM `raw_activity_tag`
