@@ -21,7 +21,7 @@
             <div class="ibox float-e-margins">
                 <div class="ibox-content text-center p-md">
 
-                    <h4 class="m-b-xxs">追灿全案咨询平台 </h4>
+                    <h4 class="m-b-xxs">追灿全案咨询 </h4>
                     <br>
                     <span class="simple_tag">一对一</span>
                     <span class="simple_tag">数据挖掘</span>
@@ -43,7 +43,7 @@
             <div class="ibox float-e-margins">
                 <div class="ibox-content text-center p-md">
 
-                    <h4 class="m-b-xxs">智能任务管理平台 <span class="label label-primary">NEW</span></h4>
+                    <h4 class="m-b-xxs">专家系统集成 <span class="label label-primary">NEW</span></h4>
                     <br>
                     <span class="simple_tag">bpm</span>
                     <span class="simple_tag">自动化</span>
@@ -68,7 +68,7 @@
             <div class="ibox float-e-margins">
                 <div class="ibox-content text-center p-md">
 
-                    <h4 class="m-b-xxs">追灿云决策平台</h4>
+                    <h4 class="m-b-xxs">商业智能定制</h4>
                     <br>
                     <span class="simple_tag">Expert Engine</span>
                     <span class="simple_tag">信息</span>
@@ -90,7 +90,7 @@
             <div class="ibox float-e-margins">
                 <div class="ibox-content text-center p-md">
 
-                    <h4 class="m-b-xxs">追灿流程定制平台</h4>
+                    <h4 class="m-b-xxs">业务流程管理</h4>
                     <br>
                     <span class="simple_tag">可视化</span>
                     <span class="simple_tag">数据转化</span>

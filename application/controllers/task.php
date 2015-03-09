@@ -81,15 +81,25 @@ class Task extends CI_Controller {
         $this->load->view('templates/task_footer_final');
     }
 
-    public function mailpage($prepage, $page = 'mailpage') {
+    public function mailpage($prepage = 'mytask', $page = 'mailpage') {
         if($prepage == 'decision') {
-            $mailtitle = '云决策平台';
+            $mailtitle = '商业智能定制';
+            $send_applymail = true;
+            $sendfor = '平台开通';
+        } else if ($prepage == 'process'){
+            $mailtitle = '业务流程管理';
+            $send_applymail = true;
+            $sendfor = '平台开通';
         } else {
-            $mailtitle = '流程定制平台';
+            $mailtitle = 'other';
+            $send_applymail = false;
+            $sendfor = '反馈问题';
         }
         $data = array(
             'title' => "联系我们",
-            'mailtitle' => $mailtitle
+            'mailtitle' => $mailtitle,
+            'send_applymail' => $send_applymail,
+            'sendfor' => $sendfor
         );
 
         $this->load->view('templates/task_header', $data);
