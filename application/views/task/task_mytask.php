@@ -1,6 +1,20 @@
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
         <div class="col-lg-12">
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-sm-4">
+                <h2>任务列表</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="task/my_task">任务概要</a>
+                    </li>
+                    <li class="active">
+                        <strong>任务列表</strong>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <br>
             <div class="ibox float-e-margins">
                 <div class="ibox-content">
                     <div class="panel-heading">
@@ -50,10 +64,10 @@
                                                             <?php
                                                                 if (time()>strtotime($item['due_date'])) {
                                                                     $class = 'label-default';
-                                                                    $caption = 'Unactive';
+                                                                    $caption = '已过期';
                                                                 } else {
                                                                     $class = 'label-primary';
-                                                                    $caption = 'Active';
+                                                                    $caption = '激活';
                                                                 }
                                                             ?>
                                                             <span class="label <?php echo $class;?>"><?php echo $caption;?></span>
@@ -70,8 +84,7 @@
                                                             <?php echo $item['creator']?>
                                                         </td>
                                                         <td class="project-actions">
-                                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                                            <a href="task/detail/db_jiuyang/<?php echo $item['task_id'];?>" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看任务详情 </a>
                                                         </td>
                                                     </tr>
                                                 <?php endforeach;?>
@@ -114,10 +127,10 @@
                                                         <?php
                                                         if (time()>strtotime($item['due_date'])) {
                                                             $class = 'label-default';
-                                                            $caption = 'Unactive';
+                                                            $caption = '已过期';
                                                         } else {
                                                             $class = 'label-primary';
-                                                            $caption = 'Active';
+                                                            $caption = '激活';
                                                         }
                                                         ?>
                                                         <span class="label <?php echo $class;?>"><?php echo $caption;?></span>
@@ -134,8 +147,7 @@
                                                                 <?php echo $item['creator']?>
                                                             </td>
                                                         <td class="project-actions">
-                                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                            <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                                            <a href="task/detail/db_jiuyang/<?php echo $item['task_id'];?>" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看任务详情 </a>
                                                         </td>
                                                         </tr>
                                                     <?php } ?>
@@ -180,10 +192,10 @@
                                                                 <?php
                                                                 if (time()>strtotime($item['due_date'])) {
                                                                     $class = 'label-default';
-                                                                    $caption = 'Unactive';
+                                                                    $caption = '已过期';
                                                                 } else {
                                                                     $class = 'label-primary';
-                                                                    $caption = 'Active';
+                                                                    $caption = '激活';
                                                                 }
                                                                 ?>
                                                                 <span class="label <?php echo $class;?>"><?php echo $caption;?></span>
@@ -200,8 +212,7 @@
                                                                 <?php echo $item['creator']?>
                                                             </td>
                                                             <td class="project-actions">
-                                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                                                <a href="task/detail/db_jiuyang/<?php echo $item['task_id'];?>" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看任务详情 </a>
                                                             </td>
                                                         </tr>
                                                     <?php } ?>
@@ -244,10 +255,10 @@
                                                                 <?php
                                                                 if (time()>strtotime($item['due_date'])) {
                                                                     $class = 'label-default';
-                                                                    $caption = 'Unactive';
+                                                                    $caption = '已过期';
                                                                 } else {
                                                                     $class = 'label-primary';
-                                                                    $caption = 'Active';
+                                                                    $caption = '激活';
                                                                 }
                                                                 ?>
                                                                 <span class="label <?php echo $class;?>"><?php echo $caption;?></span>
@@ -264,8 +275,7 @@
                                                                 <?php echo $item['creator']?>
                                                             </td>
                                                             <td class="project-actions">
-                                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                                                <a href="task/detail/db_jiuyang/<?php echo $item['task_id'];?>" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看任务详情 </a>
                                                             </td>
                                                         </tr>
                                                     <?php } ?>
@@ -309,10 +319,10 @@
                                                                 <?php
                                                                 if (time()>strtotime($item['due_date'])) {
                                                                     $class = 'label-default';
-                                                                    $caption = 'Unactive';
+                                                                    $caption = '已过期';
                                                                 } else {
                                                                     $class = 'label-primary';
-                                                                    $caption = 'Active';
+                                                                    $caption = '激活';
                                                                 }
                                                                 ?>
                                                                 <span class="label <?php echo $class;?>"><?php echo $caption;?></span>
@@ -329,8 +339,7 @@
                                                                 <?php echo $item['creator']?>
                                                             </td>
                                                             <td class="project-actions">
-                                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                                                <a href="task/detail/db_jiuyang/<?php echo $item['task_id'];?>" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看任务详情 </a>
                                                             </td>
                                                         </tr>
                                                     <?php } ?>
@@ -375,10 +384,10 @@
                                                                 <?php
                                                                 if (time()>strtotime($item['due_date'])) {
                                                                     $class = 'label-default';
-                                                                    $caption = 'Unactive';
+                                                                    $caption = '已过期';
                                                                 } else {
                                                                     $class = 'label-primary';
-                                                                    $caption = 'Active';
+                                                                    $caption = '激活';
                                                                 }
                                                                 ?>
                                                                 <span class="label <?php echo $class;?>"><?php echo $caption;?></span>
@@ -395,8 +404,7 @@
                                                                 <?php echo $item['creator']?>
                                                             </td>
                                                             <td class="project-actions">
-                                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                                                <a href="task/detail/db_jiuyang/<?php echo $item['task_id'];?>" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看任务详情 </a>
                                                             </td>
                                                         </tr>
                                                     <?php } ?>
@@ -440,10 +448,10 @@
                                                                 <?php
                                                                 if (time()>strtotime($item['due_date'])) {
                                                                     $class = 'label-default';
-                                                                    $caption = 'Unactive';
+                                                                    $caption = '已过期';
                                                                 } else {
                                                                     $class = 'label-primary';
-                                                                    $caption = 'Active';
+                                                                    $caption = '激活';
                                                                 }
                                                                 ?>
                                                                 <span class="label <?php echo $class;?>"><?php echo $caption;?></span>
@@ -460,8 +468,7 @@
                                                                 <?php echo $item['creator']?>
                                                             </td>
                                                             <td class="project-actions">
-                                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                                                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                                                <a href="task/detail/db_jiuyang/<?php echo $item['task_id'];?>" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 查看任务详情 </a>
                                                             </td>
                                                         </tr>
                                                     <?php } ?>

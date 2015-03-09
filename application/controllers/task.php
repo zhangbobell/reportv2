@@ -122,6 +122,42 @@ class Task extends CI_Controller {
         $this->load->view('templates/task_footer_final');
     }
 
+    public function task_list($page = 'task_list') {
+
+        $username = $this->session->userdata('username');
+        $authDB = $this->session->userdata('authDB');
+
+        if (!$authDB || count($authDB) == 0) {
+            show_error('没有授权的数据库，请登录或联系管理员');
+            exit();
+        }
+
+        $firstDB = '';
+        foreach($authDB as $k => $v) {
+            $firstDB = $k;
+            break;
+        }
+
+        $task_list = $this->mtask->get_task_list_by_username($firstDB, $username)->result_array();
+        $data = array(
+            'title' => "任务列表",
+            'username' => $username,
+            'authDB' => $authDB,
+            'groupID' => $this->session->userdata('groupID'),
+            'task_list' => $task_list
+        );
+        $this->load->view('templates/task_header', $data);
+        $this->load->view('templates/task_sidebar_mytask');
+        $this->load->view('templates/task_banner');
+        $this->load->view('task/task_mytask');
+        $this->load->view('templates/task_footer');
+        $this->load->view('templates/task_footer_script');
+//        $this->load->view('task/task_footer_script_add_summary');
+        $this->load->view('templates/task_footer_function');
+//        $this->load->view('task/task_footer_function_add_summary');
+        $this->load->view('templates/task_footer_final');
+    }
+
     public function my_task($page = 'my_task') {
         if ( ! file_exists('application/views/task/'.$page.'.php')) {
             show_404();
@@ -157,11 +193,13 @@ class Task extends CI_Controller {
         $this->load->view('templates/task_sidebar_mytask');
 //        $this->load->view('templates/task_sidebar');
         $this->load->view('templates/task_banner');
-        $this->load->view('task/task_mytask');
+        $this->load->view('task/task_summary');
 
         $this->load->view('templates/task_footer');
         $this->load->view('templates/task_footer_script');
+        $this->load->view('task/task_footer_script_add_summary');
         $this->load->view('templates/task_footer_function');
+        $this->load->view('task/task_footer_function_add_summary');
         $this->load->view('templates/task_footer_final');
     }
 

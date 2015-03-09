@@ -7,7 +7,10 @@
                     <h2>任务详情</h2>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="task/my_task">任务概要</a>
+                        </li>
+                        <li>
+                            <a href="task/task_list">任务列表</a>
                         </li>
                         <li class="active">
                             <strong>任务详情</strong>

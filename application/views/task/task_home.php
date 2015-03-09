@@ -21,28 +21,6 @@
             <div class="ibox float-e-margins">
                 <div class="ibox-content text-center p-md">
 
-                    <h4 class="m-b-xxs">智能任务管理平台 <span class="label label-primary">NEW</span></h4>
-                    <br>
-                    <span class="simple_tag">bpm</span>
-                    <span class="simple_tag">自动化</span>
-                    <span class="simple_tag">任务管理</span>
-                    <span class="simple_tag">智能</span>
-                    <span class="simple_tag">交互</span>
-                    <div class="m-t-md">
-                        <p>BPM+流程，自动化任务管理能力，全网最智能的人机交互系统，团队销效率提升30%及以上</p>
-                        <div class="p-lg ">
-                            <a href="dashboard_4.html"><img class="img-responsive img-shadow" src="<?php echo base_url().IMG_DIR;?>/dashbard4_2.jpg" alt=""></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="col-lg-5">
-            <div class="ibox float-e-margins">
-                <div class="ibox-content text-center p-md">
-
                     <h4 class="m-b-xxs">追灿全案咨询平台 </h4>
                     <br>
                     <span class="simple_tag">一对一</span>
@@ -54,6 +32,28 @@
                         <p>一对一定制，海量数据挖掘分析，企业各项指标全面洞察，针对核心提供模块给出落地解决方案，执行效果数据直观反馈</p>
                         <div class="p-lg">
                             <a href="dashboard_4_1.html"><img class="img-responsive img-shadow" src="<?php echo base_url().IMG_DIR;?>/dashbard4_1.jpg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-lg-5">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content text-center p-md">
+
+                    <h4 class="m-b-xxs">智能任务管理平台 <span class="label label-primary">NEW</span></h4>
+                    <br>
+                    <span class="simple_tag">bpm</span>
+                    <span class="simple_tag">自动化</span>
+                    <span class="simple_tag">任务管理</span>
+                    <span class="simple_tag">智能</span>
+                    <span class="simple_tag">交互</span>
+                    <div class="m-t-md">
+                        <p>BPM+流程，自动化任务管理能力，全网最智能的人机交互系统，团队销效率提升30%及以上</p>
+                        <div class="p-lg ">
+                            <a href="dashboard_4.html"><img class="img-responsive img-shadow" src="<?php echo base_url().IMG_DIR;?>/dashbard4_2.jpg" alt=""></a>
                         </div>
                     </div>
                 </div>

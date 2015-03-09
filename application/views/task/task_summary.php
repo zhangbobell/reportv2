@@ -4,72 +4,66 @@
         <div class="col-lg-3">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <span class="label label-success pull-right">Monthly</span>
+                    <a class="label label-success pull-right" href="task/task_list">查看任务列表</a>
                     <h5>客户运营</h5>
                 </div>
                 <div class="ibox-content">
                     <p class="no-margins">完成任务数 <strong>/</strong> 所有任务</p>
                     <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>
-                    <small>Total income</small>
                 </div>
             </div>
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <span class="label label-danger pull-right">Low value</span>
+                    <a class="label label-success pull-right" href="task/task_list">查看任务列表</a>
                     <h5>营销管理</h5>
                 </div>
                 <div class="ibox-content">
                     <p class="no-margins">完成任务数 <strong>/</strong> 所有任务</p>
                     <div class="stat-percent font-bold text-danger">38% <i class="fa fa-level-down"></i></div>
-                    <small>In first month</small>
                 </div>
             </div>
         </div>
         <div class="col-lg-3">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <span class="label label-info pull-right">Annual</span>
+                    <a class="label label-success pull-right" href="task/task_list">查看任务列表</a>
                     <h5>供应管理</h5>
                 </div>
                 <div class="ibox-content">
                     <p class="no-margins">完成任务数 <strong>/</strong> 所有任务</p>
                     <div class="stat-percent font-bold text-info">20% <i class="fa fa-level-up"></i></div>
-                    <small>New orders</small>
                 </div>
             </div>
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <span class="label label-danger pull-right">Low value</span>
+                    <a class="label label-success pull-right" href="task/task_list">查看任务列表</a>
                     <h5>跨界营销</h5>
                 </div>
                 <div class="ibox-content">
                     <p class="no-margins">完成任务数 <strong>/</strong> 所有任务</p>
                     <div class="stat-percent font-bold text-danger">38% <i class="fa fa-level-down"></i></div>
-                    <small>In first month</small>
                 </div>
             </div>
         </div>
         <div class="col-lg-3">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <span class="label label-primary pull-right">Today</span>
+                    <a class="label label-success pull-right" href="task/task_list">查看任务列表</a>
                     <h5>渠道运营</h5>
                 </div>
                 <div class="ibox-content">
                     <p class="no-margins">完成任务数 <strong>/</strong> 所有任务</p>
                     <div class="stat-percent font-bold text-navy">44% <i class="fa fa-level-up"></i></div>
-                    <small>New visits</small>
                 </div>
             </div>
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <span class="label label-danger pull-right">Low value</span>
+                    <a class="label label-success pull-right" href="task/task_list">查看任务列表</a>
                     <h5>品牌管理</h5>
                 </div>
                 <div class="ibox-content">
                     <p class="no-margins">完成任务数 <strong>/</strong> 所有任务</p>
                     <div class="stat-percent font-bold text-danger">38% <i class="fa fa-level-down"></i></div>
-                    <small>In first month</small>
                 </div>
             </div>
         </div>
