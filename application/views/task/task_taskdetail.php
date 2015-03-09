@@ -130,80 +130,7 @@
                                                         describe...
                                                     </div>
                                                     <div class="tab-pane" id="tab-2">
-                                                        <div class="feed-activity-list">
-                                                            <div class="feed-element">
-                                                                <a href="#" class="pull-left">
-                                                                    <img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a2.jpg">
-                                                                </a>
-                                                                <div class="media-body ">
-                                                                    <small class="pull-right">2h ago</small>
-                                                                    <strong>Mark Johnson</strong> posted message on <strong>Monica Smith</strong> site. <br>
-                                                                    <small class="text-muted">Today 2:10 pm - 12.06.2014</small>
-                                                                    <div class="well">
-                                                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                                                                        Over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="feed-element">
-                                                                <a href="#" class="pull-left">
-                                                                    <img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a3.jpg">
-                                                                </a>
-                                                                <div class="media-body ">
-                                                                    <small class="pull-right">2h ago</small>
-                                                                    <strong>Janet Rosowski</strong> add 1 photo on <strong>Monica Smith</strong>. <br>
-                                                                    <small class="text-muted">2 days ago at 8:30am</small>
-                                                                </div>
-                                                            </div>
-                                                            <div class="feed-element">
-                                                                <a href="#" class="pull-left">
-                                                                    <img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a4.jpg">
-                                                                </a>
-                                                                <div class="media-body ">
-                                                                    <small class="pull-right text-navy">5h ago</small>
-                                                                    <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br>
-                                                                    <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
-                                                                    <div class="actions">
-                                                                        <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
-                                                                        <a class="btn btn-xs btn-white"><i class="fa fa-heart"></i> Love</a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="feed-element">
-                                                                <a href="#" class="pull-left">
-                                                                    <img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a5.jpg">
-                                                                </a>
-                                                                <div class="media-body ">
-                                                                    <small class="pull-right">2h ago</small>
-                                                                    <strong>Kim Smith</strong> posted message on <strong>Monica Smith</strong> site. <br>
-                                                                    <small class="text-muted">Yesterday 5:20 pm - 12.06.2014</small>
-                                                                    <div class="well">
-                                                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                                                                        Over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="feed-element">
-                                                                <a href="#" class="pull-left">
-                                                                    <img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/profile.jpg">
-                                                                </a>
-                                                                <div class="media-body ">
-                                                                    <small class="pull-right">23h ago</small>
-                                                                    <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
-                                                                    <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
-                                                                </div>
-                                                            </div>
-                                                            <div class="feed-element">
-                                                                <a href="#" class="pull-left">
-                                                                    <img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/a7.jpg">
-                                                                </a>
-                                                                <div class="media-body ">
-                                                                    <small class="pull-right">46h ago</small>
-                                                                    <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br>
-                                                                    <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        change...
                                                     </div>
                                                 </div>
                                             </div>
@@ -216,25 +143,16 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="wrapper wrapper-content project-manager">
-                        <h4>task description</h4>
+                        <h5>追灿咨询</h5>
 
                         <p class="small">
                             <?php echo $task_base[0]['task_desc']?>
                         </p>
 
-                        <h5>task tag</h5>
-                        <ul class="tag-list" style="padding: 0">
-                            <li><a href=""><i class="fa fa-tag"></i> Zender</a></li>
-                            <li><a href=""><i class="fa fa-tag"></i> Lorem ipsum</a></li>
-                            <li><a href=""><i class="fa fa-tag"></i> Passages</a></li>
-                            <li><a href=""><i class="fa fa-tag"></i> Variations</a></li>
-                        </ul>
-                        <h5>task files</h5>
+                        <h5>相关文件</h5>
                         <ul class="list-unstyled project-files">
-                            <li><a href=""><i class="fa fa-file"></i> task_document.docx</a></li>
-                            <li><a href=""><i class="fa fa-file-picture-o"></i> description_company.jpg</a></li>
-                            <li><a href=""><i class="fa fa-stack-exchange"></i> Email.mln</a></li>
-                            <li><a href=""><i class="fa fa-file"></i> Contract_3_3_2015.docx</a></li>
+                            <li><a href=""><i class="fa fa-file"></i> 操作说明.docx</a></li>
+                            <li><a href=""><i class="fa fa-file"></i> readme.txt</a></li>
                         </ul>
                         <div class="text-center m-t-md">
                             <a href="#" class="btn btn-xs btn-primary">增加文件</a>

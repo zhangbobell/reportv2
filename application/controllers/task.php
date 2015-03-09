@@ -36,6 +36,7 @@ class Task extends CI_Controller {
         );
 
         $this->load->view('templates/task_header', $data);
+        $this->load->view('task/task_header_add_'.$page);
         $this->load->view('templates/task_sidebar_advisory');
 //        $this->load->view('templates/task_sidebar');
         $this->load->view('templates/task_banner');
@@ -81,8 +82,14 @@ class Task extends CI_Controller {
     }
 
     public function mailpage($prepage, $page = 'mailpage') {
+        if($prepage == 'decision') {
+            $mailtitle = '云决策平台';
+        } else {
+            $mailtitle = '流程定制平台';
+        }
         $data = array(
             'title' => "联系我们",
+            'mailtitle' => $mailtitle
         );
 
         $this->load->view('templates/task_header', $data);

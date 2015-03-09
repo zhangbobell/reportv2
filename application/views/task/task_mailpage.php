@@ -39,7 +39,7 @@
 
                     <div class="summernote">
                     <pre>
-                        <h4>管理员你好!</h4>  我申请试用云决策平台的免费试用，以下是我的相关信息：
+                        <h4><strong>管理员你好!</strong></h4>  我申请试用<?php echo $mailtitle ?>的试用，以下是我的相关信息：
                     <strong>企业信息：</strong>
                                 企业名称：                        成立时间：
                                 所属行业：                        主营产品：
