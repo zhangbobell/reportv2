@@ -37,9 +37,6 @@
                                 <div class="ibox">
                                     <div class="ibox-title">
                                         <div class="ibox-tools">
-                                            <a href="task/summary" class="btn btn-primary btn-xs">Management</a>
-                                        </div>
-                                        <div class="ibox-tools">
                                             <a href="" class="btn btn-primary btn-xs">Create new project</a>
                                         </div>
                                     </div>
@@ -98,9 +95,6 @@
                             <div id="tab-1" class="tab-pane">
                                 <div class="ibox">
                                     <div class="ibox-title">
-                                        <div class="ibox-tools">
-                                            <a href="" class="btn btn-primary btn-xs">Management</a>
-                                        </div>
                                         <div class="ibox-tools">
                                             <a href="" class="btn btn-primary btn-xs">Create new project</a>
                                         </div>
@@ -164,9 +158,6 @@
                                 <div class="ibox">
                                     <div class="ibox-title">
                                         <div class="ibox-tools">
-                                            <a href="" class="btn btn-primary btn-xs">Management</a>
-                                        </div>
-                                        <div class="ibox-tools">
                                             <a href="" class="btn btn-primary btn-xs">Create new project</a>
                                         </div>
                                     </div>
@@ -228,9 +219,6 @@
                                 <div class="ibox">
                                     <div class="ibox-title">
                                         <div class="ibox-tools">
-                                            <a href="" class="btn btn-primary btn-xs">Management</a>
-                                        </div>
-                                        <div class="ibox-tools">
                                             <a href="" class="btn btn-primary btn-xs">Create new project</a>
                                         </div>
                                     </div>
@@ -290,9 +278,6 @@
                             <div id="tab-4" class="tab-pane">
                                 <div class="ibox">
                                     <div class="ibox-title">
-                                        <div class="ibox-tools">
-                                            <a href="" class="btn btn-primary btn-xs">Management</a>
-                                        </div>
                                         <div class="ibox-tools">
                                             <a href="" class="btn btn-primary btn-xs">Create new project</a>
                                         </div>
@@ -356,9 +341,6 @@
                                 <div class="ibox">
                                     <div class="ibox-title">
                                         <div class="ibox-tools">
-                                            <a href="" class="btn btn-primary btn-xs">Management</a>
-                                        </div>
-                                        <div class="ibox-tools">
                                             <a href="" class="btn btn-primary btn-xs">Create new project</a>
                                         </div>
                                     </div>
@@ -419,9 +401,6 @@
                             <div id="tab-6" class="tab-pane">
                                 <div class="ibox">
                                     <div class="ibox-title">
-                                        <div class="ibox-tools">
-                                            <a href="" class="btn btn-primary btn-xs">Management</a>
-                                        </div>
                                         <div class="ibox-tools">
                                             <a href="" class="btn btn-primary btn-xs">Create new project</a>
                                         </div>
