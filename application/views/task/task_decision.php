@@ -5,7 +5,7 @@
                 <div class="ibox float-e-margins animated fadeInRight">
                     <div class="ibox-content">
                         <strong>平台简介：</strong><br>
-                        Expert Engine+知识 ，将知识应用于信息，将信息转化为行动。 集成覆盖企业70%决策场景的决策模型及专家知识
+                        Saiku/OLAP/ETL/可视分析+模型， 拥有将数据转化为方法的能力。包含TOP10 行业数据挖掘分析方法，100多种分析模型
                     </div>
 
                     <div class="ibox-content text-center">

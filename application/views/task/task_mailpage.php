@@ -18,8 +18,6 @@
                 </h2>
             </div>
             <div class="mail-box">
-
-
                 <div class="mail-body">
 
                     <form class="form-horizontal" method="get">

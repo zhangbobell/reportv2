@@ -101,60 +101,58 @@
                 <div class="tab-content">
                     <div id="tab-1" class="tab-pane active">
                         <div class="col-lg-6">
-                            <div class="ibox float-e-margins">
-                                <div class="ibox-title">
-                                    <h5>Value Table  </h5>
-                                    <div class="ibox-tools">
-                                        <a class="collapse-link">
-                                            <i class="fa fa-chevron-up"></i>
-                                        </a>
-                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                            <i class="fa fa-wrench"></i>
-                                        </a>
-                                        <ul class="dropdown-menu dropdown-user">
-                                            <li><a href="#">Config option 1</a>
-                                            </li>
-                                            <li><a href="#">Config option 2</a>
-                                            </li>
-                                        </ul>
-                                        <a class="close-link">
-                                            <i class="fa fa-times"></i>
-                                        </a>
-                                    </div>
+                            <div class="ibox-title">
+                                <h5>指标数值  </h5>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <i class="fa fa-wrench"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-user">
+                                        <li><a href="#">Config option 1</a>
+                                        </li>
+                                        <li><a href="#">Config option 2</a>
+                                        </li>
+                                    </ul>
+                                    <a class="close-link">
+                                        <i class="fa fa-times"></i>
+                                    </a>
                                 </div>
-                                <div class="ibox-content">
+                            </div>
+                            <div class="ibox-content">
 
-                                    <table class="table table-hover">
-                                        <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Data</th>
-                                            <th>target</th>
-                                            <th>Value</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td><span class="pie">0.52,1.041</span></td>
-                                            <td>客户重复购买率</td>
-                                            <td class="text-navy">   </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td><span class="pie">226,134</span></td>
-                                            <td>老客户销售额占比</td>
-                                            <td class="text-warning">   </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td><span class="pie">0.52/1.561</span></td>
-                                            <td>客户流失率</td>
-                                            <td class="text-navy">  </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Data</th>
+                                        <th>target</th>
+                                        <th>Value</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td><span class="pie">0.52,1.041</span></td>
+                                        <td>客户重复购买率</td>
+                                        <td class="text-navy">   </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td><span class="pie">226,134</span></td>
+                                        <td>老客户销售额占比</td>
+                                        <td class="text-warning">   </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td><span class="pie">0.52/1.561</span></td>
+                                        <td>客户流失率</td>
+                                        <td class="text-navy">  </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
 

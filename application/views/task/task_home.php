@@ -51,7 +51,7 @@
                     <span class="simple_tag">智能</span>
                     <span class="simple_tag">交互</span>
                     <div class="m-t-md">
-                        <p>BPM+流程，自动化任务管理能力，全网最智能的人机交互系统，团队销效率提升30%及以上</p>
+                        <p>Expert Engine+知识 ，将知识应用于信息，将信息转化为行动。 集成覆盖企业70%决策场景的决策模型及专家知识</p>
                         <div class="p-lg ">
                             <a href="dashboard_4.html"><img class="img-responsive img-shadow" src="<?php echo base_url().IMG_DIR;?>/dashbard4_2.jpg" alt=""></a>
                         </div>
@@ -76,7 +76,7 @@
                     <span class="simple_tag">应用</span>
                     <span class="simple_tag">专家知识</span>
                     <div class="m-t-md">
-                        <p>Expert Engine+知识 ，将知识应用于信息，将信息转化为行动。 集成覆盖企业70%决策场景的决策模型及专家知识</p>
+                        <p>Saiku/OLAP/ETL/可视分析+模型， 拥有将数据转化为方法的能力。包含TOP10 行业数据挖掘分析方法，100多种分析模型</p>
                         <div class="p-lg ">
                             <a href="dashboard_4.html"><img class="img-responsive img-shadow" src="<?php echo base_url().IMG_DIR;?>/dashbard4_2.jpg" alt=""></a>
                         </div>
@@ -97,7 +97,7 @@
                     <span class="simple_tag">数据挖掘</span>
                     <span class="simple_tag">模型分析</span>
                     <div class="m-t-md">
-                        <p>Saiku/OLAP/ETL/可视分析+模型， 拥有将数据转化为方法的能力。包含TOP10 行业数据挖掘分析方法，100多种分析模型</p>
+                        <p>BPM+流程，自动化任务管理能力，全网最智能的人机交互系统，团队销效率提升30%及以上</p>
                         <div class="p-lg">
                             <a href="dashboard_4_1.html"><img class="img-responsive img-shadow" src="<?php echo base_url().IMG_DIR;?>/dashbard4_1.jpg" alt=""></a>
                         </div>

@@ -382,8 +382,7 @@
                                             <div class="row">
                                                 <div class="col-lg-8">
                                                     <div class="form-group">
-                                                        <label>Username *</label>
-                                                        <input id="userName" name="userName" type="text" class="input-sm form-control required">
+                                                        <label>Username *</label> <input id="userName" name="userName" type="text" class="input-sm form-control required">
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Password *</label>
