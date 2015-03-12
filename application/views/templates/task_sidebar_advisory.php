@@ -15,7 +15,7 @@
                 <li class="nav-header">
                     <div class="dropdown profile-element">
 							<span>
-								<img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/profile_small.jpg" />
+								<img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/user.jpg" />
                             </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
 								<span class="clear">
@@ -30,7 +30,7 @@
                             <li><a href="javascript:;">联系：888-8888</a></li>
                             <li><a href="javascript:;">邮件：admin@admin.com</a></li>
                             <li class="divider"></li>
-                            <li><a href=" ">退出</a></li>
+                            <li><a href="login/logout ">退出</a></li>
                         </ul>
                     </div>
                     <div class="logo-element">

@@ -60,7 +60,7 @@
                     <p class="text-muted text-center">
                         <small>没有账户？</small>
                     </p>
-                    <a class="btn btn-sm btn-white btn-block" href="register.html">创建新账户</a>
+                    <a class="btn btn-sm btn-white btn-block" href="login/register">创建新账户</a>
                 </form>
 <!--                <p class="m-t">-->
 <!--                    <small>Inspinia we app framework base on Bootstrap 3 &copy; 2014</small>-->

@@ -33,6 +33,25 @@ class Login extends CI_Controller
 
     }
 
+    public function success($page = 'success') {
+        if ( ! file_exists('application/views/login/'.$page.'.php'))
+        {
+            show_404();
+        }
+        $data['title'] = "注册成功";
+        $this->load->view('login/'.$page,$data);
+
+    }
+
+    public function register($page = 'register') {
+        if ( ! file_exists('application/views/login/'.$page.'.php'))
+        {
+            show_404();
+        }
+        $data['title'] = "用户注册";
+        $this->load->view('login/'.$page,$data);
+    }
+
     public function logout($page = 'logout') {
         if (!file_exists("application/views/login/$page.php")) {
             show_404();
@@ -147,7 +166,5 @@ class Login extends CI_Controller
 
             redirect('task/my_task');
         }
-
     }
-
 }

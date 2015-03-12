@@ -112,7 +112,7 @@
 <!--                    </ul>-->
 <!--                </li>-->
                 <li>
-                    <a href=" ">
+                    <a href="login/logout">
                         <i class="fa fa-sign-out"></i> 退出系统
                     </a>
                 </li>

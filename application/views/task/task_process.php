@@ -9,9 +9,7 @@
                     </div>
 
                     <div class="ibox-content text-center">
-                        <a class="btn btn-success btn-facebook" href="task/mailpage/process">
-                            <i class="fa fa-envelope-o"> </i> 联系开通
-                        </a>
+                        <p>联系我们开通该平台：admin@e-corp.cn</p>
                     </div>
                 </div>
             </div>
