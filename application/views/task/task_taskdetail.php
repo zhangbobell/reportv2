@@ -159,18 +159,7 @@
                                 <li><a href="task/mailpage">3.功能偏少，需要再增添</a></li>
                                 <li><a href="task/mailpage">4.其他</a></li>
                             </ul>
-
                         </p>
-
-                        <h5>相关文件</h5>
-                        <ul class="list-unstyled project-files">
-                            <li><a href=""><i class="fa fa-file"></i> 操作说明.docx</a></li>
-                            <li><a href=""><i class="fa fa-file"></i> readme.txt</a></li>
-                        </ul>
-                        <div class="text-center m-t-md">
-                            <a href="#" class="btn btn-xs btn-primary">增加文件</a>
-                            <a href="#" class="btn btn-xs btn-primary">反映问题</a>
-                        </div>
                     </div>
                 </div>
             </div>

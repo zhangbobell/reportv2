@@ -15,8 +15,10 @@ class Task extends CI_Controller {
     }
 
     public function home($page = 'home') {
+        $username = $this->session->userdata('username');
         $data = array(
             'title' => "首页",
+            'username' => $username
         );
 
         $this->load->view('templates/task_header', $data);
@@ -31,8 +33,10 @@ class Task extends CI_Controller {
     }
 
     public function advisory($page = 'advisory') {
+        $username = $this->session->userdata('username');
         $data = array(
             'title' => "全案咨询",
+            'username' =>$username
         );
 
         $this->load->view('templates/task_header', $data);
@@ -50,8 +54,10 @@ class Task extends CI_Controller {
     }
 
     public function decision($page = 'decision') {
+        $username = $this->session->userdata('username');
         $data = array(
             'title' => "云决策平台",
+            'username' => $username
         );
 
         $this->load->view('templates/task_header', $data);
@@ -66,8 +72,10 @@ class Task extends CI_Controller {
     }
 
     public function process($page = 'process') {
+        $username = $this->session->userdata('username');
         $data = array(
             'title' => "流程定制平台",
+            'username' =>$username
         );
 
         $this->load->view('templates/task_header', $data);
@@ -95,11 +103,13 @@ class Task extends CI_Controller {
             $send_applymail = false;
             $sendfor = '反馈问题';
         }
+        $username = $this->session->userdata('username');
         $data = array(
             'title' => "联系我们",
             'mailtitle' => $mailtitle,
             'send_applymail' => $send_applymail,
-            'sendfor' => $sendfor
+            'sendfor' => $sendfor,
+            'username' => $username
         );
 
         $this->load->view('templates/task_header', $data);
@@ -119,8 +129,10 @@ class Task extends CI_Controller {
     }
 
     public function summary($page = 'summary') {
+        $username = $this->session->userdata('username');
         $data = array(
             'title' => "任务概要",
+            'username' => $username
         );
 
         $this->load->view('templates/task_header', $data);
@@ -225,11 +237,13 @@ class Task extends CI_Controller {
 
         $task_detail = $this->mtask->get_task_detail($db, $id);
         $task_base = $this->mtask->get_task_list_by_id($db, $id)->result_array();
+        $username = $this->session->userdata('username');
 
         $data = array(
             'title' => '任务详情',
             'task_detail' => $task_detail,
-            'task_base' => $task_base
+            'task_base' => $task_base,
+            'username' => $username
         );
 
         $this->load->view('templates/task_header', $data);

@@ -35,11 +35,6 @@
                         <div class="tab-content">
                             <div id="tab-0" class="tab-pane active">
                                 <div class="ibox">
-                                    <div class="ibox-title">
-                                        <div class="ibox-tools">
-                                            <a href="" class="btn btn-primary btn-xs">Create new project</a>
-                                        </div>
-                                    </div>
 
                                     <div class="ibox-content">
                                         <div class="row m-b-sm m-t-sm">
@@ -94,11 +89,6 @@
 
                             <div id="tab-1" class="tab-pane">
                                 <div class="ibox">
-                                    <div class="ibox-title">
-                                        <div class="ibox-tools">
-                                            <a href="" class="btn btn-primary btn-xs">Create new project</a>
-                                        </div>
-                                    </div>
 
                                     <div class="ibox-content">
                                         <div class="row m-b-sm m-t-sm">
@@ -156,11 +146,6 @@
 
                             <div id="tab-2" class="tab-pane">
                                 <div class="ibox">
-                                    <div class="ibox-title">
-                                        <div class="ibox-tools">
-                                            <a href="" class="btn btn-primary btn-xs">Create new project</a>
-                                        </div>
-                                    </div>
 
                                     <div class="ibox-content">
                                         <div class="row m-b-sm m-t-sm">
@@ -217,11 +202,6 @@
 
                             <div id="tab-3" class="tab-pane">
                                 <div class="ibox">
-                                    <div class="ibox-title">
-                                        <div class="ibox-tools">
-                                            <a href="" class="btn btn-primary btn-xs">Create new project</a>
-                                        </div>
-                                    </div>
 
                                     <div class="ibox-content">
                                         <div class="row m-b-sm m-t-sm">
@@ -277,11 +257,6 @@
 
                             <div id="tab-4" class="tab-pane">
                                 <div class="ibox">
-                                    <div class="ibox-title">
-                                        <div class="ibox-tools">
-                                            <a href="" class="btn btn-primary btn-xs">Create new project</a>
-                                        </div>
-                                    </div>
 
                                     <div class="ibox-content">
                                         <div class="row m-b-sm m-t-sm">
@@ -339,11 +314,6 @@
 
                             <div id="tab-5" class="tab-pane">
                                 <div class="ibox">
-                                    <div class="ibox-title">
-                                        <div class="ibox-tools">
-                                            <a href="" class="btn btn-primary btn-xs">Create new project</a>
-                                        </div>
-                                    </div>
 
                                     <div class="ibox-content">
                                         <div class="row m-b-sm m-t-sm">
@@ -400,11 +370,6 @@
 
                             <div id="tab-6" class="tab-pane">
                                 <div class="ibox">
-                                    <div class="ibox-title">
-                                        <div class="ibox-tools">
-                                            <a href="" class="btn btn-primary btn-xs">Create new project</a>
-                                        </div>
-                                    </div>
 
                                     <div class="ibox-content">
                                         <div class="row m-b-sm m-t-sm">

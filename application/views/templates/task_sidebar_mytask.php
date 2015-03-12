@@ -20,15 +20,15 @@
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
 								<span class="clear">
 									<span class="block m-t-xs">
-										<strong class="font-bold">David Williams</strong>
+										<strong class="font-bold"><?php echo $username ?></strong>
 									</span>
-										<span class="text-muted text-xs block">Art Director <b class="caret"></b></span>
+                                    <span class="text-muted text-xs block">账号信息 <b class="caret"></b></span>
 								</span>
                         </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                            <li><a href="profile.html">个人</a></li>
-                            <li><a href="contacts.html">联系</a></li>
-                            <li><a href="mailbox.html">邮件</a></li>
+<!--                            <li><a href="javascript:;">个人</a></li>-->
+                            <li><a href="javascript:;">联系：888-8888</a></li>
+                            <li><a href="javascript:;">邮件：admin@admin.com</a></li>
                             <li class="divider"></li>
                             <li><a href=" ">退出</a></li>
                         </ul>
