@@ -102,7 +102,7 @@
                     <div id="tab-1" class="tab-pane active">
                         <div class="col-lg-6">
                             <div class="ibox-title">
-                                <h5>指标数值  </h5>
+                                <h5>指标数值表  </h5>
                                 <div class="ibox-tools">
                                     <a class="collapse-link">
                                         <i class="fa fa-chevron-up"></i>
@@ -127,9 +127,9 @@
                                     <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Data</th>
-                                        <th>target</th>
-                                        <th>Value</th>
+                                        <th>图示</th>
+                                        <th>指标</th>
+                                        <th>数值</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -162,7 +162,7 @@
                         <div class="col-lg-6">
                             <div class="ibox float-e-margins">
                                 <div class="ibox-title">
-                                    <h5>Value Table </h5>
+                                    <h5>指标数值表 </h5>
                                     <div class="ibox-tools">
                                         <a class="collapse-link">
                                             <i class="fa fa-chevron-up"></i>
@@ -187,9 +187,9 @@
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Data</th>
-                                            <th>User</th>
-                                            <th>Value</th>
+                                            <th>图示</th>
+                                            <th>指标</th>
+                                            <th>数值</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -216,7 +216,7 @@
                         <div class="col-lg-6">
                             <div class="ibox float-e-margins">
                                 <div class="ibox-title">
-                                    <h5>Value Table </h5>
+                                    <h5>指标数值表 </h5>
                                     <div class="ibox-tools">
                                         <a class="collapse-link">
                                             <i class="fa fa-chevron-up"></i>
@@ -241,9 +241,9 @@
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Data</th>
-                                            <th>User</th>
-                                            <th>Value</th>
+                                            <th>图示</th>
+                                            <th>指标</th>
+                                            <th>数值</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -282,7 +282,7 @@
                         <div class="col-lg-6">
                             <div class="ibox float-e-margins">
                                 <div class="ibox-title">
-                                    <h5>Value Table </h5>
+                                    <h5>指标数值表 </h5>
                                     <div class="ibox-tools">
                                         <a class="collapse-link">
                                             <i class="fa fa-chevron-up"></i>
@@ -307,9 +307,9 @@
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Data</th>
-                                            <th>User</th>
-                                            <th>Value</th>
+                                            <th>图示</th>
+                                            <th>指标</th>
+                                            <th>数值</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -342,7 +342,7 @@
                         <div class="col-lg-6">
                             <div class="ibox float-e-margins">
                                 <div class="ibox-title">
-                                    <h5>Value Table </h5>
+                                    <h5>指标数值表 </h5>
                                     <div class="ibox-tools">
                                         <a class="collapse-link">
                                             <i class="fa fa-chevron-up"></i>
@@ -367,9 +367,9 @@
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Data</th>
-                                            <th>User</th>
-                                            <th>Value</th>
+                                            <th>图示</th>
+                                            <th>指标</th>
+                                            <th>数值</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -402,7 +402,7 @@
                         <div class="col-lg-6">
                             <div class="ibox float-e-margins">
                                 <div class="ibox-title">
-                                    <h5>Value Table </h5>
+                                    <h5>指标数值表 </h5>
                                     <div class="ibox-tools">
                                         <a class="collapse-link">
                                             <i class="fa fa-chevron-up"></i>
@@ -427,9 +427,9 @@
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Data</th>
-                                            <th>User</th>
-                                            <th>Value</th>
+                                            <th>图示</th>
+                                            <th>指标</th>
+                                            <th>数值</th>
                                         </tr>
                                         </thead>
                                         <tbody>
