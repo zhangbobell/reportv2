@@ -84,4 +84,24 @@ class Mlogin extends MY_model
         return true;
     }
 
+    /*
+     * insert_user : 插入新注册用户信息到etc_user表中
+     * param : $username -- 用户名 $email -- 邮箱 $password -- 用户密码
+     * return : true/false -- 操作是否成功
+     */
+    function insert_user($username, $email, $password) {
+        $config = parent::select_DB("etc_privileges");
+        $this->load->database($config);
+
+        $sql = "INSERT INTO `etc_user`(`username`,`email`, `password`, `groupid`,`group`,`is_valid`) VALUES('$username','$email','$password',1,'维权专员','1')";
+
+        if(!($query = $this->db->query($sql)))
+        {
+            $this->db->_error_message();
+            return false;
+        }
+        return true;
+
+    }
+
 }

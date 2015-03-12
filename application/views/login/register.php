@@ -24,20 +24,20 @@
             <h1 class="logo-name">E+</h1>
         </div>
         <h3>欢迎加入追灿咨询</h3>
-        <form class="m-t" role="form" action="login/success">
+        <form class="m-t" role="form" action="reg_success" method="post">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="用户名" required="">
+                <input type="text" name = "username" class="form-control" placeholder="用户名" required="">
             </div>
             <div class="form-group">
-                <input type="email" class="form-control" placeholder="邮箱" required="">
+                <input type="email" name="email" class="form-control" placeholder="邮箱" required="">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" placeholder="密码" required="">
+                <input type="password" name="password" class="form-control" placeholder="密码" required="">
             </div>
-            <div class="form-group">
-                <div class="checkbox i-checks"><label> <input type="checkbox"><i></i> 同意用户协议 </label></div>
+            <div class="form-group" >
+                <div class="checkbox i-checks"><label> <input name="checkbox" id="checkbox" type="checkbox"><i></i> 同意用户协议 </label></div>
             </div>
-            <button type="submit" class="btn btn-primary block full-width m-b">注册</button>
+            <button type="submit" name="sub_button" id="sub_button" class="btn btn-primary block full-width m-b" disabled>注册</button>
 
             <p class="text-muted text-center"><small>已经拥有账号?</small></p>
             <a class="btn btn-sm btn-white btn-block" href="login/index">登陆</a>
@@ -56,10 +56,16 @@
     $(document).ready(function(){
         $('.i-checks').iCheck({
             checkboxClass: 'icheckbox_square-green',
-            radioClass: 'iradio_square-green',
+            radioClass: 'iradio_square-green'
+        });
+
+        $('.i-checks').on('ifChanged', function(){
+            $('#checkbox').is(':checked') ? $('#sub_button').removeAttr('disabled') :　$('#sub_button').attr('disabled', '');
         });
     });
 </script>
+
+<!--<script src="//www.w3cschool.cc/try/angularjs/1.2.5/angular.min.js"></script>-->
 </body>
 
 </html>
