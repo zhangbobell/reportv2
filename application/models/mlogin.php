@@ -22,7 +22,7 @@ class Mlogin extends MY_model
         $config= $this->select_DB("etc_privileges");
         $this->load->database($config);
 
-        $sql="select `userid`, `groupid` "
+        $sql="select `userid`, `groupid`,`email` "
             . "from `etc_user` "
             . "where `username`='$username' and `password`='$password' "
             . "LIMIT 1";

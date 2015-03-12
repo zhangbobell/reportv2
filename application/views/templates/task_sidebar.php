@@ -26,9 +26,7 @@
 								</span>
                         </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                            <li><a href="profile.html">个人</a></li>
-                            <li><a href="contacts.html">联系</a></li>
-                            <li><a href="mailbox.html">邮件</a></li>
+                            <li><a href="mailbox.html">邮件:<?php echo $email;?></a></li>
                             <li class="divider"></li>
                             <li><a href="login/logout">退出</a></li>
                         </ul>

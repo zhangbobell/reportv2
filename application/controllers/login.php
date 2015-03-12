@@ -175,6 +175,7 @@ class Login extends CI_Controller
             $authDB =  $this->mlogin->get_auth_DB($record['userid']);
             $userdata = array(
                 'username'  => $username,
+                'email' => $record['email'],
                 'authDB'    => $authDB,
                 'groupID'   => $record['groupid'],
                 'logged_in' => TRUE

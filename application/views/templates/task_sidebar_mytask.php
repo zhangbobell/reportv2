@@ -27,8 +27,7 @@
                         </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
 <!--                            <li><a href="javascript:;">个人</a></li>-->
-                            <li><a href="javascript:;">联系：888-8888</a></li>
-                            <li><a href="javascript:;">邮件：admin@admin.com</a></li>
+                            <li><a href="javascript:;">邮件：<?php echo $email;?></a></li>
                             <li class="divider"></li>
                             <li><a href="login/logout ">退出</a></li>
                         </ul>

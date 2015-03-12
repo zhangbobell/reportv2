@@ -16,9 +16,11 @@ class Task extends CI_Controller {
 
     public function home($page = 'home') {
         $username = $this->session->userdata('username');
+        $email = $this->session->userdata('email');
         $data = array(
             'title' => "首页",
-            'username' => $username
+            'username' => $username,
+            'email' => $email
         );
 
         $this->load->view('templates/task_header', $data);
@@ -34,9 +36,11 @@ class Task extends CI_Controller {
 
     public function advisory($page = 'advisory') {
         $username = $this->session->userdata('username');
+        $email = $this->session->userdata('email');
         $data = array(
             'title' => "全案咨询",
-            'username' =>$username
+            'username' =>$username,
+            'email' => $email
         );
 
         $this->load->view('templates/task_header', $data);
@@ -55,9 +59,11 @@ class Task extends CI_Controller {
 
     public function decision($page = 'decision') {
         $username = $this->session->userdata('username');
+        $email = $this->session->userdata('email');
         $data = array(
             'title' => "云决策平台",
-            'username' => $username
+            'username' => $username,
+            'email' => $email
         );
 
         $this->load->view('templates/task_header', $data);
@@ -73,9 +79,11 @@ class Task extends CI_Controller {
 
     public function process($page = 'process') {
         $username = $this->session->userdata('username');
+        $email = $this->session->userdata('email');
         $data = array(
             'title' => "流程定制平台",
-            'username' =>$username
+            'username' =>$username,
+            'email' => $email
         );
 
         $this->load->view('templates/task_header', $data);
@@ -90,6 +98,7 @@ class Task extends CI_Controller {
     }
 
     public function mailpage($prepage = 'mytask', $page = 'mailpage') {
+        $email = $this->session->userdata('email');
         if($prepage == 'decision') {
             $mailtitle = '商业智能定制';
             $send_applymail = true;
@@ -109,7 +118,8 @@ class Task extends CI_Controller {
             'mailtitle' => $mailtitle,
             'send_applymail' => $send_applymail,
             'sendfor' => $sendfor,
-            'username' => $username
+            'username' => $username,
+            'email' => $email
         );
 
         $this->load->view('templates/task_header', $data);
@@ -130,9 +140,11 @@ class Task extends CI_Controller {
 
     public function summary($page = 'summary') {
         $username = $this->session->userdata('username');
+        $email = $this->session->userdata('email');
         $data = array(
             'title' => "任务概要",
-            'username' => $username
+            'username' => $username,
+            'email' => $email
         );
 
         $this->load->view('templates/task_header', $data);
@@ -155,6 +167,7 @@ class Task extends CI_Controller {
 
         $username = $this->session->userdata('username');
         $authDB = $this->session->userdata('authDB');
+        $email = $this->session->userdata('email');
 
         if (!$authDB || count($authDB) == 0) {
             show_error('没有授权的数据库，请登录或联系管理员');
@@ -171,6 +184,7 @@ class Task extends CI_Controller {
         $data = array(
             'title' => "任务列表",
             'username' => $username,
+            'email' => $email,
             'authDB' => $authDB,
             'groupID' => $this->session->userdata('groupID'),
             'task_list' => $task_list
@@ -194,6 +208,7 @@ class Task extends CI_Controller {
 
         $username = $this->session->userdata('username');
         $authDB = $this->session->userdata('authDB');
+        $email = $this->session->userdata('email');
 
         if (!$authDB || count($authDB) == 0) {
                 show_error('没有授权的数据库，请登录或联系管理员');
@@ -213,6 +228,7 @@ class Task extends CI_Controller {
         $data = array(
             'title' => "我的任务",
             'username' => $username,
+            'email' => $email,
             'authDB' => $authDB,
             'groupID' => $this->session->userdata('groupID'),
             'task_list' => $task_list
@@ -238,12 +254,14 @@ class Task extends CI_Controller {
         $task_detail = $this->mtask->get_task_detail($db, $id);
         $task_base = $this->mtask->get_task_list_by_id($db, $id)->result_array();
         $username = $this->session->userdata('username');
+        $email = $this->session->userdata('email');
 
         $data = array(
             'title' => '任务详情',
             'task_detail' => $task_detail,
             'task_base' => $task_base,
-            'username' => $username
+            'username' => $username,
+            'email' => $email
         );
 
         $this->load->view('templates/task_header', $data);
@@ -265,6 +283,7 @@ class Task extends CI_Controller {
 
         $username = $this->session->userdata('username');
         $authDB = $this->session->userdata('authDB');
+        $email = $this->session->userdata('email');
 
         if (!$authDB || count($authDB) == 0) {
             show_error('没有授权的数据库，请登录或联系管理员');
@@ -284,6 +303,7 @@ class Task extends CI_Controller {
         $data = array(
             'title' => "指派任务",
             'username' => $username,
+            'email' => $email,
             'authDB' => $authDB,
             'groupID' => $this->session->userdata('groupID'),
             'task_list' => $task_list,
