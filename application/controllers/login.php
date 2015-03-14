@@ -33,6 +33,45 @@ class Login extends CI_Controller
 
     }
 
+    /*
+     *  reg_success : 用户注册成功
+     *  @$page='reg_success' : 注册成功页面
+     */
+    public function reg_success($page = 'reg_success') {
+        if ( ! file_exists('application/views/login/'.$page.'.php'))
+        {
+            show_404();
+        }
+        $username = $this->input->post('username', true);
+        $email = $this->input->post('email', true);
+        $password = $this->input->post('password', true);
+
+        $data['title'] = "注册成功";
+        $data['username'] = $username;
+
+        $this->load->model("mlogin");
+        $this->mlogin->insert_user($username,$email,md5($password));
+
+        $this->load->view('login/'.$page,$data);
+    }
+
+    /*
+     *  register : 用户注册
+     *  @$page='register' : 注册页面
+     */
+    public function register($page = 'register') {
+        if ( ! file_exists('application/views/login/'.$page.'.php'))
+        {
+            show_404();
+        }
+        $data['title'] = "用户注册";
+        $this->load->view('login/'.$page,$data);
+    }
+
+    /*
+     *  logout : 用户退出
+     *  @$page='logout' : 退出跳转页面
+     */
     public function logout($page = 'logout') {
         if (!file_exists("application/views/login/$page.php")) {
             show_404();
@@ -136,6 +175,7 @@ class Login extends CI_Controller
             $authDB =  $this->mlogin->get_auth_DB($record['userid']);
             $userdata = array(
                 'username'  => $username,
+                'email' => $record['email'],
                 'authDB'    => $authDB,
                 'groupID'   => $record['groupid'],
                 'logged_in' => TRUE
@@ -147,7 +187,5 @@ class Login extends CI_Controller
 
             redirect('task/my_task');
         }
-
     }
-
 }

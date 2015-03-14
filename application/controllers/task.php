@@ -14,13 +14,160 @@ class Task extends CI_Controller {
         $this->load->model('mtask');
     }
 
-    public function my_task($page = 'my_task') {
-        if ( ! file_exists('application/views/task/'.$page.'.php')) {
-            show_404();
+    public function home($page = 'home') {
+        $username = $this->session->userdata('username');
+        $email = $this->session->userdata('email');
+        $data = array(
+            'title' => "首页",
+            'username' => $username,
+            'email' => $email
+        );
+
+        $this->load->view('templates/task_header', $data);
+        $this->load->view('templates/task_sidebar_home');
+//        $this->load->view('templates/task_sidebar');
+        $this->load->view('templates/task_banner');
+        $this->load->view('task/task_'.$page);
+        $this->load->view('templates/task_footer');
+        $this->load->view('templates/task_footer_script');
+        $this->load->view('templates/task_footer_function');
+        $this->load->view('templates/task_footer_final');
+    }
+
+    public function advisory($page = 'advisory') {
+        $username = $this->session->userdata('username');
+        $email = $this->session->userdata('email');
+        $data = array(
+            'title' => "全案咨询",
+            'username' =>$username,
+            'email' => $email
+        );
+
+        $this->load->view('templates/task_header', $data);
+        $this->load->view('task/task_header_add_'.$page);
+        $this->load->view('templates/task_sidebar_advisory');
+//        $this->load->view('templates/task_sidebar');
+        $this->load->view('templates/task_banner');
+        $this->load->view('task/task_'.$page);
+        $this->load->view('templates/task_footer');
+        $this->load->view('templates/task_footer_script');
+        $this->load->view('task/task_footer_script_add_'.$page);
+        $this->load->view('templates/task_footer_function');
+        $this->load->view('task/task_footer_function_add_'.$page);
+        $this->load->view('templates/task_footer_final');
+    }
+
+    public function decision($page = 'decision') {
+        $username = $this->session->userdata('username');
+        $email = $this->session->userdata('email');
+        $data = array(
+            'title' => "云决策平台",
+            'username' => $username,
+            'email' => $email
+        );
+
+        $this->load->view('templates/task_header', $data);
+        $this->load->view('templates/task_sidebar_decision');
+//        $this->load->view('templates/task_sidebar');
+        $this->load->view('templates/task_banner');
+        $this->load->view('task/task_'.$page);
+        $this->load->view('templates/task_footer');
+        $this->load->view('templates/task_footer_script');
+        $this->load->view('templates/task_footer_function');
+        $this->load->view('templates/task_footer_final');
+    }
+
+    public function process($page = 'process') {
+        $username = $this->session->userdata('username');
+        $email = $this->session->userdata('email');
+        $data = array(
+            'title' => "流程定制平台",
+            'username' =>$username,
+            'email' => $email
+        );
+
+        $this->load->view('templates/task_header', $data);
+        $this->load->view('templates/task_sidebar_process');
+//        $this->load->view('templates/task_sidebar');
+        $this->load->view('templates/task_banner');
+        $this->load->view('task/task_'.$page);
+        $this->load->view('templates/task_footer');
+        $this->load->view('templates/task_footer_script');
+        $this->load->view('templates/task_footer_function');
+        $this->load->view('templates/task_footer_final');
+    }
+
+    public function mailpage($prepage = 'mytask', $page = 'mailpage') {
+        $email = $this->session->userdata('email');
+        if($prepage == 'decision') {
+            $mailtitle = '商业智能定制';
+            $send_applymail = true;
+            $sendfor = '平台开通';
+        } else if ($prepage == 'process'){
+            $mailtitle = '业务流程管理';
+            $send_applymail = true;
+            $sendfor = '平台开通';
+        } else {
+            $mailtitle = 'other';
+            $send_applymail = false;
+            $sendfor = '反馈问题';
         }
+        $username = $this->session->userdata('username');
+        $data = array(
+            'title' => "联系我们",
+            'mailtitle' => $mailtitle,
+            'send_applymail' => $send_applymail,
+            'sendfor' => $sendfor,
+            'username' => $username,
+            'email' => $email
+        );
+
+        $this->load->view('templates/task_header', $data);
+        $this->load->view('task/task_header_add_'.$page);
+        $this->load->view('templates/task_sidebar_'.$prepage);
+//        $this->load->view('templates/task_sidebar');
+        $this->load->view('templates/task_banner');
+        $this->load->view('task/task_'.$page);
+
+        $this->load->view('templates/task_footer');
+
+        $this->load->view('templates/task_footer_script');
+        $this->load->view('task/task_footer_script_add_'.$page);
+        $this->load->view('templates/task_footer_function');
+        $this->load->view('task/task_footer_function_add_'.$page);
+        $this->load->view('templates/task_footer_final');
+    }
+
+    public function summary($page = 'summary') {
+        $username = $this->session->userdata('username');
+        $email = $this->session->userdata('email');
+        $data = array(
+            'title' => "任务概要",
+            'username' => $username,
+            'email' => $email
+        );
+
+        $this->load->view('templates/task_header', $data);
+        $this->load->view('task/task_header_add_'.$page);
+        $this->load->view('templates/task_sidebar_mytask');
+//        $this->load->view('templates/task_sidebar');
+        $this->load->view('templates/task_banner');
+
+        $this->load->view('task/task_'.$page);
+        $this->load->view('templates/task_footer');
+
+        $this->load->view('templates/task_footer_script');
+        $this->load->view('task/task_footer_script_add_'.$page);
+        $this->load->view('templates/task_footer_function');
+        $this->load->view('task/task_footer_function_add_'.$page);
+        $this->load->view('templates/task_footer_final');
+    }
+
+    public function task_list($page = 'task_list') {
 
         $username = $this->session->userdata('username');
         $authDB = $this->session->userdata('authDB');
+        $email = $this->session->userdata('email');
 
         if (!$authDB || count($authDB) == 0) {
             show_error('没有授权的数据库，请登录或联系管理员');
@@ -33,25 +180,99 @@ class Task extends CI_Controller {
             break;
         }
 
+        $task_list = $this->mtask->get_task_list_by_username($firstDB, $username)->result_array();
+        $data = array(
+            'title' => "任务列表",
+            'username' => $username,
+            'email' => $email,
+            'authDB' => $authDB,
+            'groupID' => $this->session->userdata('groupID'),
+            'task_list' => $task_list
+        );
+        $this->load->view('templates/task_header', $data);
+        $this->load->view('templates/task_sidebar_mytask');
+        $this->load->view('templates/task_banner');
+        $this->load->view('task/task_mytask');
+        $this->load->view('templates/task_footer');
+        $this->load->view('templates/task_footer_script');
+//        $this->load->view('task/task_footer_script_add_summary');
+        $this->load->view('templates/task_footer_function');
+//        $this->load->view('task/task_footer_function_add_summary');
+        $this->load->view('templates/task_footer_final');
+    }
+
+    public function my_task($page = 'my_task') {
+        if ( ! file_exists('application/views/task/'.$page.'.php')) {
+            show_404();
+        }
+
+        $username = $this->session->userdata('username');
+        $authDB = $this->session->userdata('authDB');
+        $email = $this->session->userdata('email');
+
+        if (!$authDB || count($authDB) == 0) {
+                show_error('没有授权的数据库，请登录或联系管理员');
+                exit();
+        }
+
+        $firstDB = '';
+        foreach($authDB as $k => $v) {
+            $firstDB = $k;
+            break;
+        }
+
 
         $task_list = $this->mtask->get_task_list_by_username($firstDB, $username)->result_array();
+
 
         $data = array(
             'title' => "我的任务",
             'username' => $username,
+            'email' => $email,
             'authDB' => $authDB,
             'groupID' => $this->session->userdata('groupID'),
             'task_list' => $task_list
         );
 
-        $this->load->view('templates/header', $data);
-        $this->load->view('task/header_add_'.$page);
-        $this->load->view('templates/banner');
-        $this->load->view('templates/sidebar_task');
-        $this->load->view('task/'.$page);
-        $this->load->view('templates/footer_script');
-        $this->load->view('task/footer_add_'.$page);
-        $this->load->view('templates/footer');
+        $this->load->view('templates/task_header', $data);
+        $this->load->view('templates/task_sidebar_mytask');
+//        $this->load->view('templates/task_sidebar');
+        $this->load->view('templates/task_banner');
+        $this->load->view('task/task_summary');
+
+        $this->load->view('templates/task_footer');
+        $this->load->view('templates/task_footer_script');
+        $this->load->view('task/task_footer_script_add_summary');
+        $this->load->view('templates/task_footer_function');
+        $this->load->view('task/task_footer_function_add_summary');
+        $this->load->view('templates/task_footer_final');
+    }
+
+    // 任务详情页面
+    public function detail($db, $id = '0') {
+
+        $task_detail = $this->mtask->get_task_detail($db, $id);
+        $task_base = $this->mtask->get_task_list_by_id($db, $id)->result_array();
+        $username = $this->session->userdata('username');
+        $email = $this->session->userdata('email');
+
+        $data = array(
+            'title' => '任务详情',
+            'task_detail' => $task_detail,
+            'task_base' => $task_base,
+            'username' => $username,
+            'email' => $email
+        );
+
+        $this->load->view('templates/task_header', $data);
+        $this->load->view('templates/task_sidebar_mytask');
+//        $this->load->view('templates/task_sidebar');
+        $this->load->view('templates/task_banner');
+        $this->load->view('task/task_taskdetail');
+        $this->load->view('templates/task_footer');
+        $this->load->view('templates/task_footer_script');
+        $this->load->view('templates/task_footer_function');
+        $this->load->view('templates/task_footer_final');
     }
 
     public function assign($page = 'assign') {
@@ -62,6 +283,7 @@ class Task extends CI_Controller {
 
         $username = $this->session->userdata('username');
         $authDB = $this->session->userdata('authDB');
+        $email = $this->session->userdata('email');
 
         if (!$authDB || count($authDB) == 0) {
             show_error('没有授权的数据库，请登录或联系管理员');
@@ -81,6 +303,7 @@ class Task extends CI_Controller {
         $data = array(
             'title' => "指派任务",
             'username' => $username,
+            'email' => $email,
             'authDB' => $authDB,
             'groupID' => $this->session->userdata('groupID'),
             'task_list' => $task_list,

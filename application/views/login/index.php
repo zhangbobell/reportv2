@@ -22,27 +22,27 @@
 <div class="loginColumns animated fadeInDown">
     <div class="row">
 
-        <div class="col-md-6">
-            <h2 class="font-bold">欢迎来到追灿智能决策系统！</h2>
-
+        <div class="col-md-7">
+            <h2 class="font-bold">欢迎来到追灿市场营销智慧化平台</h2>
+            <br>
             <p>
-                Perfectly designed and precisely prepared admin theme with over 50 pages with extra new web app views.
+                我们可以帮助企业提升：机会洞察与预测、精准决策、执行控管、
             </p>
 
             <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                流程自动优化.四大核心能力，推动企业智慧化升级。同时，我们
             </p>
 
             <p>
-                When an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                也是目前最智能的平台，首创定制知识导入+系统执行监测，实现
             </p>
 
             <p>
-                <small>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</small>
+                人机交互，并持续优化帮助企业永续经营。
             </p>
 
         </div>
-        <div class="col-md-6">
+        <div class="col-md-5">
             <div class="ibox-content">
                 <form class="m-t" role="form" action="login/validate" method="post">
                     <div class="form-group">
@@ -60,7 +60,7 @@
                     <p class="text-muted text-center">
                         <small>没有账户？</small>
                     </p>
-                    <a class="btn btn-sm btn-white btn-block" href="register.html">创建新账户</a>
+                    <a class="btn btn-sm btn-white btn-block" href="login/register">创建新账户</a>
                 </form>
 <!--                <p class="m-t">-->
 <!--                    <small>Inspinia we app framework base on Bootstrap 3 &copy; 2014</small>-->

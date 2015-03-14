@@ -3,7 +3,7 @@
     <div class="col-md-12 l mt20">
         <ul class="task-list col-md-2 mt30">
             <?php foreach($task_list as $item):?>
-                <li><a class="task-item" href="javascript:;" data-id="<?php echo $item['action_id'];?>"><?php echo $item['action_name'];?></a></li>
+                <li><a class="task-item" href="javascript:;" data-id="<?php echo $item['task_id'];?>"><?php echo $item['createtime'];?>------<?php echo $item['task_id'];?></a></li>
             <?php endforeach;?>
             <div id="abs"></div>
         </ul>
