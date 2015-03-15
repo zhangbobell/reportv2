@@ -44,14 +44,18 @@ class Graph extends CI_Controller
         $data['username'] = $this->session->userdata('username');
 
 
-        $this->load->view('templates/header', $data);
+        $this->load->view('templates/task_header', $data);
         $this->load->view('graph/header_add_init_first');
-        $this->load->view('templates/banner');
-        $this->load->view('templates/sidebar_report');
+        $this->load->view('templates/task_sidebar_mytask');
+        $this->load->view('templates/task_banner');
         $this->load->view('graph/' . $page, $data);
-        $this->load->view('templates/footer_script');
+
+        $this->load->view('templates/task_footer');
+        $this->load->view('templates/task_footer_script');
         $this->load->view('graph/footer_add_' . $page);
-        $this->load->view('templates/footer');
+        $this->load->view('templates/task_footer_function');
+        $this->load->view('templates/task_footer_final');
+
     }
 
     public function init_tendency($page = "init_tendency")
@@ -67,13 +71,20 @@ class Graph extends CI_Controller
         $data['username'] = $this->session->userdata('username');
 
 
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/banner');
-        $this->load->view('templates/sidebar_report');
+
+
+        $this->load->view('templates/task_header', $data);
+
+        $this->load->view('templates/task_sidebar_mytask');
+        $this->load->view('templates/task_banner');
         $this->load->view('graph/' . $page, $data);
-        $this->load->view('templates/footer_script');
+
+        $this->load->view('templates/task_footer');
+        $this->load->view('templates/task_footer_script');
         $this->load->view('graph/footer_add_' . $page);
-        $this->load->view('templates/footer');
+        $this->load->view('templates/task_footer_function');
+        $this->load->view('templates/task_footer_final');
+
     }
 
     public function init_product($page = "init_product")
@@ -88,13 +99,19 @@ class Graph extends CI_Controller
 
         $data['tag1'] = $this->mgraph->get_tag1('db_sanqiang')->result_array();
 
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/banner');
-        $this->load->view('templates/sidebar_report');
+
+        $this->load->view('templates/task_header', $data);
+
+        $this->load->view('templates/task_sidebar_mytask');
+        $this->load->view('templates/task_banner');
         $this->load->view('graph/' . $page, $data);
-        $this->load->view('templates/footer_script');
+
+        $this->load->view('templates/task_footer');
+        $this->load->view('templates/task_footer_script');
         $this->load->view('graph/footer_add_' . $page);
-        $this->load->view('templates/footer');
+        $this->load->view('templates/task_footer_function');
+        $this->load->view('templates/task_footer_final');
+
     }
 
     public function init_target($page = "init_target")
@@ -109,14 +126,18 @@ class Graph extends CI_Controller
         $data['title'] = "目标管理";
         $data['username'] = $this->session->userdata('username');
 
+        $this->load->view('templates/task_header', $data);
 
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/banner');
-        $this->load->view('templates/sidebar_report');
+        $this->load->view('templates/task_sidebar_mytask');
+        $this->load->view('templates/task_banner');
         $this->load->view('graph/' . $page, $data);
-        $this->load->view('templates/footer_script');
+
+        $this->load->view('templates/task_footer');
+        $this->load->view('templates/task_footer_script');
         $this->load->view('graph/footer_add_' . $page);
-        $this->load->view('templates/footer');
+        $this->load->view('templates/task_footer_function');
+        $this->load->view('templates/task_footer_final');
+
     }
 
 
@@ -667,7 +688,7 @@ class Graph extends CI_Controller
 //        var_dump($r);
     }
 
-    // store the saiku cache in server
+    // 读取对应的缓存文件的数据
     public function read_saiku_cache($fileName)
     {
 
@@ -685,6 +706,7 @@ class Graph extends CI_Controller
         return $data;
     }
 
+    // 将数据写入缓存cache中
     public function write_saiku_cache($fileName, $data)
     {
         $filePath = './public/saikuCache/'.$fileName.'.cache';
@@ -704,6 +726,7 @@ class Graph extends CI_Controller
         file_put_contents ($filePath, $data);
     }
 
+    // 判断cache上次修改的日期与当天日期是否相同
     public function is_saiku_updated($fileName)
     {
         $filePath = './public/saikuCache/'.$fileName.'.cache';
@@ -714,17 +737,11 @@ class Graph extends CI_Controller
         $changeDate = date("Y-m-d", filemtime($filePath));
         $today = date('Y-m-d');
         // compare time
-        if($changeDate == $today)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return $changeDate == $today;
     }
 
 
+    // 手动刷新cache（未调用，供调试使用）
     public function update_saiku_cache()
     {
         $ymdSaiku = array('report_dayly_chengjiao_zc', 'report_dayly_all_num',
@@ -765,6 +782,24 @@ class Graph extends CI_Controller
         echo 'done';
     }
 
+    // 写入第一时间的数据
+    public function write_first_data()
+    {
+        $id = $this->input->post('id', true);
+        $data = $this->input->post('data', true);
+        $fileName = 'first'.$id;
+
+        $this->write_saiku_cache($fileName, json_encode($data));
+
+    }
+
+    // 获取第一时间的数据
+    public function get_fisrt_data()
+    {
+        $id = $this->input->post('id', true);
+
+        echo $this->read_saiku_cache('first'.$id);
+    }
 
 
 }

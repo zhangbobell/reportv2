@@ -36,7 +36,7 @@
     </div>
 </div>
 
-<div class="panel-body ">
+<div class="panel-body">
     <div class="tab-content">
         <div id="tab-2" class="tab-pane">
             <div class="col-lg-12">
@@ -59,7 +59,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-12 fix"><button type="button" class="btn btn-primary r" onclick="$.jStorage.flush(); window.location.reload(true);">刷新数据</button></div>
+<!--                <div class="col-md-12 fix"><button type="button" class="btn btn-primary r" onclick="$.jStorage.flush(); window.location.reload(true);">刷新数据</button></div>-->
                 <div id="container2-1" class="col-md-12">总销售额正在加载...</div>
                 <div id="container2-2" class="col-md-12">追灿招募最近7天成交额（分销商评级）正在加载...</div>
                 <div id="container2-3" class="col-md-12">追灿招募商家数量正在加载...</div>

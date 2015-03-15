@@ -20,12 +20,12 @@ class MY_Model extends CI_Model
 //        $db_config['username'] = 'kettle';
 //        $db_config['password'] = 'root';
 //        $db_config['port'] = 33060;
-//        $db_config['hostname'] = '192.168.1.90';
-//        $db_config['username'] = 'data';
-//        $db_config['password'] = 'data2123';
-        $db_config['hostname'] = 'www.e-corp.cn';
-        $db_config['username'] = 'zczx_data';
-        $db_config['password'] = 'cos2x=2Sinxcosx';
+        $db_config['hostname'] = 'localhost';
+        $db_config['username'] = 'root';
+        $db_config['password'] = '931023';
+//        $db_config['hostname'] = 'www.e-corp.cn';
+//        $db_config['username'] = 'zczx_data';
+//        $db_config['password'] = 'cos2x=2Sinxcosx';
         $db_config['database'] = $databaseName;
         $db_config['dbdriver'] = 'mysqli';
         $db_config['dbprefix'] = '';
