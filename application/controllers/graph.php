@@ -126,11 +126,16 @@ class Graph extends CI_Controller
     {
         $saikufile = $this->input->post('saikufile');
         $saikufile = $this->sk_map[$saikufile];
-        $columns = $this->sk_fields[$saikufile];
 
-        $ret = $this->_sk_ymd($saikufile, $columns);
+        if(!$this->is_saiku_updated($saikufile))
+        {
+            $columns = $this->sk_fields[$saikufile];
+            $ret = $this->_sk_ymd($saikufile, $columns);
 
-        echo json_encode($ret);
+            $this->write_saiku_cache($saikufile, json_encode($ret));
+
+        }
+        echo $this->read_saiku_cache($saikufile);
     }
 
     // x轴：年-月  series：saiku数据
@@ -138,11 +143,18 @@ class Graph extends CI_Controller
     {
         $saikufile = $this->input->post('saikufile');
         $saikufile = $this->sk_map[$saikufile];
-        $columns = $this->sk_fields[$saikufile];
 
-        $ret = $this->_sk_ym($saikufile, $columns);
+        if(true)//(!$this->is_saiku_updated($saikufile))
+        {
+            $columns = $this->sk_fields[$saikufile];
+            $ret = $this->_sk_ym($saikufile, $columns);
 
-        echo json_encode($ret);
+            $this->write_saiku_cache($saikufile, json_encode($ret));
+
+        }
+        echo $this->read_saiku_cache($saikufile);
+
+
     }
 
     public function get_data_daily_last() {
@@ -208,11 +220,15 @@ class Graph extends CI_Controller
     {
         $saikufile = $this->input->post('saikufile');
         $saikufile = $this->sk_map[$saikufile];
-        $columns = $this->sk_fields[$saikufile];
 
-        $ret = $this->_sk_yw($saikufile, $columns);
+        if(!$this->is_saiku_updated($saikufile))
+        {
+            $columns = $this->sk_fields[$saikufile];
+            $ret = $this->_sk_yw($saikufile, $columns);
+            $this->write_saiku_cache($saikufile, json_encode($ret));
+        }
+        echo $this->read_saiku_cache($saikufile);
 
-        echo json_encode($ret);
     }
 
     // 取年周的数据（只取最新的）
@@ -433,25 +449,35 @@ class Graph extends CI_Controller
     {
         $saikufile = $this->input->post('saikufile');
         $saikufile = $this->sk_map[$saikufile];
-        $columns = $this->sk_fields[$saikufile];
-
-        $res = $this->saiku->get_json_data($saikufile);
-        if($res['flag'] == 0)
+//        $saikufile = 'report_month_order_category_num';
+        if(!$this->is_saiku_updated($saikufile))
         {
-            echo json_encode($res);
-            return;
+
+            $columns = $this->sk_fields[$saikufile];
+//            $columns = array('unname-unname','unname上衣','儿童套装','女式上衣','女式内裤','女式内衣套装','女式秋裤','女式背心','女式马甲',
+//                '女式t恤','女式休闲裤','女式打底裤','女式短衫','女式长衫','女式上衣','女式中裤','女式家居服套装','女式睡裙','女式短裤',
+//                '女式长裤','女式袜子','情侣内衣','情侣家居服','男士unname','男士上衣','男士内裤','男士内衣套装','男士秋裤','男士背心',
+//                '男士马甲','男士T恤','男士上衣','男士中裤','男士家居服套装','男士短裤','男士长裤','男士袜子');
+
+            $res = $this->saiku->get_json_data($saikufile);
+            if($res['flag'] == 0)
+            {
+                $this->write_saiku_cache($saikufile, json_encode($res));
+                echo json_encode($res);
+                return;
+            }
+
+            if (count($columns) > 0 && $columns[0] != '') {
+                $r = $this->mgraph->convert_data_leaf($res['res'], $columns, false);
+            } else {
+                $r = $this->mgraph->convert_data_leaf($res['res'], $columns, true);
+            }
+
+            $res['ticks'] = $this->mgraph->getStreamXticks($r);
+            $res['res'] = $this->mgraph->linear2stream($r);
+            $this->write_saiku_cache($saikufile, json_encode($res));
         }
-
-        if (count($columns) > 0 && $columns[0] != '') {
-            $r = $this->mgraph->convert_data_leaf($res['res'], $columns, false);
-        } else {
-            $r = $this->mgraph->convert_data_leaf($res['res'], $columns, true);
-        }
-
-        $res['ticks'] = $this->mgraph->getStreamXticks($r);
-        $res['res'] = $this->mgraph->linear2stream($r);
-
-        echo json_encode($res);
+        echo $this->read_saiku_cache($saikufile);
     }
 
     public function object_to_array($obj){
@@ -639,6 +665,104 @@ class Graph extends CI_Controller
 
         echo json_encode($res);
 //        var_dump($r);
+    }
+
+    // store the saiku cache in server
+    public function read_saiku_cache($fileName)
+    {
+
+        $filePath = './public/saikuCache/'.$fileName.'.cache';
+
+        if (file_exists($filePath) == false)
+        {
+            die("文件:" .$fileName. "不存在，请检查！");
+        }
+        else
+        {
+            $data = file_get_contents($filePath);
+        }
+
+        return $data;
+    }
+
+    public function write_saiku_cache($fileName, $data)
+    {
+        $filePath = './public/saikuCache/'.$fileName.'.cache';
+        if (file_exists($filePath) == false)
+        {
+            $fp=fopen("$filePath", "w+"); //打开文件指针，创建文件
+            if ( !is_writable($filePath) )
+            {
+                die("文件:" .$fileName. "不可写，请检查！");
+            }
+            fclose($fp);  //关闭指针
+        }
+        if (is_writable($filePath) == false) {
+            die("文件:" .$fileName. "不可写，请检查！");
+        }
+
+        file_put_contents ($filePath, $data);
+    }
+
+    public function is_saiku_updated($fileName)
+    {
+        $filePath = './public/saikuCache/'.$fileName.'.cache';
+        if (file_exists($filePath) == false)
+        {
+            return false;
+        }
+        $changeDate = date("Y-m-d", filemtime($filePath));
+        $today = date('Y-m-d');
+        // compare time
+        if($changeDate == $today)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+
+    public function update_saiku_cache()
+    {
+        $ymdSaiku = array('report_dayly_chengjiao_zc', 'report_dayly_all_num',
+            'report_up_item', 'report_up_rate', 'report_monthly_dongxiao_rate_zc',
+            'report_dayly_chengjiao', 'report_dayly_wrong_price_rate_zc',
+            'report_dayly_tuikuan_rate', 'report_dayly_order_close_rate');
+        $ymdColumns = array(
+            array('成交额'),
+            array('商家数量'),
+            array('上架商品数'),
+            array('上架率'),
+            array('动销率'),
+            array('追灿招募', '非追灿招募'),
+            array('追灿招募', '非追灿招募'),
+            array('追灿招募', '非追灿招募'),
+            array('追灿招募', '非追灿招募')
+        );
+
+        for($i=0; $i < count($ymdSaiku); $i++)
+        {
+            $ret = $this->_sk_ymd($ymdSaiku[$i], $ymdColumns[$i]);
+            $this->write_saiku_cache($ymdSaiku[$i], json_encode($ret));
+        }
+
+
+        $ywSaiku = array('report_weekly_level_new', 'report_weekly_level_num');
+        $ywColumns = array(
+            array('无评级', '银卡', '金卡', '白金卡', '钻石卡', '金钻石卡'),
+            array('无评级', '银卡', '金卡', '白金卡', '钻石卡', '金钻石卡')
+        );
+
+        for($i=0; $i < count($ywSaiku); $i++)
+        {
+            $ret = $this->_sk_yw($ywSaiku[$i], $ywColumns[$i]);
+            $this->write_saiku_cache($ywSaiku[$i], json_encode($ret));
+        }
+
+        echo 'done';
     }
 
 

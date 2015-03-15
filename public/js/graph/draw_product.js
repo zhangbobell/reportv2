@@ -13,56 +13,39 @@ $(function(){
         saikufile: 'report_month_order_category_num' // ajax 请求的 saiku 文件
     });
 
-//    $('#container4-2').drawLineChart_stream({
-//        title: '铺货商品数量', // 主标题
+
+
+//    $('#container4-3').drawbubbleChart({
+//        title: '商家铺货商品数量趋势', // 主标题
 //        subtitle: '', // 副标题
-//        xLabel: '日期', // x 轴标题
-//        yLabel: '铺货商品数量', // y 轴标题
-//        columns: ['儿童内衣裤', '儿童家居服', '儿童泳装','其他','女士内衣/男士内衣/家居服','女装/女士精品','床上用品','游泳','男装','童装/亲子装','裙子(新)','裤子']
+//        xLabel: '增长系数', // x 轴标题
+//        yLabel: '铺货商品数量'
 //    }, {
-//        url: 'graph/sk_stream', // ajax 请求地址
-//        saikufile: 'report_dayly_leimu_puhuo' // ajax 请求的 saiku 文件
+//        url: 'graph/sk_stream_bubble', // ajax 请求地址
+//        saikufile: 'report_recently_sellernick_up_num' // ajax 请求的 saiku 文件
+//    });
+//
+//    $('#container4-4').drawbubbleChart({
+//        title: '货号铺货数量趋势', // 主标题
+//        subtitle: '', // 副标题
+//        xLabel: '增长系数', // x 轴标题
+//        yLabel: '铺货数量'
+//    }, {
+//        url: 'graph/sk_stream_bubble', // ajax 请求地址
+//        saikufile: 'report_recently_itemnum_up_num' // ajax 请求的 saiku 文件
+//    });
+//
+//    $('#container4-5').drawbubbleChart({
+//        title: '货号销量趋势', // 主标题
+//        subtitle: '', // 副标题
+//        xLabel: '增长系数', // x 轴标题
+//        yLabel: '商品销量'
+//    }, {
+//        url: 'graph/sk_stream_bubble', // ajax 请求地址
+//        saikufile: 'report_recently_itemnum_sales_num' // ajax 请求的 saiku 文件
 //    });
 
-    $('#container4-3').drawbubbleChart({
-        title: '商家铺货商品数量趋势', // 主标题
-        subtitle: '', // 副标题
-        xLabel: '增长系数', // x 轴标题
-        yLabel: '铺货商品数量'
-    }, {
-        url: 'graph/sk_stream_bubble', // ajax 请求地址
-        saikufile: 'report_recently_sellernick_up_num' // ajax 请求的 saiku 文件
-    });
 
-    $('#container4-4').drawbubbleChart({
-        title: '货号铺货数量趋势', // 主标题
-        subtitle: '', // 副标题
-        xLabel: '增长系数', // x 轴标题
-        yLabel: '铺货数量'
-    }, {
-        url: 'graph/sk_stream_bubble', // ajax 请求地址
-        saikufile: 'report_recently_itemnum_up_num' // ajax 请求的 saiku 文件
-    });
-
-    $('#container4-5').drawbubbleChart({
-        title: '货号销量趋势', // 主标题
-        subtitle: '', // 副标题
-        xLabel: '增长系数', // x 轴标题
-        yLabel: '商品销量'
-    }, {
-        url: 'graph/sk_stream_bubble', // ajax 请求地址
-        saikufile: 'report_recently_itemnum_sales_num' // ajax 请求的 saiku 文件
-    });
-
-//    $('#container4-6').drawLineChart_stream({
-//        title: '平均上架商品数量', // 主标题
-//        subtitle: '', // 副标题
-//        xLabel: '日期', // x 轴标题
-//        yLabel: '平均上架商品数量'
-//    }, {
-//        url: 'graph/sk_stream_leaf', // ajax 请求地址
-//        saikufile: 'report_monthly_itemnum_up_num' // ajax 请求的 saiku 文件
-//    });
 
     $('#container4-7').drawLineChart_stream({
         title: '合作商家销售额', // 主标题

@@ -77,11 +77,11 @@ $.fn.lineChart_stream = function (lineChart) {
 $.fn.drawLineChart_stream = function(lineChart, xhrOpt) {
     var thisSelector = this.selector;
 
-    if ((d = $.jStorage.get(thisSelector))) {
-        lineChart.series = d['res'];
-        lineChart.ticks = d['ticks'];
-        $(thisSelector).lineChart_stream(lineChart);
-    } else {
+//    if ((d = $.jStorage.get(thisSelector))) {
+//        lineChart.series = d['res'];
+//        lineChart.ticks = d['ticks'];
+//        $(thisSelector).lineChart_stream(lineChart);
+//    } else {
         $.xhr_stream({
             url: xhrOpt.url,
             saikufile: xhrOpt.saikufile,
@@ -95,7 +95,7 @@ $.fn.drawLineChart_stream = function(lineChart, xhrOpt) {
                 }
                 else
                 {
-                    $.jStorage.set(thisSelector, d, {TTL: 24*3600*1000});
+//                    $.jStorage.set(thisSelector, d, {TTL: 24*3600*1000});
                     lineChart.series = d['res'];
                     lineChart.ticks = d['ticks'];
                     $(thisSelector).lineChart_stream(lineChart);
@@ -103,7 +103,7 @@ $.fn.drawLineChart_stream = function(lineChart, xhrOpt) {
 
             }
         });
-    }
+//    }
 
 }
 

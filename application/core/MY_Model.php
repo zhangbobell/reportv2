@@ -23,9 +23,9 @@ class MY_Model extends CI_Model
 //        $db_config['hostname'] = '192.168.1.90';
 //        $db_config['username'] = 'data';
 //        $db_config['password'] = 'data2123';
-        $db_config['hostname'] = '127.0.0.1';
-        $db_config['username'] = 'root';
-        $db_config['password'] = 'root';
+        $db_config['hostname'] = 'www.e-corp.cn';
+        $db_config['username'] = 'zczx_data';
+        $db_config['password'] = 'cos2x=2Sinxcosx';
         $db_config['database'] = $databaseName;
         $db_config['dbdriver'] = 'mysqli';
         $db_config['dbprefix'] = '';
