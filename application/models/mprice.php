@@ -19,45 +19,45 @@ class MPrice extends MY_model {
 
         $sql = "SELECT `a`.`updatetime`, `a`.`sellernick`, `ljNum`, `totalNum`, (`ljnum`/`totalnum`) as `ljRate`, `logTime`, `status`
                 FROM (
-                    SELECT `updatetime`, `sellernick`, `itemid`,
-                    COUNT(IF((`price_wap` < `min_price_wap` OR `price` < `min_price`), `itemid`, null )) AS `ljnum`,
-                    COUNT(`itemid`) AS `totalnum`
-                    FROM `meta_item`
+                    SELECT `updatetime`, `sellernick`, `auction_id`,
+                    COUNT(IF((`price_wap` < `min_price_wap` OR `price` < `min_price`), `auction_id`, null )) AS `ljnum`,
+                    COUNT(`auction_id`) AS `totalnum`
+                    FROM `dim_auction`
                     WHERE `updatetime` = ?
                     GROUP BY `sellernick`
                 ) AS `a`
                 LEFT JOIN (
                     SELECT MAX(`updatetime`) as `logTime`, `sellernick`, `status`
-                    FROM `status_price_log`
+                    FROM `fact_price_log`
                     WHERE `status` = '1'
                     GROUP BY `sellernick`
                 ) AS `b`
                 ON `a`.`sellernick` = `b`.`sellernick`
-                WHERE `itemid` != '-1'
+                WHERE `auction_id` != '-1'
                 AND `ljnum` > 0";
 
         $sql_old = "SELECT `a`.`updatetime`, `a`.`sellernick`, `ljNum`, `totalNum`, (`ljnum`/`totalnum`) as `ljRate`, `logTime`, `status`
                      FROM (
-                         SELECT `updatetime`, `sellernick`, `itemid`,
-                         COUNT(IF((`price_wap` < `min_price_wap` OR `price` < `min_price`), `itemid`, null )) AS `ljnum`,
-                         COUNT(`itemid`) AS `totalnum`
+                         SELECT `updatetime`, `sellernick`, `auction_id`,
+                         COUNT(IF((`price_wap` < `min_price_wap` OR `price` < `min_price`), `auction_id`, null )) AS `ljnum`,
+                         COUNT(`auction_id`) AS `totalnum`
                          FROM (
-                                SELECT `crawl_shop_item`.`updatetime`, `crawl_shop_item`.`sellernick`, `meta_item`.`itemid`,`meta_item`.`itemnum`, `crawl_shop_item`.`zk_final_price` AS `price`, `crawl_shop_item`.`zk_final_price_wap` AS `price_wap`, `min_price`, `min_price_wap`
-                                FROM `crawl_shop_item`
-                                LEFT JOIN `meta_item`
-                                ON `crawl_shop_item`.`itemid` = `meta_item`.`itemid`
-                                WHERE `crawl_shop_item`.`updatetime`= ?
+                                SELECT `raw_crawl_shop_item`.`updatetime`, `raw_crawl_shop_item`.`sellernick`, `dim_auction`.`auction_id`,`dim_auction`.`itemnum`, `raw_crawl_shop_item`.`zk_final_price` AS `price`, `raw_crawl_shop_item`.`zk_final_price_wap` AS `price_wap`, `min_price`, `min_price_wap`
+                                FROM `raw_crawl_shop_item`
+                                LEFT JOIN `dim_auction`
+                                ON `raw_crawl_shop_item`.`auction_id` = `dim_auction`.`auction_id`
+                                WHERE `raw_crawl_shop_item`.`updatetime`= ?
                           ) as c
                          GROUP BY `sellernick`
                      ) AS `a`
                      LEFT JOIN (
                          SELECT MAX(`updatetime`) as `logTime`, `sellernick`, `status`
-                         FROM `status_price_log`
+                         FROM `fact_price_log`
                          WHERE `status` = '1'
                          GROUP BY `sellernick`
                      ) AS `b`
                      ON `a`.`sellernick` = `b`.`sellernick`
-                     WHERE `itemid` != '-1'
+                     WHERE `auction_id` != '-1'
                      AND `ljnum` > 0";
 
         if ($is_history) {
@@ -81,8 +81,8 @@ class MPrice extends MY_model {
     }
 
     public function get_upset_price_product_array($db, $updatetime, $sellernick) {
-        $sql = "SELECT `sellernick`, `itemid`, `itemnum`, `price`,`min_price`, `price_wap`, `min_price_wap`, `is_reviewed_item`
-                FROM `meta_item`
+        $sql = "SELECT `sellernick`, `auction_id`, `itemnum`, `price`,`min_price`, `price_wap`, `min_price_wap`, `is_reviewed_item`
+                FROM `dim_auction`
                 WHERE `updatetime` = ?
                 AND `sellernick` = ?
                 AND (`price_wap` < `min_price_wap` OR `price` < `min_price`)";
@@ -91,7 +91,7 @@ class MPrice extends MY_model {
 
         foreach ($arr as $key => $row) {
             foreach($row as $k => $v) {
-                if ($k == 'itemid') {
+                if ($k == 'auction_id') {
                     $arr[$key]['url'] = "<a href=\"http://item.taobao.com/item.html?id=$v\" target=\"_blank\">$v</a>";
                 }
                 if ($k == 'is_reviewed_item' && ($v == '1')) {
@@ -109,7 +109,7 @@ class MPrice extends MY_model {
 
         // 时间问题待定，目前不修改原有的时间
         $datetime = date("Y-m-d");
-        $sql = "INSERT INTO `status_price_log` (`updatetime`, `sellernick`, `account`, `status`, `msg`)
+        $sql = "INSERT INTO `fact_price_log` (`updatetime`, `sellernick`, `account`, `status`, `msg`)
                 VALUES (?, ?, ?, ?, ?)
                 ON DUPLICATE KEY UPDATE
                 `sellernick` = VALUES(`sellernick`),
@@ -121,13 +121,13 @@ class MPrice extends MY_model {
     }
 
     public function get_initial_screen_product_array($db, $updatetime, $startIndex, $pageSize, $orderBy, $isAsc) {
-        $sql = "SELECT `updatetime`, `sellernick`, `itemid`, `itemnum`, `sales`, `price`, `price_wap`, `is_reviewed_item`
-                FROM `meta_item`
+        $sql = "SELECT `updatetime`, `sellernick`, `auction_id`, `itemnum`, `total_sold_quantity`, `price`, `price_wap`, `is_reviewed_item`
+                FROM `dim_auction`
                 WHERE `updatetime` = ?
-                AND `sales` > '0'
+                AND `total_sold_quantity` > '0'
                 AND `sellernick` IN (
                     SELECT `sellernick`
-                    FROM `meta_cooperation`
+                    FROM `dim_seller_list`
                     WHERE `status` > '0'
                 ) ";
 
@@ -142,7 +142,7 @@ class MPrice extends MY_model {
         $arr = $this->get_result_array($db, $sql, array($updatetime, $startIndex, $pageSize));
         foreach ($arr as $key => $row) {
             foreach($row as $k => $v) {
-                if ($k == 'itemid') {
+                if ($k == 'auction_id') {
                     $arr[$key]['url'] = "<a href=\"http://item.taobao.com/item.html?id=$v\" target=\"_blank\">$v</a>";
                 }
                 if ($k == 'is_reviewed_item' && ($v == '1')) {
@@ -157,7 +157,7 @@ class MPrice extends MY_model {
     }
 
     public function set_checked_record($db, $record) {
-        $sql = "INSERT INTO `meta_item` (`updatetime`, `sellernick`, `itemnum`, `itemid`, `is_reviewed_item`, `min_price`, `min_price_wap`)
+        $sql = "INSERT INTO `dim_auction` (`updatetime`, `sellernick`, `itemnum`, `auction_id`, `is_reviewed_item`, `min_price`, `min_price_wap`)
                 VALUES(?, ?, ?, ?, ?, ?, ?)
                 ON DUPLICATE KEY UPDATE
                 `sellernick` = VALUES(`sellernick`),
@@ -180,7 +180,7 @@ class MPrice extends MY_model {
      * */
     public function refresh_meta_item($db) {
         $sql = "SELECT `updatetime`, `uid`, `sellernick`, `itemid`, `title`, `zk_final_price`, `zk_final_price_wap`, `total_sold_quantity`
-                FROM `crawl_shop_item`
+                FROM `raw_crawl_shop_item`
                 WHERE `updatetime` = ?";
 
         // 获取到最新的爬取时间
@@ -189,6 +189,12 @@ class MPrice extends MY_model {
         $lasted_crawl = $this->my_query($db, $sql, array($latest_time))->result_array();
         foreach ($lasted_crawl as $key => $row) {
             array_unshift($lasted_crawl[$key], date("Y-m-d"));
+
+            foreach($row as $k => $v) {
+                if ($k == 'title') {
+                    $lasted_crawl[$key][$k] = str_replace('?', '', $v);;
+                }
+            }
         }
 
         $res = $this->_insert_to_meta_item($db, $lasted_crawl, 1000);
@@ -205,7 +211,7 @@ class MPrice extends MY_model {
      * @return : string -- 最新的日期
      * */
     public function latest_crawl_item_time($db) {
-        $sql = "SELECT max(`updatetime`) as `latest` FROM `crawl_shop_item`";
+        $sql = "SELECT max(`updatetime`) as `latest` FROM `raw_crawl_shop_item`";
         $query_arr = $this->my_query($db, $sql)->result_array();
 
         return $query_arr[0]['latest'];
@@ -217,13 +223,13 @@ class MPrice extends MY_model {
      * return : boolean -- 执行的结果
      * */
     private function _insert_to_meta_item($db, $valArr, $n) {
-        $sql = "INSERT INTO `meta_item` (`createtime`, `updatetime`, `uid`, `sellernick`, `itemid`, `title`, `price`, `price_wap`, `total_sold_quantity`)
+        $sql = "INSERT INTO `dim_auction` (`createtime`, `updatetime`, `seller_id`, `sellernick`, `auction_id`, `auction_title`, `price`, `price_wap`, `total_sold_quantity`)
                 VALUES ?
                 ON DUPLICATE KEY UPDATE
                 `updatetime` = VALUES(`updatetime`),
-                `uid` = VALUES(`uid`),
+                `seller_id` = VALUES(`seller_id`),
                 `sellernick` = VALUES(`sellernick`),
-                `title` = VALUES(`title`),
+                `auction_title` = VALUES(`auction_title`),
                 `price` = VALUES(`price`),
                 `price_wap` = VALUES(`price_wap`),
                 `total_sold_quantity` = VALUES(`total_sold_quantity`)";
@@ -232,14 +238,14 @@ class MPrice extends MY_model {
     }
 
     public function test_insert($db) {
-        $sql = "INSERT INTO `meta_item` (`updatetime`, `itemid`) VALUES('2014-11-11', '". rand() ."')";
+        $sql = "INSERT INTO `dim_auction` (`updatetime`, `auction_id`) VALUES('2014-11-11', '". rand() ."')";
 
         return $this->my_query($db, $sql);
     }
 
     public function get_upset_history($db, $sellernick) {
         $sql = "SELECT `updatetime`, `account`, `status`, `msg`
-                FROM `status_price_log`
+                FROM `fact_price_log`
                 WHERE `sellernick` = ?
                 ORDER BY `updatetime` DESC";
 
@@ -261,7 +267,7 @@ class MPrice extends MY_model {
 
     public function get_unreviewed_count($db, $updatetime) {
         $sql = "SELECT COUNT(`is_reviewed_item`) AS `count_item`
-                FROM `meta_item`
+                FROM `dim_auction`
                 WHERE `is_reviewed_item` = '0'
                 AND `updatetime` = ?";
 
@@ -275,7 +281,7 @@ class MPrice extends MY_model {
                     SELECT `updatetime`, `itemnum`, `min_price`, `is_wap`
                     FROM (
                         SELECT `updatetime`, `itemnum`, `min_price`, `is_wap`
-                        FROM `up_sku`
+                        FROM `raw_brand_up_sku`
                         WHERE
                         `itemnum` = ?
                         ORDER BY `updatetime` desc
@@ -309,13 +315,13 @@ class MPrice extends MY_model {
     }
 
     public function get_meta_item_count($db, $updatetime) {
-        $sql = "SELECT COUNT(`itemid`) AS `item_count`
-                FROM `meta_item`
+        $sql = "SELECT COUNT(`auction_id`) AS `item_count`
+                FROM `dim_auction`
                 WHERE `updatetime` = ?
-                AND `sales` > '0'
+                AND `total_sold_quantity` > '0'
                 AND `sellernick` IN (
                     SELECT `sellernick`
-                    FROM `meta_cooperation`
+                    FROM `dim_seller_list`
                     WHERE `status` > '0'
                 )";
 
@@ -323,7 +329,7 @@ class MPrice extends MY_model {
     }
 
     public function get_available_datetime($db) {
-        $sql = "SELECT `updatetime` FROM `meta_item` GROUP BY `updatetime` ORDER BY `updatetime` ASC";
+        $sql = "SELECT `updatetime` FROM `dim_auction` GROUP BY `updatetime` ORDER BY `updatetime` ASC";
 
         return $this->my_query($db, $sql)->result_array();
     }

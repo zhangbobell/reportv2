@@ -102,9 +102,11 @@ require(['jquery', 'utils', 'controlList', 'priceLog', 'updatetime', 'upsetProdu
                 data: upsetResult
             }).then(function(d){
                 if (d == 1) {
-                    $.bootstrapGrowl('标记成功。', {type: 'success'});
+                    toastr.success('标记成功。');
+                    //$.bootstrapGrowl('标记成功。', {type: 'success'});
                 } else {
-                    $.bootstrapGrowl('标记出错。', {type: 'danger'});
+                    toastr.success('标记出错。');
+                    //$.bootstrapGrowl('标记出错。', {type: 'danger'});
                 }
 
                 $('#remark').val('');// 清空
