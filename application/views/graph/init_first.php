@@ -42,12 +42,14 @@
 <div class="tab-content">
 <div id="tab-0" class="tab-pane active">
     <div class="ibox">
-        <div class="ibox-title">
-        </div>
+
 
         <div class="ibox-content">
 <!--            <p class="alert alert-danger" id="info"></p>-->
 <!--            <div class="col-md-12 fix"><button type="button" class="btn btn-primary r" onclick="$.jStorage.flush(); window.location.reload(true);">刷新数据</button></div>-->
+
+            <label for="db-input" class="col-xs-2 col-md-1 control-label lh32">数据库：</label>
+            <?php $this->load->view('widget/db_picker')?>
             <div id="container1"></div>
             <div id="container2"></div>
         </div>

@@ -11,7 +11,7 @@
                             <a href="task/my_task">任务概要</a>
                         </li>
                         <li class="active">
-                            <strong>任务列表</strong>
+                            <strong>商业智能定制</strong>
                         </li>
                     </ol>
                 </div>
@@ -32,10 +32,9 @@
 
                     <div class="panel-body">
                         <div class="tab-content">
-                            <div id="tab-0" class="tab-pane active">
+                            <div id="tab-0" class="tab-pane">
                                 <div class="ibox">
-                                    <div class="ibox-title">
-                                    </div>
+
 
                                     <div class="ibox-content">
                                     </div>
@@ -54,8 +53,7 @@
 
                             <div id="tab-2" class="tab-pane active">
                                 <div class="ibox">
-                                    <div class="ibox-title">
-                                    </div>
+
 
                                     <div class="ibox-content">
                                         <div class="col-md-12 fix"><button type="button" class="btn btn-primary r" onclick="$.jStorage.flush(); window.location.reload(true);">刷新数据</button></div>

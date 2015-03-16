@@ -16,7 +16,7 @@
                             <a href="task/my_task">任务概要</a>
                         </li>
                         <li class="active">
-                            <strong>任务列表</strong>
+                            <strong>商业智能定制</strong>
                         </li>
                     </ol>
                 </div>
@@ -49,8 +49,7 @@
 
                             <div id="tab-1" class="tab-pane active">
                                 <div class="ibox">
-                                    <div class="ibox-title">
-                                    </div>
+
 
                                     <div class="ibox-content">
                                         <div id="container2-1" class="col-md-12">总销售额正在加载...</div>
