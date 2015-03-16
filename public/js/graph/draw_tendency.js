@@ -1,5 +1,13 @@
 $(function(){
 
+    $('label-db').xhr({
+        url: 'graph/sk_ymd',
+        saikufile: saikufile,
+        cb: function(d) {
+        }
+    });
+
+
     $('#container2-1').drawLineChart({
         title: '追灿招募成交额（不包含运费）', // 主标题
         subtitle: '', // 副标题

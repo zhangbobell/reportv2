@@ -52,6 +52,8 @@
 
 
                                     <div class="ibox-content">
+                                        <label id="label-db" for="db-input" class="col-xs-2 col-md-1 control-label lh32">数据库：</label>
+                                        <?php $this->load->view('widget/db_picker')?>
                                         <div id="container2-1" class="col-md-12">总销售额正在加载...</div>
                                         <div id="container2-2" class="col-md-12">追灿招募最近7天成交额（分销商评级）正在加载...</div>
                                         <div id="container2-3" class="col-md-12">追灿招募商家数量正在加载...</div>

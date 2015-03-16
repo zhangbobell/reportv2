@@ -3,6 +3,8 @@
  */
 
 $(function(){
+
+
     function draw0(){
         $('#container3-0').drawLineChart({
             title: '年销售额', // 主标题

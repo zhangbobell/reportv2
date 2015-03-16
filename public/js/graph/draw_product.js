@@ -1,4 +1,5 @@
 $(function(){
+
     $('#container4-1').drawLineChart_stream({
         title: '类目销量', // 主标题
         subtitle: '', // 副标题

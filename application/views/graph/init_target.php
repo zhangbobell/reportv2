@@ -57,7 +57,8 @@
 
                                     <div class="ibox-content">
                                         <div class="col-md-12 fix"><button type="button" class="btn btn-primary r" onclick="$.jStorage.flush(); window.location.reload(true);">刷新数据</button></div>
-
+                                        <label for="db-input" class="col-xs-2 col-md-1 control-label lh32">数据库：</label>
+                                        <?php $this->load->view('widget/db_picker')?>
                                         <input type="hidden" id="user" value="<?php echo $username;?>"/>
 
                                         <div id="container3-0" class="col-md-10">年销售目标加载中...</div>

@@ -60,7 +60,8 @@
                                 <div class="ibox">
 
                                     <div class="ibox-content">
-
+                                        <label for="db-input" class="col-xs-2 col-md-1 control-label lh32">数据库：</label>
+                                        <?php $this->load->view('widget/db_picker')?>
                                         <div id="container4-1" class="col-md-12">类目销量正在加载...</div>
                                         <div id="container4-8" class="col-md-12">类目铺货量正在加载...</div>
 
