@@ -32,7 +32,7 @@
                         </ul>
                     </div>
                     <div class="logo-element">
-                        IN+
+                        E+
                     </div>
                 </li>
                 <li>
@@ -48,16 +48,24 @@
                     </a>
                 </li>
                 <li>
-                    <a href="task/decision"><i class="fa fa-bar-chart-o"></i>
+                    <a href="javascript:;"><i class="fa fa-bar-chart-o"></i>
                         <span class="nav-label">商业智能定制</span>
-                        <span class="label label-warning pull-right"></span>
+                        <span class="fa arrow"></span>
                     </a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="graph/init_first">报表</a></li>
+                        <!--                        <li ><a href="task/my_task">RAW</a></li>-->
+                    </ul>
                 </li>
-                <li class="active">
-                    <a href="task/my_task"><i class="fa fa-diamond"></i>
+                <li>
+                    <a href="javascript:;"><i class="fa fa-diamond"></i>
                         <span class="nav-label">专家系统集成</span>
-                        <span class="label label-primary pull-right">NEW</span>
+                        <span class="fa arrow"></span>
                     </a>
+                    <ul class="nav nav-second-level">
+                        <li ><a href="price/control">试用版</a></li>
+                        <li ><a href="task/my_task">正式版</a></li>
+                    </ul>
                 </li>
                 <li>
                     <a href="task/process"><i class="fa fa-edit"></i>
