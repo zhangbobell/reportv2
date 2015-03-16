@@ -6,7 +6,6 @@ require.config({
     paths:{
         'jquery': '../../../third-party/jquery/jquery.min',
         'bootstrap': '../../../third-party/bootstrap/js/bootstrap.min',
-        'jStorage': '../../../third-party/jStorage/jstorage.min',
         'moment': '../../../third-party/momentjs/moment.min',
         'moment_cn': '../../../third-party/momentjs/locales/zh-cn',
         'd3': '../../../third-party/d3/d3.min',
@@ -16,46 +15,47 @@ require.config({
         'tree': 'tree',
         'weeklyUpdate': 'weeklyUpdate',
         'dailyUpdate': 'dailyUpdate',
-        'monthlyUpdate': 'monthlyUpdate'
+        'monthlyUpdate': 'monthlyUpdate',
+        'operateCache': 'operateCache'
     },
     shim : {
         'bootstrap': {
             'deps' :['jquery']
-        },
-        'jStorage': {
-            deps: ['jquery'],
-            exports: 'jQuery.fn.jStorage'
         }
     }
 });
 
-require(['jquery', 'd3', 'jStorage', 'tree', 'weeklyUpdate', 'loading', 'dailyUpdate', 'monthlyUpdate'], function($, d3, jStorage, tree, weeklyUpdate, loading, dailyUpdate, monthlyUpdate){
+require(['jquery', 'd3',  'tree', 'weeklyUpdate', 'loading', 'dailyUpdate', 'monthlyUpdate', 'operateCache'], function($, d3, tree, weeklyUpdate, loading, dailyUpdate, monthlyUpdate, operateCache){
 
 
     $(function(){
 
-        var sales = $.jStorage.get('salesData');
-        var health = $.jStorage.get('healthData');
+        var sales;
+        var health;
 
+        $.when(operateCache.getCache({'id': 1}), operateCache.getCache({'id': 2})).then(function(d1, d2){
+            sales = JSON.parse(d1[0]);
+            health = JSON.parse(d2[0]);
 
-        if (sales && health) {
+            if (sales && health) {
 
-            loading.begin('正在绘图...');
+                loading.begin('正在绘图...');
 
-            tree.draw('#container1', sales);
-            tree.draw('#container2', health);
+                tree.draw('#container1', sales);
+                tree.draw('#container2', health);
 
-            loading.end();
+                loading.end();
 
-        } else {
-            loading.begin('正在请求数据...');
+            } else {
+                loading.begin('正在请求数据...');
 
-            $.when(drawSales(), drawHealth())
-                .then(function(){
-                    loading.end();
-                });
+                $.when(drawSales(), drawHealth())
+                    .then(function(){
+                        loading.end();
+                    });
 
-        }
+            }
+        });
 
 
         // 画销售额
@@ -120,7 +120,14 @@ require(['jquery', 'd3', 'jStorage', 'tree', 'weeklyUpdate', 'loading', 'dailyUp
                         }
 
                         if (sales['flag'] && sellers['flag'] && zero['flag']) {
-                            $.jStorage.set('salesData', data, {TTL: 24*3600*1000});
+                            $.when(operateCache.setCache({'data': data, 'id': 1})).then(function(d){
+                                var data = JSON.parse(d);
+
+                                var str;
+                                str = data ? 'Success': 'failed';
+
+                                alert(str);
+                            });
                         }
 
                         tree.draw('#container1', data);
@@ -193,7 +200,15 @@ require(['jquery', 'd3', 'jStorage', 'tree', 'weeklyUpdate', 'loading', 'dailyUp
                     }
 
                     if (close['flag'] && lost['flag'] && upset0['flag']) {
-                        $.jStorage.set('healthData', data, {TTL: 24*3600*1000});
+//                        $.jStorage.set('healthData', data, {TTL: 24*3600*1000});
+                        $.when(operateCache.setCache({'data': data, 'id': 2})).then(function(d){
+                            var data = JSON.parse(d);
+
+                            var str;
+                            str = data ? 'Success': 'failed';
+
+                            alert(str);
+                        });
                     }
                     tree.draw('#container2', data);
 

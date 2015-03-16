@@ -35,3 +35,5 @@ if(!array_key_exists('logged_in', $this->session->all_userdata()))
 
     <link href="<?php echo base_url().CSS_DIR;?>/animate.css" rel="stylesheet">
     <link href="<?php echo base_url().CSS_DIR;?>/style.css" rel="stylesheet">
+
+    <link href="<?php echo base_url() . CSS_DIR; ?>/graph/first.css" rel="stylesheet" type="text/css" />

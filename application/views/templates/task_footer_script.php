@@ -1,4 +1,5 @@
 
+
 <!-- Mainly scripts -->
 <script src="<?php echo base_url().JS_DIR;?>/jquery-2.1.1.js"></script>
 <script src="<?php echo base_url().JS_DIR;?>/bootstrap.min.js"></script>
@@ -23,3 +24,10 @@
 
 <!-- Toastr -->
 <script src="<?php echo base_url().JS_DIR;?>/plugins/toastr/toastr.min.js"></script>
+
+
+<!-- Highcharts -->
+<script src="<?php echo base_url(). TP_DIR; ?>/highcharts/highcharts.js" type="text/javascript"></script>
+<script src="<?php echo base_url(). TP_DIR; ?>/highcharts/exporting.js" type="text/javascript"></script>
+
+

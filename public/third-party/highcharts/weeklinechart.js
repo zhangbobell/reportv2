@@ -106,10 +106,10 @@ $.fn.lineChart_week = function (lineChart) {
 $.fn.drawLineChart_week = function(lineChart, xhrOpt) {
     var thisSelector = this.selector;
 
-    if ((d = $.jStorage.get(thisSelector)) && thisSelector[10] != '3') {
-        lineChart.series = d['res'];
-        $(thisSelector).lineChart_week(lineChart);
-    } else {
+//    if ((d = $.jStorage.get(thisSelector)) && thisSelector[10] != '3') {
+//        lineChart.series = d['res'];
+//        $(thisSelector).lineChart_week(lineChart);
+//    } else {
         $.xhr_week({
             url: xhrOpt.url,
             saikufile: xhrOpt.saikufile,
@@ -123,14 +123,14 @@ $.fn.drawLineChart_week = function(lineChart, xhrOpt) {
                 }
                 else
                 {
-                    $.jStorage.set(thisSelector, d, {TTL: 24*3600*1000});
+//                    $.jStorage.set(thisSelector, d, {TTL: 24*3600*1000});
                     lineChart.series = d['res'];
                     $(thisSelector).lineChart_week(lineChart);
                 }
 
             }
         });
-    }
+//    }
 }
 
 jQuery.extend({
