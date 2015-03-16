@@ -23,7 +23,7 @@
     <div class="row">
 
         <div class="col-md-7">
-            <h2 class="font-bold ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;欢迎来到ZC企业智慧化平台</h2>
+            <h2 class="font-bold">欢迎来到追灿企业智慧化平台</h2>
             <br>
             <p>
                 我们可以帮助企业提升：机会洞察与预测、精准决策、执行控管、
