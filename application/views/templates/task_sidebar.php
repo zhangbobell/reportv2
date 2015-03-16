@@ -53,7 +53,8 @@
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
-                        <li><a href="graph/init_first">报表</a></li>
+                        <li><a href="http://office.e-corp.cn:888/data/">定制平台</a></li>
+                        <li><a href="graph/init_first">定制结果</a></li>
                         <!--                        <li ><a href="task/my_task">RAW</a></li>-->
                     </ul>
                 </li>
