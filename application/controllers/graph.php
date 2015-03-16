@@ -46,7 +46,7 @@ class Graph extends CI_Controller
 
         $this->load->view('templates/task_header', $data);
         $this->load->view('graph/header_add_init_first');
-        $this->load->view('templates/task_sidebar_mytask');
+        $this->load->view('templates/task_sidebar');
         $this->load->view('templates/task_banner');
         $this->load->view('graph/' . $page, $data);
 
@@ -75,7 +75,7 @@ class Graph extends CI_Controller
 
         $this->load->view('templates/task_header', $data);
 
-        $this->load->view('templates/task_sidebar_mytask');
+        $this->load->view('templates/task_sidebar');
         $this->load->view('templates/task_banner');
         $this->load->view('graph/' . $page, $data);
 
@@ -102,7 +102,7 @@ class Graph extends CI_Controller
 
         $this->load->view('templates/task_header', $data);
 
-        $this->load->view('templates/task_sidebar_mytask');
+        $this->load->view('templates/task_sidebar');
         $this->load->view('templates/task_banner');
         $this->load->view('graph/' . $page, $data);
 
@@ -128,7 +128,7 @@ class Graph extends CI_Controller
 
         $this->load->view('templates/task_header', $data);
 
-        $this->load->view('templates/task_sidebar_mytask');
+        $this->load->view('templates/task_sidebar');
         $this->load->view('templates/task_banner');
         $this->load->view('graph/' . $page, $data);
 

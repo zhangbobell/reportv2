@@ -32,7 +32,7 @@ class Price extends CI_Controller {
 
         $this->load->view('templates/task_header', $data);
         $this->load->view('price/header_add_' . $page);
-        $this->load->view('templates/task_sidebar_mytask');
+        $this->load->view('templates/task_sidebar');
         $this->load->view('templates/task_banner');
         $this->load->view('price/' . $page);
 
@@ -63,7 +63,7 @@ class Price extends CI_Controller {
 
         $this->load->view('templates/task_header', $data);
         $this->load->view('price/header_add_' . $page);
-        $this->load->view('templates/task_sidebar_mytask');
+        $this->load->view('templates/task_sidebar');
         $this->load->view('templates/task_banner');
         $this->load->view('price/' . $page);
 
@@ -174,7 +174,7 @@ class Price extends CI_Controller {
 
         $this->load->view('templates/task_header', $data);
         $this->load->view('price/header_add_' . $page);
-        $this->load->view('templates/task_sidebar_mytask');
+        $this->load->view('templates/task_sidebar');
         $this->load->view('templates/task_banner');
         $this->load->view('price/' . $page);
 
