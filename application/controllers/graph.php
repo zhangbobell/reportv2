@@ -19,7 +19,7 @@ class Graph extends CI_Controller
         $this->load->model('mgraph');
 
 
-        if (($res = $this->mgraph->get_saiku_map('db_sanqiang'))) {
+        if (($res = $this->mgraph->get_saiku_map('db_jiuyang'))) {
             foreach ($res->result_array() as $row) {
                 $this->sk_map[$row['ref_name']] = $row['saikufile'];
                 $this->sk_fields[$row['ref_name']] = explode(',', $row['fields']);
@@ -97,7 +97,7 @@ class Graph extends CI_Controller
         $data['title'] = "产品渠道分布";
         $data['username'] = $this->session->userdata('username');
 
-        $data['tag1'] = $this->mgraph->get_tag1('db_sanqiang')->result_array();
+        $data['tag1'] = $this->mgraph->get_tag1('db_jiuyang')->result_array();
 
 
         $this->load->view('templates/task_header', $data);
@@ -620,7 +620,7 @@ class Graph extends CI_Controller
         if ($tag1 == 'All') {
             echo json_encode('null');
         } else {
-            echo json_encode($this->mgraph->get_tag2('db_sanqiang', $tag1)->result_array());
+            echo json_encode($this->mgraph->get_tag2('db_jiuyang', $tag1)->result_array());
         }
     }
 
@@ -631,7 +631,7 @@ class Graph extends CI_Controller
         if ($tag2 == 'All') {
             echo json_encode('null');
         } else {
-            echo json_encode($this->mgraph->get_tag3('db_sanqiang', $tag1, $tag2)->result_array());
+            echo json_encode($this->mgraph->get_tag3('db_jiuyang', $tag1, $tag2)->result_array());
         }
     }
 
@@ -657,7 +657,7 @@ class Graph extends CI_Controller
     }
 
     private function _filter($res, $tag1, $tag2, $tag3) {
-        $filted = $this->mgraph->get_filtered_name('db_sanqiang', $tag1, $tag2, $tag3)->result_array();
+        $filted = $this->mgraph->get_filtered_name('db_jiuyang', $tag1, $tag2, $tag3)->result_array();
         $tr_filted = array();
         $temp = array();
 
