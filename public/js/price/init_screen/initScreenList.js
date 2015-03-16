@@ -124,7 +124,7 @@ define('initScreenList', ['utils', 'mrjsontable.nosort', 'bootstrapGrowl'], func
         }).then(function(){
             get().then(function(d){
                 fillTable(d);
-                d ? $.bootstrapGrowl('修改成功！', {type: 'success'}) : $.bootstrapGrowl('修改出错！', {type: 'danger'});
+                d ? toastr.success('修改成功！') : toastr.error('修改失败！');
                 $('#DG-show-record').modal('hide');
             })
         })

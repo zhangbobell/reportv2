@@ -503,7 +503,8 @@
 
                     });
 
-                    $.bootstrapGrowl('上传成功', {type: 'success'});
+                    //$.bootstrapGrowl('上传成功', {type: 'success'});
+                    toastr.success('上传成功');
                     //alert('上传成功');
                     $upload.html( '<span class="glyphicon glyphicon-import"></span> 导入价格' );
 
@@ -607,9 +608,11 @@
                 }).done(function(d) {
                     $('#loading').css('display', 'none');
                     if (d) {
-                        $.bootstrapGrowl('价格刷新成功', {type: 'success'});
+                        //$.bootstrapGrowl('价格刷新成功', {type: 'success'});
+                        toastr.success('价格刷新成功')
                     } else {
-                        $.bootstrapGrowl('价格刷新失败', {type: 'success'});
+                        toastr.error('价格刷新失败');
+                        //$.bootstrapGrowl('价格刷新失败', {type: 'success'});
                     }
                 });
             }

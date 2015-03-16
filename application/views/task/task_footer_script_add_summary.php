@@ -9,4 +9,4 @@
 
 <!-- ChartJS-->
 <script src="<?php echo base_url().JS_DIR;?>/plugins/chartJs/Chart.min.js"></script>
-<script src="<?php echo base_url().JS_DIR;?>/demo/chartjs-demo.js"></script>
+<!--<script src="--><?php //echo base_url().JS_DIR;?><!--/demo/chartjs-demo.js"></script>-->

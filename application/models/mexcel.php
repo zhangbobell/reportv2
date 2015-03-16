@@ -24,7 +24,7 @@ class MExcel extends MY_model {
     }
 
     private function _insert_up_sku($db, $data) {
-        $sql = "INSERT INTO `up_sku` (`updatetime`, `itemnum`, `min_price`, `is_wap`, `msg`)
+        $sql = "INSERT INTO `raw_brand_up_sku` (`updatetime`, `itemnum`, `min_price`, `is_wap`, `msg`)
                 VALUES ?
                 ON DUPLICATE KEY
                 UPDATE
@@ -38,7 +38,7 @@ class MExcel extends MY_model {
     }
 
     private function _update_meta_item($db, $data) {
-        $sql = "INSERT INTO `meta_item` (`itemid`, `itemnum`, `min_price`, `min_price_wap`)
+        $sql = "INSERT INTO `dim_auction` (`auction_id`, `itemnum`, `min_price`, `min_price_wap`)
                 VALUES ?
                 ON DUPLICATE KEY
                 UPDATE
@@ -98,7 +98,7 @@ class MExcel extends MY_model {
         }
         $itemnums = implode("', '", array_values($itemnum_arr));
 
-        $sql = "SELECT `itemid`, `itemnum` FROM `meta_item` WHERE `itemnum` in ('$itemnums')";
+        $sql = "SELECT `auction_id`, `itemnum` FROM `dim_auction` WHERE `itemnum` in ('$itemnums')";
         $itemids = $this->my_query($db, $sql);
 
         return $itemids->result_array();

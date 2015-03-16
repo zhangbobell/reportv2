@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -19,14 +18,16 @@
 
 <body class="gray-bg">
 
+
 <div class="middle-box text-center animated fadeInDown">
-    <h3 class="font-bold">退出成功！</h3>
+    <h1>E+</h1>
+    <h3 class="font-bold">注册成功！</h3>
     <div class="error-desc">
-       您已成功退出，正在跳转向登陆页面...<br>如果浏览器没有反应，点击<a href="./">这里</a>
+        <?php echo $username;?>,您已成功加入追灿市场营销智慧化平台！页面正太跳转,请稍等...<br/>
     </div>
 </div>
 <script>
-    setTimeout('window.location="./"', 1000);
+    setTimeout('window.location="./"', 2000);
 </script>
 
 <!-- Mainly scripts -->

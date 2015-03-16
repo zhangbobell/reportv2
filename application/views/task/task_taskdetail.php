@@ -27,7 +27,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="m-b-md">
-                                            <a href="#" class="btn btn-white btn-xs pull-right">编辑任务</a>
+<!--                                            <a href="#" class="btn btn-white btn-xs pull-right">编辑任务</a>-->
                                             <h3>任务代号<?php echo $task_base[0]['task_id'];?>-产品<?php echo $task_base[0]['task_title'];?>相关</h3>
                                         </div>
                                         <dl class="dl-horizontal">
@@ -154,23 +154,17 @@
                             如果您在使用过程中，发现任何问题，或者有任何建议，欢迎随时联系我们。请您勾选一下方面问题，帮助我们更加快速给您回复及调整优化:
                             <br>
                             <ul>
-                                <li><a href="task/mailpage">1.操作不够简便，使用体验不好</a></li>
-                                <li><a href="task/mailpage">2.页面打开速度慢，等待时间长</a></li>
-                                <li><a href="task/mailpage">3.功能偏少，需要再增添</a></li>
-                                <li><a href="task/mailpage">4.其他</a></li>
+                                <li><a href="javascript:;">1.操作不够简便，使用体验不好</a></li>
+                                <li><a href="javascript:;">2.页面打开速度慢，等待时间长</a></li>
+                                <li><a href="javascript:;">3.功能偏少，需要再增添</a></li>
+                                <li><a href="javascript:;">4.其他</a></li>
                             </ul>
-
+                        <h5>联系我们</h5>
+                            <ul>
+                                <li>邮箱：mhx@e-corp.cn</li>
+                                <li>电话：0571- 85784363</li>
+                            </ul>
                         </p>
-
-                        <h5>相关文件</h5>
-                        <ul class="list-unstyled project-files">
-                            <li><a href=""><i class="fa fa-file"></i> 操作说明.docx</a></li>
-                            <li><a href=""><i class="fa fa-file"></i> readme.txt</a></li>
-                        </ul>
-                        <div class="text-center m-t-md">
-                            <a href="#" class="btn btn-xs btn-primary">增加文件</a>
-                            <a href="#" class="btn btn-xs btn-primary">反映问题</a>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -15,26 +15,24 @@
                 <li class="nav-header">
                     <div class="dropdown profile-element">
 							<span>
-								<img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/profile_small.jpg" />
+								<img alt="image" class="img-circle" src="<?php echo base_url().IMG_DIR;?>/user.jpg" />
                             </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
 								<span class="clear">
 									<span class="block m-t-xs">
-										<strong class="font-bold">David Williams</strong>
+										<strong class="font-bold"><?php echo $username ?></strong>
 									</span>
-										<span class="text-muted text-xs block">Art Director <b class="caret"></b></span>
+										<span class="text-muted text-xs block">账号信息 <b class="caret"></b></span>
 								</span>
                         </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                            <li><a href="profile.html">个人</a></li>
-                            <li><a href="contacts.html">联系</a></li>
-                            <li><a href="mailbox.html">邮件</a></li>
+                            <li><a href="mailbox.html">邮件:<?php echo $email;?></a></li>
                             <li class="divider"></li>
-                            <li><a href=" ">退出</a></li>
+                            <li><a href="login/logout">退出</a></li>
                         </ul>
                     </div>
                     <div class="logo-element">
-                        IN+
+                        E+
                     </div>
                 </li>
                 <li>
@@ -50,16 +48,24 @@
                     </a>
                 </li>
                 <li>
-                    <a href="task/decision"><i class="fa fa-bar-chart-o"></i>
+                    <a href="javascript:;"><i class="fa fa-bar-chart-o"></i>
                         <span class="nav-label">商业智能定制</span>
-                        <span class="label label-warning pull-right"></span>
+                        <span class="fa arrow"></span>
                     </a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="graph/init_first">报表</a></li>
+                        <!--                        <li ><a href="task/my_task">RAW</a></li>-->
+                    </ul>
                 </li>
-                <li class="active">
-                    <a href="task/my_task"><i class="fa fa-diamond"></i>
+                <li>
+                    <a href="javascript:;"><i class="fa fa-diamond"></i>
                         <span class="nav-label">专家系统集成</span>
-                        <span class="label label-primary pull-right">NEW</span>
+                        <span class="fa arrow"></span>
                     </a>
+                    <ul class="nav nav-second-level">
+                        <li ><a href="price/control">试用版</a></li>
+                        <li ><a href="task/my_task">正式版</a></li>
+                    </ul>
                 </li>
                 <li>
                     <a href="task/process"><i class="fa fa-edit"></i>

@@ -82,6 +82,7 @@ require(['jquery', 'availableDatetime', 'datetimepicker', 'initScreenList', 'pag
                 data: {db: $('#db').val()}
             }).then(function(d){
                 init_list();
+                toastr.success('刷新爬取数据成功！')
             });
         });
 

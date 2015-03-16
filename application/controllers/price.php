@@ -30,14 +30,17 @@ class Price extends CI_Controller {
             'groupID' => $this->session->userdata('groupID')
         );
 
-        $this->load->view('templates/header', $data);
-        $this->load->view('price/header_add_control');
-        $this->load->view('templates/banner');
-        $this->load->view('templates/sidebar');
-        $this->load->view('price/'.$page,$data);
-        $this->load->view('templates/footer_script');
-        $this->load->view('price/footer_add_control');
-        $this->load->view('templates/footer');
+        $this->load->view('templates/task_header', $data);
+        $this->load->view('price/header_add_' . $page);
+        $this->load->view('templates/task_sidebar_mytask');
+        $this->load->view('templates/task_banner');
+        $this->load->view('price/' . $page);
+
+        $this->load->view('templates/task_footer');
+        $this->load->view('templates/task_footer_script');
+        $this->load->view('price/footer_add_' . $page);
+        $this->load->view('templates/task_footer_function');
+        $this->load->view('templates/task_footer_final');
     }
 
     /* control : 初次筛选商品主界面
@@ -57,14 +60,19 @@ class Price extends CI_Controller {
             'groupID' => $this->session->userdata('groupID')
         );
 
-        $this->load->view('templates/header', $data);
+
+        $this->load->view('templates/task_header', $data);
         $this->load->view('price/header_add_' . $page);
-        $this->load->view('templates/banner');
-        $this->load->view('templates/sidebar');
-        $this->load->view('price/' . $page, $data);
-        $this->load->view('templates/footer_script');
+        $this->load->view('templates/task_sidebar_mytask');
+        $this->load->view('templates/task_banner');
+        $this->load->view('price/' . $page);
+
+        $this->load->view('templates/task_footer');
+        $this->load->view('templates/task_footer_script');
         $this->load->view('price/footer_add_' . $page);
-        $this->load->view('templates/footer');
+        $this->load->view('templates/task_footer_function');
+        $this->load->view('templates/task_footer_final');
+
     }
 
     /*
@@ -163,14 +171,18 @@ class Price extends CI_Controller {
             'groupID' => $this->session->userdata('groupID')
         );
 
-        $this->load->view('templates/header', $data);
+
+        $this->load->view('templates/task_header', $data);
         $this->load->view('price/header_add_' . $page);
-        $this->load->view('templates/banner');
-        $this->load->view('templates/sidebar');
-        $this->load->view('price/' . $page,$data);
-        $this->load->view('templates/footer_script');
+        $this->load->view('templates/task_sidebar_mytask');
+        $this->load->view('templates/task_banner');
+        $this->load->view('price/' . $page);
+
+        $this->load->view('templates/task_footer');
+        $this->load->view('templates/task_footer_script');
         $this->load->view('price/footer_add_' . $page);
-        $this->load->view('templates/footer');
+        $this->load->view('templates/task_footer_function');
+        $this->load->view('templates/task_footer_final');
     }
 
     public function refresh_meta_item() {
