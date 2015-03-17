@@ -5488,3 +5488,337 @@ DEBUG - 2015-03-17 21:09:04 --> File loaded: application/views/advisory/task_foo
 DEBUG - 2015-03-17 21:09:04 --> File loaded: application/views/templates/task_footer_final.php
 DEBUG - 2015-03-17 21:09:04 --> Final output sent to browser
 DEBUG - 2015-03-17 21:09:04 --> Total execution time: 0.0410
+DEBUG - 2015-03-17 21:11:03 --> Config Class Initialized
+DEBUG - 2015-03-17 21:11:03 --> Hooks Class Initialized
+DEBUG - 2015-03-17 21:11:03 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 21:11:03 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 21:11:03 --> URI Class Initialized
+DEBUG - 2015-03-17 21:11:03 --> Router Class Initialized
+DEBUG - 2015-03-17 21:11:03 --> Output Class Initialized
+DEBUG - 2015-03-17 21:11:03 --> Security Class Initialized
+DEBUG - 2015-03-17 21:11:03 --> Input Class Initialized
+DEBUG - 2015-03-17 21:11:03 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 21:11:03 --> Language Class Initialized
+DEBUG - 2015-03-17 21:11:03 --> Loader Class Initialized
+DEBUG - 2015-03-17 21:11:03 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 21:11:03 --> Session Class Initialized
+DEBUG - 2015-03-17 21:11:03 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 21:11:03 --> Session routines successfully run
+DEBUG - 2015-03-17 21:11:03 --> Controller Class Initialized
+DEBUG - 2015-03-17 21:11:03 --> Model Class Initialized
+DEBUG - 2015-03-17 21:11:03 --> Model Class Initialized
+DEBUG - 2015-03-17 21:11:03 --> File loaded: application/views/templates/task_header.php
+DEBUG - 2015-03-17 21:11:03 --> File loaded: application/views/advisory/task_header_add_advisory.php
+DEBUG - 2015-03-17 21:11:03 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 21:11:03 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 21:11:03 --> File loaded: application/views/advisory/task_advisory.php
+DEBUG - 2015-03-17 21:11:03 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 21:11:03 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 21:11:03 --> File loaded: application/views/advisory/task_footer_script_add_advisory.php
+DEBUG - 2015-03-17 21:11:03 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 21:11:03 --> File loaded: application/views/advisory/task_footer_function_add_advisory.php
+DEBUG - 2015-03-17 21:11:03 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 21:11:03 --> Final output sent to browser
+DEBUG - 2015-03-17 21:11:03 --> Total execution time: 0.0440
+DEBUG - 2015-03-17 21:11:07 --> Config Class Initialized
+DEBUG - 2015-03-17 21:11:07 --> Hooks Class Initialized
+DEBUG - 2015-03-17 21:11:07 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 21:11:07 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 21:11:07 --> URI Class Initialized
+DEBUG - 2015-03-17 21:11:07 --> Router Class Initialized
+DEBUG - 2015-03-17 21:11:07 --> Output Class Initialized
+DEBUG - 2015-03-17 21:11:07 --> Security Class Initialized
+DEBUG - 2015-03-17 21:11:07 --> Input Class Initialized
+DEBUG - 2015-03-17 21:11:07 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 21:11:07 --> Language Class Initialized
+DEBUG - 2015-03-17 21:11:07 --> Loader Class Initialized
+DEBUG - 2015-03-17 21:11:07 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 21:11:07 --> Session Class Initialized
+DEBUG - 2015-03-17 21:11:07 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 21:11:07 --> Session routines successfully run
+DEBUG - 2015-03-17 21:11:07 --> Controller Class Initialized
+DEBUG - 2015-03-17 21:11:07 --> Model Class Initialized
+DEBUG - 2015-03-17 21:11:08 --> Model Class Initialized
+DEBUG - 2015-03-17 21:11:08 --> File loaded: application/views/templates/task_header.php
+DEBUG - 2015-03-17 21:11:08 --> File loaded: application/views/advisory/task_header_add_advisory.php
+DEBUG - 2015-03-17 21:11:08 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 21:11:08 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 21:11:08 --> File loaded: application/views/advisory/task_advisory.php
+DEBUG - 2015-03-17 21:11:08 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 21:11:08 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 21:11:08 --> File loaded: application/views/advisory/task_footer_script_add_advisory.php
+DEBUG - 2015-03-17 21:11:08 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 21:11:08 --> File loaded: application/views/advisory/task_footer_function_add_advisory.php
+DEBUG - 2015-03-17 21:11:08 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 21:11:08 --> Final output sent to browser
+DEBUG - 2015-03-17 21:11:08 --> Total execution time: 0.0400
+DEBUG - 2015-03-17 21:11:08 --> Config Class Initialized
+DEBUG - 2015-03-17 21:11:08 --> Hooks Class Initialized
+DEBUG - 2015-03-17 21:11:08 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 21:11:08 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 21:11:08 --> URI Class Initialized
+DEBUG - 2015-03-17 21:11:08 --> Router Class Initialized
+DEBUG - 2015-03-17 21:11:08 --> Output Class Initialized
+DEBUG - 2015-03-17 21:11:08 --> Security Class Initialized
+DEBUG - 2015-03-17 21:11:08 --> Input Class Initialized
+DEBUG - 2015-03-17 21:11:08 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 21:11:08 --> Language Class Initialized
+DEBUG - 2015-03-17 21:11:08 --> Loader Class Initialized
+DEBUG - 2015-03-17 21:11:08 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 21:11:08 --> Session Class Initialized
+DEBUG - 2015-03-17 21:11:08 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 21:11:08 --> Session routines successfully run
+DEBUG - 2015-03-17 21:11:08 --> Controller Class Initialized
+DEBUG - 2015-03-17 21:11:08 --> Model Class Initialized
+DEBUG - 2015-03-17 21:11:08 --> Model Class Initialized
+DEBUG - 2015-03-17 21:11:08 --> File loaded: application/views/templates/task_header.php
+DEBUG - 2015-03-17 21:11:08 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 21:11:08 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 21:11:08 --> File loaded: application/views/task/task_home.php
+DEBUG - 2015-03-17 21:11:08 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 21:11:08 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 21:11:08 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 21:11:08 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 21:11:08 --> Final output sent to browser
+DEBUG - 2015-03-17 21:11:08 --> Total execution time: 0.0420
+DEBUG - 2015-03-17 21:11:10 --> Config Class Initialized
+DEBUG - 2015-03-17 21:11:10 --> Hooks Class Initialized
+DEBUG - 2015-03-17 21:11:10 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 21:11:10 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 21:11:10 --> URI Class Initialized
+DEBUG - 2015-03-17 21:11:10 --> Router Class Initialized
+DEBUG - 2015-03-17 21:11:10 --> Output Class Initialized
+DEBUG - 2015-03-17 21:11:10 --> Security Class Initialized
+DEBUG - 2015-03-17 21:11:10 --> Input Class Initialized
+DEBUG - 2015-03-17 21:11:10 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 21:11:10 --> Language Class Initialized
+DEBUG - 2015-03-17 21:11:10 --> Loader Class Initialized
+DEBUG - 2015-03-17 21:11:10 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 21:11:10 --> Session Class Initialized
+DEBUG - 2015-03-17 21:11:10 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 21:11:10 --> Session routines successfully run
+DEBUG - 2015-03-17 21:11:10 --> Controller Class Initialized
+DEBUG - 2015-03-17 21:11:10 --> Model Class Initialized
+DEBUG - 2015-03-17 21:11:10 --> Model Class Initialized
+DEBUG - 2015-03-17 21:11:10 --> File loaded: application/views/templates/task_header.php
+DEBUG - 2015-03-17 21:11:10 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 21:11:10 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 21:11:10 --> File loaded: application/views/task/task_home.php
+DEBUG - 2015-03-17 21:11:10 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 21:11:10 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 21:11:10 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 21:11:10 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 21:11:10 --> Final output sent to browser
+DEBUG - 2015-03-17 21:11:10 --> Total execution time: 0.0430
+DEBUG - 2015-03-17 21:11:11 --> Config Class Initialized
+DEBUG - 2015-03-17 21:11:11 --> Hooks Class Initialized
+DEBUG - 2015-03-17 21:11:11 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 21:11:11 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 21:11:11 --> URI Class Initialized
+DEBUG - 2015-03-17 21:11:11 --> Router Class Initialized
+DEBUG - 2015-03-17 21:11:11 --> Output Class Initialized
+DEBUG - 2015-03-17 21:11:11 --> Security Class Initialized
+DEBUG - 2015-03-17 21:11:11 --> Input Class Initialized
+DEBUG - 2015-03-17 21:11:11 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 21:11:11 --> Language Class Initialized
+DEBUG - 2015-03-17 21:11:11 --> Loader Class Initialized
+DEBUG - 2015-03-17 21:11:11 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 21:11:11 --> Session Class Initialized
+DEBUG - 2015-03-17 21:11:11 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 21:11:11 --> Session routines successfully run
+DEBUG - 2015-03-17 21:11:11 --> Controller Class Initialized
+DEBUG - 2015-03-17 21:11:11 --> Model Class Initialized
+DEBUG - 2015-03-17 21:11:11 --> Model Class Initialized
+DEBUG - 2015-03-17 21:11:11 --> File loaded: application/views/templates/task_header.php
+DEBUG - 2015-03-17 21:11:11 --> File loaded: application/views/advisory/task_header_add_advisory.php
+DEBUG - 2015-03-17 21:11:11 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 21:11:11 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 21:11:11 --> File loaded: application/views/advisory/task_advisory.php
+DEBUG - 2015-03-17 21:11:11 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 21:11:11 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 21:11:11 --> File loaded: application/views/advisory/task_footer_script_add_advisory.php
+DEBUG - 2015-03-17 21:11:11 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 21:11:11 --> File loaded: application/views/advisory/task_footer_function_add_advisory.php
+DEBUG - 2015-03-17 21:11:11 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 21:11:11 --> Final output sent to browser
+DEBUG - 2015-03-17 21:11:11 --> Total execution time: 0.0400
+DEBUG - 2015-03-17 21:11:12 --> Config Class Initialized
+DEBUG - 2015-03-17 21:11:12 --> Hooks Class Initialized
+DEBUG - 2015-03-17 21:11:12 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 21:11:12 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 21:11:12 --> URI Class Initialized
+DEBUG - 2015-03-17 21:11:12 --> Router Class Initialized
+DEBUG - 2015-03-17 21:11:12 --> Output Class Initialized
+DEBUG - 2015-03-17 21:11:12 --> Security Class Initialized
+DEBUG - 2015-03-17 21:11:12 --> Input Class Initialized
+DEBUG - 2015-03-17 21:11:12 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 21:11:12 --> Language Class Initialized
+DEBUG - 2015-03-17 21:11:12 --> Loader Class Initialized
+DEBUG - 2015-03-17 21:11:12 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 21:11:12 --> Session Class Initialized
+DEBUG - 2015-03-17 21:11:12 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 21:11:12 --> Session routines successfully run
+DEBUG - 2015-03-17 21:11:12 --> Controller Class Initialized
+DEBUG - 2015-03-17 21:11:12 --> Model Class Initialized
+DEBUG - 2015-03-17 21:11:12 --> Model Class Initialized
+DEBUG - 2015-03-17 21:11:12 --> File loaded: application/views/templates/task_header.php
+DEBUG - 2015-03-17 21:11:12 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 21:11:12 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 21:11:12 --> File loaded: application/views/task/task_process.php
+DEBUG - 2015-03-17 21:11:12 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 21:11:12 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 21:11:12 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 21:11:12 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 21:11:12 --> Final output sent to browser
+DEBUG - 2015-03-17 21:11:12 --> Total execution time: 0.0440
+DEBUG - 2015-03-17 21:11:14 --> Config Class Initialized
+DEBUG - 2015-03-17 21:11:14 --> Hooks Class Initialized
+DEBUG - 2015-03-17 21:11:14 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 21:11:14 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 21:11:14 --> URI Class Initialized
+DEBUG - 2015-03-17 21:11:14 --> Router Class Initialized
+DEBUG - 2015-03-17 21:11:14 --> Output Class Initialized
+DEBUG - 2015-03-17 21:11:14 --> Security Class Initialized
+DEBUG - 2015-03-17 21:11:14 --> Input Class Initialized
+DEBUG - 2015-03-17 21:11:14 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 21:11:14 --> Language Class Initialized
+DEBUG - 2015-03-17 21:11:14 --> Loader Class Initialized
+DEBUG - 2015-03-17 21:11:14 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 21:11:14 --> Session Class Initialized
+DEBUG - 2015-03-17 21:11:14 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 21:11:14 --> Session routines successfully run
+DEBUG - 2015-03-17 21:11:14 --> Controller Class Initialized
+DEBUG - 2015-03-17 21:11:14 --> Model Class Initialized
+DEBUG - 2015-03-17 21:11:14 --> Model Class Initialized
+DEBUG - 2015-03-17 21:11:14 --> File loaded: application/views/templates/task_header.php
+DEBUG - 2015-03-17 21:11:14 --> File loaded: application/views/advisory/task_header_add_advisory.php
+DEBUG - 2015-03-17 21:11:14 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 21:11:14 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 21:11:14 --> File loaded: application/views/advisory/task_advisory.php
+DEBUG - 2015-03-17 21:11:14 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 21:11:14 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 21:11:14 --> File loaded: application/views/advisory/task_footer_script_add_advisory.php
+DEBUG - 2015-03-17 21:11:14 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 21:11:14 --> File loaded: application/views/advisory/task_footer_function_add_advisory.php
+DEBUG - 2015-03-17 21:11:14 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 21:11:14 --> Final output sent to browser
+DEBUG - 2015-03-17 21:11:14 --> Total execution time: 0.0410
+DEBUG - 2015-03-17 21:11:16 --> Config Class Initialized
+DEBUG - 2015-03-17 21:11:16 --> Hooks Class Initialized
+DEBUG - 2015-03-17 21:11:16 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 21:11:16 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 21:11:16 --> URI Class Initialized
+DEBUG - 2015-03-17 21:11:16 --> Router Class Initialized
+DEBUG - 2015-03-17 21:11:16 --> Output Class Initialized
+DEBUG - 2015-03-17 21:11:16 --> Security Class Initialized
+DEBUG - 2015-03-17 21:11:16 --> Input Class Initialized
+DEBUG - 2015-03-17 21:11:16 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 21:11:16 --> Language Class Initialized
+DEBUG - 2015-03-17 21:11:16 --> Loader Class Initialized
+DEBUG - 2015-03-17 21:11:16 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 21:11:16 --> Session Class Initialized
+DEBUG - 2015-03-17 21:11:16 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 21:11:16 --> Session routines successfully run
+DEBUG - 2015-03-17 21:11:16 --> Controller Class Initialized
+DEBUG - 2015-03-17 21:11:16 --> Model Class Initialized
+DEBUG - 2015-03-17 21:11:16 --> Model Class Initialized
+DEBUG - 2015-03-17 21:11:16 --> File loaded: application/views/templates/task_header.php
+DEBUG - 2015-03-17 21:11:16 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 21:11:16 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 21:11:16 --> File loaded: application/views/task/task_home.php
+DEBUG - 2015-03-17 21:11:16 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 21:11:16 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 21:11:16 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 21:11:16 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 21:11:16 --> Final output sent to browser
+DEBUG - 2015-03-17 21:11:16 --> Total execution time: 0.0410
+DEBUG - 2015-03-17 21:11:18 --> Config Class Initialized
+DEBUG - 2015-03-17 21:11:18 --> Hooks Class Initialized
+DEBUG - 2015-03-17 21:11:18 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 21:11:18 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 21:11:18 --> URI Class Initialized
+DEBUG - 2015-03-17 21:11:18 --> Router Class Initialized
+DEBUG - 2015-03-17 21:11:18 --> Output Class Initialized
+DEBUG - 2015-03-17 21:11:18 --> Security Class Initialized
+DEBUG - 2015-03-17 21:11:18 --> Input Class Initialized
+DEBUG - 2015-03-17 21:11:18 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 21:11:18 --> Language Class Initialized
+DEBUG - 2015-03-17 21:11:18 --> Loader Class Initialized
+DEBUG - 2015-03-17 21:11:18 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 21:11:18 --> Session Class Initialized
+DEBUG - 2015-03-17 21:11:18 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 21:11:18 --> Session routines successfully run
+DEBUG - 2015-03-17 21:11:18 --> Controller Class Initialized
+DEBUG - 2015-03-17 21:11:18 --> Model Class Initialized
+DEBUG - 2015-03-17 21:11:18 --> Model Class Initialized
+DEBUG - 2015-03-17 21:11:18 --> File loaded: application/views/templates/task_header.php
+DEBUG - 2015-03-17 21:11:18 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 21:11:18 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 21:11:18 --> File loaded: application/views/task/task_process.php
+DEBUG - 2015-03-17 21:11:18 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 21:11:18 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 21:11:18 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 21:11:18 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 21:11:18 --> Final output sent to browser
+DEBUG - 2015-03-17 21:11:18 --> Total execution time: 0.0430
+DEBUG - 2015-03-17 21:11:19 --> Config Class Initialized
+DEBUG - 2015-03-17 21:11:19 --> Hooks Class Initialized
+DEBUG - 2015-03-17 21:11:19 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 21:11:19 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 21:11:19 --> URI Class Initialized
+DEBUG - 2015-03-17 21:11:19 --> Router Class Initialized
+DEBUG - 2015-03-17 21:11:19 --> Output Class Initialized
+DEBUG - 2015-03-17 21:11:19 --> Security Class Initialized
+DEBUG - 2015-03-17 21:11:19 --> Input Class Initialized
+DEBUG - 2015-03-17 21:11:19 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 21:11:19 --> Language Class Initialized
+DEBUG - 2015-03-17 21:11:19 --> Loader Class Initialized
+DEBUG - 2015-03-17 21:11:19 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 21:11:19 --> Session Class Initialized
+DEBUG - 2015-03-17 21:11:19 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 21:11:19 --> Session routines successfully run
+DEBUG - 2015-03-17 21:11:19 --> Controller Class Initialized
+DEBUG - 2015-03-17 21:11:19 --> Model Class Initialized
+DEBUG - 2015-03-17 21:11:19 --> Model Class Initialized
+DEBUG - 2015-03-17 21:11:19 --> File loaded: application/views/templates/task_header.php
+DEBUG - 2015-03-17 21:11:19 --> File loaded: application/views/advisory/task_header_add_advisory.php
+DEBUG - 2015-03-17 21:11:19 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 21:11:19 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 21:11:19 --> File loaded: application/views/advisory/task_advisory.php
+DEBUG - 2015-03-17 21:11:19 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 21:11:19 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 21:11:19 --> File loaded: application/views/advisory/task_footer_script_add_advisory.php
+DEBUG - 2015-03-17 21:11:19 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 21:11:19 --> File loaded: application/views/advisory/task_footer_function_add_advisory.php
+DEBUG - 2015-03-17 21:11:19 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 21:11:19 --> Final output sent to browser
+DEBUG - 2015-03-17 21:11:19 --> Total execution time: 0.0450
+DEBUG - 2015-03-17 21:11:20 --> Config Class Initialized
+DEBUG - 2015-03-17 21:11:20 --> Hooks Class Initialized
+DEBUG - 2015-03-17 21:11:20 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 21:11:20 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 21:11:20 --> URI Class Initialized
+DEBUG - 2015-03-17 21:11:20 --> Router Class Initialized
+DEBUG - 2015-03-17 21:11:20 --> Output Class Initialized
+DEBUG - 2015-03-17 21:11:20 --> Security Class Initialized
+DEBUG - 2015-03-17 21:11:20 --> Input Class Initialized
+DEBUG - 2015-03-17 21:11:20 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 21:11:20 --> Language Class Initialized
+DEBUG - 2015-03-17 21:11:20 --> Loader Class Initialized
+DEBUG - 2015-03-17 21:11:20 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 21:11:20 --> Session Class Initialized
+DEBUG - 2015-03-17 21:11:20 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 21:11:20 --> Session routines successfully run
+DEBUG - 2015-03-17 21:11:20 --> Controller Class Initialized
+DEBUG - 2015-03-17 21:11:20 --> Model Class Initialized
+DEBUG - 2015-03-17 21:11:20 --> Model Class Initialized
+DEBUG - 2015-03-17 21:11:20 --> File loaded: application/views/templates/task_header.php
+DEBUG - 2015-03-17 21:11:20 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 21:11:20 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 21:11:20 --> File loaded: application/views/task/task_home.php
+DEBUG - 2015-03-17 21:11:20 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 21:11:20 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 21:11:20 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 21:11:20 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 21:11:20 --> Final output sent to browser
+DEBUG - 2015-03-17 21:11:20 --> Total execution time: 0.0540
