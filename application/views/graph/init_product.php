@@ -9,13 +9,13 @@
         <div class="col-lg-12">
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-sm-4">
-                    <h2>任务列表</h2>
+                    <h2>商业智能定制</h2>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="task/my_task">任务概要</a>
+                            <a href="task/my_task">定制结果</a>
                         </li>
                         <li class="active">
-                            <strong>任务列表</strong>
+                            <strong>产品渠道分布</strong>
                         </li>
                     </ol>
                 </div>
@@ -58,10 +58,10 @@
 
                             <div id="tab-2" class="tab-pane active">
                                 <div class="ibox">
-                                    <div class="ibox-title">
-                                    </div>
 
                                     <div class="ibox-content">
+                                        <label for="db-input" class="col-xs-2 col-md-1 control-label lh32">数据库：</label>
+                                        <?php $this->load->view('widget/db_picker')?>
                                         <div id="container4-1" class="col-md-12">类目销量正在加载...</div>
                                         <div id="container4-8" class="col-md-12">类目铺货量正在加载...</div>
 

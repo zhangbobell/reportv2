@@ -1,4 +1,5 @@
 $(function(){
+
     $('#container4-1').drawLineChart_stream({
         title: '类目销量', // 主标题
         subtitle: '', // 副标题
@@ -10,7 +11,8 @@ $(function(){
             '男士马甲','男士T恤','男士上衣','男士中裤','男士家居服套装','男士短裤','男士长裤','男士袜子']
     }, {
         url: 'graph/sk_stream_leaf', // ajax 请求地址
-        saikufile: 'report_month_order_category_num' // ajax 请求的 saiku 文件
+        saikufile: 'report_month_order_category_num', // ajax 请求的 saiku 文件
+        db: $("#db").val()
     });
 
 
@@ -54,7 +56,8 @@ $(function(){
         yLabel: '商家销售额'
     }, {
         url: 'graph/sk_stream_leaf', // ajax 请求地址
-        saikufile: 'report_monthly_sellernick_sales_fee_2' // ajax 请求的 saiku 文件
+        saikufile: 'report_monthly_sellernick_sales_fee_2', // ajax 请求的 saiku 文件
+        db: $("#db").val()
     });
 
     $('#container4-8').drawLineChart_stream({
@@ -64,7 +67,8 @@ $(function(){
         yLabel: '铺货量'
     }, {
         url: 'graph/sk_stream_leaf', // ajax 请求地址
-        saikufile: 'report_monthly_tags_up_num' // ajax 请求的 saiku 文件
+        saikufile: 'report_monthly_tags_up_num', // ajax 请求的 saiku 文件
+        db: $("#db").val()
     });
 
     $('#container4-9').drawLineChart_stream({
@@ -74,7 +78,8 @@ $(function(){
         yLabel: '商家销售额'
     }, {
         url: 'graph/sk_stream_leaf', // ajax 请求地址
-        saikufile: 'report_monthly_sellernick_sales_fee_0' // ajax 请求的 saiku 文件
+        saikufile: 'report_monthly_sellernick_sales_fee_0', // ajax 请求的 saiku 文件
+        db: $("#db").val()
     });
 
 
