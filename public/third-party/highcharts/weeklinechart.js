@@ -115,6 +115,7 @@ $.fn.drawLineChart_week = function(lineChart, xhrOpt) {
             saikufile: xhrOpt.saikufile,
             columns: lineChart.columns,
             attach: '' || lineChart.target,
+            db: xhrOpt.db,
             cb: function(d) {
                 d = JSON.parse(d);
                 if(d['flag'] == 0)
@@ -151,7 +152,7 @@ jQuery.extend({
             type:"post",
             async:true,
             dateType:"json",
-            data:{"saikufile": o.saikufile, columns: o.columns, attach: o.attach},
+            data:{"saikufile": o.saikufile, columns: o.columns, attach: o.attach, db: o.db},
             success: o.cb
         });
     },

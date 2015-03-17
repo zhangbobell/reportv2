@@ -9,13 +9,13 @@
         <div class="col-lg-12">
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-sm-4">
-                    <h2>任务列表</h2>
+                    <h2>商业智能定制</h2>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="task/my_task">任务概要</a>
+                            <a href="task/my_task">定制结果</a>
                         </li>
                         <li class="active">
-                            <strong>商业智能定制</strong>
+                            <strong>产品渠道分布</strong>
                         </li>
                     </ol>
                 </div>

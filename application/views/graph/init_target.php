@@ -5,13 +5,13 @@
         <div class="col-lg-12">
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-sm-4">
-                    <h2>任务列表</h2>
+                    <h2>商业智能定制</h2>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="task/my_task">任务概要</a>
+                            <a href="task/my_task">定制结果</a>
                         </li>
                         <li class="active">
-                            <strong>商业智能定制</strong>
+                            <strong>目标管理</strong>
                         </li>
                     </ol>
                 </div>
@@ -56,7 +56,7 @@
 
 
                                     <div class="ibox-content">
-                                        <div class="col-md-12 fix"><button type="button" class="btn btn-primary r" onclick="$.jStorage.flush(); window.location.reload(true);">刷新数据</button></div>
+<!--                                        <div class="col-md-12 fix"><button type="button" class="btn btn-primary r" onclick="$.jStorage.flush(); window.location.reload(true);">刷新数据</button></div>-->
                                         <label for="db-input" class="col-xs-2 col-md-1 control-label lh32">数据库：</label>
                                         <?php $this->load->view('widget/db_picker')?>
                                         <input type="hidden" id="user" value="<?php echo $username;?>"/>
@@ -83,16 +83,16 @@
                                             </div>
                                         </div>
 
-                                        <div id="container3-1" class="col-md-10">乱价率目标加载中...</div>
-                                        <div  class="col-md-2">
-                                            <div class="form-group">
-                                                <label for="target">乱价率目标</label>
-                                                <input type="text" class="form-control" name="target" id="target1" placeholder="请输入目标">
-                                                <input type="hidden" id="period1" value="1"/>
-                                                <input type="hidden" id="t_type1" value="1"/>
-                                                <button id="btn1" type="button" class="btn btn-primary mt10 r">提交</button>
-                                            </div>
-                                        </div>
+<!--                                        <div id="container3-1" class="col-md-10">乱价率目标加载中...</div>-->
+<!--                                        <div  class="col-md-2">-->
+<!--                                            <div class="form-group">-->
+<!--                                                <label for="target">乱价率目标</label>-->
+<!--                                                <input type="text" class="form-control" name="target" id="target1" placeholder="请输入目标">-->
+<!--                                                <input type="hidden" id="period1" value="1"/>-->
+<!--                                                <input type="hidden" id="t_type1" value="1"/>-->
+<!--                                                <button id="btn1" type="button" class="btn btn-primary mt10 r">提交</button>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
 
                                         <div id="container3-5" class="col-md-10">月累计招商数目标加载中...</div>
                                         <div  class="col-md-2">
