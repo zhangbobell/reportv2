@@ -13218,3 +13218,2414 @@ ERROR - 2015-03-17 18:46:50 --> Severity: Warning  --> mysqli_connect() [<a href
  E:\Apache2.2\htdocs\reportv2\system\database\drivers\mysqli\mysqli_driver.php 76
 ERROR - 2015-03-17 18:46:50 --> Unable to connect to the database
 DEBUG - 2015-03-17 18:46:50 --> Language file loaded: language/english/db_lang.php
+DEBUG - 2015-03-17 18:51:45 --> Config Class Initialized
+DEBUG - 2015-03-17 18:51:45 --> Hooks Class Initialized
+DEBUG - 2015-03-17 18:51:45 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 18:51:45 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 18:51:45 --> URI Class Initialized
+DEBUG - 2015-03-17 18:51:45 --> Router Class Initialized
+DEBUG - 2015-03-17 18:51:45 --> Output Class Initialized
+DEBUG - 2015-03-17 18:51:45 --> Security Class Initialized
+DEBUG - 2015-03-17 18:51:45 --> Input Class Initialized
+DEBUG - 2015-03-17 18:51:45 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 18:51:45 --> Language Class Initialized
+DEBUG - 2015-03-17 18:51:45 --> Loader Class Initialized
+DEBUG - 2015-03-17 18:51:45 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 18:51:45 --> Session Class Initialized
+DEBUG - 2015-03-17 18:51:45 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 18:51:45 --> Session routines successfully run
+DEBUG - 2015-03-17 18:51:45 --> Controller Class Initialized
+DEBUG - 2015-03-17 18:51:45 --> Model Class Initialized
+DEBUG - 2015-03-17 18:51:45 --> Model Class Initialized
+DEBUG - 2015-03-17 18:51:45 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 18:51:45 --> File loaded: application/views/templates/task_header.php
+DEBUG - 2015-03-17 18:51:45 --> File loaded: application/views/graph/header_add_init_first.php
+ERROR - 2015-03-17 18:51:45 --> Severity: Notice  --> Undefined variable: email E:\Apache2.2\htdocs\reportv2\application\views\templates\task_sidebar.php 29
+DEBUG - 2015-03-17 18:51:45 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 18:51:45 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 18:51:45 --> File loaded: application/views/widget/db_picker.php
+DEBUG - 2015-03-17 18:51:45 --> File loaded: application/views/graph/init_first.php
+DEBUG - 2015-03-17 18:51:45 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 18:51:45 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 18:51:45 --> File loaded: application/views/graph/footer_add_init_first.php
+DEBUG - 2015-03-17 18:51:45 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 18:51:45 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 18:51:45 --> Final output sent to browser
+DEBUG - 2015-03-17 18:51:45 --> Total execution time: 0.1654
+DEBUG - 2015-03-17 18:51:46 --> Config Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> Hooks Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 18:51:46 --> URI Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> Router Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> Output Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> Security Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> Input Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 18:51:46 --> Language Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> Config Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> Hooks Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 18:51:46 --> URI Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> Loader Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> Router Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 18:51:46 --> Output Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> Session Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 18:51:46 --> Security Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> Session routines successfully run
+DEBUG - 2015-03-17 18:51:46 --> Controller Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> Input Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 18:51:46 --> Model Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> Language Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> Model Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> Loader Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 18:51:46 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> Session Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 18:51:46 --> Session routines successfully run
+DEBUG - 2015-03-17 18:51:46 --> Controller Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> Model Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> Model Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 18:51:46 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:51:46 --> Final output sent to browser
+DEBUG - 2015-03-17 18:51:46 --> Total execution time: 0.0948
+DEBUG - 2015-03-17 18:51:46 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:51:46 --> Final output sent to browser
+DEBUG - 2015-03-17 18:51:46 --> Total execution time: 0.1242
+DEBUG - 2015-03-17 18:51:47 --> Config Class Initialized
+DEBUG - 2015-03-17 18:51:47 --> Hooks Class Initialized
+DEBUG - 2015-03-17 18:51:47 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 18:51:47 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 18:51:47 --> URI Class Initialized
+DEBUG - 2015-03-17 18:51:47 --> Router Class Initialized
+DEBUG - 2015-03-17 18:51:47 --> Output Class Initialized
+DEBUG - 2015-03-17 18:51:47 --> Security Class Initialized
+DEBUG - 2015-03-17 18:51:47 --> Input Class Initialized
+DEBUG - 2015-03-17 18:51:47 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 18:51:47 --> Language Class Initialized
+DEBUG - 2015-03-17 18:51:47 --> Loader Class Initialized
+DEBUG - 2015-03-17 18:51:47 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 18:51:47 --> Session Class Initialized
+DEBUG - 2015-03-17 18:51:47 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 18:51:47 --> Session routines successfully run
+DEBUG - 2015-03-17 18:51:47 --> Controller Class Initialized
+DEBUG - 2015-03-17 18:51:47 --> Model Class Initialized
+DEBUG - 2015-03-17 18:51:47 --> Model Class Initialized
+DEBUG - 2015-03-17 18:51:47 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 18:51:47 --> File loaded: application/views/templates/task_header.php
+ERROR - 2015-03-17 18:51:48 --> Severity: Notice  --> Undefined variable: email E:\Apache2.2\htdocs\reportv2\application\views\templates\task_sidebar.php 29
+DEBUG - 2015-03-17 18:51:48 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 18:51:48 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 18:51:48 --> File loaded: application/views/widget/db_picker.php
+DEBUG - 2015-03-17 18:51:48 --> File loaded: application/views/graph/init_target.php
+DEBUG - 2015-03-17 18:51:48 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 18:51:48 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 18:51:48 --> File loaded: application/views/graph/footer_add_init_target.php
+DEBUG - 2015-03-17 18:51:48 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 18:51:48 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 18:51:48 --> Final output sent to browser
+DEBUG - 2015-03-17 18:51:48 --> Total execution time: 0.0983
+DEBUG - 2015-03-17 18:51:48 --> Config Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Hooks Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 18:51:48 --> URI Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Router Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Output Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Security Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Config Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Input Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 18:51:48 --> Hooks Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Language Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 18:51:48 --> URI Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Loader Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Router Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 18:51:48 --> Output Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Config Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Session Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Hooks Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Security Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 18:51:48 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 18:51:48 --> Session routines successfully run
+DEBUG - 2015-03-17 18:51:48 --> Controller Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> URI Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Input Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 18:51:48 --> Router Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Language Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Model Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Output Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Model Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Security Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Loader Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Input Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 18:51:48 --> Language Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 18:51:48 --> Session Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Loader Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 18:51:48 --> Session routines successfully run
+DEBUG - 2015-03-17 18:51:48 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Controller Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 18:51:48 --> Session Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Model Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 18:51:48 --> Session routines successfully run
+DEBUG - 2015-03-17 18:51:48 --> Model Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Controller Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Model Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Model Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:51:48 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:51:48 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:51:48 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:51:48 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:51:48 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:51:48 --> Config Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Hooks Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 18:51:48 --> URI Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Router Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Output Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Security Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Input Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 18:51:48 --> Language Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Loader Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 18:51:48 --> Session Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 18:51:48 --> Session routines successfully run
+DEBUG - 2015-03-17 18:51:48 --> Controller Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Model Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Model Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 18:51:48 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:51:48 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:51:50 --> Model Class Initialized
+DEBUG - 2015-03-17 18:51:50 --> Final output sent to browser
+DEBUG - 2015-03-17 18:51:50 --> Total execution time: 1.3931
+DEBUG - 2015-03-17 18:51:51 --> Model Class Initialized
+DEBUG - 2015-03-17 18:51:51 --> Final output sent to browser
+DEBUG - 2015-03-17 18:51:51 --> Total execution time: 2.8135
+DEBUG - 2015-03-17 18:51:53 --> Model Class Initialized
+DEBUG - 2015-03-17 18:51:53 --> Final output sent to browser
+DEBUG - 2015-03-17 18:51:53 --> Total execution time: 4.8881
+DEBUG - 2015-03-17 18:51:53 --> Model Class Initialized
+DEBUG - 2015-03-17 18:51:53 --> Final output sent to browser
+DEBUG - 2015-03-17 18:51:53 --> Total execution time: 5.4886
+DEBUG - 2015-03-17 18:58:38 --> Config Class Initialized
+DEBUG - 2015-03-17 18:58:38 --> Hooks Class Initialized
+DEBUG - 2015-03-17 18:58:38 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 18:58:38 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 18:58:38 --> URI Class Initialized
+DEBUG - 2015-03-17 18:58:38 --> Router Class Initialized
+DEBUG - 2015-03-17 18:58:38 --> Output Class Initialized
+DEBUG - 2015-03-17 18:58:38 --> Security Class Initialized
+DEBUG - 2015-03-17 18:58:38 --> Input Class Initialized
+DEBUG - 2015-03-17 18:58:38 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 18:58:38 --> Language Class Initialized
+DEBUG - 2015-03-17 18:58:38 --> Loader Class Initialized
+DEBUG - 2015-03-17 18:58:38 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 18:58:38 --> Session Class Initialized
+DEBUG - 2015-03-17 18:58:38 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 18:58:38 --> Session routines successfully run
+DEBUG - 2015-03-17 18:58:38 --> Controller Class Initialized
+DEBUG - 2015-03-17 18:58:38 --> Model Class Initialized
+DEBUG - 2015-03-17 18:58:38 --> Model Class Initialized
+DEBUG - 2015-03-17 18:58:38 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 18:58:38 --> File loaded: application/views/templates/task_header.php
+ERROR - 2015-03-17 18:58:38 --> Severity: Notice  --> Undefined variable: email E:\Apache2.2\htdocs\reportv2\application\views\templates\task_sidebar.php 29
+DEBUG - 2015-03-17 18:58:38 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 18:58:38 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 18:58:38 --> File loaded: application/views/widget/db_picker.php
+DEBUG - 2015-03-17 18:58:38 --> File loaded: application/views/graph/init_target.php
+DEBUG - 2015-03-17 18:58:38 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 18:58:38 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 18:58:38 --> File loaded: application/views/graph/footer_add_init_target.php
+DEBUG - 2015-03-17 18:58:38 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 18:58:38 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 18:58:38 --> Final output sent to browser
+DEBUG - 2015-03-17 18:58:38 --> Total execution time: 0.1034
+DEBUG - 2015-03-17 18:58:39 --> Config Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Hooks Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 18:58:39 --> URI Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Router Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Output Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Security Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Input Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 18:58:39 --> Language Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Config Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Hooks Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 18:58:39 --> URI Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Loader Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Router Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 18:58:39 --> Output Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Session Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 18:58:39 --> Security Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Session routines successfully run
+DEBUG - 2015-03-17 18:58:39 --> Controller Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Input Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 18:58:39 --> Language Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Model Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Model Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Loader Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 18:58:39 --> Session Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 18:58:39 --> Session routines successfully run
+DEBUG - 2015-03-17 18:58:39 --> Controller Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Model Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Model Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Config Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Hooks Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 18:58:39 --> URI Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Router Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Output Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Security Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Input Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 18:58:39 --> Language Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Loader Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 18:58:39 --> Config Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Hooks Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Session Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 18:58:39 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 18:58:39 --> Session routines successfully run
+DEBUG - 2015-03-17 18:58:39 --> URI Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Controller Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Router Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Model Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:58:39 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:58:39 --> Model Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Output Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Security Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Input Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 18:58:39 --> Language Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:58:39 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:58:39 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Loader Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 18:58:39 --> Session Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 18:58:39 --> Session routines successfully run
+DEBUG - 2015-03-17 18:58:39 --> Controller Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Model Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Model Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 18:58:39 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:58:39 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:58:39 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:58:39 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:58:42 --> Model Class Initialized
+DEBUG - 2015-03-17 18:58:42 --> Final output sent to browser
+DEBUG - 2015-03-17 18:58:42 --> Total execution time: 3.4450
+DEBUG - 2015-03-17 18:58:43 --> Model Class Initialized
+DEBUG - 2015-03-17 18:58:43 --> Final output sent to browser
+DEBUG - 2015-03-17 18:58:43 --> Total execution time: 4.5631
+DEBUG - 2015-03-17 18:58:43 --> Model Class Initialized
+DEBUG - 2015-03-17 18:58:43 --> Final output sent to browser
+DEBUG - 2015-03-17 18:58:43 --> Total execution time: 4.7385
+DEBUG - 2015-03-17 18:58:44 --> Model Class Initialized
+DEBUG - 2015-03-17 18:58:44 --> Final output sent to browser
+DEBUG - 2015-03-17 18:58:44 --> Total execution time: 5.4855
+DEBUG - 2015-03-17 18:58:54 --> Config Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Hooks Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 18:58:54 --> URI Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Router Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Output Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Security Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Input Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 18:58:54 --> Language Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Loader Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 18:58:54 --> Session Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 18:58:54 --> Session routines successfully run
+DEBUG - 2015-03-17 18:58:54 --> Controller Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Model Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Model Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> File loaded: application/views/templates/task_header.php
+ERROR - 2015-03-17 18:58:54 --> Severity: Notice  --> Undefined variable: email E:\Apache2.2\htdocs\reportv2\application\views\templates\task_sidebar.php 29
+DEBUG - 2015-03-17 18:58:54 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 18:58:54 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 18:58:54 --> File loaded: application/views/widget/db_picker.php
+DEBUG - 2015-03-17 18:58:54 --> File loaded: application/views/graph/init_target.php
+DEBUG - 2015-03-17 18:58:54 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 18:58:54 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 18:58:54 --> File loaded: application/views/graph/footer_add_init_target.php
+DEBUG - 2015-03-17 18:58:54 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 18:58:54 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 18:58:54 --> Final output sent to browser
+DEBUG - 2015-03-17 18:58:54 --> Total execution time: 0.1381
+DEBUG - 2015-03-17 18:58:54 --> Config Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Hooks Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 18:58:54 --> URI Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Router Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Output Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Security Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Input Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 18:58:54 --> Language Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Loader Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 18:58:54 --> Session Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 18:58:54 --> Session routines successfully run
+DEBUG - 2015-03-17 18:58:54 --> Controller Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Config Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Hooks Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Model Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 18:58:54 --> Model Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> URI Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Router Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Output Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Security Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Input Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 18:58:54 --> Language Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Loader Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 18:58:54 --> Session Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 18:58:54 --> Session routines successfully run
+DEBUG - 2015-03-17 18:58:54 --> Controller Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Model Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Model Class Initialized
+DEBUG - 2015-03-17 18:58:54 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:58:55 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:58:55 --> Config Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> Hooks Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 18:58:55 --> URI Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> Router Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> Output Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> Security Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> Input Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 18:58:55 --> Language Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> Loader Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 18:58:55 --> Session Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 18:58:55 --> Session routines successfully run
+DEBUG - 2015-03-17 18:58:55 --> Controller Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> Model Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> Model Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> Config Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> Hooks Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 18:58:55 --> URI Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> Router Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> Output Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> Security Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> Input Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 18:58:55 --> Language Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> Loader Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 18:58:55 --> Session Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 18:58:55 --> Session routines successfully run
+DEBUG - 2015-03-17 18:58:55 --> Controller Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> Model Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> Model Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 18:58:55 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:58:55 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:58:55 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:58:55 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:58:55 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:58:55 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:58:57 --> Model Class Initialized
+DEBUG - 2015-03-17 18:58:58 --> Model Class Initialized
+DEBUG - 2015-03-17 18:58:58 --> Final output sent to browser
+DEBUG - 2015-03-17 18:58:58 --> Total execution time: 2.8222
+DEBUG - 2015-03-17 18:58:58 --> Final output sent to browser
+DEBUG - 2015-03-17 18:58:58 --> Total execution time: 2.9398
+DEBUG - 2015-03-17 18:58:58 --> Model Class Initialized
+DEBUG - 2015-03-17 18:58:58 --> Final output sent to browser
+DEBUG - 2015-03-17 18:58:58 --> Total execution time: 4.0924
+DEBUG - 2015-03-17 18:59:00 --> Model Class Initialized
+DEBUG - 2015-03-17 18:59:00 --> Final output sent to browser
+DEBUG - 2015-03-17 18:59:00 --> Total execution time: 5.8569
+DEBUG - 2015-03-17 18:59:32 --> Config Class Initialized
+DEBUG - 2015-03-17 18:59:32 --> Hooks Class Initialized
+DEBUG - 2015-03-17 18:59:32 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 18:59:32 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 18:59:33 --> URI Class Initialized
+DEBUG - 2015-03-17 18:59:33 --> Router Class Initialized
+DEBUG - 2015-03-17 18:59:33 --> Output Class Initialized
+DEBUG - 2015-03-17 18:59:33 --> Security Class Initialized
+DEBUG - 2015-03-17 18:59:33 --> Input Class Initialized
+DEBUG - 2015-03-17 18:59:33 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 18:59:33 --> Language Class Initialized
+DEBUG - 2015-03-17 18:59:33 --> Loader Class Initialized
+DEBUG - 2015-03-17 18:59:33 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 18:59:33 --> Session Class Initialized
+DEBUG - 2015-03-17 18:59:33 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 18:59:33 --> Session routines successfully run
+DEBUG - 2015-03-17 18:59:33 --> Controller Class Initialized
+DEBUG - 2015-03-17 18:59:33 --> Model Class Initialized
+DEBUG - 2015-03-17 18:59:33 --> Model Class Initialized
+DEBUG - 2015-03-17 18:59:33 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 18:59:33 --> File loaded: application/views/templates/task_header.php
+ERROR - 2015-03-17 18:59:33 --> Severity: Notice  --> Undefined variable: email E:\Apache2.2\htdocs\reportv2\application\views\templates\task_sidebar.php 29
+DEBUG - 2015-03-17 18:59:33 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 18:59:33 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 18:59:33 --> File loaded: application/views/widget/db_picker.php
+DEBUG - 2015-03-17 18:59:33 --> File loaded: application/views/graph/init_target.php
+DEBUG - 2015-03-17 18:59:33 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 18:59:33 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 18:59:33 --> File loaded: application/views/graph/footer_add_init_target.php
+DEBUG - 2015-03-17 18:59:33 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 18:59:33 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 18:59:33 --> Final output sent to browser
+DEBUG - 2015-03-17 18:59:33 --> Total execution time: 0.4201
+DEBUG - 2015-03-17 18:59:37 --> Config Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Hooks Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 18:59:37 --> URI Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Router Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Output Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Security Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Input Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Config Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Hooks Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 18:59:37 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Language Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 18:59:37 --> URI Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Router Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Output Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Loader Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Security Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 18:59:37 --> Input Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 18:59:37 --> Session Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Language Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Config Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Hooks Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 18:59:37 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Session routines successfully run
+DEBUG - 2015-03-17 18:59:37 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 18:59:37 --> Controller Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> URI Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Model Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Loader Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Router Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 18:59:37 --> Model Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Output Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Session Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Security Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 18:59:37 --> Session routines successfully run
+DEBUG - 2015-03-17 18:59:37 --> Controller Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Input Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 18:59:37 --> Model Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Language Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Model Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Loader Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 18:59:37 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Session Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 18:59:37 --> Session routines successfully run
+DEBUG - 2015-03-17 18:59:37 --> Controller Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Model Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Model Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Config Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Hooks Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 18:59:37 --> URI Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Router Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Output Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Security Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Input Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 18:59:37 --> Language Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Loader Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 18:59:37 --> Session Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 18:59:37 --> Session routines successfully run
+DEBUG - 2015-03-17 18:59:37 --> Controller Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Model Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Model Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 18:59:37 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:59:37 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:59:37 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:59:37 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:59:37 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:59:37 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:59:37 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:59:37 --> XSS Filtering completed
+DEBUG - 2015-03-17 18:59:40 --> Model Class Initialized
+DEBUG - 2015-03-17 18:59:40 --> Final output sent to browser
+DEBUG - 2015-03-17 18:59:40 --> Total execution time: 2.7691
+DEBUG - 2015-03-17 18:59:41 --> Model Class Initialized
+DEBUG - 2015-03-17 18:59:41 --> Final output sent to browser
+DEBUG - 2015-03-17 18:59:41 --> Total execution time: 4.1853
+DEBUG - 2015-03-17 18:59:42 --> Model Class Initialized
+DEBUG - 2015-03-17 18:59:42 --> Final output sent to browser
+DEBUG - 2015-03-17 18:59:42 --> Total execution time: 5.6532
+DEBUG - 2015-03-17 18:59:45 --> Model Class Initialized
+DEBUG - 2015-03-17 18:59:45 --> Final output sent to browser
+DEBUG - 2015-03-17 18:59:45 --> Total execution time: 7.8859
+DEBUG - 2015-03-17 19:01:26 --> Config Class Initialized
+DEBUG - 2015-03-17 19:01:26 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:01:26 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:01:26 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:01:26 --> URI Class Initialized
+DEBUG - 2015-03-17 19:01:26 --> Router Class Initialized
+DEBUG - 2015-03-17 19:01:26 --> Output Class Initialized
+DEBUG - 2015-03-17 19:01:26 --> Security Class Initialized
+DEBUG - 2015-03-17 19:01:26 --> Input Class Initialized
+DEBUG - 2015-03-17 19:01:26 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:01:26 --> Language Class Initialized
+DEBUG - 2015-03-17 19:01:26 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:01:26 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:01:26 --> Session Class Initialized
+DEBUG - 2015-03-17 19:01:26 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:01:26 --> Session routines successfully run
+DEBUG - 2015-03-17 19:01:26 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:01:26 --> Model Class Initialized
+DEBUG - 2015-03-17 19:01:26 --> Model Class Initialized
+DEBUG - 2015-03-17 19:01:26 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:01:26 --> File loaded: application/views/templates/task_header.php
+ERROR - 2015-03-17 19:01:26 --> Severity: Notice  --> Undefined variable: email E:\Apache2.2\htdocs\reportv2\application\views\templates\task_sidebar.php 29
+DEBUG - 2015-03-17 19:01:26 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 19:01:26 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 19:01:26 --> File loaded: application/views/widget/db_picker.php
+DEBUG - 2015-03-17 19:01:26 --> File loaded: application/views/graph/init_target.php
+DEBUG - 2015-03-17 19:01:26 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 19:01:26 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 19:01:26 --> File loaded: application/views/graph/footer_add_init_target.php
+DEBUG - 2015-03-17 19:01:26 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 19:01:26 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 19:01:26 --> Final output sent to browser
+DEBUG - 2015-03-17 19:01:26 --> Total execution time: 0.2329
+DEBUG - 2015-03-17 19:01:27 --> Config Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:01:27 --> URI Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Router Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Output Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Security Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Config Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Input Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:01:27 --> Language Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Config Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:01:27 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:01:27 --> URI Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Session Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:01:27 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:01:27 --> Router Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> URI Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Session routines successfully run
+DEBUG - 2015-03-17 19:01:27 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Router Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Output Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Model Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Security Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Output Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Model Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Input Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Config Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Security Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:01:27 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Language Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Input Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:01:27 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:01:27 --> Language Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> URI Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Router Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Output Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:01:27 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Security Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Session Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:01:27 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:01:27 --> Input Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Session routines successfully run
+DEBUG - 2015-03-17 19:01:27 --> Session Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:01:27 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Language Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:01:27 --> Session routines successfully run
+DEBUG - 2015-03-17 19:01:27 --> Model Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Model Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Model Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Model Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:01:27 --> Session Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:01:27 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Session routines successfully run
+DEBUG - 2015-03-17 19:01:27 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Model Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Model Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:01:27 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:01:27 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:01:27 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:01:27 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:01:27 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:01:27 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:01:27 --> Model Class Initialized
+DEBUG - 2015-03-17 19:01:28 --> Final output sent to browser
+DEBUG - 2015-03-17 19:01:28 --> Total execution time: 0.6789
+DEBUG - 2015-03-17 19:01:28 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:01:28 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:01:31 --> Model Class Initialized
+DEBUG - 2015-03-17 19:01:31 --> Final output sent to browser
+DEBUG - 2015-03-17 19:01:31 --> Total execution time: 4.5494
+DEBUG - 2015-03-17 19:01:33 --> Model Class Initialized
+DEBUG - 2015-03-17 19:01:33 --> Final output sent to browser
+DEBUG - 2015-03-17 19:01:33 --> Total execution time: 5.7852
+DEBUG - 2015-03-17 19:01:33 --> Model Class Initialized
+DEBUG - 2015-03-17 19:01:33 --> Final output sent to browser
+DEBUG - 2015-03-17 19:01:33 --> Total execution time: 6.1526
+DEBUG - 2015-03-17 19:02:14 --> Config Class Initialized
+DEBUG - 2015-03-17 19:02:14 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:02:14 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:02:14 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:02:14 --> URI Class Initialized
+DEBUG - 2015-03-17 19:02:14 --> Router Class Initialized
+DEBUG - 2015-03-17 19:02:14 --> Output Class Initialized
+DEBUG - 2015-03-17 19:02:14 --> Security Class Initialized
+DEBUG - 2015-03-17 19:02:14 --> Input Class Initialized
+DEBUG - 2015-03-17 19:02:14 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:02:14 --> Language Class Initialized
+DEBUG - 2015-03-17 19:02:14 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:02:14 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:02:14 --> Session Class Initialized
+DEBUG - 2015-03-17 19:02:14 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:02:14 --> Session routines successfully run
+DEBUG - 2015-03-17 19:02:14 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:02:14 --> Model Class Initialized
+DEBUG - 2015-03-17 19:02:14 --> Model Class Initialized
+DEBUG - 2015-03-17 19:02:14 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:02:14 --> File loaded: application/views/templates/task_header.php
+ERROR - 2015-03-17 19:02:14 --> Severity: Notice  --> Undefined variable: email E:\Apache2.2\htdocs\reportv2\application\views\templates\task_sidebar.php 29
+DEBUG - 2015-03-17 19:02:14 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 19:02:14 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 19:02:14 --> File loaded: application/views/widget/db_picker.php
+DEBUG - 2015-03-17 19:02:14 --> File loaded: application/views/graph/init_target.php
+DEBUG - 2015-03-17 19:02:14 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 19:02:14 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 19:02:14 --> File loaded: application/views/graph/footer_add_init_target.php
+DEBUG - 2015-03-17 19:02:14 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 19:02:14 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 19:02:14 --> Final output sent to browser
+DEBUG - 2015-03-17 19:02:14 --> Total execution time: 0.1691
+DEBUG - 2015-03-17 19:02:15 --> Config Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:02:15 --> URI Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Router Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Output Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Security Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Input Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Config Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:02:15 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Language Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:02:15 --> URI Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Router Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Output Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Security Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:02:15 --> Input Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Session Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:02:15 --> Config Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Language Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:02:15 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Session routines successfully run
+DEBUG - 2015-03-17 19:02:15 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:02:15 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> URI Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Router Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Model Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Output Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:02:15 --> Model Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Security Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Config Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Session Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:02:15 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Input Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Session routines successfully run
+DEBUG - 2015-03-17 19:02:15 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:02:15 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:02:15 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Language Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> URI Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Model Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Router Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Model Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Output Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Security Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:02:15 --> Input Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:02:15 --> Session Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Language Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:02:15 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Session routines successfully run
+DEBUG - 2015-03-17 19:02:15 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Model Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:02:15 --> Model Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Session Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:02:15 --> Session routines successfully run
+DEBUG - 2015-03-17 19:02:15 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Model Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Model Class Initialized
+DEBUG - 2015-03-17 19:02:15 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:02:16 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:02:16 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:02:16 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:02:16 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:02:16 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:02:16 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:02:16 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:02:16 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:02:16 --> Model Class Initialized
+DEBUG - 2015-03-17 19:02:16 --> Final output sent to browser
+DEBUG - 2015-03-17 19:02:16 --> Total execution time: 1.0607
+DEBUG - 2015-03-17 19:02:20 --> Model Class Initialized
+DEBUG - 2015-03-17 19:02:20 --> Final output sent to browser
+DEBUG - 2015-03-17 19:02:20 --> Total execution time: 4.2646
+DEBUG - 2015-03-17 19:02:20 --> Model Class Initialized
+DEBUG - 2015-03-17 19:02:20 --> Final output sent to browser
+DEBUG - 2015-03-17 19:02:20 --> Total execution time: 4.5219
+DEBUG - 2015-03-17 19:02:21 --> Model Class Initialized
+DEBUG - 2015-03-17 19:02:21 --> Final output sent to browser
+DEBUG - 2015-03-17 19:02:21 --> Total execution time: 5.9035
+DEBUG - 2015-03-17 19:02:23 --> Config Class Initialized
+DEBUG - 2015-03-17 19:02:23 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:02:23 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:02:23 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:02:23 --> URI Class Initialized
+DEBUG - 2015-03-17 19:02:23 --> Router Class Initialized
+DEBUG - 2015-03-17 19:02:23 --> Output Class Initialized
+DEBUG - 2015-03-17 19:02:23 --> Security Class Initialized
+DEBUG - 2015-03-17 19:02:23 --> Input Class Initialized
+DEBUG - 2015-03-17 19:02:23 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:02:23 --> Language Class Initialized
+DEBUG - 2015-03-17 19:02:23 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:02:23 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:02:23 --> Session Class Initialized
+DEBUG - 2015-03-17 19:02:23 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:02:23 --> Session routines successfully run
+DEBUG - 2015-03-17 19:02:23 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:02:23 --> Model Class Initialized
+DEBUG - 2015-03-17 19:02:23 --> Model Class Initialized
+DEBUG - 2015-03-17 19:02:23 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:02:23 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:02:23 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:02:25 --> Model Class Initialized
+DEBUG - 2015-03-17 19:02:25 --> Final output sent to browser
+DEBUG - 2015-03-17 19:02:25 --> Total execution time: 2.1708
+DEBUG - 2015-03-17 19:03:32 --> Config Class Initialized
+DEBUG - 2015-03-17 19:03:32 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:03:32 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:03:32 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:03:32 --> URI Class Initialized
+DEBUG - 2015-03-17 19:03:32 --> Router Class Initialized
+DEBUG - 2015-03-17 19:03:32 --> Output Class Initialized
+DEBUG - 2015-03-17 19:03:32 --> Security Class Initialized
+DEBUG - 2015-03-17 19:03:32 --> Input Class Initialized
+DEBUG - 2015-03-17 19:03:32 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:03:32 --> Language Class Initialized
+DEBUG - 2015-03-17 19:03:32 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:03:32 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:03:32 --> Session Class Initialized
+DEBUG - 2015-03-17 19:03:32 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:03:32 --> Session routines successfully run
+DEBUG - 2015-03-17 19:03:32 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:03:32 --> Model Class Initialized
+DEBUG - 2015-03-17 19:03:32 --> Model Class Initialized
+DEBUG - 2015-03-17 19:03:32 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:03:33 --> File loaded: application/views/templates/task_header.php
+ERROR - 2015-03-17 19:03:33 --> Severity: Notice  --> Undefined variable: email E:\Apache2.2\htdocs\reportv2\application\views\templates\task_sidebar.php 29
+DEBUG - 2015-03-17 19:03:33 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 19:03:33 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 19:03:33 --> File loaded: application/views/widget/db_picker.php
+DEBUG - 2015-03-17 19:03:33 --> File loaded: application/views/graph/init_target.php
+DEBUG - 2015-03-17 19:03:33 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 19:03:33 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 19:03:33 --> File loaded: application/views/graph/footer_add_init_target.php
+DEBUG - 2015-03-17 19:03:33 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 19:03:33 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 19:03:33 --> Final output sent to browser
+DEBUG - 2015-03-17 19:03:33 --> Total execution time: 0.4801
+DEBUG - 2015-03-17 19:03:35 --> Config Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:03:35 --> URI Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> Router Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> Config Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> Output Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:03:35 --> Security Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> URI Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> Input Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> Router Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:03:35 --> Language Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> Output Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> Security Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> Input Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:03:35 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:03:35 --> Language Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> Session Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:03:35 --> Session routines successfully run
+DEBUG - 2015-03-17 19:03:35 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:03:35 --> Model Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> Session Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> Model Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:03:35 --> Session routines successfully run
+DEBUG - 2015-03-17 19:03:35 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> Model Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> Model Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:03:35 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:03:35 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:03:35 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:03:35 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:03:36 --> Config Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:03:36 --> URI Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> Router Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> Config Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> Output Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> Security Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:03:36 --> Input Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> URI Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:03:36 --> Router Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> Language Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> Output Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> Security Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:03:36 --> Input Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> Session Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:03:36 --> Language Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:03:36 --> Session routines successfully run
+DEBUG - 2015-03-17 19:03:36 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> Model Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:03:36 --> Model Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> Session Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:03:36 --> Session routines successfully run
+DEBUG - 2015-03-17 19:03:36 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> Model Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> Model Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:03:36 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:03:36 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:03:36 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:03:36 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:03:37 --> Model Class Initialized
+DEBUG - 2015-03-17 19:03:37 --> Final output sent to browser
+DEBUG - 2015-03-17 19:03:37 --> Total execution time: 1.7732
+DEBUG - 2015-03-17 19:03:39 --> Model Class Initialized
+DEBUG - 2015-03-17 19:03:39 --> Final output sent to browser
+DEBUG - 2015-03-17 19:03:39 --> Total execution time: 3.3164
+DEBUG - 2015-03-17 19:03:40 --> Model Class Initialized
+DEBUG - 2015-03-17 19:03:40 --> Final output sent to browser
+DEBUG - 2015-03-17 19:03:40 --> Total execution time: 4.1475
+DEBUG - 2015-03-17 19:03:42 --> Model Class Initialized
+DEBUG - 2015-03-17 19:03:42 --> Final output sent to browser
+DEBUG - 2015-03-17 19:03:42 --> Total execution time: 6.3147
+DEBUG - 2015-03-17 19:07:12 --> Config Class Initialized
+DEBUG - 2015-03-17 19:07:12 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:07:12 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:07:12 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:07:12 --> URI Class Initialized
+DEBUG - 2015-03-17 19:07:12 --> Router Class Initialized
+DEBUG - 2015-03-17 19:07:12 --> Output Class Initialized
+DEBUG - 2015-03-17 19:07:12 --> Security Class Initialized
+DEBUG - 2015-03-17 19:07:12 --> Input Class Initialized
+DEBUG - 2015-03-17 19:07:12 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:07:12 --> Language Class Initialized
+DEBUG - 2015-03-17 19:07:12 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:07:12 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:07:12 --> Session Class Initialized
+DEBUG - 2015-03-17 19:07:12 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:07:12 --> Session routines successfully run
+DEBUG - 2015-03-17 19:07:12 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:07:12 --> Model Class Initialized
+DEBUG - 2015-03-17 19:07:12 --> Model Class Initialized
+DEBUG - 2015-03-17 19:07:12 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:07:12 --> File loaded: application/views/templates/task_header.php
+ERROR - 2015-03-17 19:07:12 --> Severity: Notice  --> Undefined variable: email E:\Apache2.2\htdocs\reportv2\application\views\templates\task_sidebar.php 29
+DEBUG - 2015-03-17 19:07:12 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 19:07:12 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 19:07:12 --> File loaded: application/views/widget/db_picker.php
+DEBUG - 2015-03-17 19:07:12 --> File loaded: application/views/graph/init_target.php
+DEBUG - 2015-03-17 19:07:12 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 19:07:12 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 19:07:12 --> File loaded: application/views/graph/footer_add_init_target.php
+DEBUG - 2015-03-17 19:07:12 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 19:07:12 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 19:07:12 --> Final output sent to browser
+DEBUG - 2015-03-17 19:07:12 --> Total execution time: 0.1371
+DEBUG - 2015-03-17 19:07:13 --> Config Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:07:13 --> URI Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Router Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Output Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Security Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Input Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:07:13 --> Config Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Language Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:07:13 --> URI Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Router Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:07:13 --> Session Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Output Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:07:13 --> Session routines successfully run
+DEBUG - 2015-03-17 19:07:13 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Security Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Model Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Input Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:07:13 --> Language Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Model Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:07:13 --> Session Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:07:13 --> Session routines successfully run
+DEBUG - 2015-03-17 19:07:13 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Model Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Model Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:07:13 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:07:13 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:07:13 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:07:13 --> Config Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:07:13 --> URI Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Router Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Output Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Security Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Input Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:07:13 --> Language Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Config Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:07:13 --> URI Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Router Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:07:13 --> Output Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Session Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:07:13 --> Security Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Session routines successfully run
+DEBUG - 2015-03-17 19:07:13 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Input Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:07:13 --> Model Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Language Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Model Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:07:13 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Session Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:07:13 --> Session routines successfully run
+DEBUG - 2015-03-17 19:07:13 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Model Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Model Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:07:13 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:07:13 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:07:13 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:07:13 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:07:14 --> Model Class Initialized
+DEBUG - 2015-03-17 19:07:14 --> Final output sent to browser
+DEBUG - 2015-03-17 19:07:14 --> Total execution time: 0.4126
+DEBUG - 2015-03-17 19:07:15 --> Model Class Initialized
+DEBUG - 2015-03-17 19:07:15 --> Final output sent to browser
+DEBUG - 2015-03-17 19:07:15 --> Total execution time: 1.9491
+DEBUG - 2015-03-17 19:07:17 --> Model Class Initialized
+DEBUG - 2015-03-17 19:07:17 --> Final output sent to browser
+DEBUG - 2015-03-17 19:07:17 --> Total execution time: 3.8935
+DEBUG - 2015-03-17 19:07:23 --> Model Class Initialized
+DEBUG - 2015-03-17 19:07:23 --> Final output sent to browser
+DEBUG - 2015-03-17 19:07:23 --> Total execution time: 9.9583
+DEBUG - 2015-03-17 19:08:35 --> Config Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:08:35 --> URI Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Router Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Output Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Security Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Input Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:08:35 --> Language Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:08:35 --> Session Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:08:35 --> Session routines successfully run
+DEBUG - 2015-03-17 19:08:35 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Model Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Model Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> File loaded: application/views/templates/task_header.php
+ERROR - 2015-03-17 19:08:35 --> Severity: Notice  --> Undefined variable: email E:\Apache2.2\htdocs\reportv2\application\views\templates\task_sidebar.php 29
+DEBUG - 2015-03-17 19:08:35 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 19:08:35 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 19:08:35 --> File loaded: application/views/widget/db_picker.php
+DEBUG - 2015-03-17 19:08:35 --> File loaded: application/views/graph/init_target.php
+DEBUG - 2015-03-17 19:08:35 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 19:08:35 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 19:08:35 --> File loaded: application/views/graph/footer_add_init_target.php
+DEBUG - 2015-03-17 19:08:35 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 19:08:35 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 19:08:35 --> Final output sent to browser
+DEBUG - 2015-03-17 19:08:35 --> Total execution time: 0.1087
+DEBUG - 2015-03-17 19:08:35 --> Config Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:08:35 --> URI Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Router Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Output Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Security Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Config Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Input Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:08:35 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:08:35 --> Language Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> URI Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Router Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Output Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:08:35 --> Session Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:08:35 --> Session routines successfully run
+DEBUG - 2015-03-17 19:08:35 --> Security Class Initialized
+DEBUG - 2015-03-17 19:08:35 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Input Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Model Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:08:36 --> Model Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Language Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:08:36 --> Session Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:08:36 --> Session routines successfully run
+DEBUG - 2015-03-17 19:08:36 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Model Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Model Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:08:36 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:08:36 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:08:36 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:08:36 --> Config Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:08:36 --> URI Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Router Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Output Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Security Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Input Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:08:36 --> Language Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:08:36 --> Session Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:08:36 --> Session routines successfully run
+DEBUG - 2015-03-17 19:08:36 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Model Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Model Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Config Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:08:36 --> URI Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Router Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Output Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Security Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Input Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:08:36 --> Language Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:08:36 --> Session Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:08:36 --> Session routines successfully run
+DEBUG - 2015-03-17 19:08:36 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Model Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Model Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:08:36 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:08:36 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:08:36 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:08:36 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:08:39 --> Model Class Initialized
+DEBUG - 2015-03-17 19:08:39 --> Final output sent to browser
+DEBUG - 2015-03-17 19:08:39 --> Total execution time: 2.7865
+DEBUG - 2015-03-17 19:08:39 --> Model Class Initialized
+DEBUG - 2015-03-17 19:08:39 --> Final output sent to browser
+DEBUG - 2015-03-17 19:08:39 --> Total execution time: 3.9379
+DEBUG - 2015-03-17 19:08:39 --> Model Class Initialized
+DEBUG - 2015-03-17 19:08:39 --> Final output sent to browser
+DEBUG - 2015-03-17 19:08:39 --> Total execution time: 3.6064
+DEBUG - 2015-03-17 19:08:41 --> Model Class Initialized
+DEBUG - 2015-03-17 19:08:41 --> Final output sent to browser
+DEBUG - 2015-03-17 19:08:41 --> Total execution time: 5.3606
+DEBUG - 2015-03-17 19:08:52 --> Config Class Initialized
+DEBUG - 2015-03-17 19:08:52 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:08:52 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:08:52 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:08:52 --> URI Class Initialized
+DEBUG - 2015-03-17 19:08:52 --> Router Class Initialized
+DEBUG - 2015-03-17 19:08:52 --> Output Class Initialized
+DEBUG - 2015-03-17 19:08:52 --> Security Class Initialized
+DEBUG - 2015-03-17 19:08:52 --> Input Class Initialized
+DEBUG - 2015-03-17 19:08:52 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:08:52 --> Language Class Initialized
+DEBUG - 2015-03-17 19:08:52 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:08:52 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:08:52 --> Session Class Initialized
+DEBUG - 2015-03-17 19:08:52 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:08:52 --> Session routines successfully run
+DEBUG - 2015-03-17 19:08:52 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:08:52 --> Model Class Initialized
+DEBUG - 2015-03-17 19:08:52 --> Model Class Initialized
+DEBUG - 2015-03-17 19:08:52 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:08:52 --> File loaded: application/views/templates/task_header.php
+ERROR - 2015-03-17 19:08:52 --> Severity: Notice  --> Undefined variable: email E:\Apache2.2\htdocs\reportv2\application\views\templates\task_sidebar.php 29
+DEBUG - 2015-03-17 19:08:52 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 19:08:52 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 19:08:52 --> File loaded: application/views/widget/db_picker.php
+DEBUG - 2015-03-17 19:08:52 --> File loaded: application/views/graph/init_target.php
+DEBUG - 2015-03-17 19:08:52 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 19:08:52 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 19:08:52 --> File loaded: application/views/graph/footer_add_init_target.php
+DEBUG - 2015-03-17 19:08:52 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 19:08:52 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 19:08:52 --> Final output sent to browser
+DEBUG - 2015-03-17 19:08:52 --> Total execution time: 0.1278
+DEBUG - 2015-03-17 19:08:53 --> Config Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:08:53 --> URI Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Router Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Output Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Security Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Config Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Input Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:08:53 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Language Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:08:53 --> URI Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Router Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Output Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:08:53 --> Security Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Session Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Input Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:08:53 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:08:53 --> Session routines successfully run
+DEBUG - 2015-03-17 19:08:53 --> Language Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Model Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Model Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Config Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:08:53 --> Config Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Session Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:08:53 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:08:53 --> URI Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Session routines successfully run
+DEBUG - 2015-03-17 19:08:53 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Router Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:08:53 --> Output Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> URI Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Model Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Security Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Router Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Model Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Input Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:08:53 --> Output Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Language Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Security Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Input Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:08:53 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Language Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:08:53 --> Session Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:08:53 --> Session routines successfully run
+DEBUG - 2015-03-17 19:08:53 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:08:53 --> Model Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Session Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:08:53 --> Session routines successfully run
+DEBUG - 2015-03-17 19:08:53 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Model Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Model Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Model Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:08:53 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:08:53 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:08:53 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:08:53 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:08:53 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:08:53 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:08:53 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:08:53 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:08:55 --> Model Class Initialized
+DEBUG - 2015-03-17 19:08:55 --> Final output sent to browser
+DEBUG - 2015-03-17 19:08:55 --> Total execution time: 1.8012
+DEBUG - 2015-03-17 19:08:56 --> Model Class Initialized
+DEBUG - 2015-03-17 19:08:56 --> Final output sent to browser
+DEBUG - 2015-03-17 19:08:56 --> Total execution time: 3.2258
+DEBUG - 2015-03-17 19:08:58 --> Model Class Initialized
+DEBUG - 2015-03-17 19:08:58 --> Final output sent to browser
+DEBUG - 2015-03-17 19:08:58 --> Total execution time: 5.0979
+DEBUG - 2015-03-17 19:08:58 --> Model Class Initialized
+DEBUG - 2015-03-17 19:08:58 --> Final output sent to browser
+DEBUG - 2015-03-17 19:08:58 --> Total execution time: 5.4916
+DEBUG - 2015-03-17 19:09:59 --> Config Class Initialized
+DEBUG - 2015-03-17 19:09:59 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:09:59 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:09:59 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:09:59 --> URI Class Initialized
+DEBUG - 2015-03-17 19:09:59 --> Router Class Initialized
+DEBUG - 2015-03-17 19:09:59 --> Output Class Initialized
+DEBUG - 2015-03-17 19:09:59 --> Security Class Initialized
+DEBUG - 2015-03-17 19:09:59 --> Input Class Initialized
+DEBUG - 2015-03-17 19:09:59 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:09:59 --> Language Class Initialized
+DEBUG - 2015-03-17 19:09:59 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:09:59 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:09:59 --> Session Class Initialized
+DEBUG - 2015-03-17 19:09:59 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:09:59 --> Session routines successfully run
+DEBUG - 2015-03-17 19:09:59 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:09:59 --> Model Class Initialized
+DEBUG - 2015-03-17 19:09:59 --> Model Class Initialized
+DEBUG - 2015-03-17 19:09:59 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> File loaded: application/views/templates/task_header.php
+ERROR - 2015-03-17 19:10:00 --> Severity: Notice  --> Undefined variable: email E:\Apache2.2\htdocs\reportv2\application\views\templates\task_sidebar.php 29
+DEBUG - 2015-03-17 19:10:00 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 19:10:00 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 19:10:00 --> File loaded: application/views/widget/db_picker.php
+DEBUG - 2015-03-17 19:10:00 --> File loaded: application/views/graph/init_target.php
+DEBUG - 2015-03-17 19:10:00 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 19:10:00 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 19:10:00 --> File loaded: application/views/graph/footer_add_init_target.php
+DEBUG - 2015-03-17 19:10:00 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 19:10:00 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 19:10:00 --> Final output sent to browser
+DEBUG - 2015-03-17 19:10:00 --> Total execution time: 0.0895
+DEBUG - 2015-03-17 19:10:00 --> Config Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:10:00 --> URI Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Router Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Output Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Security Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Input Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:10:00 --> Config Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Language Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:10:00 --> URI Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Router Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:10:00 --> Output Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Session Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Security Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:10:00 --> Session routines successfully run
+DEBUG - 2015-03-17 19:10:00 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Input Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Model Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:10:00 --> Language Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Model Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Config Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:10:00 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:10:00 --> URI Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Session Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Router Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:10:00 --> Session routines successfully run
+DEBUG - 2015-03-17 19:10:00 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Output Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Model Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Security Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Input Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:10:00 --> Model Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Language Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:10:00 --> Session Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:10:00 --> Session routines successfully run
+DEBUG - 2015-03-17 19:10:00 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Model Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Model Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Config Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:10:00 --> URI Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Router Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Output Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Security Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Input Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:10:00 --> Language Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:10:00 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:10:00 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:10:00 --> Session Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:10:00 --> Session routines successfully run
+DEBUG - 2015-03-17 19:10:00 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Model Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Model Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:10:00 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:10:00 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:10:00 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:10:00 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:10:00 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:10:00 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:10:03 --> Model Class Initialized
+DEBUG - 2015-03-17 19:10:03 --> Final output sent to browser
+DEBUG - 2015-03-17 19:10:03 --> Total execution time: 2.8825
+DEBUG - 2015-03-17 19:10:03 --> Model Class Initialized
+DEBUG - 2015-03-17 19:10:03 --> Final output sent to browser
+DEBUG - 2015-03-17 19:10:03 --> Total execution time: 3.0039
+DEBUG - 2015-03-17 19:10:05 --> Model Class Initialized
+DEBUG - 2015-03-17 19:10:05 --> Final output sent to browser
+DEBUG - 2015-03-17 19:10:05 --> Total execution time: 5.2978
+DEBUG - 2015-03-17 19:10:05 --> Model Class Initialized
+DEBUG - 2015-03-17 19:10:05 --> Final output sent to browser
+DEBUG - 2015-03-17 19:10:05 --> Total execution time: 5.3360
+DEBUG - 2015-03-17 19:11:27 --> Config Class Initialized
+DEBUG - 2015-03-17 19:11:27 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:11:27 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:11:27 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:11:27 --> URI Class Initialized
+DEBUG - 2015-03-17 19:11:27 --> Router Class Initialized
+DEBUG - 2015-03-17 19:11:27 --> Output Class Initialized
+DEBUG - 2015-03-17 19:11:27 --> Security Class Initialized
+DEBUG - 2015-03-17 19:11:27 --> Input Class Initialized
+DEBUG - 2015-03-17 19:11:27 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:11:27 --> Language Class Initialized
+DEBUG - 2015-03-17 19:11:27 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:11:27 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:11:27 --> Session Class Initialized
+DEBUG - 2015-03-17 19:11:27 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:11:27 --> Session routines successfully run
+DEBUG - 2015-03-17 19:11:27 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:11:27 --> Model Class Initialized
+DEBUG - 2015-03-17 19:11:27 --> Model Class Initialized
+DEBUG - 2015-03-17 19:11:27 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:11:27 --> File loaded: application/views/templates/task_header.php
+ERROR - 2015-03-17 19:11:27 --> Severity: Notice  --> Undefined variable: email E:\Apache2.2\htdocs\reportv2\application\views\templates\task_sidebar.php 29
+DEBUG - 2015-03-17 19:11:27 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 19:11:27 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 19:11:27 --> File loaded: application/views/widget/db_picker.php
+DEBUG - 2015-03-17 19:11:27 --> File loaded: application/views/graph/init_target.php
+DEBUG - 2015-03-17 19:11:27 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 19:11:27 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 19:11:27 --> File loaded: application/views/graph/footer_add_init_target.php
+DEBUG - 2015-03-17 19:11:27 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 19:11:27 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 19:11:27 --> Final output sent to browser
+DEBUG - 2015-03-17 19:11:27 --> Total execution time: 0.1719
+DEBUG - 2015-03-17 19:11:28 --> Config Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:11:28 --> URI Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Router Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Output Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Security Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Input Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:11:28 --> Language Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Config Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:11:28 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:11:28 --> URI Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Session Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:11:28 --> Router Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Session routines successfully run
+DEBUG - 2015-03-17 19:11:28 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Output Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Model Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Security Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Model Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Input Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:11:28 --> Language Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:11:28 --> Session Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:11:28 --> Session routines successfully run
+DEBUG - 2015-03-17 19:11:28 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Model Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Model Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Config Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:11:28 --> URI Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Router Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Output Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Security Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Input Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:11:28 --> Language Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Config Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:11:28 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> URI Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:11:28 --> Router Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Session Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Output Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:11:28 --> Session routines successfully run
+DEBUG - 2015-03-17 19:11:28 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Security Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Model Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Input Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Model Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:11:28 --> Language Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:11:28 --> Session Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:11:28 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:11:28 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:11:28 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:11:28 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:11:28 --> Session routines successfully run
+DEBUG - 2015-03-17 19:11:28 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Model Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Model Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:11:28 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:11:28 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:11:30 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:11:30 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:11:32 --> Model Class Initialized
+DEBUG - 2015-03-17 19:11:32 --> Final output sent to browser
+DEBUG - 2015-03-17 19:11:32 --> Total execution time: 4.0955
+DEBUG - 2015-03-17 19:11:33 --> Model Class Initialized
+DEBUG - 2015-03-17 19:11:33 --> Final output sent to browser
+DEBUG - 2015-03-17 19:11:33 --> Total execution time: 4.8630
+DEBUG - 2015-03-17 19:11:34 --> Model Class Initialized
+DEBUG - 2015-03-17 19:11:34 --> Final output sent to browser
+DEBUG - 2015-03-17 19:11:34 --> Total execution time: 5.4940
+DEBUG - 2015-03-17 19:11:34 --> Model Class Initialized
+ERROR - 2015-03-17 19:11:34 --> Severity: Notice  --> Undefined offset: 0 E:\Apache2.2\htdocs\reportv2\application\models\mgraph.php 393
+ERROR - 2015-03-17 19:11:34 --> Severity: Notice  --> Undefined offset: -1 E:\Apache2.2\htdocs\reportv2\application\models\mgraph.php 394
+DEBUG - 2015-03-17 19:11:34 --> Final output sent to browser
+DEBUG - 2015-03-17 19:11:34 --> Total execution time: 6.2290
+DEBUG - 2015-03-17 19:12:02 --> Config Class Initialized
+DEBUG - 2015-03-17 19:12:02 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:12:02 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:12:02 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:12:02 --> URI Class Initialized
+DEBUG - 2015-03-17 19:12:02 --> Router Class Initialized
+DEBUG - 2015-03-17 19:12:02 --> Output Class Initialized
+DEBUG - 2015-03-17 19:12:02 --> Security Class Initialized
+DEBUG - 2015-03-17 19:12:02 --> Input Class Initialized
+DEBUG - 2015-03-17 19:12:02 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:12:02 --> Language Class Initialized
+DEBUG - 2015-03-17 19:12:02 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:12:02 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:12:02 --> Session Class Initialized
+DEBUG - 2015-03-17 19:12:02 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:12:02 --> Session routines successfully run
+DEBUG - 2015-03-17 19:12:02 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:12:02 --> Model Class Initialized
+DEBUG - 2015-03-17 19:12:02 --> Model Class Initialized
+DEBUG - 2015-03-17 19:12:02 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:12:02 --> File loaded: application/views/templates/task_header.php
+ERROR - 2015-03-17 19:12:02 --> Severity: Notice  --> Undefined variable: email E:\Apache2.2\htdocs\reportv2\application\views\templates\task_sidebar.php 29
+DEBUG - 2015-03-17 19:12:02 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 19:12:02 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 19:12:02 --> File loaded: application/views/widget/db_picker.php
+DEBUG - 2015-03-17 19:12:02 --> File loaded: application/views/graph/init_target.php
+DEBUG - 2015-03-17 19:12:02 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 19:12:02 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 19:12:02 --> File loaded: application/views/graph/footer_add_init_target.php
+DEBUG - 2015-03-17 19:12:02 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 19:12:02 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 19:12:02 --> Final output sent to browser
+DEBUG - 2015-03-17 19:12:02 --> Total execution time: 0.1587
+DEBUG - 2015-03-17 19:12:03 --> Config Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:12:03 --> URI Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> Router Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> Output Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> Config Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> Security Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:12:03 --> Input Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:12:03 --> URI Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> Language Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> Router Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> Output Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> Security Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> Input Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:12:03 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:12:03 --> Language Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> Session Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:12:03 --> Session routines successfully run
+DEBUG - 2015-03-17 19:12:03 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> Model Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:12:03 --> Model Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> Session Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:12:03 --> Session routines successfully run
+DEBUG - 2015-03-17 19:12:03 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> Model Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> Model Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:12:03 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:12:03 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:12:03 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:12:03 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:12:04 --> Config Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> Config Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:12:04 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:12:04 --> URI Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> URI Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> Router Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> Router Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> Output Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> Output Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> Security Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> Security Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> Input Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:12:04 --> Language Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> Input Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:12:04 --> Language Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:12:04 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:12:04 --> Session Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:12:04 --> Session Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> Session routines successfully run
+DEBUG - 2015-03-17 19:12:04 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:12:04 --> Session routines successfully run
+DEBUG - 2015-03-17 19:12:04 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> Model Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> Model Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> Model Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> Model Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:12:04 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:12:04 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:12:04 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:12:04 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:12:07 --> Model Class Initialized
+DEBUG - 2015-03-17 19:12:07 --> Final output sent to browser
+DEBUG - 2015-03-17 19:12:07 --> Total execution time: 3.3023
+DEBUG - 2015-03-17 19:12:08 --> Model Class Initialized
+DEBUG - 2015-03-17 19:12:08 --> Final output sent to browser
+DEBUG - 2015-03-17 19:12:08 --> Total execution time: 4.4401
+DEBUG - 2015-03-17 19:12:08 --> Model Class Initialized
+DEBUG - 2015-03-17 19:12:08 --> Final output sent to browser
+DEBUG - 2015-03-17 19:12:08 --> Total execution time: 4.8187
+DEBUG - 2015-03-17 19:12:08 --> Model Class Initialized
+DEBUG - 2015-03-17 19:12:08 --> Final output sent to browser
+DEBUG - 2015-03-17 19:12:08 --> Total execution time: 5.2442
+DEBUG - 2015-03-17 19:12:32 --> Config Class Initialized
+DEBUG - 2015-03-17 19:12:32 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:12:32 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:12:32 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:12:32 --> URI Class Initialized
+DEBUG - 2015-03-17 19:12:32 --> Router Class Initialized
+DEBUG - 2015-03-17 19:12:32 --> Output Class Initialized
+DEBUG - 2015-03-17 19:12:32 --> Security Class Initialized
+DEBUG - 2015-03-17 19:12:32 --> Input Class Initialized
+DEBUG - 2015-03-17 19:12:32 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:12:32 --> Language Class Initialized
+DEBUG - 2015-03-17 19:12:32 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:12:32 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:12:32 --> Session Class Initialized
+DEBUG - 2015-03-17 19:12:32 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:12:32 --> Session routines successfully run
+DEBUG - 2015-03-17 19:12:32 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:12:32 --> Model Class Initialized
+DEBUG - 2015-03-17 19:12:32 --> Model Class Initialized
+DEBUG - 2015-03-17 19:12:32 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:12:33 --> File loaded: application/views/templates/task_header.php
+ERROR - 2015-03-17 19:12:33 --> Severity: Notice  --> Undefined variable: email E:\Apache2.2\htdocs\reportv2\application\views\templates\task_sidebar.php 29
+DEBUG - 2015-03-17 19:12:33 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 19:12:33 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 19:12:33 --> File loaded: application/views/widget/db_picker.php
+DEBUG - 2015-03-17 19:12:33 --> File loaded: application/views/graph/init_target.php
+DEBUG - 2015-03-17 19:12:33 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 19:12:33 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 19:12:33 --> File loaded: application/views/graph/footer_add_init_target.php
+DEBUG - 2015-03-17 19:12:33 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 19:12:33 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 19:12:33 --> Final output sent to browser
+DEBUG - 2015-03-17 19:12:33 --> Total execution time: 1.1400
+DEBUG - 2015-03-17 19:12:34 --> Config Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:12:34 --> URI Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Router Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Output Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Security Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Input Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:12:34 --> Language Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Config Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:12:34 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:12:34 --> Session Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> URI Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:12:34 --> Session routines successfully run
+DEBUG - 2015-03-17 19:12:34 --> Router Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Model Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Output Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Model Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Security Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Input Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:12:34 --> Language Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:12:34 --> Session Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:12:34 --> Session routines successfully run
+DEBUG - 2015-03-17 19:12:34 --> Config Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:12:34 --> Model Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> URI Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Model Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Router Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Output Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Security Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Input Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:12:34 --> Language Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:12:34 --> Session Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:12:34 --> Session routines successfully run
+DEBUG - 2015-03-17 19:12:34 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Model Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Model Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Config Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:12:34 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:12:34 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:12:34 --> URI Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Router Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Output Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Security Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Input Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:12:34 --> Language Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:12:34 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:12:34 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:12:34 --> Session Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:12:34 --> Session routines successfully run
+DEBUG - 2015-03-17 19:12:34 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Model Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Model Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:12:34 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:12:34 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:12:38 --> Model Class Initialized
+ERROR - 2015-03-17 19:12:38 --> Severity: Notice  --> Undefined offset: 0 E:\Apache2.2\htdocs\reportv2\application\models\mgraph.php 393
+ERROR - 2015-03-17 19:12:38 --> Severity: Notice  --> Undefined offset: -1 E:\Apache2.2\htdocs\reportv2\application\models\mgraph.php 394
+DEBUG - 2015-03-17 19:12:38 --> Final output sent to browser
+DEBUG - 2015-03-17 19:12:38 --> Model Class Initialized
+DEBUG - 2015-03-17 19:12:38 --> Total execution time: 3.9130
+DEBUG - 2015-03-17 19:12:38 --> Final output sent to browser
+DEBUG - 2015-03-17 19:12:38 --> Total execution time: 3.8744
+DEBUG - 2015-03-17 19:12:38 --> Model Class Initialized
+DEBUG - 2015-03-17 19:12:38 --> Final output sent to browser
+DEBUG - 2015-03-17 19:12:38 --> Total execution time: 4.5425
+DEBUG - 2015-03-17 19:12:43 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:12:43 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:12:43 --> Model Class Initialized
+DEBUG - 2015-03-17 19:12:43 --> Final output sent to browser
+DEBUG - 2015-03-17 19:12:43 --> Total execution time: 9.4549
+DEBUG - 2015-03-17 19:13:28 --> Config Class Initialized
+DEBUG - 2015-03-17 19:13:28 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:13:28 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:13:28 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:13:28 --> URI Class Initialized
+DEBUG - 2015-03-17 19:13:28 --> Router Class Initialized
+DEBUG - 2015-03-17 19:13:28 --> Output Class Initialized
+DEBUG - 2015-03-17 19:13:28 --> Security Class Initialized
+DEBUG - 2015-03-17 19:13:28 --> Input Class Initialized
+DEBUG - 2015-03-17 19:13:28 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:13:28 --> Language Class Initialized
+DEBUG - 2015-03-17 19:13:28 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:13:28 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:13:28 --> Session Class Initialized
+DEBUG - 2015-03-17 19:13:28 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:13:28 --> Session routines successfully run
+DEBUG - 2015-03-17 19:13:28 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:13:28 --> Model Class Initialized
+DEBUG - 2015-03-17 19:13:28 --> Model Class Initialized
+DEBUG - 2015-03-17 19:13:28 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:13:28 --> File loaded: application/views/templates/task_header.php
+ERROR - 2015-03-17 19:13:28 --> Severity: Notice  --> Undefined variable: email E:\Apache2.2\htdocs\reportv2\application\views\templates\task_sidebar.php 29
+DEBUG - 2015-03-17 19:13:28 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 19:13:28 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 19:13:28 --> File loaded: application/views/widget/db_picker.php
+DEBUG - 2015-03-17 19:13:28 --> File loaded: application/views/graph/init_target.php
+DEBUG - 2015-03-17 19:13:28 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 19:13:28 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 19:13:28 --> File loaded: application/views/graph/footer_add_init_target.php
+DEBUG - 2015-03-17 19:13:28 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 19:13:28 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 19:13:28 --> Final output sent to browser
+DEBUG - 2015-03-17 19:13:28 --> Total execution time: 0.1586
+DEBUG - 2015-03-17 19:13:29 --> Config Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:13:29 --> URI Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Router Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Output Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Security Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Config Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Input Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:13:29 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:13:29 --> Language Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> URI Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Router Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Output Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Security Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Input Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:13:29 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:13:29 --> Language Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Session Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:13:29 --> Config Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Session routines successfully run
+DEBUG - 2015-03-17 19:13:29 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:13:29 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Model Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> URI Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:13:29 --> Model Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Router Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Session Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:13:29 --> Output Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Session routines successfully run
+DEBUG - 2015-03-17 19:13:29 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Security Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Model Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Input Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:13:29 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Model Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Language Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:13:29 --> Session Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:13:29 --> Session routines successfully run
+DEBUG - 2015-03-17 19:13:29 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Model Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Model Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Config Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:13:29 --> URI Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Router Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Output Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Security Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Input Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:13:29 --> Language Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:13:29 --> Session Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:13:29 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:13:29 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:13:29 --> Session routines successfully run
+DEBUG - 2015-03-17 19:13:29 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Model Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Model Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:13:29 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:13:29 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:13:29 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:13:29 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:13:29 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:13:29 --> XSS Filtering completed
+ERROR - 2015-03-17 19:13:31 --> Severity: Notice  --> Undefined property: stdClass::$data E:\Apache2.2\htdocs\reportv2\application\models\mgraph.php 540
+ERROR - 2015-03-17 19:13:31 --> Severity: Notice  --> Undefined property: stdClass::$name E:\Apache2.2\htdocs\reportv2\application\models\mgraph.php 552
+DEBUG - 2015-03-17 19:13:31 --> Model Class Initialized
+DEBUG - 2015-03-17 19:13:31 --> Final output sent to browser
+DEBUG - 2015-03-17 19:13:31 --> Total execution time: 1.9311
+ERROR - 2015-03-17 19:13:34 --> Severity: Notice  --> Undefined property: stdClass::$data E:\Apache2.2\htdocs\reportv2\application\models\mgraph.php 540
+ERROR - 2015-03-17 19:13:34 --> Severity: Notice  --> Undefined property: stdClass::$name E:\Apache2.2\htdocs\reportv2\application\models\mgraph.php 552
+DEBUG - 2015-03-17 19:13:34 --> Model Class Initialized
+DEBUG - 2015-03-17 19:13:34 --> Final output sent to browser
+DEBUG - 2015-03-17 19:13:34 --> Total execution time: 4.7909
+ERROR - 2015-03-17 19:13:34 --> Severity: Notice  --> Undefined property: stdClass::$data E:\Apache2.2\htdocs\reportv2\application\models\mgraph.php 540
+ERROR - 2015-03-17 19:13:34 --> Severity: Notice  --> Undefined property: stdClass::$name E:\Apache2.2\htdocs\reportv2\application\models\mgraph.php 552
+DEBUG - 2015-03-17 19:13:34 --> Model Class Initialized
+DEBUG - 2015-03-17 19:13:34 --> Final output sent to browser
+DEBUG - 2015-03-17 19:13:34 --> Total execution time: 4.8886
+ERROR - 2015-03-17 19:13:34 --> Severity: Notice  --> Undefined property: stdClass::$data E:\Apache2.2\htdocs\reportv2\application\models\mgraph.php 515
+ERROR - 2015-03-17 19:13:34 --> Severity: Notice  --> Undefined property: stdClass::$name E:\Apache2.2\htdocs\reportv2\application\models\mgraph.php 527
+DEBUG - 2015-03-17 19:13:34 --> Model Class Initialized
+ERROR - 2015-03-17 19:13:34 --> Severity: Notice  --> Undefined offset: 0 E:\Apache2.2\htdocs\reportv2\application\models\mgraph.php 393
+ERROR - 2015-03-17 19:13:34 --> Severity: Notice  --> Undefined offset: -1 E:\Apache2.2\htdocs\reportv2\application\models\mgraph.php 394
+DEBUG - 2015-03-17 19:13:34 --> Final output sent to browser
+DEBUG - 2015-03-17 19:13:34 --> Total execution time: 5.5068
+DEBUG - 2015-03-17 19:13:37 --> Config Class Initialized
+DEBUG - 2015-03-17 19:13:37 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:13:37 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:13:37 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:13:37 --> URI Class Initialized
+DEBUG - 2015-03-17 19:13:37 --> Router Class Initialized
+DEBUG - 2015-03-17 19:13:37 --> Output Class Initialized
+DEBUG - 2015-03-17 19:13:37 --> Security Class Initialized
+DEBUG - 2015-03-17 19:13:37 --> Input Class Initialized
+DEBUG - 2015-03-17 19:13:37 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:13:37 --> Language Class Initialized
+DEBUG - 2015-03-17 19:13:37 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:13:37 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:13:37 --> Session Class Initialized
+DEBUG - 2015-03-17 19:13:37 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:13:37 --> Session routines successfully run
+DEBUG - 2015-03-17 19:13:37 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:13:37 --> Model Class Initialized
+DEBUG - 2015-03-17 19:13:37 --> Model Class Initialized
+DEBUG - 2015-03-17 19:13:37 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:13:37 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:13:37 --> XSS Filtering completed
+ERROR - 2015-03-17 19:13:39 --> Severity: Notice  --> Undefined property: stdClass::$data E:\Apache2.2\htdocs\reportv2\application\models\mgraph.php 515
+ERROR - 2015-03-17 19:13:39 --> Severity: Notice  --> Undefined property: stdClass::$name E:\Apache2.2\htdocs\reportv2\application\models\mgraph.php 527
+DEBUG - 2015-03-17 19:13:39 --> Model Class Initialized
+ERROR - 2015-03-17 19:13:39 --> Severity: Notice  --> Undefined offset: 0 E:\Apache2.2\htdocs\reportv2\application\models\mgraph.php 393
+ERROR - 2015-03-17 19:13:39 --> Severity: Notice  --> Undefined offset: -1 E:\Apache2.2\htdocs\reportv2\application\models\mgraph.php 394
+DEBUG - 2015-03-17 19:13:39 --> Final output sent to browser
+DEBUG - 2015-03-17 19:13:39 --> Total execution time: 1.7937
+DEBUG - 2015-03-17 19:14:34 --> Config Class Initialized
+DEBUG - 2015-03-17 19:14:34 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:14:34 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:14:34 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:14:34 --> URI Class Initialized
+DEBUG - 2015-03-17 19:14:34 --> Router Class Initialized
+DEBUG - 2015-03-17 19:14:34 --> Output Class Initialized
+DEBUG - 2015-03-17 19:14:34 --> Security Class Initialized
+DEBUG - 2015-03-17 19:14:34 --> Input Class Initialized
+DEBUG - 2015-03-17 19:14:34 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:14:34 --> Language Class Initialized
+DEBUG - 2015-03-17 19:14:34 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:14:34 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:14:34 --> Session Class Initialized
+DEBUG - 2015-03-17 19:14:34 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:14:34 --> Session routines successfully run
+DEBUG - 2015-03-17 19:14:34 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:14:34 --> Model Class Initialized
+DEBUG - 2015-03-17 19:14:34 --> Model Class Initialized
+DEBUG - 2015-03-17 19:14:34 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:14:34 --> File loaded: application/views/templates/task_header.php
+ERROR - 2015-03-17 19:14:34 --> Severity: Notice  --> Undefined variable: email E:\Apache2.2\htdocs\reportv2\application\views\templates\task_sidebar.php 29
+DEBUG - 2015-03-17 19:14:34 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 19:14:34 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 19:14:34 --> File loaded: application/views/widget/db_picker.php
+DEBUG - 2015-03-17 19:14:34 --> File loaded: application/views/graph/init_target.php
+DEBUG - 2015-03-17 19:14:34 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 19:14:34 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 19:14:34 --> File loaded: application/views/graph/footer_add_init_target.php
+DEBUG - 2015-03-17 19:14:34 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 19:14:34 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 19:14:34 --> Final output sent to browser
+DEBUG - 2015-03-17 19:14:34 --> Total execution time: 0.0854
+DEBUG - 2015-03-17 19:14:35 --> Config Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:14:35 --> URI Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Router Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Output Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Security Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Config Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Input Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:14:35 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:14:35 --> Language Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> URI Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Router Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:14:35 --> Output Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Session Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Security Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Input Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:14:35 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:14:35 --> Session routines successfully run
+DEBUG - 2015-03-17 19:14:35 --> Language Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Model Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Model Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:14:35 --> Session Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:14:35 --> Session routines successfully run
+DEBUG - 2015-03-17 19:14:35 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Model Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Model Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Config Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:14:35 --> URI Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Router Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Output Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Security Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Input Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:14:35 --> Language Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:14:35 --> Session Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:14:35 --> Session routines successfully run
+DEBUG - 2015-03-17 19:14:35 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Model Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:14:35 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:14:35 --> Model Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:14:35 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:14:35 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:14:35 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:14:35 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:14:36 --> Config Class Initialized
+DEBUG - 2015-03-17 19:14:36 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:14:36 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:14:36 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:14:36 --> URI Class Initialized
+DEBUG - 2015-03-17 19:14:36 --> Router Class Initialized
+DEBUG - 2015-03-17 19:14:36 --> Output Class Initialized
+DEBUG - 2015-03-17 19:14:36 --> Security Class Initialized
+DEBUG - 2015-03-17 19:14:36 --> Input Class Initialized
+DEBUG - 2015-03-17 19:14:36 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:14:36 --> Language Class Initialized
+DEBUG - 2015-03-17 19:14:36 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:14:36 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:14:36 --> Session Class Initialized
+DEBUG - 2015-03-17 19:14:36 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:14:36 --> Session routines successfully run
+DEBUG - 2015-03-17 19:14:36 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:14:36 --> Model Class Initialized
+DEBUG - 2015-03-17 19:14:36 --> Model Class Initialized
+DEBUG - 2015-03-17 19:14:36 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:14:36 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:14:36 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:14:39 --> Model Class Initialized
+DEBUG - 2015-03-17 19:14:39 --> Final output sent to browser
+DEBUG - 2015-03-17 19:14:39 --> Total execution time: 3.9247
+DEBUG - 2015-03-17 19:14:40 --> Model Class Initialized
+DEBUG - 2015-03-17 19:14:40 --> Final output sent to browser
+DEBUG - 2015-03-17 19:14:40 --> Total execution time: 4.2286
+DEBUG - 2015-03-17 19:14:40 --> Model Class Initialized
+DEBUG - 2015-03-17 19:14:40 --> Final output sent to browser
+DEBUG - 2015-03-17 19:14:40 --> Total execution time: 4.6768
+DEBUG - 2015-03-17 19:14:41 --> Model Class Initialized
+ERROR - 2015-03-17 19:14:41 --> Severity: Notice  --> Undefined offset: 0 E:\Apache2.2\htdocs\reportv2\application\models\mgraph.php 393
+ERROR - 2015-03-17 19:14:41 --> Severity: Notice  --> Undefined offset: -1 E:\Apache2.2\htdocs\reportv2\application\models\mgraph.php 394
+DEBUG - 2015-03-17 19:14:41 --> Final output sent to browser
+DEBUG - 2015-03-17 19:14:41 --> Total execution time: 5.3244
+DEBUG - 2015-03-17 19:15:08 --> Config Class Initialized
+DEBUG - 2015-03-17 19:15:08 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:15:08 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:15:08 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:15:08 --> URI Class Initialized
+DEBUG - 2015-03-17 19:15:08 --> Router Class Initialized
+DEBUG - 2015-03-17 19:15:08 --> Output Class Initialized
+DEBUG - 2015-03-17 19:15:08 --> Security Class Initialized
+DEBUG - 2015-03-17 19:15:08 --> Input Class Initialized
+DEBUG - 2015-03-17 19:15:08 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:15:08 --> Language Class Initialized
+DEBUG - 2015-03-17 19:15:08 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:15:08 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:15:08 --> Session Class Initialized
+DEBUG - 2015-03-17 19:15:08 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:15:08 --> Session routines successfully run
+DEBUG - 2015-03-17 19:15:08 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:15:08 --> Model Class Initialized
+DEBUG - 2015-03-17 19:15:08 --> Model Class Initialized
+DEBUG - 2015-03-17 19:15:08 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:15:08 --> File loaded: application/views/templates/task_header.php
+ERROR - 2015-03-17 19:15:08 --> Severity: Notice  --> Undefined variable: email E:\Apache2.2\htdocs\reportv2\application\views\templates\task_sidebar.php 29
+DEBUG - 2015-03-17 19:15:08 --> File loaded: application/views/templates/task_sidebar.php
+DEBUG - 2015-03-17 19:15:08 --> File loaded: application/views/templates/task_banner.php
+DEBUG - 2015-03-17 19:15:08 --> File loaded: application/views/widget/db_picker.php
+DEBUG - 2015-03-17 19:15:08 --> File loaded: application/views/graph/init_target.php
+DEBUG - 2015-03-17 19:15:08 --> File loaded: application/views/templates/task_footer.php
+DEBUG - 2015-03-17 19:15:08 --> File loaded: application/views/templates/task_footer_script.php
+DEBUG - 2015-03-17 19:15:08 --> File loaded: application/views/graph/footer_add_init_target.php
+DEBUG - 2015-03-17 19:15:08 --> File loaded: application/views/templates/task_footer_function.php
+DEBUG - 2015-03-17 19:15:08 --> File loaded: application/views/templates/task_footer_final.php
+DEBUG - 2015-03-17 19:15:08 --> Final output sent to browser
+DEBUG - 2015-03-17 19:15:08 --> Total execution time: 0.1648
+DEBUG - 2015-03-17 19:15:08 --> Config Class Initialized
+DEBUG - 2015-03-17 19:15:08 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:15:08 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:15:08 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:15:08 --> URI Class Initialized
+DEBUG - 2015-03-17 19:15:08 --> Router Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Output Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Security Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Config Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Input Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:15:09 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:15:09 --> URI Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Language Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Router Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Output Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Security Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:15:09 --> Input Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:15:09 --> Session Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Language Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:15:09 --> Session routines successfully run
+DEBUG - 2015-03-17 19:15:09 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Config Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Model Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:15:09 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:15:09 --> Model Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> URI Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Session Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:15:09 --> Router Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Session routines successfully run
+DEBUG - 2015-03-17 19:15:09 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Output Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Model Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Security Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Model Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Input Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:15:09 --> Language Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:15:09 --> Session Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:15:09 --> Session routines successfully run
+DEBUG - 2015-03-17 19:15:09 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Model Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Model Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Config Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Hooks Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Utf8 Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> UTF-8 Support Enabled
+DEBUG - 2015-03-17 19:15:09 --> URI Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Router Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:15:09 --> Output Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:15:09 --> Security Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Input Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:15:09 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-03-17 19:15:09 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:15:09 --> Language Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Loader Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Helper loaded: url_helper
+DEBUG - 2015-03-17 19:15:09 --> Session Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Helper loaded: string_helper
+DEBUG - 2015-03-17 19:15:09 --> Session routines successfully run
+DEBUG - 2015-03-17 19:15:09 --> Controller Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Model Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:15:09 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:15:09 --> Model Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> Database Driver Class Initialized
+DEBUG - 2015-03-17 19:15:09 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:15:09 --> XSS Filtering completed
+DEBUG - 2015-03-17 19:15:12 --> Model Class Initialized
+DEBUG - 2015-03-17 19:15:12 --> Final output sent to browser
+DEBUG - 2015-03-17 19:15:12 --> Total execution time: 3.7669
+DEBUG - 2015-03-17 19:15:13 --> Model Class Initialized
+DEBUG - 2015-03-17 19:15:13 --> Final output sent to browser
+DEBUG - 2015-03-17 19:15:13 --> Total execution time: 4.1532
+DEBUG - 2015-03-17 19:15:14 --> Model Class Initialized
+DEBUG - 2015-03-17 19:15:14 --> Final output sent to browser
+DEBUG - 2015-03-17 19:15:14 --> Total execution time: 5.3177
+DEBUG - 2015-03-17 19:15:14 --> Model Class Initialized
+DEBUG - 2015-03-17 19:15:14 --> Final output sent to browser
+DEBUG - 2015-03-17 19:15:14 --> Total execution time: 5.5441
