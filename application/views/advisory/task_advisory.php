@@ -23,8 +23,8 @@
                             </div>
                             <div class="ibox-content">
                                 <form method="post" role="form" class="form-horizontal" action="advisory/adv_sucess">
-                                <div class="form_group">
-                                    <table width="930" height="708" border="1">
+                                <div class="form_groupma">
+                                    <table width="930" height="708" border="1" class="ma">
                                         <tr>
                                             <th width="238" scope="col">&nbsp;</th>
                                             <th width="141" scope="col"><div align="center">序号</div></th>
@@ -396,24 +396,26 @@
                                         </tr>
                                     </table>
                                     <br><br>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label">填表人信息</label>
-                                        <div class="col-sm-10">
+                                    <div class="form-group client-info">
+                                        <div class="col-sm-12 clearfix">
+                                            <label class="col-sm-2 control-label lh48"><h3>填表人信息</h3></label>
+                                        </div>
+                                        <div class="col-sm-12 tc">
                                             <div class="form-group">
                                                 <label class="col-sm-4 control-label">企业名称：</label>
-                                                <div class="col-sm-6"><input type="text" name="company" class="form-control" placeholder=""></div>
+                                                <div class="col-sm-8"><input type="text" name="company" class="form-control" placeholder=""></div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-sm-4 control-label">负责人（职位）：</label>
-                                                <div class="col-sm-6"><input type="text" name="applicant" class="form-control" placeholder=""></div>
+                                                <div class="col-sm-8"><input type="text" name="applicant" class="form-control" placeholder=""></div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-sm-4 control-label">邮箱地址：</label>
-                                                <div class="col-sm-6"><input type="email" name="email" class="form-control" placeholder=""></div>
+                                                <div class="col-sm-8"><input type="email" name="email" class="form-control" placeholder=""></div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-sm-4 control-label">联系电话：</label>
-                                                <div class="col-sm-6"><input type="text" name="phone" class="form-control" placeholder=""></div>
+                                                <div class="col-sm-8"><input type="text" name="phone" class="form-control" placeholder=""></div>
                                             </div>
                                         </div>
                                     </div>

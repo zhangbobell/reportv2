@@ -7,7 +7,7 @@
                 showMethod: 'slideDown',
                 timeOut: 4000
             };
-            toastr.success('admin@e-corp.cn', '欢迎来到追灿');
+            toastr.success('admin@e-corp.cn', '欢迎来到E-CORP企业智慧化平台');
 
         }, 1300);
 

@@ -64,7 +64,7 @@
 				<div class="carousel-caption">
 					<h1>一站式解决方案提供商<br/>
 						企业智慧化转型管理咨询及技术提供</h1>
-					<p>Lorem Ipsum is simply dummy text of the printing.</p>
+					<p>Integrated Intelligent Solution for business revolution.</p>
 					<p>
 						<a class="btn btn-lg btn-primary" href="login" role="button">查看更多</a>
 <!--						<a class="caption-link" href="#" role="button">Inspinia Theme</a>-->
@@ -81,8 +81,9 @@
 		<div class="item">
 			<div class="container">
 				<div class="carousel-caption blank">
-					<h1>We create meaningful <br/> interfaces that inspire.</h1>
-					<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+					<h1>E-CORP企业智慧化平台<br />
+						商业数据价值领域的探索者和开创者</h1>
+					<p>Bringing an intelligent future for business.</p>
 					<p><a class="btn btn-lg btn-primary" href="login" role="button">查看更多</a></p>
 				</div>
 			</div>
@@ -130,8 +131,8 @@
 	<div class="row">
 		<div class="col-lg-12 text-center">
 			<div class="navy-line"></div>
-			<h1>5 年实战<br/> <span class="navy"> 数据采集+挖掘+分析+解决方案+落地执全流程实战探索</span> </h1>
-			<p>解决企业最核心问题，推动企业智慧化升级转型</p>
+			<h1>5 年实战<br/> <span class="navy"> E-CORP智慧化平台四大产品</span> </h1>
+			<p>数据采集+挖掘+分析+解决方案+落地执全流程实战探索</p>
 		</div>
 	</div>
 	<div class="row">
@@ -199,7 +200,7 @@
 		</div>
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 text-center m-t-lg m-b-lg">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+<!--				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>-->
 			</div>
 		</div>
 	</div>
