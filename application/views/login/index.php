@@ -59,10 +59,10 @@
     <hr/>
     <div class="row">
         <div class="col-md-6">
-            Copyright e-corp
+            &copy; 2015&nbsp;&nbsp;杭州追灿科技有限公司
         </div>
         <div class="col-md-6 text-right">
-            <small>&copy; 2010-2015</small>
+            <small>e-corp.cn </small>
         </div>
     </div>
 </div>
