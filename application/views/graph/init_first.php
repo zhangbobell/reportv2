@@ -13,13 +13,13 @@
 <div class="col-lg-12">
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-sm-4">
-        <h2>任务列表</h2>
+        <h2>商业智能定制</h2>
         <ol class="breadcrumb">
             <li>
-                <a href="task/my_task">任务概要</a>
+                <a href="task/my_task">定制结果</a>
             </li>
             <li class="active">
-                <strong>任务列表</strong>
+                <strong>第一时间</strong>
             </li>
         </ol>
     </div>
@@ -50,7 +50,7 @@
 
             <label for="db-input" class="col-xs-2 col-md-1 control-label lh32">数据库：</label>
             <?php $this->load->view('widget/db_picker')?>
-            <div id="container1"></div>
+            <div id="container1" class="mt40"></div>
             <div id="container2"></div>
         </div>
     </div>

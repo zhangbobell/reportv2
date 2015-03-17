@@ -1,11 +1,6 @@
 $(function(){
 
-    $('label-db').xhr({
-        url: 'graph/sk_ymd',
-        saikufile: saikufile,
-        cb: function(d) {
-        }
-    });
+
 
 
     $('#container2-1').drawLineChart({
@@ -16,7 +11,8 @@ $(function(){
         columns: ['成交额'] // 系列的名称
     }, {
         url: 'graph/sk_ymd', // ajax 请求地址
-        saikufile: 'report_dayly_chengjiao_zc' // ajax 请求的 saiku 文件
+        saikufile: 'report_dayly_chengjiao_zc', // ajax 请求的 saiku 文件
+        db: $("#db").val()
     });
 
     $('#container2-2').drawLineChart_week({
@@ -27,7 +23,8 @@ $(function(){
         columns: ['无评级', '银卡', '金卡', '白金卡', '钻石卡', '金钻石卡']
     }, {
         url: 'graph/sk_yw', // ajax 请求地址
-        saikufile: 'report_weekly_level_new' // ajax 请求的 saiku 文件
+        saikufile: 'report_weekly_level_new', // ajax 请求的 saiku 文件
+        db: $("#db").val()
     });
 
     $('#container2-3').drawLineChart({
@@ -38,7 +35,8 @@ $(function(){
         columns: ['商家数量'] // 系列的名称
     }, {
         url: 'graph/sk_ymd', // ajax 请求地址
-        saikufile: 'report_dayly_all_num' // ajax 请求的 saiku 文件
+        saikufile: 'report_dayly_all_num', // ajax 请求的 saiku 文件
+        db: $("#db").val()
     });
 
     $('#container2-4').drawLineChart_week({
@@ -49,7 +47,8 @@ $(function(){
         columns: ['无评级', '银卡', '金卡', '白金卡', '钻石卡', '金钻石卡']
     }, {
         url: 'graph/sk_yw', // ajax 请求地址
-        saikufile: 'report_weekly_level_num' // ajax 请求的 saiku 文件
+        saikufile: 'report_weekly_level_num', // ajax 请求的 saiku 文件
+        db: $("#db").val()
     });
 
     $('#container2-5').drawLineChart({
@@ -60,7 +59,8 @@ $(function(){
         columns: ['上架商品数'] // 系列的名称
     }, {
         url: 'graph/sk_ymd', // ajax 请求地址
-        saikufile: 'report_up_item' // ajax 请求的 saiku 文件
+        saikufile: 'report_up_item', // ajax 请求的 saiku 文件
+        db: $("#db").val()
     });
 
     $('#container2-6').drawLineChart({
@@ -71,7 +71,8 @@ $(function(){
         columns: ['上架率'] // 系列的名称
     }, {
         url: 'graph/sk_ymd', // ajax 请求地址
-        saikufile: 'report_up_rate' // ajax 请求的 saiku 文件
+        saikufile: 'report_up_rate', // ajax 请求的 saiku 文件
+        db: $("#db").val()
     });
 
     $('#container2-7').drawLineChart({
@@ -82,7 +83,8 @@ $(function(){
         columns: ['动销率'] // 系列的名称
     }, {
         url: 'graph/sk_ymd', // saiku结构是ym，取最小颗粒
-        saikufile: 'report_monthly_dongxiao_rate_zc' // ajax 请求的 saiku 文件
+        saikufile: 'report_monthly_dongxiao_rate_zc', // ajax 请求的 saiku 文件
+        db: $("#db").val()
     });
 
     $('#container2-8').drawLineChart({
@@ -93,7 +95,8 @@ $(function(){
         columns: ['追灿招募', '非追灿招募'] // 系列的名称
     }, {
         url: 'graph/sk_ymd', // ajax 请求地址
-        saikufile: 'report_dayly_chengjiao' // ajax 请求的 saiku 文件
+        saikufile: 'report_dayly_chengjiao', // ajax 请求的 saiku 文件
+        db: $("#db").val()
     });
 
     $('#container2-9').drawLineChart({
@@ -104,7 +107,8 @@ $(function(){
         columns: ['追灿招募','非追灿招募'] // 系列的名称
     }, {
         url: 'graph/sk_ymd', // ajax 请求地址
-        saikufile: 'report_dayly_wrong_price_rate_zc' // ajax 请求的 saiku 文件
+        saikufile: 'report_dayly_wrong_price_rate_zc', // ajax 请求的 saiku 文件
+        db: $("#db").val()
     });
 
     $('#container2-10').drawLineChart({
@@ -115,7 +119,8 @@ $(function(){
         columns: ['追灿招募','非追灿招募'] // 系列的名称
     }, {
         url: 'graph/sk_ymd', // ajax 请求地址
-        saikufile: 'report_dayly_tuikuan_rate' // ajax 请求的 saiku 文件
+        saikufile: 'report_dayly_tuikuan_rate', // ajax 请求的 saiku 文件
+        db: $("#db").val()
     });
 
     $('#container2-11').drawLineChart({
@@ -126,7 +131,8 @@ $(function(){
         columns: ['追灿招募','非追灿招募'] // 系列的名称
     }, {
         url: 'graph/sk_ymd', // ajax 请求地址
-        saikufile: 'report_dayly_order_close_rate' // ajax 请求的 saiku 文件
+        saikufile: 'report_dayly_order_close_rate', // ajax 请求的 saiku 文件
+        db: $("#db").val()
     });
 
 

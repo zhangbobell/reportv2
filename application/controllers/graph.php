@@ -146,7 +146,8 @@ class Graph extends CI_Controller
     public function sk_ymd()
     {
         $saikufile = $this->input->post('saikufile');
-        $dbname = $this->input->post('dbname');
+        $dbname = $this->input->post('db');
+        $saikufile = $dbname.'_'.$saikufile;
         $saikufile = $this->sk_map[$saikufile];
 
         if(!$this->is_saiku_updated($saikufile))
@@ -154,17 +155,18 @@ class Graph extends CI_Controller
             $columns = $this->sk_fields[$saikufile];
             $ret = $this->_sk_ymd($saikufile, $columns);
 
-            $this->write_saiku_cache($dbname.'_'.$saikufile, json_encode($ret));
+            $this->write_saiku_cache($saikufile, json_encode($ret));
 
         }
-        echo $this->read_saiku_cache($dbname.'_'.$saikufile);
+        echo $this->read_saiku_cache($saikufile);
     }
 
     // x轴：年-月  series：saiku数据
     public function sk_ym()
     {
         $saikufile = $this->input->post('saikufile');
-        $dbname = $this->input->post('dbname');
+        $dbname = $this->input->post('db');
+        $saikufile = $dbname.'_'.$saikufile;
         $saikufile = $this->sk_map[$saikufile];
 
         if(true)//(!$this->is_saiku_updated($saikufile))
@@ -172,10 +174,10 @@ class Graph extends CI_Controller
             $columns = $this->sk_fields[$saikufile];
             $ret = $this->_sk_ym($saikufile, $columns);
 
-            $this->write_saiku_cache($dbname.'_'.$saikufile, json_encode($ret));
+            $this->write_saiku_cache($saikufile, json_encode($ret));
 
         }
-        echo $this->read_saiku_cache($dbname.'_'.$saikufile);
+        echo $this->read_saiku_cache($saikufile);
 
 
     }
@@ -242,16 +244,17 @@ class Graph extends CI_Controller
     public function sk_yw()
     {
         $saikufile = $this->input->post('saikufile');
-        $dbname = $this->input->post('dbname');
+        $dbname = $this->input->post('db');
+        $saikufile = $dbname.'_'.$saikufile;
         $saikufile = $this->sk_map[$saikufile];
 
         if(!$this->is_saiku_updated($saikufile))
         {
             $columns = $this->sk_fields[$saikufile];
             $ret = $this->_sk_yw($saikufile, $columns);
-            $this->write_saiku_cache($dbname.'_'.$saikufile, json_encode($ret));
+            $this->write_saiku_cache($saikufile, json_encode($ret));
         }
-        echo $this->read_saiku_cache($dbname.'_'.$saikufile);
+        echo $this->read_saiku_cache($saikufile);
 
     }
 
@@ -312,9 +315,11 @@ class Graph extends CI_Controller
     public function sk_ymd_t()
     {
         $saikufile = $this->input->post('saikufile');
+        $dbname = $this->input->post('db');
+        $saikufile = $dbname.'_'.$saikufile;
         $saikufile = $this->sk_map[$saikufile];
         $columns = $this->sk_fields[$saikufile];
-        $tmp = $this->input->post('attach'); // 传递period和t_type
+        $tmp = $this->input->post('attach', true); // 传递period和t_type
 
         $res = $this->saiku->get_json_data($saikufile);
         if($res['flag'] == 0)
@@ -380,7 +385,10 @@ class Graph extends CI_Controller
     // x轴：年-月     series：saiku数据月平均 & 年目标
     public function sk_ym_avg_t() {
         $saikufile = $this->input->post('saikufile', true);
+        $dbname = $this->input->post('db');
+        $saikufile = $dbname.'_'.$saikufile;
         $saikufile = $this->sk_map[$saikufile];
+
         $columns = $this->sk_fields[$saikufile];
         $tmp = $this->input->post('attach', true); // 传递period和t_type
 
@@ -391,6 +399,7 @@ class Graph extends CI_Controller
             return;
         }
 
+
         $r = $this->mgraph->convert_data($res['res'], $columns);
 
         $nanoIdx = count($r) - 1;
@@ -400,7 +409,11 @@ class Graph extends CI_Controller
         foreach($columns as $k => $v) {
             $ret[$k]->data = $this->mgraph->sort_data($ret[$k]->data);
         }
+
+
         $ret = $this->mgraph->chose_month_data($ret);
+
+        var_dump($ret);
 
 
         $target = $this->get_target($tmp[0], $tmp[1]);
@@ -414,9 +427,11 @@ class Graph extends CI_Controller
     // x轴：月-日     series：saiku当月数据 & 月目标 & 时时日目标
     public function sk_md_t() {
         $saikufile = $this->input->post('saikufile');
+        $dbname = $this->input->post('db');
+        $saikufile = $dbname.'_'.$saikufile;
         $saikufile = $this->sk_map[$saikufile];
         $columns = $this->sk_fields[$saikufile];
-        $tmp = $this->input->post('attach');
+        $tmp = $this->input->post('attach', true);
 
         $res = $this->saiku->get_json_data($saikufile);
 
@@ -472,7 +487,8 @@ class Graph extends CI_Controller
     public function sk_stream_leaf()
     {
         $saikufile = $this->input->post('saikufile');
-        $dbname = $this->input->post('dbname');
+        $dbname = $this->input->post('db');
+        $saikufile = $dbname.'_'.$saikufile;
         $saikufile = $this->sk_map[$saikufile];
 //        $saikufile = 'report_month_order_category_num';
         if(!$this->is_saiku_updated($saikufile))
@@ -487,7 +503,7 @@ class Graph extends CI_Controller
             $res = $this->saiku->get_json_data($saikufile);
             if($res['flag'] == 0)
             {
-                $this->write_saiku_cache($dbname.'_'.$saikufile, json_encode($res));
+                $this->write_saiku_cache($saikufile, json_encode($res));
 
                 echo json_encode($res);
                 return;
@@ -501,9 +517,9 @@ class Graph extends CI_Controller
 
             $res['ticks'] = $this->mgraph->getStreamXticks($r);
             $res['res'] = $this->mgraph->linear2stream($r);
-            $this->write_saiku_cache($dbname.'_'.$saikufile, json_encode($res));
+            $this->write_saiku_cache($saikufile, json_encode($res));
         }
-        echo $this->read_saiku_cache($dbname.'_'.$saikufile);
+        echo $this->read_saiku_cache($saikufile);
     }
 
     public function object_to_array($obj){
@@ -560,6 +576,7 @@ class Graph extends CI_Controller
         $username = $this->session->userdata('username');
         $this->load->model('targetprocess');
         $target = $this->targetprocess->get_target($username, $period, $t_type);
+
         $tar = $target[0]['target'];
 //        var_dump($target);
         return $tar;
