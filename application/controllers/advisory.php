@@ -45,8 +45,6 @@ class Advisory extends CI_Controller {
             'email' => $email
         );
 
-//        $business_type = $this->input->post('business_type', true);   // radio
-
         $sales_ac_1 = $this->input->post('sales_ac_1', true);
         $sales_ac_2 = $this->input->post('sales_ac_2', true);
         $sales_ac_3 = $this->input->post('sales_ac_3', true);
@@ -85,9 +83,6 @@ class Advisory extends CI_Controller {
         $competitors_1 = $this->input->post('competitors_1', true);
         $competitors_2 = $this->input->post('competitors_2', true);
         $competitors_3 = $this->input->post('competitors_3', true);
-
-//        $suggestion = $this->input->post('suggestion', true);    //
-
 
         $aDoor = $_POST['formDoor'];
         if(empty($aDoor))
@@ -171,6 +166,5 @@ class Advisory extends CI_Controller {
         $this->load->view('templates/task_footer_script');
         $this->load->view('templates/task_footer_function');
         $this->load->view('templates/task_footer_final');
-
     }
 }

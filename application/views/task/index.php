@@ -4,24 +4,24 @@
             <div class="ibox float-e-margins">
                 <div class="ibox float-e-margins animated fadeInRight">
                     <div class="ibox-content">
-                        <h3><strong>商业智能定制是什么？</strong></h3>
-                        <p>追灿商业智能定制是对企业信息的搜集、管理和分析过程，目的是使企业的各级决策者获得知识或洞察力，促使他们做出对企业更有利的决策。</p>
+                        <h3><strong>专家系统集成</strong></h3>
+                        <p>追灿专家系统集成是一个智能计算机程序系统，其内部含有大量专家团队的知识与经验，能够利用专家的知识和解决问题<br>
+                            的方法来处理对应问题。也就是说，它能应用人工智能技术和计算机技术，根据一个或多个专家提供的知识和经验，进行<br>
+                            推理和判断，模拟人类专家的决策过程，以便解决那些需要高端人才处理的复杂问题。</p>
 
-                        <h3><strong>功能技术：</strong></h3>
+                        <h3><strong>核心技术：</strong></h3>
                         <ul>
-                            <li>Saiku/OLAP/ETL/可视分析+模型</li>
-                            <li>软件、硬件、咨询服务及应用的完美融合</li>
-                            <li>数据仓库、OLAP和数据挖掘等技术的综合运用</li>
-                            <li>内置TOP10 行业数据挖掘分析方法，100多种分析模型</li>
-                            <li>决策树, 神经网络,朴素贝叶斯等行业领先的数据分析法 </li>
+                            <li>强大的Expert Engine规则引擎，集成覆盖企业70%决策场景的决策模型及专家知识；</li>
+                            <li>基于深度学习deep-learning 算法 </li>
                         </ul>
-                        
+
                         <h3><strong>您能得到什么? </strong></h3>
                         <ul>
-                            <li>通过量身定制的商业智能报表，深度匹配企业业务问题</li>
-                            <li>解决技术人员不懂业务而导致的商业智能低效或无效问题</li>
-                            <li>灵活的自助分析界面，企业可以轻松调整设置和修改报表</li>
-                            <li>强大的可视化分析能力，让您洞察全局</li>
+                            <li>获得构建基于市场数据的，持续优化的企业决策支持平台</li>
+                            <li>轻松将人工决策过程转化为自动化，轻松设置监控，智能纠错</li>
+                            <li>高效解决复杂问题，是企业决策者的最佳助理，避免决策失误</li>
+                            <li>辅助企业发现决策盲点，避免资源浪费，及时发现企业问题</li>
+                            <li>完成决策和知识积累， 避免人才缺乏或流失导致的决策风险</li>
                         </ul>
 
                         <h3><strong>为什么选择我们？</strong></h3>
@@ -37,7 +37,7 @@
                     <div class="ibox-content">
                         <h3>申请试用：</h3>
                         <p>您可以在下框中输入您的试用需求， 也可以致电0571-8578-4363，或将申请邮件发送至E-mail：mhx@e-corp.cn。</p>
-                        <form method="post" name="inputform1" id="inputform1" role="form" class="form-horizontal" action="graph/sup_sucess">
+                        <form method="post" name="inputform" id="inputform" role="form" class="form-horizontal" action="task/sup_sucess">
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">请填写申请信息</label>
                                 <div class="col-sm-10">
@@ -58,13 +58,14 @@
                                         <div class="col-sm-6"><input type="text" name="phone" class="form-control" placeholder=""></div>
                                     </div>
                                     <div class="form-group">
-                                        <div class="col-sm-10"><textarea class="form-control" placeholder="申请理由"></textarea></div>
+                                        <div class="col-sm-10"><textarea class="form-control" name="reason" placeholder="申请理由"></textarea></div>
                                     </div>
                                 </div>
                             </div>
                         </form>
+                        <br><br>
                         <div class="text-center">
-                            <button class="text-right btn btn-primary m-t-n-xs" type="submit" onclick="inputform1.submit();"><strong>提 交</strong></button>
+                            <button class="text-right btn btn-primary m-t-n-xs" type="submit" onclick="inputform.submit();"><strong>提 交</strong></button>
                             <p>联系我们开通该平台：admin@e-corp.cn</p>
                         </div>
                     </div>
