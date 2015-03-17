@@ -66,7 +66,7 @@
                         </form>
                         <div class="text-center">
                             <button class="text-right btn btn-primary m-t-n-xs" type="submit" onclick="inputform2.submit();"><strong>提 交</strong></button>
-                            <p>联系我们开通该平台：admin@e-corp.cn</p>
+<!--                            <p>联系我们开通该平台：admin@e-corp.cn</p>-->
                         </div>
                     </div>
                 </div>
