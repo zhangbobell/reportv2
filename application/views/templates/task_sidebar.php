@@ -44,8 +44,11 @@
                 <li>
                     <a href="advisory/index"><i class="fa fa-globe"></i>
                         <span class="nav-label">全案咨询</span>
-                        <span class="label label-warning pull-right"></span>
+                        <span class="fa arrow"></span>
                     </a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="advisory/index">简要介绍</a></li>
+                    </ul>
                 </li>
                 <li>
                     <a href="graph/index"><i class="fa fa-bar-chart-o"></i>
@@ -53,8 +56,12 @@
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
+                        <li><a href="graph/index">简要介绍</a></li>
+
+                        <?php if($this->session->userdata('groupID') > 0):?>
                         <li><a href="http://office.e-corp.cn:888/data/">定制平台</a></li>
                         <li><a href="graph/init_first">定制结果</a></li>
+                        <?php endif;?>
                         <!--                        <li ><a href="task/my_task">RAW</a></li>-->
                     </ul>
                 </li>
@@ -64,15 +71,23 @@
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
+                        <li><a href="task/index">简要介绍</a></li>
+
+                        <?php if($this->session->userdata('groupID') > 0):?>
                         <li ><a href="price/control">试用版</a></li>
                         <li ><a href="task/my_task">正式版</a></li>
+                        <?php endif;?>
+
                     </ul>
                 </li>
                 <li>
                     <a href="process/index"><i class="fa fa-edit"></i>
                         <span class="nav-label">业务流程管理 </span>
-                        <span class="label label-warning pull-right"></span>
+                        <span class="fa arrow"></span>
                     </a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="process/index">简要介绍</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>
