@@ -42,7 +42,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="task/advisory"><i class="fa fa-globe"></i>
+                    <a href="advisory/index"><i class="fa fa-globe"></i>
                         <span class="nav-label">全案咨询</span>
                         <span class="label label-warning pull-right"></span>
                     </a>
