@@ -90,12 +90,18 @@ class Mlogin extends MY_model
      * return : true/false -- 操作是否成功
      */
     function insert_user($username, $email, $password) {
-        $config = parent::select_DB("etc_privileges");
-        $this->load->database($config);
+        $insert_user = array(
+            'username' => $username,
+            'email' => $email,
+            'password' => $password,
+            'groupid' => -1,
+            'group' => '维权专员',
+            'is_valid' => '1'
+        );
 
-        $sql = "INSERT INTO `etc_user`(`username`,`email`, `password`, `groupid`,`group`,`is_valid`) VALUES('$username','$email','$password',1,'维权专员','1')";
+        $sql = "INSERT INTO `etc_user`(`username`,`email`, `password`, `groupid`,`group`,`is_valid`) VALUES(?,?,?,?,?,?)";
 
-        if(!($query = $this->db->query($sql)))
+        if(!($query =  $this->my_query('etc_privileges', $sql, $insert_user)))
         {
             $this->db->_error_message();
             return false;

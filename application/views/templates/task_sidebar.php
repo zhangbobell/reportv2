@@ -58,7 +58,7 @@
                     <ul class="nav nav-second-level">
                         <li><a href="graph/index">简要介绍</a></li>
 
-                        <?php if($this->session->userdata('groupID') > 0):?>
+                        <?php if($this->session->userdata('groupID') > -1):?>
                         <li><a href="http://office.e-corp.cn:888/data/">定制平台</a></li>
                         <li><a href="graph/init_first">定制结果</a></li>
                         <?php endif;?>
@@ -73,7 +73,7 @@
                     <ul class="nav nav-second-level">
                         <li><a href="task/index">简要介绍</a></li>
 
-                        <?php if($this->session->userdata('groupID') > 0):?>
+                        <?php if($this->session->userdata('groupID') > -1):?>
                         <li ><a href="price/control">试用版</a></li>
                         <li ><a href="task/my_task">正式版</a></li>
                         <?php endif;?>

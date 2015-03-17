@@ -26,14 +26,9 @@ class MAdvisory extends MY_Model {
         ."`superiority`,`competitors`,`shop`,`income`,`desired_cat`,`income_expect`,"
         ."`product_coincide`,`shop_independent`,`distributors`,`erp`,`suggestion`,"
         ."`applicant`,`company`,`email`,`phone`) VALUES('". date("Y-m-d H:i:s") ."',"
-        ."'$insert_val[sales]','$insert_val[business_type]','$insert_val[sales_ac]','$insert_val[main_cat]',"
-        ."'$insert_val[product_positioning]','$insert_val[competitiveness]','$insert_val[supply]','$insert_val[superiority]',"
-        ."'$insert_val[competitors]','$insert_val[shop]','$insert_val[income]','$insert_val[desired_cat]',"
-        ."'$insert_val[income_expect]','$insert_val[product_coincide]','$insert_val[shop_independent]','$insert_val[distributors]',"
-        ."'$insert_val[erp]','$insert_val[suggestion]','$insert_val[applicant]','$insert_val[company]',"
-        ."'$insert_val[email]','$insert_val[phone]')";
+        ."?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
-        if(!($query = $this->db->query($sql)))
+        if(!($query =  $this->my_query('etc_privileges', $sql, $insert_val)))
         {
             $this->db->_error_message();
             return false;

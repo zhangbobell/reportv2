@@ -63,7 +63,6 @@
                                 </div>
                             </div>
                         </form>
-                        <br><br>
                         <div class="text-center">
                             <button class="text-right btn btn-primary m-t-n-xs" type="submit" onclick="inputform.submit();"><strong>提 交</strong></button>
                             <p>联系我们开通该平台：admin@e-corp.cn</p>
