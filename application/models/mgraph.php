@@ -10,7 +10,6 @@ class MGraph extends MY_model {
 
     function __contruct() {
         parent::__construct();
-        ini_set('display_errors', 0);
     }
 
     /*
