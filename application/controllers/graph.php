@@ -30,6 +30,34 @@ class Graph extends CI_Controller
         }
     }
 
+    /*
+     *  index : 商业智能定制界面函数
+     *  @$page='index' : 默认调用视图页面
+     */
+    public function index($page = 'index')
+    {
+        if (!file_exists('application/views/process/' . $page . '.php')) {
+            show_404();
+        }
+
+        $username = $this->session->userdata('username');
+        $email = $this->session->userdata('email');
+        $data = array(
+            'title' => "商业智能定制",
+            'username' =>$username,
+            'email' => $email
+        );
+
+        $this->load->view('templates/task_header', $data);
+        $this->load->view('templates/task_sidebar');
+        $this->load->view('templates/task_banner');
+        $this->load->view('graph/'.$page);
+        $this->load->view('templates/task_footer');
+        $this->load->view('templates/task_footer_script');
+        $this->load->view('templates/task_footer_function');
+        $this->load->view('templates/task_footer_final');
+    }
+
     // 绘制页面
     public function init_first($page = "init_first")
     {

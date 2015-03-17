@@ -185,7 +185,7 @@ class Login extends CI_Controller
             //插入日志文件
             $this->mlogin->insert_log_message($username, "login", $this->input->ip_address());
 
-            redirect('task/my_task');
+            redirect('home/');
         }
     }
 }

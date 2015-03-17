@@ -36,19 +36,19 @@
                     </div>
                 </li>
                 <li>
-                    <a href="task/home"><i class="fa fa-th-large"></i>
+                    <a href="home/index"><i class="fa fa-th-large"></i>
                         <span class="nav-label">首页</span>
                         <span class="label label-warning pull-right"></span>
                     </a>
                 </li>
                 <li>
-                    <a href="task/advisory"><i class="fa fa-globe"></i>
+                    <a href="advisory/index"><i class="fa fa-globe"></i>
                         <span class="nav-label">全案咨询</span>
                         <span class="label label-warning pull-right"></span>
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;"><i class="fa fa-bar-chart-o"></i>
+                    <a href="graph/index"><i class="fa fa-bar-chart-o"></i>
                         <span class="nav-label">商业智能定制</span>
                         <span class="fa arrow"></span>
                     </a>
@@ -59,7 +59,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="javascript:;"><i class="fa fa-diamond"></i>
+                    <a href="task/index"><i class="fa fa-diamond"></i>
                         <span class="nav-label">专家系统集成</span>
                         <span class="fa arrow"></span>
                     </a>
@@ -69,7 +69,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="task/process"><i class="fa fa-edit"></i>
+                    <a href="process/index"><i class="fa fa-edit"></i>
                         <span class="nav-label">业务流程管理 </span>
                         <span class="label label-warning pull-right"></span>
                     </a>
