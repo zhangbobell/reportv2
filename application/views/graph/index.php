@@ -37,8 +37,35 @@
                     <div class="ibox-content">
                         <h3>申请试用：</h3>
                         <p>您可以在下框中输入您的试用需求， 也可以致电0571-8578-4363，或将申请邮件发送至E-mail：mhx@e-corp.cn。</p>
+                        <form method="post" name="inputform1" id="inputform1" role="form" class="form-horizontal" action="graph/sup_sucess">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">请填写申请信息</label>
+                                <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label">企业名称：</label>
+                                        <div class="col-sm-6"><input type="text" name="company" class="form-control" placeholder=""></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label">负责人（职位）：</label>
+                                        <div class="col-sm-6"><input type="text" name="applicant" class="form-control" placeholder=""></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label">邮箱地址：</label>
+                                        <div class="col-sm-6"><input type="email" name="email" class="form-control" placeholder=""></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label">联系电话：</label>
+                                        <div class="col-sm-6"><input type="text" name="phone" class="form-control" placeholder=""></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-10"><textarea class="form-control" placeholder="申请理由"></textarea></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                         <div class="text-center">
-                            <p>联系我们开通该平台：admin@e-corp.cn</p>
+                            <button class="text-right btn btn-primary m-t-n-xs" type="submit" onclick="inputform1.submit();"><strong>提 交</strong></button>
+<!--                            <p>联系我们开通该平台：admin@e-corp.cn</p>-->
                         </div>
                     </div>
                 </div>

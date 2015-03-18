@@ -56,7 +56,7 @@
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
-                        <?php if($this->session->userdata('groupID') > 0):?>
+                        <?php if($this->session->userdata('groupID') > -1):?>
                         <li><a href="http://office.e-corp.cn:888/data/">新建查询(预览)</a></li>
                         <li><a href="graph/init_first">报表管理(预览)</a></li>
                         <?php endif;?>
@@ -71,7 +71,7 @@
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
-                        <?php if($this->session->userdata('groupID') > 0):?>
+                        <?php if($this->session->userdata('groupID') > -1):?>
                         <li ><a href="javascript:;">知识管理(预览)</a></li>
                         <li ><a href="javascript:;">规则模块(预览)</a></li>
                         <?php endif;?>
@@ -85,7 +85,7 @@
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
-                        <?php if($this->session->userdata('groupID') > 0):?>
+                        <?php if($this->session->userdata('groupID') > -1):?>
                             <li ><a href="price/control">乱价系统(可用)</a></li>
                             <li ><a href="task/my_task">任务管理(预览)</a></li>
                         <?php endif;?>
