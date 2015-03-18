@@ -46,11 +46,17 @@ class Login extends CI_Controller
         $email = $this->input->post('email', true);
         $password = $this->input->post('password', true);
 
+        $company = $this->input->post('company', true);
+        $company_site = $this->input->post('company_site', true);
+        $position = $this->input->post('position', true);
+        $phone = $this->input->post('phone', true);
+
+
         $data['title'] = "注册成功";
         $data['username'] = $username;
 
         $this->load->model("mlogin");
-        $this->mlogin->insert_user($username,$email,md5($password));
+        $this->mlogin->insert_user($username,$email,md5($password),$company,$company_site,$position,$phone);
 
         $this->load->view('login/'.$page,$data);
     }
