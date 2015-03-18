@@ -121,10 +121,10 @@ class MPrice extends MY_model {
     }
 
     public function get_initial_screen_product_array($db, $updatetime, $startIndex, $pageSize, $orderBy, $isAsc) {
-        $sql = "SELECT `updatetime`, `sellernick`, `auction_id`, `itemnum`, `total_sold_quantity`, `price`, `price_wap`, `is_reviewed_item`
+        $sql = "SELECT `updatetime`, `sellernick`, `auction_id`, `itemnum`, `recent_sold_quantity`, `price`, `price_wap`, `is_reviewed_item`
                 FROM `dim_auction`
                 WHERE `updatetime` = ?
-                AND `total_sold_quantity` > '0'
+                AND `recent_sold_quantity` > '0'
                 AND `sellernick` IN (
                     SELECT `sellernick`
                     FROM `dim_seller_list`
@@ -179,7 +179,7 @@ class MPrice extends MY_model {
      * @return : null
      * */
     public function refresh_meta_item($db) {
-        $sql = "SELECT `updatetime`, `uid`, `sellernick`, `itemid`, `title`, `zk_final_price`, `zk_final_price_wap`, `total_sold_quantity`
+        $sql = "SELECT `updatetime`, `uid`, `sellernick`, `itemid`, `title`, `zk_final_price`, `zk_final_price_wap`, `total_sold_quantity`, `biz30day`
                 FROM `raw_crawl_shop_item`
                 WHERE `updatetime` = ?";
 
@@ -223,7 +223,7 @@ class MPrice extends MY_model {
      * return : boolean -- 执行的结果
      * */
     private function _insert_to_meta_item($db, $valArr, $n) {
-        $sql = "INSERT INTO `dim_auction` (`createtime`, `updatetime`, `seller_id`, `sellernick`, `auction_id`, `auction_title`, `price`, `price_wap`, `total_sold_quantity`)
+        $sql = "INSERT INTO `dim_auction` (`createtime`, `updatetime`, `seller_id`, `sellernick`, `auction_id`, `auction_title`, `price`, `price_wap`, `total_sold_quantity`, `recent_sold_quantity`)
                 VALUES ?
                 ON DUPLICATE KEY UPDATE
                 `updatetime` = VALUES(`updatetime`),
@@ -232,7 +232,8 @@ class MPrice extends MY_model {
                 `auction_title` = VALUES(`auction_title`),
                 `price` = VALUES(`price`),
                 `price_wap` = VALUES(`price_wap`),
-                `total_sold_quantity` = VALUES(`total_sold_quantity`)";
+                `total_sold_quantity` = VALUES(`total_sold_quantity`),
+                `recent_sold_quantity` = VALUES(`recent_sold_quantity`)";
 
         return $this->batch_insert($db, $sql, $valArr, $n);
     }
@@ -318,7 +319,7 @@ class MPrice extends MY_model {
         $sql = "SELECT COUNT(`auction_id`) AS `item_count`
                 FROM `dim_auction`
                 WHERE `updatetime` = ?
-                AND `total_sold_quantity` > '0'
+                AND `recent_sold_quantity` > '0'
                 AND `sellernick` IN (
                     SELECT `sellernick`
                     FROM `dim_seller_list`

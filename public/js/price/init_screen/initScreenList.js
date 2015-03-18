@@ -74,7 +74,7 @@ define('initScreenList', ['utils', 'mrjsontable.nosort', 'bootstrapGrowl'], func
                 },
                 {
                     heading: "30天销量",
-                    data: "sales",
+                    data: "recent_sold_quantity",
                     type: "int",
                     sortable: true,
                     dg_visible: false,
