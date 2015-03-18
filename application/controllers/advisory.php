@@ -36,6 +36,27 @@ class Advisory extends CI_Controller {
         $this->load->view('templates/task_footer_final');
     }
 
+    public function questionary($page = 'questionary') {
+        $username = $this->session->userdata('username');
+        $email = $this->session->userdata('email');
+        $data = array(
+            'title' => "调查问卷",
+            'username' =>$username,
+            'email' => $email
+        );
+        $this->load->view('templates/task_header', $data);
+        $this->load->view('advisory/task_header_add_advisory');
+        $this->load->view('templates/task_sidebar');
+        $this->load->view('templates/task_banner');
+        $this->load->view('advisory/'.$page);
+        $this->load->view('templates/task_footer');
+        $this->load->view('templates/task_footer_script');
+        $this->load->view('advisory/task_footer_script_add_advisory');
+        $this->load->view('templates/task_footer_function');
+        $this->load->view('advisory/task_footer_function_add_advisory');
+        $this->load->view('templates/task_footer_final');
+    }
+
     public function adv_sucess($page = 'adv_sucess') {
         $username = $this->session->userdata('username');
         $email = $this->session->userdata('email');
