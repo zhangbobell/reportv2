@@ -66,7 +66,7 @@
 						企业智慧化转型管理咨询及技术提供</h1>
 					<p>Integrated Intelligent Solution for business revolution.</p>
 					<p>
-						<a class="btn btn-lg btn-primary" href="login" role="button">查看更多</a>
+						<a class="btn btn-lg btn-primary" href="login" role="button">申请试用</a>
 <!--						<a class="caption-link" href="#" role="button">Inspinia Theme</a>-->
 					</p>
 				</div>
@@ -84,7 +84,7 @@
 					<h1>E-CORP企业智慧化平台<br />
 						商业数据价值领域的探索者和开创者</h1>
 					<p>Bringing an intelligent future for business.</p>
-					<p><a class="btn btn-lg btn-primary" href="login" role="button">查看更多</a></p>
+					<p><a class="btn btn-lg btn-primary" href="login" role="button">申请试用</a></p>
 				</div>
 			</div>
 			<!-- Set background for slide in css -->
@@ -140,12 +140,17 @@
 			<div>
 				<i class="fa fa-mobile features-icon"></i>
 				<h2>全案咨询</h2>
-				<p>一对一定制，海量数据挖掘分析，企业各项指标全面洞察，针对核心提供模块给出落地解决方案，执行效果数据直观反馈。</p>
+				<p>借助8年数据化咨询与技术整合能力，帮助打造企业智能决策能力、自动化流程管理体系、专家决策体系，智能纠错的生态系统。<br />
+					基于行业及企业信息，辅助企业完成市场营销战略定制，供应链协同，销售预测，精准营销及客户关系管理的方案制定及执行咨询。<br />
+					针对电子商务企业深度咨询，帮助企业产品和市场定位，整合营销，供应链管理，客户运营，跨界营销，渠道分销，品牌保护，落地解决企业销售及利润问题。</p>
 			</div>
 			<div class="m-t-lg">
 				<i class="fa fa-bar-chart features-icon"></i>
 				<h2>商业智能定制</h2>
-				<p>Saiku/OLAP/ETL/可视分析+模型， 拥有将数据转化为方法的能力。包含 TOP10 行业数据挖掘分析方法，100多种分析模型。</p>
+				<p>可定制化商业智能， 辅助自定义报表展现，100余种数据挖掘算法， 直观发现市场机会，发现业务问题<br />
+					通过量身定制的商业智能，深度匹配企业业务问题，解决技术人员不懂业务而导致的商业智能低效或无效问题 <br />
+					强大的可视化分析能力，灵活的自助分析界面，让企业具备全面洞察力 <br />
+					整合全行业、企业、竞争数据、全网数据、线上线下数据、企业内部数据，支持企业全行业探索</p>
 			</div>
 		</div>
 		<div class="col-md-6 text-center  wow zoomIn">
@@ -155,12 +160,16 @@
 			<div>
 				<i class="fa fa-envelope features-icon"></i>
 				<h2>专家系统集成</h2>
-				<p>Expert Engine+知识 ，将知识应用于信息，将信息转化为行动。 集成覆盖企业 70% 决策场景的决策模型及专家知识。</p>
+				<p>强大的规则引擎， 覆盖高达8年上万次决策规则及经验， 帮助企业获得精准决策能力<br />
+					支持企业将人工决策过程转化为自动化，轻松设置监控，智能纠错，智能决策，高效解决复杂问题，是企业决策者的最佳助理，避免决策失误 <br />
+					基于深度学习deep-learning 算法，帮助企业构建基于市场数据的，持续优化的企业决策支持平台。达到决策方法的传承和优化。</p>
 			</div>
 			<div class="m-t-lg">
 				<i class="fa fa-google features-icon"></i>
 				<h2>业务流程管理</h2>
-				<p>BPM + 流程，自动化任务管理能力，全网最智能的人机交互系统，团队销效率提升 30% 及以上。</p>
+				<p>强大的任务分配功能，解决企业决策不能落地执行的问题 <br />
+					灵活的自助任务分配界面，辅助管理者轻松分配团队任务 <br />
+					可定制的任务分派及工作流程，深度匹配企业业务问题，解决了各种流程工具因不匹配实际业务场景而导致的流程低效或无效问题</p>
 			</div>
 		</div>
 	</div>

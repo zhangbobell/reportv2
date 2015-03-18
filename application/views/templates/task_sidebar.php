@@ -47,7 +47,7 @@
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
-                        <li><a href="advisory/index">简要介绍</a></li>
+                        <li><a href="advisory/index">简介</a></li>
                     </ul>
                 </li>
                 <li>
@@ -56,13 +56,13 @@
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
-                        <li><a href="graph/index">简要介绍</a></li>
-
                         <?php if($this->session->userdata('groupID') > 0):?>
-                        <li><a href="http://office.e-corp.cn:888/data/">定制平台</a></li>
-                        <li><a href="graph/init_first">定制结果</a></li>
+                        <li><a href="http://office.e-corp.cn:888/data/">新建查询(预览)</a></li>
+                        <li><a href="graph/init_first">报表管理(预览)</a></li>
                         <?php endif;?>
                         <!--                        <li ><a href="task/my_task">RAW</a></li>-->
+
+                        <li><a href="graph/index">更多功能</a></li>
                     </ul>
                 </li>
                 <li>
@@ -71,13 +71,12 @@
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
-                        <li><a href="task/index">简要介绍</a></li>
-
                         <?php if($this->session->userdata('groupID') > 0):?>
-                        <li ><a href="price/control">试用版</a></li>
-                        <li ><a href="task/my_task">正式版</a></li>
+                        <li ><a href="javascript:;">知识管理(预览)</a></li>
+                        <li ><a href="javascript:;">规则模块(预览)</a></li>
                         <?php endif;?>
 
+                        <li><a href="task/index">更多功能</a></li>
                     </ul>
                 </li>
                 <li>
@@ -86,7 +85,11 @@
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
-                        <li><a href="process/index">简要介绍</a></li>
+                        <?php if($this->session->userdata('groupID') > 0):?>
+                            <li ><a href="price/control">乱价系统(可用)</a></li>
+                            <li ><a href="task/my_task">任务管理(预览)</a></li>
+                        <?php endif;?>
+                        <li><a href="process/index">更多功能</a></li>
                     </ul>
                 </li>
             </ul>
