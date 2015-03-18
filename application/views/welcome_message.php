@@ -136,17 +136,17 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-3 wow fadeInLeft">
+		<div class="col-md-3 text-center wow fadeInLeft">
 			<div>
 				<i class="fa fa-mobile features-icon"></i>
 				<h2>全案咨询</h2>
-				<p>E-CORP全案咨询（追灿咨询）拥有8年的数据化决策支持经验，全面辅助企业市场营销战略定制，供应链协同，销售预测，精准营销及客户关系管理的方案制定及执行<br />
+				<p class="text-left">E-CORP全案咨询（追灿咨询）拥有8年的数据化决策支持经验，全面辅助企业市场营销战略定制，供应链协同，销售预测，精准营销及客户关系管理的方案制定及执行<br />
 					追灿同时针对电子商务企业提供深度咨询，帮助企业完成产品和市场定位，整合营销，供应链管理，客户运营，精准营销，渠道运营，品牌保护，大幅提升企业销售业绩及利润。</p>
 			</div>
 			<div class="m-t-lg">
 				<i class="fa fa-bar-chart features-icon"></i>
 				<h2>商业智能定制</h2>
-				<p>辅助企业定制商业智能，深度匹配企业业务问题，避免因企业决策人员不足而导致的报表无效或低效问题。<br />
+				<p class="text-left">辅助企业定制商业智能，深度匹配企业业务问题，避免因企业决策人员不足而导致的报表无效或低效问题。<br />
 					100余种数据挖掘算法，强大的可视化分析能力，自定义报表设计功能，使企业的各级决策者获得知识或洞察力，促使企业做出对企业更有利的决策。<br />
 					整合全行业，企业，竞争数据，线上线下数据，企业内部数据，支持企业信息全面探索。</p>
 			</div>
@@ -154,18 +154,18 @@
 		<div class="col-md-6 text-center  wow zoomIn">
 			<img src="public/images/perspective.png" alt="dashboard" class="img-responsive">
 		</div>
-		<div class="col-md-3 wow fadeInRight">
+		<div class="col-md-3 text-center wow fadeInRight">
 			<div>
 				<i class="fa fa-envelope features-icon"></i>
 				<h2>专家系统集成</h2>
-				<p>强大的规则引擎， 熔铸8年上万次数据化决策规则及专家经验，是企业管理者极佳的决策助理。<br />
+				<p class="text-left">强大的规则引擎， 熔铸8年上万次数据化决策规则及专家经验，是企业管理者极佳的决策助理。<br />
 					支持企业各级管理者将复杂人工决策转化为自动化，轻松设置监控，智能纠错，智能决策等等，建立企业基于市场信息的快速精准决策能力。<br />
 					基于深度学习deep-learning 算法，帮助企业构建持续优化的企业决策支持平台。达到企业决策方法的传承和优化。</p>
 			</div>
 			<div class="m-t-lg">
 				<i class="fa fa-google features-icon"></i>
 				<h2>业务流程管理</h2>
-				<p>灵活的自助任务分配界面，支持用户自行定义所需要分配的任务和流程，辅助管理者轻松分配团队任务。<br />
+				<p class="text-left">灵活的自助任务分配界面，支持用户自行定义所需要分配的任务和流程，辅助管理者轻松分配团队任务。<br />
 					强大的人机交互功能，实现决策-执行-反馈-决策的任务闭环，大幅提升团队执行力，持续提高组织业务绩效。<br />
 					深度辅助企业定制过程，匹配企业业务问题，避免标准化流程工具因不匹配实际业务场景而导致的流程低效或无效问题。</p>
 			</div>
