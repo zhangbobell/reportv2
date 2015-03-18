@@ -67,13 +67,13 @@
                 </li>
                 <li>
                     <a href="task/index"><i class="fa fa-diamond"></i>
-                        <span class="nav-label">专家系统集成</span>
+                        <span class="nav-label">业务流程管理</span>
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
                         <?php if($this->session->userdata('groupID') > -1):?>
-                        <li ><a href="javascript:;">知识管理(预览)</a></li>
-                        <li ><a href="javascript:;">规则模块(预览)</a></li>
+                            <li ><a href="price/control">乱价系统(可用)</a></li>
+                            <li ><a href="task/my_task">任务管理(预览)</a></li>
                         <?php endif;?>
 
                         <li><a href="task/index">更多功能</a></li>
@@ -81,13 +81,13 @@
                 </li>
                 <li>
                     <a href="process/index"><i class="fa fa-edit"></i>
-                        <span class="nav-label">业务流程管理 </span>
+                        <span class="nav-label">专家系统集成</span>
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
                         <?php if($this->session->userdata('groupID') > -1):?>
-                            <li ><a href="price/control">乱价系统(可用)</a></li>
-                            <li ><a href="task/my_task">任务管理(预览)</a></li>
+                            <li ><a href="javascript:;">知识管理(预览)</a></li>
+                            <li ><a href="javascript:;">规则模块(预览)</a></li>
                         <?php endif;?>
                         <li><a href="process/index">更多功能</a></li>
                     </ul>
