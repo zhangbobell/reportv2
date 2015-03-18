@@ -23,7 +23,7 @@
         <div>
             <h1 class="logo-name">E+</h1>
         </div>
-        <h3>欢迎加入追灿咨询</h3>
+        <h3>欢迎加入E-CORP企业智慧化平台</h3>
         <form class="m-t" role="form" action="reg_success" method="post">
             <div class="form-group">
                 <input type="text" name = "username" class="form-control" placeholder="用户名" required="">
@@ -34,6 +34,19 @@
             <div class="form-group">
                 <input type="password" name="password" class="form-control" placeholder="密码" required="">
             </div>
+            <div class="form-group">
+                <input type="text" name = "company" class="form-control" placeholder="所在公司名称" required="">
+            </div>
+            <div class="form-group">
+                <input type="text" name = "company_site" class="form-control" placeholder="公司网站" required="">
+            </div>
+            <div class="form-group">
+                <input type="text" name = "position" class="form-control" placeholder="职位" required="">
+            </div>
+            <div class="form-group">
+                <input type="text" name = "phone" class="form-control" placeholder="联系电话" required="">
+            </div>
+
             <div class="form-group" >
                 <div class="checkbox i-checks"><label> <input name="checkbox" id="checkbox" type="checkbox"><i></i> 同意用户协议 </label></div>
             </div>

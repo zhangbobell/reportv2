@@ -89,17 +89,22 @@ class Mlogin extends MY_model
      * param : $username -- 用户名 $email -- 邮箱 $password -- 用户密码
      * return : true/false -- 操作是否成功
      */
-    function insert_user($username, $email, $password) {
+    function insert_user($username, $email, $password,$company,$company_site,$position,$phone) {
         $insert_user = array(
             'username' => $username,
             'email' => $email,
             'password' => $password,
             'groupid' => -1,
             'group' => '维权专员',
-            'is_valid' => '1'
+            'is_valid' => '1',
+            'company' => $company,
+            'company_site' => $company_site,
+            'position' => $position,
+            'phone' => $phone
         );
 
-        $sql = "INSERT INTO `etc_user`(`username`,`email`, `password`, `groupid`,`group`,`is_valid`) VALUES(?,?,?,?,?,?)";
+        $sql = "INSERT INTO `etc_user`(`username`,`email`, `password`, `groupid`,`group`,`is_valid`"
+        .",`company`,`company_site`,`position`,`phone`) VALUES(?,?,?,?,?,?,?,?,?,?)";
 
         if(!($query =  $this->my_query('etc_privileges', $sql, $insert_user)))
         {
