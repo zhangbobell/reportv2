@@ -20,7 +20,7 @@ class MY_Model extends CI_Model
 //        $db_config['username'] = 'kettle';
 //        $db_config['password'] = 'root';
 //        $db_config['port'] = 33060;
-        $db_config['hostname'] = 'www.e-corp.cn';
+        $db_config['hostname'] = 'tools.e-corp.cn';
         $db_config['username'] = 'zczx_data';
         $db_config['password'] = 'cos2x=2Sinxcosx';
 //        $db_config['hostname'] = '127.0.0.1';

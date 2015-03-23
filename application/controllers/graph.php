@@ -17,7 +17,7 @@ class Graph extends CI_Controller
         parent::__construct();
         $this->load->library('saiku');
         $this->load->model('mgraph');
-
+      // $this->_init_sk_map();
     }
 
     private function _init_sk_map() {
@@ -98,7 +98,6 @@ class Graph extends CI_Controller
             show_404();
         }
 
-        $this->_init_sk_map();
 
 
 
@@ -127,7 +126,6 @@ class Graph extends CI_Controller
             show_404();
         }
 
-        $this->_init_sk_map();
 
         $data['title'] = "趋势";
         $data['username'] = $this->session->userdata('username');
@@ -156,7 +154,6 @@ class Graph extends CI_Controller
             show_404();
         }
 
-        $this->_init_sk_map();
 
         $data['title'] = "产品渠道分布";
         $data['username'] = $this->session->userdata('username');
@@ -185,8 +182,6 @@ class Graph extends CI_Controller
             show_404();
         }
 
-        $this->_init_sk_map();
-
 
 
         $data['title'] = "目标管理";
@@ -211,12 +206,14 @@ class Graph extends CI_Controller
     // x轴：年-月-日  series：saiku数据
     public function sk_ymd()
     {
+        $this->_init_sk_map();
+
         $saikufile = $this->input->post('saikufile');
         $dbname = $this->input->post('db');
         $saikufile = $dbname.'_'.$saikufile;
-        //$saikufile = $this->sk_map[$saikufile];
+        $saikufile = $this->sk_map[$saikufile];
 
-        if(false)//!$this->is_saiku_updated($saikufile))
+        if(!$this->is_saiku_updated($saikufile))
         {
             $columns = $this->sk_fields[$saikufile];
             $ret = $this->_sk_ymd($saikufile, $columns);
@@ -230,12 +227,14 @@ class Graph extends CI_Controller
     // x轴：年-月  series：saiku数据
     public function sk_ym()
     {
+        $this->_init_sk_map();
+
         $saikufile = $this->input->post('saikufile');
         $dbname = $this->input->post('db');
         $saikufile = $dbname.'_'.$saikufile;
-        //$saikufile = $this->sk_map[$saikufile];
+        $saikufile = $this->sk_map[$saikufile];
 
-        if(false)//(!$this->is_saiku_updated($saikufile))
+        if(!$this->is_saiku_updated($saikufile))
         {
             $columns = $this->sk_fields[$saikufile];
             $ret = $this->_sk_ym($saikufile, $columns);
@@ -309,12 +308,14 @@ class Graph extends CI_Controller
     // x轴：年-周     series：saiku数据
     public function sk_yw()
     {
+        $this->_init_sk_map();
+
         $saikufile = $this->input->post('saikufile');
         $dbname = $this->input->post('db');
         $saikufile = $dbname.'_'.$saikufile;
-        //$saikufile = $this->sk_map[$saikufile];
+        $saikufile = $this->sk_map[$saikufile];
 
-        if(false)//!$this->is_saiku_updated($saikufile))
+        if(!$this->is_saiku_updated($saikufile))
         {
             $columns = $this->sk_fields[$saikufile];
             $ret = $this->_sk_yw($saikufile, $columns);
@@ -380,6 +381,7 @@ class Graph extends CI_Controller
     // x轴：年-月 (求和)  series：saiku数据 & 目标
     public function sk_ymd_t()
     {
+        $this->_init_sk_map();
         $saikufile = $this->input->post('saikufile');
         $dbname = $this->input->post('db');
         $saikufile = $dbname.'_'.$saikufile;
@@ -491,7 +493,9 @@ class Graph extends CI_Controller
 
     // 从一年的数据中获取当月的数据 结构 年-月-日
     // x轴：月-日     series：saiku当月数据 & 月目标 & 时时日目标
-    public function sk_md_t() {
+    public function sk_md_t()
+    {
+        $this->_init_sk_map();
         $saikufile = $this->input->post('saikufile');
         $dbname = $this->input->post('db');
         $saikufile = $dbname.'_'.$saikufile;
@@ -552,11 +556,12 @@ class Graph extends CI_Controller
 
     public function sk_stream_leaf()
     {
+        $this->_init_sk_map();
         $saikufile = $this->input->post('saikufile');
         $dbname = $this->input->post('db');
         $saikufile = $dbname.'_'.$saikufile;
- //       $saikufile = $this->sk_map[$saikufile];
-        if(false)//!$this->is_saiku_updated($saikufile))
+        $saikufile = $this->sk_map[$saikufile];
+        if(!$this->is_saiku_updated($saikufile))
         {
 
             $columns = $this->sk_fields[$saikufile];
