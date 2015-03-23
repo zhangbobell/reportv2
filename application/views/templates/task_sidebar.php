@@ -36,43 +36,61 @@
                     </div>
                 </li>
                 <li>
-                    <a href="task/home"><i class="fa fa-th-large"></i>
+                    <a href="home/index"><i class="fa fa-th-large"></i>
                         <span class="nav-label">首页</span>
                         <span class="label label-warning pull-right"></span>
                     </a>
                 </li>
                 <li>
-                    <a href="task/advisory"><i class="fa fa-globe"></i>
+                    <a href="advisory/index"><i class="fa fa-globe"></i>
                         <span class="nav-label">全案咨询</span>
-                        <span class="label label-warning pull-right"></span>
+                        <span class="fa arrow"></span>
                     </a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="advisory/index">简介</a></li>
+                    </ul>
                 </li>
                 <li>
-                    <a href="javascript:;"><i class="fa fa-bar-chart-o"></i>
+                    <a href="graph/index"><i class="fa fa-bar-chart-o"></i>
                         <span class="nav-label">商业智能定制</span>
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
-                        <li><a href="http://office.e-corp.cn:888/data/">定制平台</a></li>
-                        <li><a href="graph/init_first">定制结果</a></li>
+                        <?php if($this->session->userdata('groupID') > -1):?>
+                        <li><a href="http://office.e-corp.cn:888/data/">新建查询(预览)</a></li>
+                        <li><a href="graph/init_first">报表管理(预览)</a></li>
+                        <?php endif;?>
                         <!--                        <li ><a href="task/my_task">RAW</a></li>-->
+
+                        <li><a href="graph/index">更多功能</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="javascript:;"><i class="fa fa-diamond"></i>
+                    <a href="task/index"><i class="fa fa-diamond"></i>
+                        <span class="nav-label">业务流程管理</span>
+                        <span class="fa arrow"></span>
+                    </a>
+                    <ul class="nav nav-second-level">
+                        <?php if($this->session->userdata('groupID') > -1):?>
+                            <li ><a href="price/control">乱价系统(可用)</a></li>
+                            <li ><a href="task/my_task">任务管理(预览)</a></li>
+                        <?php endif;?>
+
+                        <li><a href="task/index">更多功能</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="process/index"><i class="fa fa-edit"></i>
                         <span class="nav-label">专家系统集成</span>
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
-                        <li ><a href="price/control">试用版</a></li>
-                        <li ><a href="task/my_task">正式版</a></li>
+                        <?php if($this->session->userdata('groupID') > -1):?>
+                            <li ><a href="javascript:;">知识管理(预览)</a></li>
+                            <li ><a href="javascript:;">规则模块(预览)</a></li>
+                        <?php endif;?>
+                        <li><a href="process/index">更多功能</a></li>
                     </ul>
-                </li>
-                <li>
-                    <a href="task/process"><i class="fa fa-edit"></i>
-                        <span class="nav-label">业务流程管理 </span>
-                        <span class="label label-warning pull-right"></span>
-                    </a>
                 </li>
             </ul>
         </div>

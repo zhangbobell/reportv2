@@ -5169,3 +5169,12 @@ body.skin-3 {
 .mt10 {margin-top: 10px;}
 .mb10 {margin-bottom: 10px;}
 .mt40 {margin-top: 40px;}
+.lh24 {line-height: 24px;}
+.lh48 {line-height: 48px;}
+.ma {margin: auto;}
+.tc {text-align: center;}
+div.form-group.client-info {width: 930px;margin: auto;}
+
+.fill-label {
+  text-align: left;
+}

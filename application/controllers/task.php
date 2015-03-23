@@ -14,71 +14,50 @@ class Task extends CI_Controller {
         $this->load->model('mtask');
     }
 
-    public function home($page = 'home') {
+    public function sup_sucess($page = 'sup_sucess') {
         $username = $this->session->userdata('username');
         $email = $this->session->userdata('email');
         $data = array(
-            'title' => "首页",
-            'username' => $username,
-            'email' => $email
-        );
-
-        $this->load->view('templates/task_header', $data);
-        $this->load->view('templates/task_sidebar');
-        $this->load->view('templates/task_banner');
-        $this->load->view('task/task_'.$page);
-        $this->load->view('templates/task_footer');
-        $this->load->view('templates/task_footer_script');
-        $this->load->view('templates/task_footer_function');
-        $this->load->view('templates/task_footer_final');
-    }
-
-    public function advisory($page = 'advisory') {
-        $username = $this->session->userdata('username');
-        $email = $this->session->userdata('email');
-        $data = array(
-            'title' => "全案咨询",
+            'title' => "提交成功",
             'username' =>$username,
             'email' => $email
         );
 
-        $this->load->view('templates/task_header', $data);
-        $this->load->view('task/task_header_add_'.$page);
-        $this->load->view('templates/task_sidebar');
-        $this->load->view('templates/task_banner');
-        $this->load->view('task/task_'.$page);
-        $this->load->view('templates/task_footer');
-        $this->load->view('templates/task_footer_script');
-        $this->load->view('task/task_footer_script_add_'.$page);
-        $this->load->view('templates/task_footer_function');
-        $this->load->view('task/task_footer_function_add_'.$page);
-        $this->load->view('templates/task_footer_final');
-    }
-
-    public function decision($page = 'decision') {
-        $username = $this->session->userdata('username');
-        $email = $this->session->userdata('email');
-        $data = array(
-            'title' => "云决策平台",
-            'username' => $username,
-            'email' => $email
+        $sup_info = array(
+            'apply_type' => '专家系统集成开通申请',
+            'company' => $this->input->post('company', true),
+            'email' =>$this->input->post('email', true),
+            'applicant'=> $this->input->post('applicant', true),
+            'phone' => $this->input->post('phone', true),
+            'reason' => $this->input->post('reason',true)
         );
 
+        $this->mtask->insert_sup_info($sup_info);
+
         $this->load->view('templates/task_header', $data);
         $this->load->view('templates/task_sidebar');
         $this->load->view('templates/task_banner');
-        $this->load->view('task/task_'.$page);
+        $this->load->view('task/'.$page);
         $this->load->view('templates/task_footer');
         $this->load->view('templates/task_footer_script');
         $this->load->view('templates/task_footer_function');
         $this->load->view('templates/task_footer_final');
     }
 
-    public function process($page = 'process') {
+    /*
+     *  index : 流程定制平台界面函数
+     *  @$page='index' : 默认调用视图页面
+     */
+    public function index($page = 'index')
+    {
+        if (!file_exists('application/views/process/' . $page . '.php')) {
+            show_404();
+        }
+
         $username = $this->session->userdata('username');
         $email = $this->session->userdata('email');
         $data = array(
-            'title' => "流程定制平台",
+            'title' => "专家系统集成",
             'username' =>$username,
             'email' => $email
         );
@@ -86,7 +65,7 @@ class Task extends CI_Controller {
         $this->load->view('templates/task_header', $data);
         $this->load->view('templates/task_sidebar');
         $this->load->view('templates/task_banner');
-        $this->load->view('task/task_'.$page);
+        $this->load->view('task/'.$page);
         $this->load->view('templates/task_footer');
         $this->load->view('templates/task_footer_script');
         $this->load->view('templates/task_footer_function');

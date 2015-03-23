@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="<?php echo base_url(); ?>" />
 
-    <title><?php echo $title ?> -- 追灿数据决策系统</title>
+    <title><?php echo $title ?> -- E-CORP企业智慧化平台</title>
 
     <link href="<?php echo base_url().CSS_DIR; ?>/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url().PUB_DIR; ?>/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -23,22 +23,10 @@
     <div class="row">
 
         <div class="col-md-7">
-            <h2 class="font-bold">欢迎来到追灿企业智慧化平台</h2>
+            <h2 class="font-bold">欢迎来到E-CORP企业智慧化平台</h2>
             <br>
-            <p>
-                我们可以帮助企业提升：机会洞察与预测、精准决策、执行控管、
-            </p>
-
-            <p>
-                流程自动优化.四大核心能力，推动企业智慧化升级。同时，我们
-            </p>
-
-            <p>
-                也是目前最智能的平台，首创定制知识导入+系统执行监测，实现
-            </p>
-
-            <p>
-                人机交互，并持续优化帮助企业永续经营。
+            <p class="lh24">
+                E-CORP企业智慧化平台，是商业数据价值领域的探索者和开创者。 由国内首家数据战略咨询公司发起，熔铸长达8年近上万次企业决策支持经验。平台集成强大的企业业务深度咨询和大数据技术能力，涵盖全案咨询， 决策智能定制，专家系统集成，业务流程管理四大服务，一对一助力企业实现企业智慧化全面升级。
             </p>
 
         </div>
@@ -71,10 +59,10 @@
     <hr/>
     <div class="row">
         <div class="col-md-6">
-            Copyright e-corp
+            &copy; 2015&nbsp;&nbsp;杭州追灿科技有限公司
         </div>
         <div class="col-md-6 text-right">
-            <small>&copy; 2010-2015</small>
+            <small>e-corp.cn </small>
         </div>
     </div>
 </div>

@@ -6,8 +6,8 @@
                 Free.
             </div>
             <div>
-                <strong>Copyright e-corp</strong>
-                © 2010-2015
+                &copy;2015&nbsp;&nbsp;<strong>杭州追灿科技有限公司</strong>&nbsp;&nbsp;
+                 e-corp.cn
             </div>
         </div>
     </div>    <!--右侧全部结束-->

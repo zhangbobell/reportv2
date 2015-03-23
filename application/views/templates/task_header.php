@@ -22,7 +22,7 @@ if(!array_key_exists('logged_in', $this->session->all_userdata()))
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title><?php echo $title ?> -- 追灿数据决策系统</title>
+    <title><?php echo $title ?> -- E-CORP企业智慧化平台</title>
 
     <link href="<?php echo base_url().TP_DIR; ?>/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url().PUB_DIR;?>/font-awesome/css/font-awesome.css" rel="stylesheet">

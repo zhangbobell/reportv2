@@ -18,7 +18,9 @@ class Graph extends CI_Controller
         $this->load->library('saiku');
         $this->load->model('mgraph');
 
+    }
 
+    private function _init_sk_map() {
         if (($res = $this->mgraph->get_saiku_map('db_jiuyang'))) {
             foreach ($res->result_array() as $row) {
                 $this->sk_map[$row['ref_name']] = $row['saikufile'];
@@ -30,6 +32,64 @@ class Graph extends CI_Controller
         }
     }
 
+    /*
+     *  index : 商业智能定制界面函数
+     *  @$page='index' : 默认调用视图页面
+     */
+    public function index($page = 'index')
+    {
+        if (!file_exists('application/views/process/' . $page . '.php')) {
+            show_404();
+        }
+
+        $username = $this->session->userdata('username');
+        $email = $this->session->userdata('email');
+        $data = array(
+            'title' => "商业智能定制",
+            'username' =>$username,
+            'email' => $email
+        );
+
+        $this->load->view('templates/task_header', $data);
+        $this->load->view('templates/task_sidebar');
+        $this->load->view('templates/task_banner');
+        $this->load->view('graph/'.$page);
+        $this->load->view('templates/task_footer');
+        $this->load->view('templates/task_footer_script');
+        $this->load->view('templates/task_footer_function');
+        $this->load->view('templates/task_footer_final');
+    }
+
+    public function sup_sucess($page = 'sup_sucess') {
+        $username = $this->session->userdata('username');
+        $email = $this->session->userdata('email');
+        $data = array(
+            'title' => "提交成功",
+            'username' =>$username,
+            'email' => $email
+        );
+
+        $sup_info = array(
+            'apply_type' => '商业智能定制开通申请',
+            'company' => $this->input->post('company', true),
+            'email' =>$this->input->post('email', true),
+            'applicant'=> $this->input->post('applicant', true),
+            'phone' => $this->input->post('phone', true),
+            'reason' => $this->input->post('reason',true)
+        );
+
+        $this->mgraph->insert_sup_info($sup_info);
+
+        $this->load->view('templates/task_header', $data);
+        $this->load->view('templates/task_sidebar');
+        $this->load->view('templates/task_banner');
+        $this->load->view('graph/'.$page);
+        $this->load->view('templates/task_footer');
+        $this->load->view('templates/task_footer_script');
+        $this->load->view('templates/task_footer_function');
+        $this->load->view('templates/task_footer_final');
+    }
+
     // 绘制页面
     public function init_first($page = "init_first")
     {
@@ -37,6 +97,8 @@ class Graph extends CI_Controller
         {
             show_404();
         }
+
+        $this->_init_sk_map();
 
 
 
@@ -65,7 +127,7 @@ class Graph extends CI_Controller
             show_404();
         }
 
-
+        $this->_init_sk_map();
 
         $data['title'] = "趋势";
         $data['username'] = $this->session->userdata('username');
@@ -94,6 +156,8 @@ class Graph extends CI_Controller
             show_404();
         }
 
+        $this->_init_sk_map();
+
         $data['title'] = "产品渠道分布";
         $data['username'] = $this->session->userdata('username');
 
@@ -120,6 +184,8 @@ class Graph extends CI_Controller
         {
             show_404();
         }
+
+        $this->_init_sk_map();
 
 
 
@@ -148,9 +214,9 @@ class Graph extends CI_Controller
         $saikufile = $this->input->post('saikufile');
         $dbname = $this->input->post('db');
         $saikufile = $dbname.'_'.$saikufile;
-        $saikufile = $this->sk_map[$saikufile];
+        //$saikufile = $this->sk_map[$saikufile];
 
-        if(!$this->is_saiku_updated($saikufile))
+        if(false)//!$this->is_saiku_updated($saikufile))
         {
             $columns = $this->sk_fields[$saikufile];
             $ret = $this->_sk_ymd($saikufile, $columns);
@@ -167,9 +233,9 @@ class Graph extends CI_Controller
         $saikufile = $this->input->post('saikufile');
         $dbname = $this->input->post('db');
         $saikufile = $dbname.'_'.$saikufile;
-        $saikufile = $this->sk_map[$saikufile];
+        //$saikufile = $this->sk_map[$saikufile];
 
-        if(true)//(!$this->is_saiku_updated($saikufile))
+        if(false)//(!$this->is_saiku_updated($saikufile))
         {
             $columns = $this->sk_fields[$saikufile];
             $ret = $this->_sk_ym($saikufile, $columns);
@@ -246,9 +312,9 @@ class Graph extends CI_Controller
         $saikufile = $this->input->post('saikufile');
         $dbname = $this->input->post('db');
         $saikufile = $dbname.'_'.$saikufile;
-        $saikufile = $this->sk_map[$saikufile];
+        //$saikufile = $this->sk_map[$saikufile];
 
-        if(!$this->is_saiku_updated($saikufile))
+        if(false)//!$this->is_saiku_updated($saikufile))
         {
             $columns = $this->sk_fields[$saikufile];
             $ret = $this->_sk_yw($saikufile, $columns);
@@ -489,9 +555,8 @@ class Graph extends CI_Controller
         $saikufile = $this->input->post('saikufile');
         $dbname = $this->input->post('db');
         $saikufile = $dbname.'_'.$saikufile;
-        $saikufile = $this->sk_map[$saikufile];
-//        $saikufile = 'report_month_order_category_num';
-        if(!$this->is_saiku_updated($saikufile))
+ //       $saikufile = $this->sk_map[$saikufile];
+        if(false)//!$this->is_saiku_updated($saikufile))
         {
 
             $columns = $this->sk_fields[$saikufile];
