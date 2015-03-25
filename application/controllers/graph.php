@@ -834,30 +834,30 @@ class Graph extends CI_Controller
     {
         $this->_init_sk_map();
 
-//        $ymdSaiku = array('report_dayly_chengjiao_zc', 'report_dayly_all_num',
-//            'report_up_item', 'report_up_rate', 'report_monthly_dongxiao_rate_zc',
-//            'report_dayly_chengjiao', 'report_dayly_wrong_price_rate_zc',
-//            'report_dayly_tuikuan_rate', 'report_dayly_order_close_rate');
-//
-//        for($i=0; $i < count($ymdSaiku); $i++)
-//        {
-//            $saikuName = 'db_jiuyang_'.$ymdSaiku[$i];
-//            $ret = $this->_sk_ymd($saikuName, $this->sk_fields[$saikuName]);
-//            $this->write_saiku_cache($saikuName, json_encode($ret));
-//            echo 'update '.$saikuName.' successfully.'.'</br>';
-//        }
+        $ymdSaiku = array('report_dayly_chengjiao_zc', 'report_dayly_all_num',
+            'report_up_item', 'report_up_rate', 'report_monthly_dongxiao_rate_zc',
+            'report_dayly_chengjiao', 'report_dayly_wrong_price_rate_zc',
+            'report_dayly_tuikuan_rate', 'report_dayly_order_close_rate');
+
+        for($i=0; $i < count($ymdSaiku); $i++)
+        {
+            $saikuName = 'db_jiuyang_'.$ymdSaiku[$i];
+            $ret = $this->_sk_ymd($saikuName, $this->sk_fields[$saikuName]);
+            $this->write_saiku_cache($saikuName, json_encode($ret));
+            echo 'update '.$saikuName.' successfully.'.'</br>';
+        }
 
 
-//        $ywSaiku = array('report_weekly_level_new', 'report_weekly_level_num');
-//
-//
-//        for($i=0; $i < count($ywSaiku); $i++)
-//        {
-//            $saikuName = 'db_jiuyang_'.$ywSaiku[$i];
-//            $ret = $this->_sk_yw($saikuName, $this->sk_fields[$saikuName]);
-//            $this->write_saiku_cache($saikuName, json_encode($ret));
-//            echo 'update '.$saikuName.' successfully.'.'</br>';
-//        }
+        $ywSaiku = array('report_weekly_level_new', 'report_weekly_level_num');
+
+
+        for($i=0; $i < count($ywSaiku); $i++)
+        {
+            $saikuName = 'db_jiuyang_'.$ywSaiku[$i];
+            $ret = $this->_sk_yw($saikuName, $this->sk_fields[$saikuName]);
+            $this->write_saiku_cache($saikuName, json_encode($ret));
+            echo 'update '.$saikuName.' successfully.'.'</br>';
+        }
 
         $steamSaiku = array('report_month_order_category_num', 'report_monthly_sellernick_sales_fee_2',
                             'report_monthly_tags_up_num', 'report_monthly_sellernick_sales_fee_0');
