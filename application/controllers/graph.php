@@ -213,14 +213,14 @@ class Graph extends CI_Controller
         $saikufile = $dbname.'_'.$saikufile;
         $saikufile = $this->sk_map[$saikufile];
 
-        if(!$this->is_saiku_updated($saikufile))
-        {
-            $columns = $this->sk_fields[$saikufile];
-            $ret = $this->_sk_ymd($saikufile, $columns);
-
-            $this->write_saiku_cache($saikufile, json_encode($ret));
-
-        }
+//        if(!$this->is_saiku_updated($saikufile))
+//        {
+//            $columns = $this->sk_fields[$saikufile];
+//            $ret = $this->_sk_ymd($saikufile, $columns);
+//
+//            $this->write_saiku_cache($saikufile, json_encode($ret));
+//
+//        }
         echo $this->read_saiku_cache($saikufile);
     }
 
@@ -234,14 +234,14 @@ class Graph extends CI_Controller
         $saikufile = $dbname.'_'.$saikufile;
         $saikufile = $this->sk_map[$saikufile];
 
-        if(!$this->is_saiku_updated($saikufile))
-        {
-            $columns = $this->sk_fields[$saikufile];
-            $ret = $this->_sk_ym($saikufile, $columns);
-
-            $this->write_saiku_cache($saikufile, json_encode($ret));
-
-        }
+//        if(!$this->is_saiku_updated($saikufile))
+//        {
+//            $columns = $this->sk_fields[$saikufile];
+//            $ret = $this->_sk_ym($saikufile, $columns);
+//
+//            $this->write_saiku_cache($saikufile, json_encode($ret));
+//
+//        }
         echo $this->read_saiku_cache($saikufile);
 
 
@@ -315,12 +315,12 @@ class Graph extends CI_Controller
         $saikufile = $dbname.'_'.$saikufile;
         $saikufile = $this->sk_map[$saikufile];
 
-        if(!$this->is_saiku_updated($saikufile))
-        {
-            $columns = $this->sk_fields[$saikufile];
-            $ret = $this->_sk_yw($saikufile, $columns);
-            $this->write_saiku_cache($saikufile, json_encode($ret));
-        }
+//        if(!$this->is_saiku_updated($saikufile))
+//        {
+//            $columns = $this->sk_fields[$saikufile];
+//            $ret = $this->_sk_yw($saikufile, $columns);
+//            $this->write_saiku_cache($saikufile, json_encode($ret));
+//        }
         echo $this->read_saiku_cache($saikufile);
 
     }
@@ -561,34 +561,30 @@ class Graph extends CI_Controller
         $dbname = $this->input->post('db');
         $saikufile = $dbname.'_'.$saikufile;
         $saikufile = $this->sk_map[$saikufile];
-        if(!$this->is_saiku_updated($saikufile))
-        {
-
-            $columns = $this->sk_fields[$saikufile];
-//            $columns = array('unname-unname','unname上衣','儿童套装','女式上衣','女式内裤','女式内衣套装','女式秋裤','女式背心','女式马甲',
-//                '女式t恤','女式休闲裤','女式打底裤','女式短衫','女式长衫','女式上衣','女式中裤','女式家居服套装','女式睡裙','女式短裤',
-//                '女式长裤','女式袜子','情侣内衣','情侣家居服','男士unname','男士上衣','男士内裤','男士内衣套装','男士秋裤','男士背心',
-//                '男士马甲','男士T恤','男士上衣','男士中裤','男士家居服套装','男士短裤','男士长裤','男士袜子');
-
-            $res = $this->saiku->get_json_data($saikufile);
-            if($res['flag'] == 0)
-            {
-                $this->write_saiku_cache($saikufile, json_encode($res));
-
-                echo json_encode($res);
-                return;
-            }
-
-            if (count($columns) > 0 && $columns[0] != '') {
-                $r = $this->mgraph->convert_data_leaf($res['res'], $columns, false);
-            } else {
-                $r = $this->mgraph->convert_data_leaf($res['res'], $columns, true);
-            }
-
-            $res['ticks'] = $this->mgraph->getStreamXticks($r);
-            $res['res'] = $this->mgraph->linear2stream($r);
-            $this->write_saiku_cache($saikufile, json_encode($res));
-        }
+//        if(!$this->is_saiku_updated($saikufile))
+//        {
+//
+//            $columns = $this->sk_fields[$saikufile];
+//
+//            $res = $this->saiku->get_json_data($saikufile);
+//            if($res['flag'] == 0)
+//            {
+//                $this->write_saiku_cache($saikufile, json_encode($res));
+//
+//                echo json_encode($res);
+//                return;
+//            }
+//
+//            if (count($columns) > 0 && $columns[0] != '') {
+//                $r = $this->mgraph->convert_data_leaf($res['res'], $columns, false);
+//            } else {
+//                $r = $this->mgraph->convert_data_leaf($res['res'], $columns, true);
+//            }
+//
+//            $res['ticks'] = $this->mgraph->getStreamXticks($r);
+//            $res['res'] = $this->mgraph->linear2stream($r);
+//            $this->write_saiku_cache($saikufile, json_encode($res));
+//        }
         echo $this->read_saiku_cache($saikufile);
     }
 
@@ -836,40 +832,67 @@ class Graph extends CI_Controller
     // 手动刷新cache（未调用，供调试使用）
     public function update_saiku_cache()
     {
-        $ymdSaiku = array('report_dayly_chengjiao_zc', 'report_dayly_all_num',
-            'report_up_item', 'report_up_rate', 'report_monthly_dongxiao_rate_zc',
-            'report_dayly_chengjiao', 'report_dayly_wrong_price_rate_zc',
-            'report_dayly_tuikuan_rate', 'report_dayly_order_close_rate');
-        $ymdColumns = array(
-            array('成交额'),
-            array('商家数量'),
-            array('上架商品数'),
-            array('上架率'),
-            array('动销率'),
-            array('追灿招募', '非追灿招募'),
-            array('追灿招募', '非追灿招募'),
-            array('追灿招募', '非追灿招募'),
-            array('追灿招募', '非追灿招募')
-        );
+        $this->_init_sk_map();
 
-        for($i=0; $i < count($ymdSaiku); $i++)
+//        $ymdSaiku = array('report_dayly_chengjiao_zc', 'report_dayly_all_num',
+//            'report_up_item', 'report_up_rate', 'report_monthly_dongxiao_rate_zc',
+//            'report_dayly_chengjiao', 'report_dayly_wrong_price_rate_zc',
+//            'report_dayly_tuikuan_rate', 'report_dayly_order_close_rate');
+//
+//        for($i=0; $i < count($ymdSaiku); $i++)
+//        {
+//            $saikuName = 'db_jiuyang_'.$ymdSaiku[$i];
+//            $ret = $this->_sk_ymd($saikuName, $this->sk_fields[$saikuName]);
+//            $this->write_saiku_cache($saikuName, json_encode($ret));
+//            echo 'update '.$saikuName.' successfully.'.'</br>';
+//        }
+
+
+//        $ywSaiku = array('report_weekly_level_new', 'report_weekly_level_num');
+//
+//
+//        for($i=0; $i < count($ywSaiku); $i++)
+//        {
+//            $saikuName = 'db_jiuyang_'.$ywSaiku[$i];
+//            $ret = $this->_sk_yw($saikuName, $this->sk_fields[$saikuName]);
+//            $this->write_saiku_cache($saikuName, json_encode($ret));
+//            echo 'update '.$saikuName.' successfully.'.'</br>';
+//        }
+
+        $steamSaiku = array('report_month_order_category_num', 'report_monthly_sellernick_sales_fee_2',
+                            'report_monthly_tags_up_num', 'report_monthly_sellernick_sales_fee_0');
+
+        for($i=0; $i < count($steamSaiku); $i++)
         {
-            $ret = $this->_sk_ymd($ymdSaiku[$i], $ymdColumns[$i]);
-            $this->write_saiku_cache($ymdSaiku[$i], json_encode($ret));
+            $saikufile = 'db_jiuyang_'.$steamSaiku[$i];
+
+            $columns = $this->sk_fields[$saikufile];
+
+            $res = $this->saiku->get_json_data($saikufile);
+            if($res['flag'] == 0)
+            {
+                $this->write_saiku_cache($saikufile, json_encode($res));
+
+                echo json_encode($res);
+                return;
+            }
+
+            if (count($columns) > 0 && $columns[0] != '') {
+                $r = $this->mgraph->convert_data_leaf($res['res'], $columns, false);
+            } else {
+                $r = $this->mgraph->convert_data_leaf($res['res'], $columns, true);
+            }
+
+            $res['ticks'] = $this->mgraph->getStreamXticks($r);
+            $res['res'] = $this->mgraph->linear2stream($r);
+            $this->write_saiku_cache($saikufile, json_encode($res));
+
+            echo 'update '.$saikufile.' successfully.'.'</br>';
         }
 
 
-        $ywSaiku = array('report_weekly_level_new', 'report_weekly_level_num');
-        $ywColumns = array(
-            array('无评级', '银卡', '金卡', '白金卡', '钻石卡', '金钻石卡'),
-            array('无评级', '银卡', '金卡', '白金卡', '钻石卡', '金钻石卡')
-        );
 
-        for($i=0; $i < count($ywSaiku); $i++)
-        {
-            $ret = $this->_sk_yw($ywSaiku[$i], $ywColumns[$i]);
-            $this->write_saiku_cache($ywSaiku[$i], json_encode($ret));
-        }
+
 
         echo 'done';
     }
