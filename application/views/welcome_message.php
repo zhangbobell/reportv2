@@ -48,6 +48,7 @@
 					<li><a class="page-scroll" href="#team">优势</a></li>
 					<li><a class="page-scroll" href="#testimonials">客户</a></li>
 					<li><a class="page-scroll" href="#contact">联系我们</a></li>
+					<li><a href="http://www.e-corp.cn">返回官网</a></li>
 				</ul>
 			</div>
 		</div>
