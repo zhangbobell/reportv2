@@ -48,6 +48,7 @@
 					<li><a class="page-scroll" href="#team">优势</a></li>
 					<li><a class="page-scroll" href="#testimonials">客户</a></li>
 					<li><a class="page-scroll" href="#contact">联系我们</a></li>
+					<li><a href="http://www.e-corp.cn">返回官网</a></li>
 				</ul>
 			</div>
 		</div>
@@ -186,7 +187,7 @@
 			<div class="col-sm-4 wow fadeInLeft">
 				<div class="team-member">
 					<img src="public/images/avatar3.jpg" class="img-responsive img-circle img-small" alt="">
-					<h4><span class="navy">数十万家企业近万次决策支持</span></h4>
+					<h4><span class="navy">数十家企业近万次决策支持</span></h4>
 					<p>服务二十多家企业，近十家上市集团公司，经过上万次的决策支持，积累了企业70%以上的决策应用场景模型。</p>
 				</div>
 			</div>
