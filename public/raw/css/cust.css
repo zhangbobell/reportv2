@@ -1,0 +1,24 @@
+.login-form{
+    width: 300px;
+    height: 410px;
+    padding: 13px 14px 15px;
+    margin-top: 110px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(../images/transparent-18.png);
+    font-family: 'Microsoft YaHei';
+    background-repeat: repeat;
+}
+.form-control{
+    width: 270px;
+    padding: 6px 12px;
+    height: 35px;
+    display: block;
+    line-height: 1.428571429;
+    border: 1px solid #ccc;
+    font-family: 'Microsoft YaHei', verdana;
+    font-size: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+}

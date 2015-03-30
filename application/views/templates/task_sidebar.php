@@ -59,6 +59,7 @@
                         <?php if($this->session->userdata('groupID') > -1):?>
                         <li><a href="http://office.e-corp.cn:888/data/">新建查询(预览)</a></li>
                         <li><a href="graph/init_first">报表管理(预览)</a></li>
+                        <li><a href="./public/raw/index.php">报表定制(预览)</a></li>
                         <?php endif;?>
                         <!--                        <li ><a href="task/my_task">RAW</a></li>-->
 

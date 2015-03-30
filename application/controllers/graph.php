@@ -201,6 +201,16 @@ class Graph extends CI_Controller
 
     }
 
+    public function init_customization()
+    {
+        if ( ! file_exists('application/views/raw/index.php'))
+        {
+            show_404();
+        }
+        $this->load->view('raw/index');
+
+    }
+
 
     // 获取数据给js模块来绘图
     // x轴：年-月-日  series：saiku数据
