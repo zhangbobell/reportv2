@@ -203,13 +203,15 @@ class Graph extends CI_Controller
 
     public function init_customization()
     {
-        if ( ! file_exists('application/views/raw/index.php'))
+        if ( ! file_exists('application/views/graph/init_customization.php'))
         {
             show_404();
         }
-        $this->load->view('raw/index');
+        $this->load->view('graph/init_customization');
 
     }
+
+
 
 
     // 获取数据给js模块来绘图
