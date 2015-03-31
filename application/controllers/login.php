@@ -50,13 +50,22 @@ class Login extends CI_Controller
         $company_site = $this->input->post('company_site', true);
         $position = $this->input->post('position', true);
         $phone = $this->input->post('phone', true);
+        $def_proj = '630050316';
 
 
         $data['title'] = "注册成功";
         $data['username'] = $username;
 
         $this->load->model("mlogin");
+
+        // 插入新用户
         $this->mlogin->insert_user($username,$email,md5($password),$company,$company_site,$position,$phone);
+
+        // 新用户uid
+        $uid = $this->mlogin->getuid_by_username($username);
+
+        // 给新用户分配默认数据库
+        $this->mlogin->proj_for_newuser($uid, $def_proj);
 
         $this->load->view('login/'.$page,$data);
     }

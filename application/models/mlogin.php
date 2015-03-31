@@ -115,4 +115,39 @@ class Mlogin extends MY_model
 
     }
 
+    /*
+     * getuid_by_username : 根据用户名返回用户ID
+     * param : $username -- 用户名
+     * return : 返回用户ID
+     */
+    function getuid_by_username($username) {
+
+        $sql = "Select `userid` FROM `etc_user` where `username` = ? ";
+
+        $id_arr = $this->mlogin->my_query('etc_privileges', $sql, array($username))->result_array();
+//        var_dump($id_arr[0]['userid']);
+//        var_dump($this->mlogin->my_query('etc_privileges', $sql, array($username))->result_array());
+        return $id_arr[0]['userid'];
+    }
+
+    /*
+     * proj_for_newuser : 给新注册用户添加默认数据库：九阳
+     * param : $username -- 用户名 $def_proj -- 项目id
+     * return : true/false -- 操作是否成功
+     */
+    function proj_for_newuser($uid, $def_proj) {
+        $def_proj_for_newuser = array(
+            'uid' => $uid,
+            'def_poj' => $def_proj
+        );
+
+        $sql = "INSERT INTO `rep_competence`(`uid`,`pid`) VALUES(?,?)";
+
+        if(!($query =  $this->my_query('etc_privileges', $sql, $def_proj_for_newuser)))
+        {
+            $this->db->_error_message();
+            return false;
+        }
+        return true;
+    }
 }
