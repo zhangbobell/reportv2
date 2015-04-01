@@ -42,7 +42,7 @@
         <div class="col-sm-3">
             <select id="group" class="form-control">
                 <option value="0">系统管理员</option>
-                <option value="2">维权专员</option>
+                <option value="-1">维权专员</option>
             </select>
         </div>
     </div>
@@ -67,6 +67,17 @@
             <label>
                 <input type="radio" name="is-valid" id="optionsRadios0" value="0">禁用
             </label>
+        </div>
+    </div>
+
+    <div class="form-group fix">
+        <label for="auth-project" class="col-sm-2 control-label">授权时限：</label>
+        <div class="col-sm-3">
+            <select multiple="multiple" id="auth-time" class="form-control">
+                <option value="3">3天</option>
+                <option value="30">30天</option>
+                <option value="0">永久</option>
+            </select>
         </div>
     </div>
     <div class="form-group fix col-sm-5">

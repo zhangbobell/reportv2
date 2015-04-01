@@ -91,8 +91,6 @@ class Mlogin extends MY_model
      */
     function insert_user($username, $email, $password,$company,$company_site,$position,$phone) {
         $insert_user = array(
-            'durdatetime' => date('Y-m-d H:i:s',strtotime('+3 day')),
-            'expire_time' => '1',
             'username' => $username,
             'email' => $email,
             'password' => $password,
@@ -105,8 +103,8 @@ class Mlogin extends MY_model
             'phone' => $phone
         );
 
-        $sql = "INSERT INTO `etc_user`(`durdatetime`,`expire_time`,`username`,`email`, `password`, `groupid`,`group`,`is_valid`"
-        .",`company`,`company_site`,`position`,`phone`) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO `etc_user`(`username`,`email`, `password`, `groupid`,`group`,`is_valid`"
+        .",`company`,`company_site`,`position`,`phone`) VALUES(?,?,?,?,?,?,?,?,?,?)";
 
         if(!($query =  $this->my_query('etc_privileges', $sql, $insert_user)))
         {
@@ -154,28 +152,15 @@ class Mlogin extends MY_model
     }
 
     /*
-     * get_expire_time_by_username : 获取新用户是否处在试用期
-     * param : $username -- 用户名
-     * return : 试用期状态
-     */
-    function get_expire_time_by_username($username) {
-        $sql = "select `expire_time` from `etc_user` where `username` = ?";
-
-        $id_arr = $this->mlogin->my_query('etc_privileges', $sql, array($username))->result_array();
-        return $id_arr[0]['expire_time'];
-    }
-
-    /*
-     * expire_time_user : 新用户是否已经过了3天试用期 并且 没有购买产品
+     * expire_time_user : 新用户是否已经过了试用期 并且 没有购买产品
      * param : $username -- 用户名
      * return : true/false -- 是否已经过了试用期 true：已过
      */
     function expire_time_user($username) {
-        $expire_time = $this->mlogin->get_expire_time_by_username($username);
         $date_dur = $this->mlogin->get_durdatetime_by_username($username);
         $groupid = $this->mlogin->get_groupid_by_username($username);
         $date_now = date('Y-m-d H:i:s');
-        if(strtotime($date_now) - strtotime($date_dur) > 0 & $expire_time == '1' & $groupid == 0) {
+        if(strtotime($date_now) - strtotime($date_dur) > 0 & $groupid == 0) {
             return true;
         } else {
             return false;
@@ -188,10 +173,10 @@ class Mlogin extends MY_model
      * return : 试用截止时间
      */
     function get_durdatetime_by_username($username) {
-        $sql = "select `durdatetime` from `etc_user` where `username` = ?";
+        $sql = "select `expire_datetime` from `etc_user` where `username` = ?";
 
         $id_arr = $this->mlogin->my_query('etc_privileges', $sql, array($username))->result_array();
-        return $id_arr[0]['durdatetime'];
+        return $id_arr[0]['expire_datetime'];
     }
 
     /*
