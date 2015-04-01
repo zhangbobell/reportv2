@@ -153,6 +153,11 @@ class Mlogin extends MY_model
         return true;
     }
 
+    /*
+     * get_expire_time_by_username : 获取新用户是否处在试用期
+     * param : $username -- 用户名
+     * return : 试用期状态
+     */
     function get_expire_time_by_username($username) {
         $sql = "select `expire_time` from `etc_user` where `username` = ?";
 
@@ -177,6 +182,11 @@ class Mlogin extends MY_model
         }
     }
 
+    /*
+     * get_durdatetime_by_username : 获取新用户使用截止时间
+     * param : $username -- 用户名
+     * return : 试用截止时间
+     */
     function get_durdatetime_by_username($username) {
         $sql = "select `durdatetime` from `etc_user` where `username` = ?";
 
@@ -184,6 +194,11 @@ class Mlogin extends MY_model
         return $id_arr[0]['durdatetime'];
     }
 
+    /*
+     * set_user_groupid : 设置用户权限
+     * param : $username -- 用户名 $groupid -- 需要设置的权限
+     * return :
+     */
     function set_user_groupid($groupid, $username) {
         $setdata = array(
             'gropuid' => $groupid,
@@ -200,6 +215,11 @@ class Mlogin extends MY_model
         return true;
     }
 
+    /*
+     * get_groupid_by_username : 设获取用户权限等级
+     * param : $username -- 用户名
+     * return : groupid
+     */
     function get_groupid_by_username($username) {
         $sql = "select `groupid` from `etc_user` where `username` = ?";
 
