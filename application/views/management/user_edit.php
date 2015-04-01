@@ -72,13 +72,12 @@
 
     <div class="form-group fix">
         <label for="auth-project" class="col-sm-2 control-label">授权时限：</label>
-        <div class="col-sm-3">
-            <select multiple="multiple" id="auth-time" class="form-control">
-                <option value="3">3天</option>
-                <option value="30">30天</option>
-                <option value="0">永久</option>
-            </select>
+        <div class="input-group date form_datetime col-md-4" data-date="2015-04-01T05:25:07Z" data-date-format="yyyy-mm-dd hh:ii:ss" data-link-field="dtp_input1">
+            <input class="form-control" name="limitime" id="limitime" size="16" type="text" value="" readonly>
+            <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+            <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
         </div>
+        <input type="hidden" id="dtp_input1" value="" /><br/>
     </div>
     <div class="form-group fix col-sm-5">
         <input id="edit-user" type="button" value="修 改" class="btn btn-primary r"/>

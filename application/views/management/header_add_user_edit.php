@@ -1,0 +1,1 @@
+<link href="<?php echo base_url().CSS_DIR;?>/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">

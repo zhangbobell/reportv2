@@ -14,33 +14,6 @@ class MManagement extends MY_model
     }
 
     /*
-     * function:设置用户使用系统的时限
-     */
-    function update_user_time_limit($auth_time, $username) {
-        if($auth_time == '30') {
-            $setdate = date('Y-m-d H:i:s',strtotime('+30 day'));
-            $sql = "update `etc_user` set `durdatetime` = $setdate,`groupid` = 0 where `username` = ?";
-
-        } else if($auth_time == '3') {
-            $setdate = date('Y-m-d H:i:s',strtotime('+3 day'));
-            $sql = "update `etc_user` set `durdatetime` = $setdate,`groupid` = 0 where `username` = ?";
-        } else {
-            $sql = "update `etc_user` set `expire_time` = '0',`groupid` = 0 where `username` = ?";
-        }
-
-        $setdata = array(
-            'username' => $username
-        );
-
-        if(!($query =  $this->my_query('etc_privileges', $sql, $setdata)))
-        {
-            $this->db->_error_message();
-            return false;
-        }
-        return true;
-    }
-
-    /*
      * function: 获取当前数据库中的所有用户的数据信息
      *
      */
@@ -286,5 +259,22 @@ class MManagement extends MY_model
         $res_delete_rep_competence = $this->my_query($db, $sql_delete_rep_competence, $uid);
 
         return $res_delete_rep_competence  && $res_update_user;
+    }
+
+    // 设置用户使用产品的时限
+    public function set_limitime($limitime, $username) {
+        $setdata = array(
+            'gropuid' => $limitime,
+            'username' => $username
+        );
+
+        $sql = "update `etc_user` set `expire_datetime` = ? where `username` = ?";
+
+        if(!($query =  $this->my_query('etc_privileges', $sql, $setdata)))
+        {
+            $this->db->_error_message();
+            return false;
+        }
+        return true;
     }
 }

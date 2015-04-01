@@ -81,7 +81,7 @@ $(function(){
             //auth_project: $("#auth-project").text(),
             auth_project: $('#auth-project').val(),
             is_valid: $('input[name="is-valid"]:checked').val(),
-            auth_time: $('#auth-time').val(),
+            limitime:$('#limitime').val(),
             uid: $uid,
             tag: $tag
         };
@@ -118,4 +118,36 @@ $(function(){
             return false;
         }
     })
+
+    $('.form_datetime').datetimepicker({
+        //language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        forceParse: 0,
+        showMeridian: 1
+    });
+    $('.form_date').datetimepicker({
+        language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0
+    });
+    $('.form_time').datetimepicker({
+        language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 1,
+        minView: 0,
+        maxView: 1,
+        forceParse: 0
+    });
 })
