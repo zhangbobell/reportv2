@@ -96,7 +96,7 @@ class Mlogin extends MY_model
             'username' => $username,
             'email' => $email,
             'password' => $password,
-            'groupid' => 0,
+            'groupid' => -1,
             'group' => '维权专员',
             'is_valid' => '1',
             'company' => $company,
