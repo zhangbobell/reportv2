@@ -179,6 +179,11 @@ class Login extends CI_Controller
         }
         else
         {
+            // 如果试用期过 并且 没有购买产品 则权限下降
+            if($this->mlogin->expire_time_user($username)) {
+
+                $this->mlogin->set_user_groupid(-1, $username);  // 用户权限降低
+            }
 //            echo LOGIN_SUCCESS;
 
             //删除验证码
@@ -192,7 +197,7 @@ class Login extends CI_Controller
                 'username'  => $username,
                 'email' => $record['email'],
                 'authDB'    => $authDB,
-                'groupID'   => $record['groupid'],
+                'groupID' => $this->mlogin->get_groupid_by_username($username),  // 判断是否已过试用期之后再获取groupid
                 'logged_in' => TRUE
             );
             $this->session->set_userdata($userdata);
