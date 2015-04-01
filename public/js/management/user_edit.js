@@ -81,6 +81,7 @@ $(function(){
             //auth_project: $("#auth-project").text(),
             auth_project: $('#auth-project').val(),
             is_valid: $('input[name="is-valid"]:checked').val(),
+            auth_time: $('#auth-time').val(),
             uid: $uid,
             tag: $tag
         };

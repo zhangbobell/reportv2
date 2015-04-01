@@ -189,6 +189,7 @@ class Management extends CI_Controller
         $groupid = $this->input->post('group');
         $pid = $this->input->post('auth_project');
         $is_valid = $this->input->post('is_valid');
+        $auth_time = $this->input->post('auth_time');
         $uid = $this->input->post('uid');
         $tag = $this->input->post('tag');
 
@@ -198,6 +199,7 @@ class Management extends CI_Controller
             $res = $this->mmanagement->update_user_holdpassword($db, $username, $groupid, $is_valid, $uid);
         }
 
+        $this->mmanagement->update_user_time_limit($auth_time, $username);
         $tag = true;
         $date = date('Y-m-d H:i:s');
         for($i=0; $i<count($pid); $i++){
