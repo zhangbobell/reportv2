@@ -841,73 +841,8 @@ class Graph extends CI_Controller
     }
 
 
-    // 手动刷新cache（未调用，供调试使用）
-    public function update_saiku_cache()
-    {
-        $this->_init_sk_map();
-
-        $ymdSaiku = array('report_dayly_chengjiao_zc', 'report_dayly_all_num',
-            'report_up_item', 'report_up_rate', 'report_monthly_dongxiao_rate_zc',
-            'report_dayly_chengjiao', 'report_dayly_wrong_price_rate_zc',
-            'report_dayly_tuikuan_rate', 'report_dayly_order_close_rate');
-
-        for($i=0; $i < count($ymdSaiku); $i++)
-        {
-            $saikuName = 'db_jiuyang_'.$ymdSaiku[$i];
-            $ret = $this->_sk_ymd($saikuName, $this->sk_fields[$saikuName]);
-            $this->write_saiku_cache($saikuName, json_encode($ret));
-            echo 'update '.$saikuName.' successfully.'.'</br>';
-        }
 
 
-        $ywSaiku = array('report_weekly_level_new', 'report_weekly_level_num');
-
-
-        for($i=0; $i < count($ywSaiku); $i++)
-        {
-            $saikuName = 'db_jiuyang_'.$ywSaiku[$i];
-            $ret = $this->_sk_yw($saikuName, $this->sk_fields[$saikuName]);
-            $this->write_saiku_cache($saikuName, json_encode($ret));
-            echo 'update '.$saikuName.' successfully.'.'</br>';
-        }
-
-        $steamSaiku = array('report_month_order_category_num', 'report_monthly_sellernick_sales_fee_2',
-                            'report_monthly_tags_up_num', 'report_monthly_sellernick_sales_fee_0');
-
-        for($i=0; $i < count($steamSaiku); $i++)
-        {
-            $saikufile = 'db_jiuyang_'.$steamSaiku[$i];
-
-            $columns = $this->sk_fields[$saikufile];
-
-            $res = $this->saiku->get_json_data($saikufile);
-            if($res['flag'] == 0)
-            {
-                $this->write_saiku_cache($saikufile, json_encode($res));
-
-                echo json_encode($res);
-                return;
-            }
-
-            if (count($columns) > 0 && $columns[0] != '') {
-                $r = $this->mgraph->convert_data_leaf($res['res'], $columns, false);
-            } else {
-                $r = $this->mgraph->convert_data_leaf($res['res'], $columns, true);
-            }
-
-            $res['ticks'] = $this->mgraph->getStreamXticks($r);
-            $res['res'] = $this->mgraph->linear2stream($r);
-            $this->write_saiku_cache($saikufile, json_encode($res));
-
-            echo 'update '.$saikufile.' successfully.'.'</br>';
-        }
-
-
-
-
-
-        echo 'done';
-    }
 
     // 写入第一时间的数据
     public function write_first_data()
@@ -926,6 +861,82 @@ class Graph extends CI_Controller
         $id = $this->input->post('id', true);
 
         echo $this->read_saiku_cache('first'.$id);
+    }
+
+
+    // 手动刷新cache（未调用，供调试使用）
+    public function update_saiku_cache($name, $i)
+    {
+
+        $saikuName = 'db_jiuyang_'.$name;
+        $this->_init_sk_map();
+
+        if($i < 9)
+        {
+            $ret = $this->_sk_ymd($saikuName, $this->sk_fields[$saikuName]);
+            if($ret['flag'] == 0)
+                return false;
+            $this->write_saiku_cache($saikuName, json_encode($ret));
+        }
+        elseif($i < 11)
+        {
+            $ret = $this->_sk_yw($saikuName, $this->sk_fields[$saikuName]);
+            if($ret['flag'] == 0)
+                return false;
+            $this->write_saiku_cache($saikuName, json_encode($ret));
+        }
+        else
+        {
+            $columns = $this->sk_fields[$saikuName];
+
+            $res = $this->saiku->get_json_data($saikuName);
+            if($res['flag'] == 0)
+                return false;
+
+            if (count($columns) > 0 && $columns[0] != '') {
+                $r = $this->mgraph->convert_data_leaf($res['res'], $columns, false);
+            } else {
+                $r = $this->mgraph->convert_data_leaf($res['res'], $columns, true);
+            }
+
+            $res['ticks'] = $this->mgraph->getStreamXticks($r);
+            $res['res'] = $this->mgraph->linear2stream($r);
+            $this->write_saiku_cache($saikuName, json_encode($res));
+        }
+
+        $this->mgraph->insert_updatetime($saikuName);
+
+        return true;
+    }
+
+    public function upadate_all_saiku_cache()
+    {
+        $saikuname = array('report_dayly_chengjiao_zc', 'report_dayly_all_num',
+            'report_up_item', 'report_up_rate', 'report_monthly_dongxiao_rate_zc',
+            'report_dayly_chengjiao', 'report_dayly_wrong_price_rate_zc',
+            'report_dayly_tuikuan_rate', 'report_dayly_order_close_rate',
+
+            'report_weekly_level_new', 'report_weekly_level_num',
+
+            'report_month_order_category_num', 'report_monthly_sellernick_sales_fee_2',
+            'report_monthly_tags_up_num', 'report_monthly_sellernick_sales_fee_0'
+        );
+
+        for($i=0; $i<count($saikuname); $i++)
+        {
+            $count = 0;
+            while(!$this->update_saiku_cache($saikuname[$i], $i))
+            {
+
+                $count++;
+                if($count > 9)
+                {
+                    echo 'update '.$saikuname[$i].' failed.</br>';
+                    break;
+                }
+            }
+        }
+        echo 'done.';
     }
 
 
