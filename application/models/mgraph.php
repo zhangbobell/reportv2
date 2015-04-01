@@ -737,4 +737,10 @@ class MGraph extends MY_model {
         }
         return true;
     }
+
+    function insert_updatetime($saikuname)
+    {
+        $sql = "UPDATE `saiku_map` SET `updatetime` = '".date("Y-m-d H:i:s")."' WHERE `ref_name` = '".$saikuname."'";
+        $this->my_query('db_jiuyang', $sql);
+    }
 }
