@@ -260,4 +260,21 @@ class MManagement extends MY_model
 
         return $res_delete_rep_competence  && $res_update_user;
     }
+
+    // 设置用户使用产品的时限
+    public function set_limitime($limitime, $username) {
+        $setdata = array(
+            'gropuid' => $limitime,
+            'username' => $username
+        );
+
+        $sql = "update `etc_user` set `expire_datetime` = ? where `username` = ?";
+
+        if(!($query =  $this->my_query('etc_privileges', $sql, $setdata)))
+        {
+            $this->db->_error_message();
+            return false;
+        }
+        return true;
+    }
 }
