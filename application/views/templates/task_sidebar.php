@@ -90,6 +90,7 @@
                         <?php if($this->session->userdata('groupID') > -1):?>
                             <li ><a href="javascript:;">知识管理(预览)</a></li>
                             <li ><a href="javascript:;">规则模块(预览)</a></li>
+                            <li ><a href="http://www.e-corp.cn:8989/rules/task_list">规则系统</a></li>
                         <?php endif;?>
                         <li><a href="process/index">更多功能</a></li>
                     </ul>
